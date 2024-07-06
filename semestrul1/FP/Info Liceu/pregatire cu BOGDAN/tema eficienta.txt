@@ -1,0 +1,412 @@
+BAC 2015 
+
+a)Algoritmul folosit este unul de cautare binara, avand o complexitate O(log n), mult mai eficinta decat o cautare bruta cu O(n).
+
+b)
+#include <iostream>
+#include <fstream>
+using namespace std;
+ifstream fin ("bac.txt.in)
+ofstream fout ("bac.txt.out)
+int main ()
+{
+  int n, x, y, a[1001];
+  fin>>n;
+  for(int i=1; i<=n; ++i)
+    fin>>a[i];
+  fin>>x>>y;
+  int st=1; dr=n;
+  while(st<=dr)
+  {
+     int mij=(st+dr)/2;
+     if(y==a[mij])
+       { fout<<y; return 0;}
+     else
+       if(y>a[mij]
+         dr=mij-1;
+     else
+       st=mij+1;
+    }
+  if(a[st]>x)
+   fout<<a[st];
+  else
+   fout<<"nu exista";
+  return 0;
+}
+===========================================
+
+3/180 O(log 100)
+int a[100], x;
+for(int i=1; i<=n; ++i)
+ cin>>a[i];
+int st=1, dr=100;
+while(st<=dr)
+{
+  int mij=(st+dr)/2;
+  if(x==a[mij])
+   { cout<<"DA"; return 0;
+  else
+   if(x>a[mij])
+     st=mij+1;
+  else
+    dr=mij-1;}
+cout<<"NU"; return 0; }
+==============================
+
+3/219
+a)
+int Cautare (int n, int x[], int v)
+{
+ int st=1, dr=n;
+ while(st<=dr)
+ {
+  int mij=(st+dr)/2;
+  if(v==x[mij])
+    return mij;
+  else
+   if(v>x[mij])
+    st=mij+1;
+  else
+   dr=mij-1;
+   }
+  return st;
+}
+b) Subprogramul contine un algoritm de cautare binara care are complexitatea O(log n). Aceasta este cea mai eficienta solutie, luand initial capetele sirului, calculand mijlocul, iar mai apoi comparand in ce parte se afla nr cautat. Prin repetare, se va afisa poz pe care ar trebui inserat numarul.
+c) ??
+ifstream fin ("sir,in");
+ofstream fout ("sir.out");
+int main ()
+{
+  int a[1001][1001], x, i, j;
+  while(fin>>x)
+  { }
+  return 0;
+
+=======================================================================
+
+
+Varianta 9/17
+III. 3.
+#include <iostream>
+using namespace std;
+ifstream fin("BAC.IN");
+ofstream fout ("BAC.OUT");
+int main()
+{
+  int a[101], n;
+  fin>>n;
+  for(int i=1; i<=n; ++i)
+    fin>>a[i];
+  int i=2, nr=0, aux=-1;
+  while(aux==-1 && i<=n)
+    {
+      if(a[i]>a[i-1] && nr==0)
+        ++i;
+      else
+        if(a[i]<a[i-1] && nr==0)
+        {nr=a[i-1]; i++;}
+      else
+          if(a[i]<a[i-1] && nr)
+            i++;
+      else
+            aux=0;
+    }
+  if(aux==-1)
+    fout<<nr;
+  else
+    fout<<aux;
+    return 0;
+}
+
+==============================================
+
+
+Varianta 14/28 nu sunt sigur daca este corect
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+  int n, poz=0, k=0;
+  cin>>n;
+  while(poz<n)
+    {
+      k++; poz=poz+k+k-1;
+    }
+  if(poz-n<k)
+    cout<<k;
+  else
+    if(n=poz-k)
+      cout<<k-1;
+  else
+      cout<<poz-k-n;
+  return 0;
+  }
+
+===================================================
+
+
+III.2/38 nu sunt sigur daca este corect
+b)
+#include <iostream>
+#include <cmath>
+using namespace std;
+int nr (int c1, int c2, int c3)
+{
+  return c1*10000+c2*1000+c3*100+c2*10+c1;
+}
+int main()
+{
+  int k, c1, c2, c3;
+  cin>>k;
+  for(c1=1; c1<=9; ++c1)
+    {
+      if(c1+k<=9)
+      {
+        c2=c1+k;
+        if(c2+k<=9)
+        {c3=c2+k; cout<<nr(c1, c2, c3)<<endl;}
+        if(c2-k>=0)
+        {c3=c2-k; cout<<nr(c1, c2, c3)<<endl;}
+      }
+      if(c1-k>=0)
+      {
+        c2=c1-k;
+        if(c2+k<=9)
+        {c3=c2+k; cout<<nr(c1, c2, c3)<<endl;}
+        if(c2-k>=0)
+        {c3=c2-k; cout<<nr(c1, c2, c3)<<endl;}
+      }
+    }
+  return 0;
+  }
+a)
+Metoda de rezolvare a problemei prsupune stabilirea unui c1, fiind prima cifra a numarului cautat, cu valori intre 1 si 9 si calcularea celorlalte 2 cifre c2, c3 in functie de k, efectuandu se doar 9 pasi in rezolvarea problemei. Programul verifica daca exista c1-k>=0, respectiv c1+k<=9, pentru care c2 va lua una dintre valori, urmand sa se procedeze in acelasi mod si pentru c2.
+=========================================================================
+
+
+III.2/42
+b)
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+  int k;
+  cin>>k;
+  cout<<k/3+1<<" "<<k/3+k%3;
+  return 0;
+  }
+a)
+Se poate observca ca elementele de sub diagonala principala sunt de forma 3k, k numar natural, cele de pe diagonala principala sunt de forma 3k+1, iar cele de deasupra 3k+2. Printr o singura operatie se afiseaza linia elemnului ceurt, iar prin determinarea restului se afla coloana acestuia.
+
+===================================================================================================
+
+
+III.1./46
+#include <iostream>
+#include <cmath>
+using namespace std;
+int a[101][101];
+int main()
+{
+  int n, color[101];
+  cin>>n;
+  
+  for(int i=1; i<=n; ++i)
+    cin>>color[i];
+ 
+  for(int i=1; i<=n; ++i)
+    for(int j=1; j<=n; ++j)
+         if((i==j/2 || j==i/2) && i!=j)
+          a[i][j]=1;
+  
+  for(int i=1; i<=n; ++i)
+    for(int j=1; j<=n; ++j)
+       if(a[i][j]==1 && color[i]==color[j])
+       {cout<<"incorect"; return 0;}
+  
+  cout<<"corect";
+  return 0;
+  }
+
+====================================================================================================
+
+
+III.3./54
+#include <iostream>
+#include <cmath>
+using namespace std;
+int a[101][101];
+int main()
+{
+  int n, x, y, a, b;
+  int ok=1;
+  cin>>n;
+  cin>>x>>y;
+  for(int i=2; i<=n; ++i)
+    {
+      cin>>a>>b;
+      if(x<=a && y<=b && y>=a)
+        {x=a; ok++;}
+      else
+        if(x>=a && y>=b && x<=b)
+        {y=b; ok++;}
+      else
+        if(x>=a && x<=b && y>=a && y<=b)
+          ok++;
+      else
+        if(x<=a && y>=b)
+        {ok++; x=a; y=b;}
+    }
+  if(ok==n)
+    cout<<x<<" "<<y;
+  else
+    cout<<"multime vida";
+  return 0;
+  }
+======================================================================================================
+
+
+III.1./56
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+ long long a;
+ cin>>a;
+  int uc=a%10;
+  uc=uc*(a%10);
+  cout<<(uc*(a%10))%10;
+  return 0;
+}
+
+=====================================================================================================
+
+
+III.3./60
+a)
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+ int n, k=1, poz=0;
+  cin>>n;
+  while(poz<n)
+    {
+      k*=10;
+      poz+=9;
+    }
+  int cif=9-poz+n;
+  n=0;
+  while(k!=0)
+    {
+      n=cif*k+n;
+      k/=10;
+    }
+  cout<<n;
+  return 0;
+}
+b) Metoda folosita calculeaza in care dintre subsiruri se afla pozitia cautata, urmand sa se construiasca un numar de pe pozitia data. Algoritmul este eficient din punct de vedere al timpului deoarece subsirul se determina in n/9 pasi, iar construirea numarului in n/9+1 pasi.
+
+====================================================================================================
+
+
+III.1./70
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+  int x, y, a=1, b=0, c=0;
+  bool ok=false;
+  cin>>x>>y;
+  while(c<x)
+    {
+      c=a+b;
+      a=b; b=c;
+      if(x==b)
+      {
+        c=a+b;
+        if(y==c)
+          ok=true;
+      }
+      }
+if(ok)
+   cout<<"Numerele "<<x<<" si "<<y<<" sunt termeni consecutivi in sirul lui Fibonacci";
+  else
+  cout<<"Numerele "<< x<<" si "<<y<<" nu sunt termeni consecutivi in sirul lui Fibonacci";
+  return 0;
+}
+
+=====================================================================================================
+
+
+III.1./75
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+  int n, m, a[12][22];
+  cin>>m>>n;
+  for(int i=1; i<=m; ++i)
+    for(int j=1; j<=n; ++j)
+      cin>>a[i][j];
+  for(int i=1; i<=m/2+m%2; ++i)
+    for(int j=1; j<=n/2+n%2; ++j)
+      if(a[i][j]!=a[m-i+1][n-j+1])
+      {
+        cout<<"NU"; return 0;
+      } 
+  cout<<"DA";
+  return 0;
+}
+
+======================================================================================================
+
+
+III.3./79
+#include <iostream>
+#include <cmath>
+#include <cstring>
+using namespace std;
+
+int main() {
+  int n, v[31],x;
+  char a[256][256], s[101];
+  cin>>n;
+  for(int i=1; i<=n; ++i)
+    {
+      cin>>s>>x;
+      v[i]=x; strcpy(a[i], s);
+    }
+  for(int i=1; i<n; ++i)
+    for(int j=i+1; j<=n; ++j)
+      if(v[i]<v[j])
+      {
+        swap(v[i], v[j]);
+        swap(a[i], a[j]);
+      }
+  for(int i=1; i<=n; ++i)
+    cout<<a[i]<<" "<<v[i]<<endl;
+  return 0;
+}
+
+======================================================================================================
+
+
+
+
+
+
+====
+ADMITERE CLUJ - IULIE 2022
+===
+
+
+
+  

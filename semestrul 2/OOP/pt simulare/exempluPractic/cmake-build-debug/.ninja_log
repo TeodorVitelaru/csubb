@@ -1,0 +1,72 @@
+# ninja log v5
+9	108	7378354338383009	cevaceva2_autogen/timestamp	6e9490164847c6a4
+108	1232	7378353298672726	CMakeFiles/cevaceva2.dir/Repo.cpp.obj	c720c47cc5ce6d80
+117	1218	7378353298502740	CMakeFiles/cevaceva2.dir/Service.cpp.obj	b2990cf3e09ad8ed
+9	108	7378354338383009	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/timestamp	6e9490164847c6a4
+9	108	7378354338383009	cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+9	108	7378354338383009	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+268	466	7378337245932944	CMakeFiles/cevaceva2.dir/cevaceva2_autogen/mocs_compilation.cpp.obj	c8735cb6a1ef4539
+281	1063	7378337251892917	CMakeFiles/cevaceva2.dir/Apartament.cpp.obj	cffa109decf211aa
+104	2646	7378353648117850	CMakeFiles/cevaceva2.dir/main.cpp.obj	8298371e37ba8200
+100	5067	7378353337043070	CMakeFiles/cevaceva2.dir/GUI.cpp.obj	a37ac81ec17ea924
+606	1029	7378354345653003	cevaceva2.exe	78e0c299e5f4a883
+111	606	7378354343373014	CMakeFiles/cevaceva2.dir/teste.cpp.obj	7ebd5e79cc99e684
+6	104	7378354938016082	cevaceva2_autogen/timestamp	6e9490164847c6a4
+6	104	7378354938016082	cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+6	104	7378354938016082	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/timestamp	6e9490164847c6a4
+6	104	7378354938016082	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+108	622	7378354943196498	CMakeFiles/cevaceva2.dir/teste.cpp.obj	7ebd5e79cc99e684
+623	1054	7378354945506157	cevaceva2.exe	78e0c299e5f4a883
+7	103	7378355017494159	cevaceva2_autogen/timestamp	6e9490164847c6a4
+7	103	7378355017494159	cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+7	103	7378355017494159	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/timestamp	6e9490164847c6a4
+7	103	7378355017494159	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+107	606	7378355022513827	CMakeFiles/cevaceva2.dir/teste.cpp.obj	7ebd5e79cc99e684
+606	1009	7378355024803855	cevaceva2.exe	78e0c299e5f4a883
+6	104	7378355136115118	cevaceva2_autogen/timestamp	6e9490164847c6a4
+6	104	7378355136115118	cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+6	104	7378355136115118	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/timestamp	6e9490164847c6a4
+6	104	7378355136115118	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+107	602	7378355141095476	CMakeFiles/cevaceva2.dir/teste.cpp.obj	7ebd5e79cc99e684
+602	1030	7378355143365472	cevaceva2.exe	78e0c299e5f4a883
+6	101	7378356183597570	cevaceva2_autogen/timestamp	6e9490164847c6a4
+6	101	7378356183597570	cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+6	101	7378356183597570	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/timestamp	6e9490164847c6a4
+6	101	7378356183597570	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+104	631	7378356188907544	CMakeFiles/cevaceva2.dir/teste.cpp.obj	7ebd5e79cc99e684
+632	1039	7378356191197545	cevaceva2.exe	78e0c299e5f4a883
+8	147	7378369851132393	cevaceva2_autogen/timestamp	6e9490164847c6a4
+8	147	7378369851132393	cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+8	147	7378369851132393	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/timestamp	6e9490164847c6a4
+8	147	7378369851132393	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+162	1674	7378369865952596	CMakeFiles/cevaceva2.dir/Apartament.cpp.obj	cffa109decf211aa
+177	1713	7378369866552607	CMakeFiles/cevaceva2.dir/teste.cpp.obj	7ebd5e79cc99e684
+152	1757	7378369866952577	CMakeFiles/cevaceva2.dir/Repo.cpp.obj	c720c47cc5ce6d80
+172	1835	7378369867962586	CMakeFiles/cevaceva2.dir/Service.cpp.obj	b2990cf3e09ad8ed
+157	4147	7378369891122566	CMakeFiles/cevaceva2.dir/main.cpp.obj	8298371e37ba8200
+166	4486	7378369894502563	CMakeFiles/cevaceva2.dir/GUI.cpp.obj	a37ac81ec17ea924
+4486	4982	7378369897683343	cevaceva2.exe	78e0c299e5f4a883
+7	123	7378371800456636	cevaceva2_autogen/timestamp	6e9490164847c6a4
+7	123	7378371800456636	cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+7	123	7378371800456636	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/timestamp	6e9490164847c6a4
+7	123	7378371800456636	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+127	2881	7378371828006981	CMakeFiles/cevaceva2.dir/GUI.cpp.obj	a37ac81ec17ea924
+2881	3290	7378371830416965	cevaceva2.exe	78e0c299e5f4a883
+7	101	7378372018045859	cevaceva2_autogen/timestamp	6e9490164847c6a4
+7	101	7378372018045859	cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+7	101	7378372018045859	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/timestamp	6e9490164847c6a4
+7	101	7378372018045859	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+105	2735	7378372044365844	CMakeFiles/cevaceva2.dir/GUI.cpp.obj	a37ac81ec17ea924
+2735	3135	7378372046678299	cevaceva2.exe	78e0c299e5f4a883
+6	99	7378372317677815	cevaceva2_autogen/timestamp	6e9490164847c6a4
+6	99	7378372317677815	cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+6	99	7378372317677815	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/timestamp	6e9490164847c6a4
+6	99	7378372317677815	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+102	2748	7378372344157821	CMakeFiles/cevaceva2.dir/GUI.cpp.obj	a37ac81ec17ea924
+2749	3147	7378372346497437	cevaceva2.exe	78e0c299e5f4a883
+27	418	7379114806009801	cevaceva2_autogen/timestamp	6e9490164847c6a4
+27	418	7379114806009801	cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+27	418	7379114806009801	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/timestamp	6e9490164847c6a4
+27	418	7379114806009801	D:/facultate/semestrul 2/OOP/cevaceva2/cmake-build-debug/cevaceva2_autogen/mocs_compilation.cpp	6e9490164847c6a4
+429	2110	7379114822899398	CMakeFiles/cevaceva2.dir/teste.cpp.obj	7ebd5e79cc99e684
+2111	5383	7379114840639933	cevaceva2.exe	78e0c299e5f4a883

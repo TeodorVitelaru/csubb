@@ -1,0 +1,43 @@
+verificare daca un fisier e de tip txt:
+if file $F | grep -q 'ASCII text'
+
+extragerea doar numelui fisierului:
+NF=$(echo $F | sed 's@.*/@@')
+
+numar de linii dintr un fisier:
+echo 'Numar linii:' $(wc -l <$NUME)
+
+numar de caractere dintr un fisier:
+echo 'Numar caractere:' $(wc -m <$NUME)
+
+verificare daca un fisier este director
+if [ -d $NUME ]
+
+citire cuvant de la tastatura:
+read -p "Cuvant: " CUVANT
+
+in range de la 1 la NL:
+$(seq 1 $NL)
+
+eliminare ultima virgula:
+result=${result%,}
+
+linia care apare de cele mai multe ori:
+cat "$file" | sort | uniq -c | sort -nr | head -n 1
+
+afisare la stderr:
+echo "" >&2
+
+fisiere in ord descrescatare in functie a ceva continut
+grep -r "" director | sort | uniq c | sort -nr | awk '{print $2 $1 "\n"}'
+
+doar o linie:
+$(sed -n ''$L'p' $file)
+
+nr cuvinte de pe o linie:
+NC=$(echo $LINIE | wc -w)
+
+inlocuire pe o linie inaintea primului cuvant care incepe cu voc:
+sed -i ''$N' s/\<[aeiouAEIOU]/'$ch' &/' $file
+
+

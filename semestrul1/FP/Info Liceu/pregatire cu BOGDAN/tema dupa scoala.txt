@@ -1,0 +1,181 @@
+21 III.4
+a) #include <iostream> 
+#include <cstring>
+using namespace std;
+
+int f(int n)
+{
+  if(n<=5)
+    return n;
+  else
+  {
+    int a=10, b=10;
+    while(b<=n){
+      a=b; b=b*2;
+    }
+    return a;
+  }
+}
+
+int main(){
+ int n;
+  cin>>n;
+  cout<<f(n);
+  
+  return 0;
+}
+b) ??
+===========
+
+
+
+43 I.2.D
+a=a-(i-1)*(i-1)
+==================
+
+
+
+
+
+63 III 4
+#include <iostream> 
+#include <cstring>
+#include<fstream>
+using namespace std;
+
+ifstream fin("bac.txt");
+
+int main(){
+ int x, k, n;
+ fin>>n>>k;
+ int v[10001]={0}, s=0;
+ for(int i=1; i<=k; i++)
+   {
+     fin>>x;
+     v[i]=x;
+     s+=x;
+   }
+ int smax=s, poz=0, a=v[1];
+  for(int i=k+1; i<=n; i++)
+    {
+      fin>>x;
+      v[i]=x;
+      if(s>smax)
+      {poz=i-k; smax=s;}
+      s-=a;
+      s+=x;
+      a=v[i-k+1];
+    }
+  if(s>smax)
+  {poz=n-k; smax=s;}
+  for(int i=poz; i<=poz+k-1; i++)
+    cout<<v[i]<<" ";
+
+  return 0;
+}
+================
+
+
+
+
+
+72 III 4  NU AFISEAZA OK
+#include <cstring>
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+ifstream fin("bac.txt");
+
+int main() {
+  int x, v[1001] = {0}, n, a, b;
+  fin >> n;
+  while (n) {
+    fin >> x;
+    v[x] = 1;
+    n--;
+  }
+
+  fin >> a >> b;
+  for (int i = a; i <= b; i++)
+    if (v[i] == 1) {
+      cout << v[i];
+      return 0;
+    }
+
+  cout << "NU";
+  return 0;
+}
+=========================
+
+
+
+
+81 III 4
+#include <cstring>
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+ifstream fin("bac.txt");
+
+int main() {
+  float x, y;
+  int nr=999, n;
+  fin>>n;
+  fin>>x;
+    n--;
+  while(n)
+    {
+      fin>>y;
+      if(int(y)-int(x)<nr)
+        nr=int(y)-int(x);
+      n--;
+      y=x;
+    }
+  cout<<nr;
+  
+  return 0;
+}
+==================
+
+
+
+
+87 III 4
+#include <cstring>
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+ifstream fin("bac.txt");
+
+int main() {
+  int n, m, x, v[101];
+  fin>>n>>m;
+  for(int i=1; i<=n; i++)
+    fin>>v[i];
+  int aux=1;
+  for(int i=1; i<=m; i++)
+    {
+      fin>>x;
+      int s=0;
+      while(s<x && aux<=n)
+        {
+          s+=v[aux];aux++;
+        }
+      if(s!=x)
+      {cout<<"NU"; return 0;}
+    }
+  cout<<"DA";
+  
+  return 0;
+}
+====================================
+
+
+
+183 III 4 ???
+
+
+

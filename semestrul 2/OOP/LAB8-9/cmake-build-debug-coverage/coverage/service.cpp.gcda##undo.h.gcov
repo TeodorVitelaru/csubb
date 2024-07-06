@@ -1,0 +1,109 @@
+        -:    0:Source:D:/facultate/semestrul 2/OOP/LAB8-9/undo.h
+        -:    0:Graph:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\service.cpp.gcno
+        -:    0:Data:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "domain.h"
+        -:    2:#include "repo.h"
+        -:    3:
+        -:    4:class ActiuneUndo
+        -:    5:{
+        -:    6:    public:
+        -:    7:    virtual void doUndo() = 0;
+function _ZN11ActiuneUndoD2Ev called 40 returned 100% blocks executed 100%
+       40:    8:    virtual ~ActiuneUndo() {};
+        -:    9:};
+        -:   10:
+        -:   11:class UndoAdauga : public ActiuneUndo
+        -:   12:{
+        -:   13:    Oferta of;
+        -:   14:    RepoAbstract &repo;
+        -:   15:    public:
+function _ZN10UndoAdaugaC1ER12RepoAbstractRK6Oferta called 34 returned 100% blocks executed 80%
+       34:   16:    UndoAdauga(RepoAbstract &repo, const Oferta& of) : repo{repo}, of{of}{};
+       34:   16-block  0
+call    0 returned 34
+call    1 returned 34
+branch  2 taken 34 (fallthrough)
+branch  3 taken 0 (throw)
+       34:   16-block  1
+    $$$$$:   16-block  2
+call    4 never executed
+        -:   17:    /*
+        -:   18:     * Functie de undo pentru adaugare
+        -:   19:     */
+function _ZN10UndoAdauga6doUndoEv called 1 returned 100% blocks executed 100%
+        1:   20:    void doUndo() override
+        -:   21:    {
+        1:   22:        repo.del(of);
+        1:   22-block  0
+call    0 returned 1
+        1:   23:    }
+        -:   24:};
+        -:   25:
+        -:   26:class UndoModifica : public ActiuneUndo
+        -:   27:{
+        -:   28:    Oferta of_veche, of_noua;
+        -:   29:    RepoAbstract &repo;
+        -:   30:    public:
+        -:   31:    /*
+        -:   32:     * Functie de undo pentru modificare
+        -:   33:     * repo: repo ul in care se face undo
+        -:   34:     * of_veche: oferta veche
+        -:   35:     * of_noua: oferta noua
+        -:   36:     * return: -
+        -:   37:     */
+function _ZN12UndoModificaC1ER12RepoAbstractRK6OfertaS4_ called 3 returned 100% blocks executed 62%
+        3:   38:    UndoModifica(RepoAbstract &repo, const Oferta& of_veche, const Oferta& of_noua) : repo{repo}, of_veche{of_veche},of_noua{of_noua}{};
+        3:   38-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:   38-block  1
+call    4 returned 3
+branch  5 taken 3 (fallthrough)
+branch  6 taken 0 (throw)
+        3:   38-block  2
+    $$$$$:   38-block  3
+call    7 never executed
+    $$$$$:   38-block  4
+call    8 never executed
+        -:   39:
+        -:   40:    /*
+        -:   41:     * Functie de undo pentru modificare
+        -:   42:     */
+function _ZN12UndoModifica6doUndoEv called 1 returned 100% blocks executed 100%
+        1:   43:    void doUndo() override
+        -:   44:    {
+        1:   45:        repo.modify(of_veche);
+        1:   45-block  0
+call    0 returned 1
+        1:   46:    }
+        -:   47:};
+        -:   48:
+        -:   49:class UndoSterge : public ActiuneUndo
+        -:   50:{
+        -:   51:    Oferta of;
+        -:   52:    RepoAbstract &repo;
+        -:   53:    public:
+function _ZN10UndoStergeC1ER12RepoAbstractRK6Oferta called 3 returned 100% blocks executed 80%
+        3:   54:    UndoSterge(RepoAbstract &repo, const Oferta& of) : repo{repo}, of{of} {};
+        3:   54-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:   54-block  1
+    $$$$$:   54-block  2
+call    4 never executed
+        -:   55:    /*
+        -:   56:     * Functie de undo pentru stergere
+        -:   57:     */
+function _ZN10UndoSterge6doUndoEv called 1 returned 100% blocks executed 100%
+        1:   58:    void doUndo() override
+        -:   59:    {
+        1:   60:        repo.store(of);
+        1:   60-block  0
+call    0 returned 1
+        1:   61:    }
+        -:   62:};

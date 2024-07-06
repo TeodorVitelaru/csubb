@@ -1,0 +1,43 @@
+        -:    0:Source:C:/Users/Admin/CLionProjects/LAB6/service.h
+        -:    0:Graph:C:\Users\Admin\CLionProjects\LAB6\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\service.cpp.gcno
+        -:    0:Data:C:\Users\Admin\CLionProjects\LAB6\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <iostream>
+        -:    2:#include "repo.h"
+        -:    3:#include "validator.h"
+        -:    4:
+        -:    5:typedef int(*Sort)(const Oferta&, const Oferta&);
+        -:    6:
+        -:    7:class Service
+        -:    8:{
+        -:    9:private:
+        -:   10:    Repo& repo;
+        -:   11:    Validator& val;
+        -:   12:public:
+        -:   13:    Service(Repo& oferta_repo, Validator& val) :repo{ oferta_repo }, val{ val }{};
+        -:   14:
+        -:   15:    Service(const Service& ot) = delete;
+        -:   16:
+        -:   17:    void adaugare_oferta(string denumire, string destinatie, string tip, int pret);
+        -:   18:
+        -:   19:    void stergere_oferta(int poz);
+        -:   20:
+        -:   21:    void modificare_oferta(const string& denumire, const string& destinatie, const string& tip, int pret);
+        -:   22:
+        -:   23:    Oferta cautare_oferte(const string& denumire, const string& destinatie);
+        -:   24:
+        -:   25:    void sortare_generica(int(*fct)(const Oferta&, const Oferta&), int ord);
+        -:   26:
+        -:   27:    vector<Oferta> filtrare_destinatie(const string& destinatie);
+        -:   28:
+        -:   29:    vector<Oferta> filtrare_pret(const int& pret);
+        -:   30:
+        -:   31:
+function _ZN7Service14get_all_oferteEv called 18 returned 100% blocks executed 100%
+       18:   32:    const vector<Oferta>& get_all_oferte()
+        -:   33:    {
+       18:   34:        return this->repo.get_all_oferte();
+       18:   34-block  0
+call    0 returned 18
+        -:   35:    }
+        -:   36:};

@@ -1,0 +1,180 @@
+BAC 2019
+========
+#august
+=======
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin ("bac.in");
+ofstream fout ("bac.out");
+
+int main()
+{
+  int v[1001]={0}, n;
+  while(fin >> n)
+    {v[n]++;}
+  for(int i = 1; i <= 999; i+=2)
+    while(v[i])
+      {cout<<i<<" "; v[i]--;}
+   for(int i = 0; i <= 1000; i+=2)
+      while(v[i])
+      {cout<<i<<" "; v[i]--;}
+  
+  return 0;
+}
+
+
+#iunie
+======
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin ("bac.in");
+ofstream fout ("bac.out");
+
+int main()
+{
+  int x, y, vf=0;
+  fin >> x;
+  cout << x << " ";
+  vf=x; 
+  while(fin>>y)
+    {
+      if(y > vf)
+      {cout<<y<<" "; vf=y;}
+      if(y == x)
+        cout << y << " ";
+      x=y;
+    }
+  return 0;
+}
+
+
+
+
+
+#mai
+====
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin ("bac.in");
+ofstream fout ("bac.out");
+
+int main()
+{
+  int x, y, z, t, n;
+  fin >> n>>x>>y>>z;
+  n=n-3;
+  while(n)
+    {
+      t=z+y-x;
+      x=y; y=z; z=t; n--;
+    }
+  cout<<" "<<z<<" "<<y<<" "<<x<<" ";
+  t=x+y-z; z=y; y=x; x=t;
+  while(t>0)
+    {
+      cout<<t<<" ";
+      t=x+y-z;
+      z=y; y=x; x=t;
+    }
+  return 0;
+}
+
+
+
+
+
+
+
+#martie
+=======
+
+
+!III.2 Ceva nu i bun
+======
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin ("bac.in");
+ofstream fout ("bac.out");
+
+int main()
+{
+  char s[200], copie[200]="";
+  char p[200]={"COLEGIUL, LICEUL, TEORETIC, NATIONAL"};
+  cin.getline(s, 200);
+  char *r=strtok(s, " ");
+  while(r)
+    {
+      char aux[200];
+      strcpy(aux, r);
+      int nr=strlen(r);
+      if(r[nr-1]=='.')
+      {
+        r--;
+        if(strstr(p, r))
+      {
+        if(r[1]== 'C')
+        {strcat(copie, "COLEGIUL");
+          strcat(copie, " ");}
+        if(r[1]== 'L')
+          {strcat(copie, "LICEUL");
+          strcat(copie, " ");}
+        if(r[1]== 'T')
+        {strcat(copie, "TEORETIC");
+          strcat(copie, " ");}
+        if(r[1]== 'N')
+          {strcat(copie, "NATIONAL");
+            strcat(copie, " ");}
+      }
+      }
+        else
+        { strcat(copie, aux); strcat(copie, " ");}
+      r=strtok(NULL, " ");
+    }
+  cout<<copie;
+  return 0;
+}
+
+
+III.3
+======
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin ("bac.in");
+ofstream fout ("bac.out");
+
+int main()
+{
+   int n, x, micp1=1000001, mici1=1000001, micp2=1000001, mici2=1000001, a=0, b=0;
+  fin>> n;
+  for(int i=1; i<=n; ++i)
+    {
+      fin>>x;
+      if(x%2==0)
+      { b++; if(x<micp1) micp1=x;}
+      else
+      { a++; if(x<mici1) mici1=x;}
+    }
+  for(int i=n+1; i<=2*n; ++i)
+    {
+      fin>>x;
+      if(x%2==0)
+      {b--; if(x<micp2) micp2=x;}
+      else
+      {a--; if(x<mici2) mici2=x;}
+    }
+  if(a==0 && b==0)
+  {cout<<"DA"; return 0;}
+    
+  if(micp1<mici2 && mici1<micp2)
+    cout<<"DA";
+  else
+    cout<<"NU";
+
+      
+  return 0;
+}

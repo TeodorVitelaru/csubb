@@ -1,0 +1,142 @@
+FMI-
+ex.8
+101100b=
+f(x)=f(10110)+1
+f(10110)=f(1011)+1
+...
+x= nr egal de biti de 1 si biti 0
+2022=101110100b
+numere pe biti: 10--> 1 nr
+4 biti: 1---  > 3 numere
+6 biti:1 ----- > combin(5,2)
+8 biti:1--------- > combin(7,3)
+10 biti: 1-----  > combin(9,4)
+-------
+
+ex.11
+F=2001
+f=
+2022=1+x+x+...+x+(x+5)
+
+x=2021/21=96
+rest=5---> f=101
+
+??
+2017-august
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int frec[1001];
+int main() {
+  ifstream fin("bac.txt");
+  int x,maxx=0;
+  int cnt = 0;
+  int r = -1;
+  int cop;
+  while (fin >> x)
+		{ frec[x] = 1;if(x>maxx) maxx=x;}
+  for (int i = 0; i <= 1000; ++i)
+    if (frec[i] == 1) {
+      cop = i;
+      break;
+    }
+  for (int i = cop + 1; i <= 1000; ++i)
+    if (frec[i] == 1) {
+      r = i - cop;
+      break;
+    }
+	for (int i = cop + r+1; i <=maxx; i++)
+    if ((frec[i] == 1 && (i - cop) % r != 0) ||
+        (frec[i] == 0 && (i - cop) % r == 0)) {
+      cout << "NU";
+      return 0;
+    }
+
+  cout << r;
+  return 0;
+}
+===================
+2016- mai
+1,-1,2,-2,3,-3,4,-4
+1  2 3  4 5  6 7  8
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    ofstream fout("BAC.OUT");
+    int n;
+    cin >> n;
+    while(n){
+        if(n%2==0)
+            fout << -n/2 << " ";
+        else
+            fout << (n+1)/2 << " ";
+        n--;
+    }
+    return 0;
+}
+==================
+SIRURI DE CHAR
+s1 este prefix al lui s
+char *p=strstr(s,s1);
+if(p-s==0) 
+  cout<<"prefix"
+
+s1 este sufix al lui s
+char *p=strstr(s+strlen(s)-strlen(s1),s1);
+if(strcmp(p,s1)==0) 
+  cout<<"sufix"
+
+strncpy(s2,s,strlen(s)/2);
+s2[strlen(s)/2]=0;
+--------------------
+CONVERSII RAPIDE INTRE BAZE DE NUMERATIE
+
+Baza 2---> baza 8
+8=2^3
+
+11.100.010.001b--->3421o
+
+Baza 2---> baza 16
+16=2^4
+1111.0011.0010b=F32H
+
+Baza 8---> baza 2
+7501o=111101000001b
+2-->4,8,16
+4-->16
+16-->4
+16--->2
+8-->2
+4--->2
+-------------
+702o=7* 8 ^2 +0* 8^1 +2* 8^0
+210
+
+
+...
+d la puterea p
+for(i=1;i<=p/k;i++)
+  a=a*d;
+for(i=1;i<=p%k;i++)
+  b=b*d;
+
+
+
+...
+s[i]='a'+'z'-s[i];
+-------
+
+TEMA
+Exercitiul B1;
+http://www.cs.ubbcluj.ro/wp-content/uploads/subiect-informatica-concurs-mate-info-ubb-ro-2018.pdf
+
+prob III.4 de eficienta din bac 2018 si 2019
++exercitii admitere info Iasi 2012-2019!!!!
+
+
+
+

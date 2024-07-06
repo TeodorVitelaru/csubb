@@ -1,0 +1,1352 @@
+        -:    0:Source:C:/Users/Admin/Desktop/poriect alex vladu/controller.c
+        -:    0:Graph:C:\Users\Admin\Desktop\poriect alex vladu\cmake-build-debun-code-coverage\CMakeFiles\poriect_alex_vladu.dir\controller.c.gcno
+        -:    0:Data:C:\Users\Admin\Desktop\poriect alex vladu\cmake-build-debun-code-coverage\CMakeFiles\poriect_alex_vladu.dir\controller.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "controller.h"
+        -:    2:
+        -:    3:#include <stdlib.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <string.h>
+        -:    6:#include <assert.h>
+        -:    7:#include "domain.h"
+        -:    8:#include "validator.h"
+        -:    9:#include "repository.h"
+        -:   10:#include "controller.h"
+        -:   11:#include "array.h"
+        -:   12:
+function create_Controller called 2 returned 100% blocks executed 100%
+        2:   13:Controller create_Controller(Repository repo)
+        -:   14:{
+        2:   15:    Controller controller = (Controller)malloc(sizeof(Oferta_Controller));
+        2:   16:    controller->repo = repo;
+        2:   17:    return controller;
+        2:   17-block  0
+        -:   18:}
+function destroy_Controller called 1 returned 100% blocks executed 100%
+        1:   19:void destroy_Controller(Controller controller)
+        -:   20:{
+        1:   21:    detroy_Repo(controller->repo);
+        1:   21-block  0
+call    0 returned 1
+        1:   22:    free(controller);
+        1:   23:}
+        -:   24:
+function get_Controller_Repo called 131 returned 100% blocks executed 100%
+      131:   25:Repository get_Controller_Repo(Controller controller)
+        -:   26:{
+      131:   27:    return controller->repo;
+      131:   27-block  0
+        -:   28:}
+        -:   29:
+        -:   30:
+function return_last_element called 1 returned 100% blocks executed 100%
+        1:   31:Vector return_last_element(Vector vec)
+        -:   32:{
+        1:   33:    return vec->v[vec->size-1];
+        1:   33-block  0
+        -:   34:}
+        -:   35:
+function destroy_last_element called 1 returned 100% blocks executed 100%
+        1:   36:void destroy_last_element(Vector vec)
+        -:   37:{
+        1:   38:    destroy_vector(vec->v[vec->size-1], delete_Oferta);
+        1:   38-block  0
+call    0 returned 1
+        1:   39:    vec->size--;
+        1:   40:}
+        -:   41:
+        -:   42:
+function test_undo_list called 1 returned 100% blocks executed 85%
+        1:   43:void test_undo_list()
+        -:   44:{
+        1:   45:    Vector oferte = create_vector(2);
+        1:   45-block  0
+call    0 returned 1
+        1:   46:    add_vector(oferte, create_Oferta("teodor", 200, "calea nationala", 1000));
+call    0 returned 1
+call    1 returned 1
+       1*:   47:    assert(get_Vector_Size(oferte) == 1);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   47-block  0
+call    3 never executed
+        1:   47-block  1
+        1:   48:    Vector undoL = create_vector(1);
+        1:   48-block  0
+call    0 returned 1
+        1:   49:    add_vector(undoL, oferte);
+call    0 returned 1
+        1:   50:    Vector previous_list = return_last_element(undoL);
+call    0 returned 1
+       1*:   51:    assert(previous_list->size == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   51-block  0
+call    2 never executed
+        1:   51-block  1
+        1:   52:    destroy_last_element(undoL);
+        1:   52-block  0
+call    0 returned 1
+       1*:   53:    assert(get_Vector_Size(undoL) == 0);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   53-block  0
+call    3 never executed
+        1:   53-block  1
+        1:   54:    destroy(undoL, (DestroyFunction) destroy_lista);
+        1:   54-block  0
+call    0 returned 1
+        1:   55:}
+        -:   56:
+        -:   57:
+function test_transform_chars_to_integer called 1 returned 100% blocks executed 77%
+        1:   58:void test_transform_chars_to_integer()
+        -:   59:{
+        -:   60:    //Functie care testeaza transform_chars_to_integer
+       1*:   61:    assert(transform_chars_to_integer("12345") == 12345);
+        1:   61-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   61-block  1
+call    3 never executed
+        1:   61-block  2
+       1*:   62:    assert(transform_chars_to_integer("01234") == 1234);
+        1:   62-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   62-block  1
+call    3 never executed
+        1:   62-block  2
+       1*:   63:    assert(transform_chars_to_integer("5") == 5);
+        1:   63-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   63-block  1
+call    3 never executed
+        1:   63-block  2
+        1:   64:}
+        -:   65:
+function transform_chars_to_integer called 43 returned 100% blocks executed 100%
+       43:   66:int transform_chars_to_integer(const char* amount_text)
+        -:   67:{
+       43:   68:    int nr = 0;
+      151:   69:    for (int i = 0; i < strlen(amount_text); i++)
+       43:   69-block  0
+      151:   69-block  1
+branch  0 taken 108
+branch  1 taken 43 (fallthrough)
+      108:   70:        nr *= 10, nr += amount_text[i] - '0';
+      108:   70-block  0
+       43:   71:    return nr;
+       43:   71-block  0
+        -:   72:}
+        -:   73:
+function test_try_to_add_oferta called 1 returned 100% blocks executed 83%
+        1:   74:void test_try_to_add_oferta(Controller controller)
+        -:   75:{
+        -:   76:    //Functia testeaza functie de try_to_add_oferta
+        -:   77:    //Functia primeste ca parametru controllerul;
+        1:   78:    Vector undoL = create_vector(1);
+        1:   78-block  0
+call    0 returned 1
+        1:   79:    char *result=try_to_add_oferta(controller, "apart", "20", "str1.pret", "2501", undoL);
+call    0 returned 1
+       1*:   80:    assert(strcmp(result, "Tipul nu este unul valid! Tipul poate fi doar teren, casa sau apartament\nNot enough infomation about your address!"));
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   80-block  0
+call    2 never executed
+        1:   80-block  1
+        1:   81:    free(result);
+        1:   82:    result = try_to_add_oferta(controller, "kasa", "202z", "Sibiu,str.Luncii,nr.", "2501", undoL);
+        1:   82-block  0
+call    0 returned 1
+       1*:   83:    assert(strcmp(result, "Tipul nu este unul valid! Tipul poate fi doar teren, casa sau apartament\nSuprafata is not integer\nPlease enter your street address number!"));
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   83-block  0
+call    2 never executed
+        1:   83-block  1
+        1:   84:    free(result);
+        1:   85:    result=try_to_add_oferta(controller, "casa", "65", "Sibiu,str.Luncii,nr.14", "555", undoL);
+        1:   85-block  0
+call    0 returned 1
+       1*:   86:    assert(check_ok_string(result));
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   86-block  0
+call    3 never executed
+        1:   86-block  1
+        1:   87:    free(result);
+        1:   88:    remove_Ofera_Repo(get_Controller_Repo(controller), 0);
+        1:   88-block  0
+call    0 returned 1
+call    1 returned 1
+        1:   89:    destroy(undoL, (DestroyFunction) destroy_lista);
+call    0 returned 1
+        1:   90:}
+        -:   91:
+function try_to_add_oferta called 11 returned 100% blocks executed 91%
+       11:   92:char* try_to_add_oferta(Controller controller, char* tip, char* suprafata, char* adresa, char* pret, Vector undoL)
+        -:   93:{
+       11:   94:    char* errors = (char*)malloc(200 * sizeof(char));
+       11:   95:    errors[0] = '\0';
+       11:   96:    if (!check_equ_string(tip, "teren") && !check_equ_string(tip, "casa") && !check_equ_string(tip, "apartament"))
+       11:   96-block  0
+call    0 returned 11
+branch  1 taken 9 (fallthrough)
+branch  2 taken 2
+        9:   96-block  1
+call    3 returned 9
+branch  4 taken 3 (fallthrough)
+branch  5 taken 6
+        3:   96-block  2
+call    6 returned 3
+branch  7 taken 2 (fallthrough)
+branch  8 taken 1
+        2:   97:        strcat(errors, "Tipul nu este unul valid! Tipul poate fi doar teren, casa sau apartament\n");
+        2:   97-block  0
+       11:   98:    if (!check_number_string(suprafata))
+       11:   98-block  0
+call    0 returned 11
+branch  1 taken 1 (fallthrough)
+branch  2 taken 10
+        1:   99:        strcat(errors, "Suprafata is not integer\n");
+        1:   99-block  0
+       11:  100:    if (!strlen(adresa))
+       11:  100-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 11
+    #####:  101:        strcat(errors, "Adresa trebuie sa fie valida!");
+    %%%%%:  101-block  0
+       11:  102:    if (!check_number_string(pret))
+       11:  102-block  0
+call    0 returned 11
+branch  1 taken 0 (fallthrough)
+branch  2 taken 11
+    #####:  103:        strcat(errors, "Pret is not integer\n");
+    %%%%%:  103-block  0
+       11:  104:    if (strlen(adresa) > 30)
+       11:  104-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 11
+    #####:  105:        strcat(errors, "Use max.30 characters to represent address!\n");
+    %%%%%:  105-block  0
+       11:  106:    int value_adress_error = check_ok_adress(adresa);
+       11:  106-block  0
+call    0 returned 11
+       11:  107:    if (value_adress_error == -1)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 10
+        1:  108:        strcat(errors, "Not enough infomation about your address!\n");
+        1:  108-block  0
+       11:  109:    if (value_adress_error == 0)
+       11:  109-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 10
+        1:  110:        strcat(errors, "Please enter your street address number!\n");
+        1:  110-block  0
+       11:  111:    if (strlen(errors))
+       11:  111-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 9
+        2:  112:        return errors;
+        2:  112-block  0
+        9:  113:    strcpy(errors, "OK");
+        9:  114:    Vector copie_vector = copy_vector(get_Repo_Vector(controller->repo));
+        9:  114-block  0
+call    0 returned 9
+call    1 returned 9
+        -:  115:    //printf("%d", copie_vector->size);
+        9:  116:    add_vector(undoL, copie_vector); //adaugam la undo
+call    0 returned 9
+        9:  117:    add_Oferta_Repo(get_Controller_Repo(controller), create_Oferta(tip, transform_chars_to_integer(suprafata), adresa, transform_chars_to_integer(pret)));
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+call    3 returned 9
+call    4 returned 9
+        9:  118:    return errors;
+        -:  119:}
+        -:  120:
+function test_try_to_edit_oferta called 1 returned 100% blocks executed 84%
+        1:  121:void test_try_to_edit_oferta(Controller controller)
+        -:  122:{
+        -:  123:    //Functia testeaza functie de try_to_edit_ofert
+        -:  124:    //Functia primeste ca parametru controllerul;
+        -:  125:    char *result;
+        1:  126:    Vector undoL = create_vector(1);
+        1:  126-block  0
+call    0 returned 1
+        1:  127:    result=try_to_add_oferta(controller, "casa", "65", "Sibiu,str.Luncii,nr.14", "555", undoL);
+call    0 returned 1
+        1:  128:    free(result);
+        1:  129:    result = try_to_edit(controller, "0", "apart", "20", "str1.pret", "2501", undoL);
+call    0 returned 1
+       1*:  130:    assert(strcmp(result, "Tipul nu este unul valid! Tipul poate fi doar teren, casa sau apartament\nNot enough infomation about your address!"));
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  130-block  0
+call    2 never executed
+        1:  130-block  1
+        1:  131:    free(result);
+        -:  132:    
+        1:  133:    result = try_to_edit(controller, "0", "kasa", "202z", "Sibiu,str.Luncii,nr.", "2501", undoL);
+        1:  133-block  0
+call    0 returned 1
+       1*:  134:    assert(strcmp(result, "Tipul nu este unul valid! Tipul poate fi doar teren, casa sau apartament\nSuprafata is not integer\nPlease enter your street address number!"));
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  134-block  0
+call    2 never executed
+        1:  134-block  1
+        1:  135:    free(result);
+        1:  136:    result = try_to_edit(controller, "0", "casa", "65", "Sibiu,str.Luncii,nr.14", "555", undoL);
+        1:  136-block  0
+call    0 returned 1
+       1*:  137:    assert(check_ok_string(result));
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  137-block  0
+call    3 never executed
+        1:  137-block  1
+        1:  138:    free(result);
+        1:  139:    remove_Ofera_Repo(get_Controller_Repo(controller), 0);
+        1:  139-block  0
+call    0 returned 1
+call    1 returned 1
+        1:  140:    destroy(undoL, (DestroyFunction) destroy_lista);
+call    0 returned 1
+        1:  141:}
+        -:  142:
+function try_to_edit called 3 returned 100% blocks executed 83%
+        3:  143:char* try_to_edit(Controller controller, char* id_string, char* tip, char* suprafata, char* adresa, char* pret, Vector undoL)
+        -:  144:{
+        3:  145:    char* errors = (char*)malloc(200 * sizeof(char));
+        3:  146:    if (errors == NULL)
+        3:  146-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    #####:  147:        return NULL;
+    %%%%%:  147-block  0
+        3:  148:    errors[0] = '\0';
+        3:  149:    if (!check_number_string(id_string))
+        3:  149-block  0
+call    0 returned 3
+branch  1 taken 0 (fallthrough)
+branch  2 taken 3
+    #####:  150:        strcat(errors, "ID is not integer\n");
+    %%%%%:  150-block  0
+        3:  151:    int id = transform_chars_to_integer(id_string);
+        3:  151-block  0
+call    0 returned 3
+        3:  152:    if (id >= get_Repo_Size(get_Controller_Repo(controller)))
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 0 (fallthrough)
+branch  3 taken 3
+    #####:  153:        strcat(errors, "Element donesn't exist in database\n");
+    %%%%%:  153-block  0
+        3:  154:    if (id < 0)
+        3:  154-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    #####:  155:        strcat(errors, "Element donesn't exist in database\n");
+    %%%%%:  155-block  0
+        3:  156:    if (strlen(errors))
+        3:  156-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    #####:  157:        return errors;
+    %%%%%:  157-block  0
+        3:  158:    if (!check_equ_string(tip, "teren") && !check_equ_string(tip, "casa") && !check_equ_string(tip, "apartament"))
+        3:  158-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0
+        3:  158-block  1
+call    3 returned 3
+branch  4 taken 2 (fallthrough)
+branch  5 taken 1
+        2:  158-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0
+        2:  159:        strcat(errors, "Tipul nu este unul valid! Tipul poate fi doar teren, casa sau apartament\n");
+        2:  159-block  0
+        3:  160:    if (!check_number_string(suprafata))
+        3:  160-block  0
+call    0 returned 3
+branch  1 taken 1 (fallthrough)
+branch  2 taken 2
+        1:  161:        strcat(errors, "Suprafata is not integer\n");
+        1:  161-block  0
+        3:  162:    if (!strlen(adresa))
+        3:  162-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    #####:  163:        strcat(errors, "Adresa trebuie sa fie valida!");
+    %%%%%:  163-block  0
+        3:  164:    if (!check_number_string(pret))
+        3:  164-block  0
+call    0 returned 3
+branch  1 taken 0 (fallthrough)
+branch  2 taken 3
+    #####:  165:        strcat(errors, "Pret is not integer\n");
+    %%%%%:  165-block  0
+        3:  166:    if (strlen(adresa) > 30)
+        3:  166-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    #####:  167:        strcat(errors, "Use max.30 characters to represent address!\n");
+    %%%%%:  167-block  0
+        3:  168:    int value_adress_error = check_ok_adress(adresa);
+        3:  168-block  0
+call    0 returned 3
+        3:  169:    if (value_adress_error == -1)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
+        1:  170:        strcat(errors, "Not enough infomation about your address!\n");
+        1:  170-block  0
+        3:  171:    if (value_adress_error == 0)
+        3:  171-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
+        1:  172:        strcat(errors, "Please enter your street address number!\n");
+        1:  172-block  0
+        3:  173:    if (strlen(errors))
+        3:  173-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        2:  174:        return errors;
+        2:  174-block  0
+        1:  175:    strcpy(errors, "OK");
+        1:  176:    Vector copie_vector = copy_vector(get_Repo_Vector(controller->repo));
+        1:  176-block  0
+call    0 returned 1
+call    1 returned 1
+        1:  177:    add_vector(undoL, copie_vector); //adaugam la undo
+call    0 returned 1
+        1:  178:    edit_Oferta_Repo(get_Controller_Repo(controller), id, create_Oferta(tip, transform_chars_to_integer(suprafata), adresa, transform_chars_to_integer(pret)));
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+        1:  179:    return errors;
+        -:  180:}
+        -:  181:
+function test_try_to_remove called 1 returned 100% blocks executed 83%
+        1:  182:void test_try_to_remove(Controller controller)
+        -:  183:{
+        -:  184:    //Functia testeaza functie de try_to_remove
+        -:  185:    //Functia primeste ca parametru controllerul;
+        -:  186:    char *result;
+        1:  187:    Vector undoL = create_vector(1);
+        1:  187-block  0
+call    0 returned 1
+        1:  188:    result=try_to_add_oferta(controller, "casa", "65", "Sibiu,str.Luncii,nr.14", "555", undoL);
+call    0 returned 1
+        1:  189:    free(result);
+       1*:  190:    assert(get_Repo_Size(get_Controller_Repo(controller))==1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:  190-block  0
+call    4 never executed
+        1:  190-block  1
+        1:  191:    result=try_to_remove(controller, "1", undoL);
+        1:  191-block  0
+call    0 returned 1
+       1*:  192:    assert(strcmp(result, "Element donesn't exist in database\n")==0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  192-block  0
+call    2 never executed
+        1:  192-block  1
+        1:  193:    free(result);
+        1:  194:    result = try_to_remove(controller, "0", undoL);
+        1:  194-block  0
+call    0 returned 1
+       1*:  195:    assert(check_ok_string(result));
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  195-block  0
+call    3 never executed
+        1:  195-block  1
+        1:  196:    free(result);
+        1:  197:    destroy(undoL, (DestroyFunction) destroy_lista);
+        1:  197-block  0
+call    0 returned 1
+        1:  198:}
+        -:  199:
+function try_to_remove called 2 returned 100% blocks executed 86%
+        2:  200:char* try_to_remove(Controller controller, char* id_string, Vector undoL)
+        -:  201:{
+        -:  202:    //Functie primeste ca parametru controller si un sir de caractere(id oferta)
+        -:  203:    //Functia returneaza un sir de caractere
+        -:  204:    //Functia returneaza OK daca s-a putut sterge oferta cu id-ul respectiv
+        -:  205:    //Functia returneaza EROARE daca nu exista
+        2:  206:    char* errors = (char*)malloc(200 * sizeof(char));
+        2:  207:    if (errors == NULL)
+        2:  207-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    #####:  208:        return NULL;
+    %%%%%:  208-block  0
+        2:  209:    errors[0] = '\0';
+        2:  210:    if (!check_number_string(id_string))
+        2:  210-block  0
+call    0 returned 2
+branch  1 taken 0 (fallthrough)
+branch  2 taken 2
+    #####:  211:        strcat(errors, "ID is not integer\n");
+    %%%%%:  211-block  0
+        2:  212:    int id = transform_chars_to_integer(id_string);
+        2:  212-block  0
+call    0 returned 2
+        2:  213:    if (id >= get_Repo_Size(get_Controller_Repo(controller)))
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+        1:  214:        strcat(errors, "Element donesn't exist in database\n");
+        1:  214-block  0
+        2:  215:    if (id < 0)
+        2:  215-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    #####:  216:        strcat(errors, "Element donesn't exist in database\n");
+    %%%%%:  216-block  0
+        2:  217:    if (strlen(errors))
+        2:  217-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  218:        return errors;
+        1:  218-block  0
+        1:  219:    strcpy(errors, "OK");
+        1:  220:    Vector copie_vector = copy_vector(get_Repo_Vector(controller->repo));
+        1:  220-block  0
+call    0 returned 1
+call    1 returned 1
+        1:  221:    add_vector(undoL, copie_vector); //adaugam la undo
+call    0 returned 1
+        1:  222:    remove_Ofera_Repo(get_Controller_Repo(controller), id);
+call    0 returned 1
+call    1 returned 1
+        1:  223:    return errors;
+        -:  224:}
+        -:  225:
+function test_sort_by_price_asc called 1 returned 100% blocks executed 88%
+        1:  226:void test_sort_by_price_asc(Controller controller)
+        -:  227:{
+        -:  228:    //Functia primeste ca parametru controller
+        -:  229:    //Functia testeaza daca se sorteaza asc dupa pret corect datele din repository;
+        1:  230:    Vector array=sort_by_price_asc(controller, compare_Oferta_by_price);
+        1:  230-block  0
+call    0 returned 1
+        1:  231:    Oferta of0=(Oferta)get_vector_element(array, 0);
+call    0 returned 1
+        1:  232:    Oferta of1=(Oferta)get_vector_element(array, 1);
+call    0 returned 1
+        1:  233:    Oferta of5=(Oferta)get_vector_element(array, 5);
+call    0 returned 1
+       1*:  234:    assert(get_Oferta_pret(of0)==150 && get_Oferta_pret(of1)==250);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+        1:  234-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  234-block  1
+call    6 never executed
+        1:  234-block  2
+       1*:  235:    assert(get_Oferta_pret(of5)==5550);
+        1:  235-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  235-block  1
+call    3 never executed
+        1:  235-block  2
+        1:  236:    free(get_Vector_Array(array));
+        1:  236-block  0
+call    0 returned 1
+        1:  237:    free(array);
+        1:  238:}
+        -:  239:
+function sort_by_price_asc called 1 returned 100% blocks executed 96%
+        1:  240:Vector sort_by_price_asc(Controller controller, int(*cmp)(void*, void*))
+        -:  241:{
+        1:  242:    Vector array=create_vector(get_Repo_Size(get_Controller_Repo(controller)));
+        1:  242-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  243:    if (array == NULL)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    #####:  244:        return NULL;
+    %%%%%:  244-block  0
+        1:  245:    int n = get_Repo_Size(get_Controller_Repo(controller));
+        1:  245-block  0
+call    0 returned 1
+call    1 returned 1
+        7:  246:    for (int i = 0; i < n; i++)
+        7:  246-block  0
+branch  0 taken 6
+branch  1 taken 1 (fallthrough)
+        6:  247:        add_vector(array, get_vector_element(get_Repo_Vector(get_Controller_Repo(controller)), i));
+        6:  247-block  0
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+call    3 returned 6
+        1:  248:    int st = 1;
+        1:  248-block  0
+        -:  249:    do {
+        5:  250:        st = 1;
+       30:  251:        for (int i = 0; i < n-1; i++)
+        5:  251-block  0
+       25:  251-block  1
+       30:  251-block  2
+branch  0 taken 25
+branch  1 taken 5 (fallthrough)
+        -:  252:        {
+       25:  253:            Oferta of_current=(Oferta)get_vector_element(array, i);
+       25:  253-block  0
+call    0 returned 25
+       25:  254:            Oferta of_next=(Oferta)get_vector_element(array, i+1);
+call    0 returned 25
+       25:  255:            if(cmp(of_current, of_next)>0)
+call    0 returned 25
+branch  1 taken 6 (fallthrough)
+branch  2 taken 19
+        -:  256:            {
+        6:  257:                Telem aux = array->v[i];
+        6:  258:                array->v[i] = array->v[i + 1];
+        6:  259:                array->v[i + 1] = aux;
+        6:  260:                st = 0;
+        6:  260-block  0
+        -:  261:            }
+        -:  262:        }
+        5:  263:    } while (st == 0);
+        5:  263-block  0
+branch  0 taken 4
+branch  1 taken 1 (fallthrough)
+        1:  264:    return array;
+        1:  264-block  0
+        -:  265:}
+        -:  266:
+function test_sort_by_price_desc called 1 returned 100% blocks executed 88%
+        1:  267:void test_sort_by_price_desc(Controller controller)
+        -:  268:{
+        -:  269:    //Functia primeste ca parametru controller
+        -:  270:    //Functia testeaza daca se sorteaza desc dupa pret corect datele din repository;
+        1:  271:    Vector array = sort_by_price_desc(controller, compare_Oferta_by_price);
+        1:  271-block  0
+call    0 returned 1
+        1:  272:    Oferta of0 = (Oferta)get_vector_element(array, 0);
+call    0 returned 1
+        1:  273:    Oferta of1 = (Oferta)get_vector_element(array, 1);
+call    0 returned 1
+        1:  274:    Oferta of5 = (Oferta)get_vector_element(array, 4);
+call    0 returned 1
+       1*:  275:    assert(get_Oferta_pret(of0) == 5550 && get_Oferta_pret(of1) == 1550);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+        1:  275-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  275-block  1
+call    6 never executed
+        1:  275-block  2
+        -:  276:    //printf("%d", get_Oferta_pret(of5));
+       1*:  277:    assert(get_Oferta_pret(of5) == 250);
+        1:  277-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  277-block  1
+call    3 never executed
+        1:  277-block  2
+        1:  278:    free(get_Vector_Array(array));
+        1:  278-block  0
+call    0 returned 1
+        1:  279:    free(array);
+        1:  280:}
+        -:  281:
+function sort_by_price_desc called 1 returned 100% blocks executed 96%
+        1:  282:Vector sort_by_price_desc(Controller controller, int(*cmp)(void *, void*))
+        -:  283:{
+        -:  284:    //Functia primeste ca parametru controller
+        -:  285:    //Functia returneaza un array de oferte sortate descendent dupa pret
+        1:  286:    Vector array = create_vector(get_Repo_Size(get_Controller_Repo(controller)));
+        1:  286-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  287:    if (array == NULL)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    #####:  288:        return NULL;
+    %%%%%:  288-block  0
+        1:  289:    int n = get_Repo_Size(get_Controller_Repo(controller));
+        1:  289-block  0
+call    0 returned 1
+call    1 returned 1
+        7:  290:    for (int i = 0; i < n; i++)
+        7:  290-block  0
+branch  0 taken 6
+branch  1 taken 1 (fallthrough)
+        6:  291:        add_vector(array, get_vector_element(get_Repo_Vector(get_Controller_Repo(controller)), i));
+        6:  291-block  0
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+call    3 returned 6
+        1:  292:    int st = 1;
+        1:  292-block  0
+        -:  293:    do {
+        5:  294:        st = 1;
+       30:  295:        for (int i = 0; i < n - 1; i++)
+        5:  295-block  0
+       25:  295-block  1
+       30:  295-block  2
+branch  0 taken 25
+branch  1 taken 5 (fallthrough)
+        -:  296:        {
+       25:  297:            Telem of_current = get_vector_element(array, i);
+       25:  297-block  0
+call    0 returned 25
+       25:  298:            Telem of_next = get_vector_element(array, i + 1);
+call    0 returned 25
+       25:  299:            if (cmp(of_current, of_next)<0)
+call    0 returned 25
+branch  1 taken 9 (fallthrough)
+branch  2 taken 16
+        -:  300:            {
+        9:  301:                Telem aux = array->v[i];
+        9:  302:                array->v[i] = array->v[i + 1];
+        9:  303:                array->v[i + 1] = aux;
+        9:  304:                st = 0;
+        9:  304-block  0
+        -:  305:            }
+        -:  306:        }
+        5:  307:    } while (st == 0);
+        5:  307-block  0
+branch  0 taken 4
+branch  1 taken 1 (fallthrough)
+        1:  308:    return array;
+        1:  308-block  0
+        -:  309:}
+        -:  310:
+function test_sort_by_tip_asc called 1 returned 100% blocks executed 83%
+        1:  311:void test_sort_by_tip_asc(Controller controller)
+        -:  312:{
+        -:  313:    //Functia primeste ca parametru controller
+        -:  314:    //Functia testeaza daca se sorteaza asc dupa tip corect datele din repository;
+        1:  315:    Vector array = sort_by_tip_asc(controller, compare_Oferta_by_type);
+        1:  315-block  0
+call    0 returned 1
+        1:  316:    Oferta of0 = (Oferta)get_vector_element(array, 0);
+call    0 returned 1
+        1:  317:    Oferta of1 = (Oferta)get_vector_element(array, 1);
+call    0 returned 1
+        1:  318:    Oferta of2 = (Oferta)get_vector_element(array, 2);
+call    0 returned 1
+       1*:  319:    assert(strcmp(get_Oferta_tip(of0), "apartament")==0);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  319-block  0
+call    3 never executed
+        1:  319-block  1
+       1*:  320:    assert(strcmp(get_Oferta_tip(of1), "casa")==0);
+        1:  320-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  320-block  1
+call    3 never executed
+        1:  320-block  2
+       1*:  321:    assert(strcmp(get_Oferta_tip(of2), "casa")==0);
+        1:  321-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  321-block  1
+call    3 never executed
+        1:  321-block  2
+        1:  322:    free(get_Vector_Array(array));
+        1:  322-block  0
+call    0 returned 1
+        1:  323:    free(array);
+        1:  324:}
+        -:  325:
+function sort_by_tip_asc called 1 returned 100% blocks executed 96%
+        1:  326:Vector sort_by_tip_asc(Controller controller, int(*cmp)(Telem, Telem))
+        -:  327:{
+        -:  328:    //Functia primeste ca parametru controller
+        -:  329:    //Functia returneaza un array de oferte sortate ascendent dupa tip
+        1:  330:    Vector array = create_vector(get_Repo_Size(get_Controller_Repo(controller)));
+        1:  330-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  331:    if (array == NULL)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    #####:  332:        return NULL;
+    %%%%%:  332-block  0
+        1:  333:    int n = get_Repo_Size(get_Controller_Repo(controller));
+        1:  333-block  0
+call    0 returned 1
+call    1 returned 1
+        7:  334:    for (int i = 0; i < n; i++)
+        7:  334-block  0
+branch  0 taken 6
+branch  1 taken 1 (fallthrough)
+        6:  335:        add_vector(array, get_vector_element(get_Repo_Vector(get_Controller_Repo(controller)), i));
+        6:  335-block  0
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+call    3 returned 6
+        1:  336:    int st = 1;
+        1:  336-block  0
+        -:  337:    do {
+        3:  338:        st = 1;
+       18:  339:        for (int i = 0; i < n - 1; i++)
+        3:  339-block  0
+       15:  339-block  1
+       18:  339-block  2
+branch  0 taken 15
+branch  1 taken 3 (fallthrough)
+        -:  340:        {
+       15:  341:            Telem of_current = get_vector_element(array, i);
+       15:  341-block  0
+call    0 returned 15
+       15:  342:            Telem of_next = get_vector_element(array, i + 1);
+call    0 returned 15
+       15:  343:            if(cmp(of_current, of_next)>0)
+call    0 returned 15
+branch  1 taken 7 (fallthrough)
+branch  2 taken 8
+        -:  344:            {
+        7:  345:                Telem aux = array->v[i];
+        7:  346:                array->v[i] = array->v[i + 1];
+        7:  347:                array->v[i + 1] = aux;
+        7:  348:                st = 0;
+        7:  348-block  0
+        -:  349:            }
+        -:  350:        }
+        3:  351:    } while (st == 0);
+        3:  351-block  0
+branch  0 taken 2
+branch  1 taken 1 (fallthrough)
+        1:  352:    return array;
+        1:  352-block  0
+        -:  353:}
+        -:  354:
+function test_sort_by_tip_desc called 1 returned 100% blocks executed 83%
+        1:  355:void test_sort_by_tip_desc(Controller controller)
+        -:  356:{
+        -:  357:    //Functia primeste ca parametru controller
+        -:  358:    //Functia testeaza daca se sorteaza asc dupa tip corect datele din repository;
+        1:  359:    Vector array = sort_by_tip_desc(controller, compare_Oferta_by_type);
+        1:  359-block  0
+call    0 returned 1
+        1:  360:    Oferta of0 = (Oferta)get_vector_element(array, 0);
+call    0 returned 1
+        1:  361:    Oferta of1 = (Oferta)get_vector_element(array, 1);
+call    0 returned 1
+        1:  362:    Oferta of2 = (Oferta)get_vector_element(array, 2);
+call    0 returned 1
+       1*:  363:    assert(strcmp(get_Oferta_tip(of0), "teren")==0);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  363-block  0
+call    3 never executed
+        1:  363-block  1
+       1*:  364:    assert(strcmp(get_Oferta_tip(of1), "teren")==0);
+        1:  364-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  364-block  1
+call    3 never executed
+        1:  364-block  2
+       1*:  365:    assert(strcmp(get_Oferta_tip(of2), "casa")==0);
+        1:  365-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  365-block  1
+call    3 never executed
+        1:  365-block  2
+        1:  366:    free(get_Vector_Array(array));
+        1:  366-block  0
+call    0 returned 1
+        1:  367:    free(array);
+        1:  368:}
+        -:  369:
+function sort_by_tip_desc called 1 returned 100% blocks executed 96%
+        1:  370:Vector sort_by_tip_desc(Controller controller, int(*cmp)(void*, void*))
+        -:  371:{
+        -:  372:    //Functia primeste ca parametru controller
+        -:  373:    //Functia returneaza un array de oferte sortate descendent dupa tip
+        1:  374:    Vector array = create_vector(get_Repo_Size(get_Controller_Repo(controller)));
+        1:  374-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  375:    if (array == NULL)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    #####:  376:        return NULL;
+    %%%%%:  376-block  0
+        1:  377:    int n = get_Repo_Size(get_Controller_Repo(controller));
+        1:  377-block  0
+call    0 returned 1
+call    1 returned 1
+        7:  378:    for (int i = 0; i < n; i++)
+        7:  378-block  0
+branch  0 taken 6
+branch  1 taken 1 (fallthrough)
+        6:  379:        add_vector(array, get_vector_element(get_Repo_Vector(get_Controller_Repo(controller)), i));
+        6:  379-block  0
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+call    3 returned 6
+        1:  380:    int st = 1;
+        1:  380-block  0
+        -:  381:    do {
+        3:  382:        st = 1;
+       18:  383:        for (int i = 0; i < n - 1; i++)
+        3:  383-block  0
+       15:  383-block  1
+       18:  383-block  2
+branch  0 taken 15
+branch  1 taken 3 (fallthrough)
+        -:  384:        {
+       15:  385:            Telem of_current = get_vector_element(array, i);
+       15:  385-block  0
+call    0 returned 15
+       15:  386:            Telem of_next = get_vector_element(array, i + 1);
+call    0 returned 15
+       15:  387:            if (cmp(of_current, of_next) < 0)
+call    0 returned 15
+branch  1 taken 4 (fallthrough)
+branch  2 taken 11
+        -:  388:            {
+        4:  389:                Telem aux = array->v[i];
+        4:  390:                array->v[i] = array->v[i + 1];
+        4:  391:                array->v[i + 1] = aux;
+        4:  392:                st = 0;
+        4:  392-block  0
+        -:  393:            }
+        -:  394:        }
+        3:  395:    } while (st == 0);
+        3:  395-block  0
+branch  0 taken 2
+branch  1 taken 1 (fallthrough)
+        1:  396:    return array;
+        1:  396-block  0
+        -:  397:}
+        -:  398:
+function test_filter_by_tip called 1 returned 100% blocks executed 84%
+        1:  399:void test_filter_by_tip(Controller controller)
+        -:  400:{
+        -:  401:    //Functia primeste ca parametru controller
+        -:  402:    //Functia testeaza daca se filtreaza dupa tip corect
+        -:  403:
+        1:  404:    Vector array = filter_by_tip(controller, "apartament");
+        1:  404-block  0
+call    0 returned 1
+       1*:  405:    assert(get_Vector_Size(array)==1);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  405-block  0
+call    3 never executed
+        1:  405-block  1
+        1:  406:    free(get_Vector_Array(array));
+        1:  406-block  0
+call    0 returned 1
+        1:  407:    free(array);
+        -:  408:
+        1:  409:    array= filter_by_tip(controller, "casa");
+call    0 returned 1
+       1*:  410:    assert(get_Vector_Size(array)==3);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  410-block  0
+call    3 never executed
+        1:  410-block  1
+        1:  411:    free(get_Vector_Array(array));
+        1:  411-block  0
+call    0 returned 1
+        1:  412:    free(array);
+        -:  413:
+        1:  414:    array = filter_by_tip(controller, "teren");
+call    0 returned 1
+       1*:  415:    assert(get_Vector_Size(array)==2);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  415-block  0
+call    3 never executed
+        1:  415-block  1
+        1:  416:    free(get_Vector_Array(array));
+        1:  416-block  0
+call    0 returned 1
+        1:  417:    free(array);
+        1:  418:}
+        -:  419:
+function filter_by_tip called 3 returned 100% blocks executed 100%
+        3:  420:Vector filter_by_tip(Controller controller, char* tip)
+        -:  421:{
+        3:  422:    Vector array=create_vector(get_Repo_Size(get_Controller_Repo(controller)));
+        3:  422-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  423:    int n = get_Repo_Size(get_Controller_Repo(controller));
+call    0 returned 3
+call    1 returned 3
+       21:  424:    for (int i = 0; i < n; i++)
+       18:  424-block  0
+       21:  424-block  1
+branch  0 taken 18
+branch  1 taken 3 (fallthrough)
+        -:  425:    {
+       18:  426:        Oferta element = (Oferta)get_vector_element(get_Repo_Vector(get_Controller_Repo(controller)), i);
+       18:  426-block  0
+call    0 returned 18
+call    1 returned 18
+call    2 returned 18
+       18:  427:        if(check_equ_string(get_Oferta_tip(element), tip))
+call    0 returned 18
+call    1 returned 18
+branch  2 taken 6 (fallthrough)
+branch  3 taken 12
+        6:  428:            add_vector(array, element);
+        6:  428-block  0
+call    0 returned 6
+        -:  429:    }
+        3:  430:    return array;
+        3:  430-block  0
+        -:  431:}
+        -:  432:
+function filter_by_adresa_cluj called 1 returned 100% blocks executed 100%
+        1:  433:Vector filter_by_adresa_cluj(Controller controller)
+        -:  434:{
+        1:  435:    Vector array = create_vector(get_Repo_Size(get_Controller_Repo(controller)));
+        1:  435-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  436:    int n = get_Repo_Size(get_Controller_Repo(controller));
+call    0 returned 1
+call    1 returned 1
+        7:  437:    for (int i = 0; i < n; i++)
+        6:  437-block  0
+        7:  437-block  1
+branch  0 taken 6
+branch  1 taken 1 (fallthrough)
+        -:  438:    {
+        6:  439:        Oferta element = (Oferta)get_vector_element(get_Repo_Vector(get_Controller_Repo(controller)), i);
+        6:  439-block  0
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+        6:  440:        if (strstr(get_Oferta_adresa(element), "Cluj") || strstr(get_Oferta_adresa(element), "cluj") )
+call    0 returned 6
+branch  1 taken 4 (fallthrough)
+branch  2 taken 2
+        4:  440-block  0
+call    3 returned 4
+branch  4 taken 0 (fallthrough)
+branch  5 taken 4
+        2:  441:            add_vector(array, element);
+        2:  441-block  0
+call    0 returned 2
+        -:  442:    }
+        1:  443:    return array;
+        1:  443-block  0
+        -:  444:}
+        -:  445:
+function test_filter_by_adresa_cluj called 1 returned 100% blocks executed 80%
+        1:  446:void test_filter_by_adresa_cluj(Controller controller)
+        -:  447:{
+        1:  448:    Vector array = filter_by_adresa_cluj(controller);
+        1:  448-block  0
+call    0 returned 1
+       1*:  449:    assert(get_Vector_Size(array)==2);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  449-block  0
+call    3 never executed
+        1:  449-block  1
+       1*:  450:    assert(get_Oferta_pret(array->v[0]) == 250);
+        1:  450-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  450-block  1
+call    3 never executed
+        1:  450-block  2
+       1*:  451:    assert(get_Oferta_pret(array->v[1]) == 550);
+        1:  451-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  451-block  1
+call    3 never executed
+        1:  451-block  2
+        1:  452:    free(get_Vector_Array(array));
+        1:  452-block  0
+call    0 returned 1
+        1:  453:    free(array);
+        -:  454:
+        1:  455:}
+        -:  456:
+function test_filter_by_suprafata called 1 returned 100% blocks executed 84%
+        1:  457:void test_filter_by_suprafata(Controller controller)
+        -:  458:{
+        -:  459:    //Functia primeste ca parametru controller
+        -:  460:    //Functia testeaza daca se filtreaza dupa suprafata
+        -:  461:
+        -:  462:
+        -:  463:
+        1:  464:    Vector array = filter_by_suprafata(controller, "150", "350");
+        1:  464-block  0
+call    0 returned 1
+       1*:  465:    assert(get_Vector_Size(array)==2);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  465-block  0
+call    3 never executed
+        1:  465-block  1
+        1:  466:    free(get_Vector_Array(array));
+        1:  466-block  0
+call    0 returned 1
+        1:  467:    free(array);
+        -:  468:
+        1:  469:    array = filter_by_suprafata(controller, "20", "3500");
+call    0 returned 1
+       1*:  470:    assert(get_Vector_Size(array) == 6);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  470-block  0
+call    3 never executed
+        1:  470-block  1
+        1:  471:    free(get_Vector_Array(array));
+        1:  471-block  0
+call    0 returned 1
+        1:  472:    free(array);
+        -:  473:
+        1:  474:    array = filter_by_suprafata(controller, "1550", "650");
+call    0 returned 1
+       1*:  475:    assert(get_Vector_Size(array) == 0);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  475-block  0
+call    3 never executed
+        1:  475-block  1
+        1:  476:    free(get_Vector_Array(array));
+        1:  476-block  0
+call    0 returned 1
+        1:  477:    free(array);
+        1:  478:}
+function filter_by_suprafata called 3 returned 100% blocks executed 100%
+        3:  479:Vector filter_by_suprafata(Controller controller, char* mini_txt, char* maxi_txt)
+        -:  480:{
+        3:  481:    Vector array = create_vector(get_Repo_Size(get_Controller_Repo(controller)));
+        3:  481-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  482:    int n = get_Repo_Size(get_Controller_Repo(controller));
+call    0 returned 3
+call    1 returned 3
+        3:  483:    int mini = transform_chars_to_integer(mini_txt);
+call    0 returned 3
+        3:  484:    int maxi = transform_chars_to_integer(maxi_txt);
+call    0 returned 3
+       21:  485:    for (int i = 0; i < n; i++)
+       18:  485-block  0
+       21:  485-block  1
+branch  0 taken 18
+branch  1 taken 3 (fallthrough)
+        -:  486:    {
+       18:  487:        Oferta element = (Oferta)get_vector_element(get_Repo_Vector(get_Controller_Repo(controller)), i);
+       18:  487-block  0
+call    0 returned 18
+call    1 returned 18
+call    2 returned 18
+       18:  488:        if (get_Oferta_suprafata(element) >= mini && get_Oferta_suprafata(element) <= maxi)
+call    0 returned 18
+branch  1 taken 9 (fallthrough)
+branch  2 taken 9
+        9:  488-block  0
+call    3 returned 9
+branch  4 taken 8 (fallthrough)
+branch  5 taken 1
+        8:  489:            add_vector(array, element);
+        8:  489-block  0
+call    0 returned 8
+        -:  490:    }
+        3:  491:    return array;
+        3:  491-block  0
+        -:  492:}
+        -:  493:
+function test_filter_by_pret called 1 returned 100% blocks executed 100%
+        1:  494:void test_filter_by_pret(Controller controller)
+        -:  495:{
+        1:  496:    Vector array = filter_by_pret(controller, "0", "100");
+        1:  496-block  0
+call    0 returned 1
+        1:  497:    free(get_Vector_Array(array));
+call    0 returned 1
+        1:  498:    free(array);
+        -:  499:
+        1:  500:    array = filter_by_pret(controller, "50", "250");
+call    0 returned 1
+        1:  501:    free(get_Vector_Array(array));
+call    0 returned 1
+        1:  502:    free(array);
+        -:  503:
+        1:  504:    array = filter_by_pret(controller, "500", "0");
+call    0 returned 1
+        1:  505:    free(get_Vector_Array(array));
+call    0 returned 1
+        1:  506:    free(array);
+        1:  507:}
+        -:  508:
+function filter_by_pret called 3 returned 100% blocks executed 100%
+        3:  509:Vector filter_by_pret(Controller controller, char* mini_txt, char* maxi_txt)
+        -:  510:{
+        3:  511:    Vector array = create_vector(get_Repo_Size(get_Controller_Repo(controller)));
+        3:  511-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  512:    int n = get_Repo_Size(get_Controller_Repo(controller));
+call    0 returned 3
+call    1 returned 3
+        3:  513:    int mini = transform_chars_to_integer(mini_txt);
+call    0 returned 3
+        3:  514:    int maxi = transform_chars_to_integer(maxi_txt);
+call    0 returned 3
+       21:  515:    for (int i = 0; i < n; i++)
+       18:  515-block  0
+       21:  515-block  1
+branch  0 taken 18
+branch  1 taken 3 (fallthrough)
+        -:  516:    {
+       18:  517:        Oferta element = (Oferta)get_vector_element(get_Repo_Vector(get_Controller_Repo(controller)), i);
+       18:  517-block  0
+call    0 returned 18
+call    1 returned 18
+call    2 returned 18
+       18:  518:        if (get_Oferta_pret(element) >= mini && get_Oferta_pret(element) <= maxi)
+call    0 returned 18
+branch  1 taken 15 (fallthrough)
+branch  2 taken 3
+       15:  518-block  0
+call    3 returned 15
+branch  4 taken 2 (fallthrough)
+branch  5 taken 13
+        2:  519:            add_vector(array, element);
+        2:  519-block  0
+call    0 returned 2
+        -:  520:    }
+        3:  521:    return array;
+        3:  521-block  0
+        -:  522:}
+        -:  523:
+function test_controller called 1 returned 100% blocks executed 100%
+        1:  524:void test_controller(Controller controller)
+        -:  525:{
+        1:  526:    test_transform_chars_to_integer();
+        1:  526-block  0
+call    0 returned 1
+        1:  527:    test_try_to_add_oferta(controller);
+call    0 returned 1
+        1:  528:    test_try_to_edit_oferta(controller);
+call    0 returned 1
+        1:  529:    test_try_to_remove(controller);
+call    0 returned 1
+        1:  530:    test_undo_list();
+call    0 returned 1
+        -:  531:    
+        -:  532:    char *result;
+        1:  533:    Vector undoL = create_vector(1);
+call    0 returned 1
+        1:  534:    result=try_to_add_oferta(controller, "teren", "52", "Sibiu,str.Luncii,nr.14", "350", undoL);
+call    0 returned 1
+        1:  535:    free(result);
+        -:  536:    //printf("%d\n", get_Controller_Repo(controller)->array->size);
+        1:  537:    result=try_to_add_oferta(controller, "casa", "120", "Cluj,str.Aurel Vlaicu,nr.184", "250", undoL);
+call    0 returned 1
+        1:  538:    free(result);
+        1:  539:    Vector lista = undoL->v[1];
+        -:  540:    //printf("%d", lista->size);
+        -:  541:
+        1:  542:    result=try_to_add_oferta(controller, "apartament", "25", "Cluj,str.Libertatii,nr.1", "550", undoL);
+call    0 returned 1
+        1:  543:    free(result);
+        -:  544:
+        1:  545:    result=try_to_add_oferta(controller, "teren", "375", "Sibiu,str.Rovine,nr.12", "5550", undoL);
+call    0 returned 1
+        1:  546:    free(result);
+        -:  547:
+        1:  548:    result=try_to_add_oferta(controller, "casa", "275", "Pitesti,str.Ploiesti,nr.23", "150", undoL);
+call    0 returned 1
+        1:  549:    free(result);
+        -:  550:
+        -:  551:
+        1:  552:    result=try_to_add_oferta(controller, "casa", "175", "Alba-Iulia,str.Neagra,nr.5", "1550", undoL);
+call    0 returned 1
+        1:  553:    free(result);
+        -:  554:
+        1:  555:    test_sort_by_price_asc(controller);
+call    0 returned 1
+        1:  556:    test_sort_by_price_desc(controller);
+call    0 returned 1
+        1:  557:    test_sort_by_tip_asc(controller);
+call    0 returned 1
+        1:  558:    test_sort_by_tip_desc(controller);
+call    0 returned 1
+        1:  559:    test_filter_by_tip(controller);
+call    0 returned 1
+        1:  560:    test_filter_by_suprafata(controller);
+call    0 returned 1
+        1:  561:    test_filter_by_pret(controller);
+call    0 returned 1
+        1:  562:    test_filter_by_adresa_cluj(controller);
+call    0 returned 1
+        1:  563:    destroy(undoL, (DestroyFunction) destroy_lista);
+call    0 returned 1
+        1:  564:}

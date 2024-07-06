@@ -1,0 +1,728 @@
+        -:    0:Source:C:/Users/Admin/Desktop/poriect alex vladu/ui.c
+        -:    0:Graph:C:\Users\Admin\Desktop\poriect alex vladu\cmake-build-debun-code-coverage\CMakeFiles\poriect_alex_vladu.dir\ui.c.gcno
+        -:    0:Data:C:\Users\Admin\Desktop\poriect alex vladu\cmake-build-debun-code-coverage\CMakeFiles\poriect_alex_vladu.dir\ui.c.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#include "domain.h"
+        -:    3:#include "controller.h"
+        -:    4:#include "repository.h"
+        -:    5:#include "validator.h"
+        -:    6:#include <stdlib.h>
+        -:    7://#include <windows.h>
+        -:    8:#include <stdio.h>
+        -:    9:#include <string.h>
+        -:   10:#include "domain.h"
+        -:   11:#include "ui.h"
+        -:   12:
+        -:   13:
+function print_menu called 1 returned 100% blocks executed 100%
+        1:   14:void print_menu()
+        -:   15:{
+        1:   16:    printf("### MENU ###\n");
+        1:   16-block  0
+call    0 returned 1
+        1:   17:    printf("1.Adaugare oferta.\n"); //OK
+call    0 returned 1
+        1:   18:    printf("2.Actualizare oferta\n"); //OK
+call    0 returned 1
+        1:   19:    printf("3.Sterge oferta\n"); //OK
+call    0 returned 1
+        1:   20:    printf("4.Vizualiare oferte\n"); //OK
+call    0 returned 1
+        1:   21:    printf("5.Vizualizare oferete ordonat dupa pret, tip (crescator/descrescator)\n"); //OK
+call    0 returned 1
+        1:   22:    printf("6.Vizualizare oferta filtrate dupa suprafata\n"); //IN Progress
+call    0 returned 1
+        1:   23:    printf("7.Vizualizare oferta filtrate dupa tip\n"); //OK
+call    0 returned 1
+        1:   24:    printf("8.Vizualizare oferta filtrate dupa pret\n");
+call    0 returned 1
+        1:   25:    printf("9.UNDO\n");
+call    0 returned 1
+        1:   26:    printf("10.Exit aplication\n");
+call    0 returned 1
+        1:   27:    printf("11.Vizualizare oferte filtrate dupa adresa din Cluj\n");
+call    0 returned 1
+        1:   28:}
+function sub_menu_sort_offerts called 0 returned 0% blocks executed 0%
+    #####:   29:void sub_menu_sort_offerts()
+        -:   30:{
+    #####:   31:    printf("### SUBMENU SORT ###\n");
+    %%%%%:   31-block  0
+call    0 never executed
+    #####:   32:    printf("1.Ordonare dupa pret crescator\n");
+call    0 never executed
+    #####:   33:    printf("2.Ordonare dupa pret descrescator\n");
+call    0 never executed
+    #####:   34:    printf("3.Ordonare dupa tip crescator\n");
+call    0 never executed
+    #####:   35:    printf("4.Ordonare dupa tip descrescator\n");
+call    0 never executed
+    #####:   36:    printf("5.Back\n");
+call    0 never executed
+    #####:   37:}
+function sub_menu_filter_tip_offerts called 0 returned 0% blocks executed 0%
+    #####:   38:void sub_menu_filter_tip_offerts()
+        -:   39:{
+    #####:   40:    printf("### SUBMENU FILTER BY TIP ###\n");
+    %%%%%:   40-block  0
+call    0 never executed
+    #####:   41:    printf("1.Afisare toate cele care sunt de tip teren\n");
+call    0 never executed
+    #####:   42:    printf("2.Afisare toate cele care sunt de tip casa\n");
+call    0 never executed
+    #####:   43:    printf("3.Afisare toate cele care sunt de tip apartament\n");
+call    0 never executed
+    #####:   44:    printf("4.Back\n");
+call    0 never executed
+    #####:   45:}
+function digits called 0 returned 0% blocks executed 0%
+    #####:   46:int digits(int nr)
+        -:   47:{
+    #####:   48:    int cnt = 0;
+    #####:   49:    while (nr)
+    %%%%%:   49-block  0
+    %%%%%:   49-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+        -:   50:    {
+    #####:   51:        cnt++;
+    #####:   52:        nr /= 10;
+    %%%%%:   52-block  0
+        -:   53:    }
+    #####:   54:    return cnt;
+    %%%%%:   54-block  0
+        -:   55:}
+function display_oferte_by_array called 0 returned 0% blocks executed 0%
+    #####:   56:void display_oferte_by_array(Vector vec)
+        -:   57:{
+    #####:   58:    printf("Tip                            ");
+    %%%%%:   58-block  0
+call    0 never executed
+    #####:   59:    printf("Suprafata                      ");
+call    0 never executed
+    #####:   60:    printf("Adresa                         ");
+call    0 never executed
+    #####:   61:    printf("Pret                          \n");
+call    0 never executed
+    #####:   62:    for (int i = 0; i < get_Vector_Size(vec); i++)
+    %%%%%:   62-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed (fallthrough)
+        -:   63:    {
+    #####:   64:        Oferta oferta=(Oferta)get_vector_element(vec, i);
+    %%%%%:   64-block  0
+call    0 never executed
+    #####:   65:        printf("%s", get_Oferta_tip(oferta));
+call    0 never executed
+call    1 never executed
+    #####:   66:        for (size_t j = strlen(get_Oferta_tip(oferta)); j <= 30; j++)
+call    0 never executed
+    %%%%%:   66-block  0
+branch  1 never executed
+branch  2 never executed (fallthrough)
+    #####:   67:            printf(" ");
+    %%%%%:   67-block  0
+call    0 never executed
+    #####:   68:        printf("%d", get_Oferta_suprafata(oferta));
+    %%%%%:   68-block  0
+call    0 never executed
+call    1 never executed
+    #####:   69:        for (int j = digits(get_Oferta_suprafata(oferta)); j <= 30; j++)
+call    0 never executed
+call    1 never executed
+    %%%%%:   69-block  0
+branch  2 never executed
+branch  3 never executed (fallthrough)
+    #####:   70:            printf(" ");
+    %%%%%:   70-block  0
+call    0 never executed
+    #####:   71:        printf("%s", get_Oferta_adresa(oferta));
+    %%%%%:   71-block  0
+call    0 never executed
+call    1 never executed
+    #####:   72:        for (size_t j = strlen(get_Oferta_adresa(oferta)); j <= 30; j++)
+call    0 never executed
+    %%%%%:   72-block  0
+branch  1 never executed
+branch  2 never executed (fallthrough)
+    #####:   73:            printf(" ");
+    %%%%%:   73-block  0
+call    0 never executed
+    #####:   74:        printf("%d", get_Oferta_pret(oferta));
+    %%%%%:   74-block  0
+call    0 never executed
+call    1 never executed
+    #####:   75:        for (int j = digits(get_Oferta_pret(oferta)); j <= 30; j++)
+call    0 never executed
+call    1 never executed
+    %%%%%:   75-block  0
+branch  2 never executed
+branch  3 never executed (fallthrough)
+    #####:   76:            printf(" ");
+    %%%%%:   76-block  0
+call    0 never executed
+    #####:   77:        printf("\n");
+    %%%%%:   77-block  0
+call    0 never executed
+        -:   78:    }
+    #####:   79:}
+        -:   80:
+function filter_by_adresa_cluj_ui called 0 returned 0% blocks executed 0%
+    #####:   81:void filter_by_adresa_cluj_ui(Controller controller)
+        -:   82:{
+    #####:   83:    Vector oferte = filter_by_adresa_cluj(controller);
+    %%%%%:   83-block  0
+call    0 never executed
+    #####:   84:    printf("%d records from database:\n", get_Vector_Size(oferte)), display_oferte_by_array(oferte);
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   85:}
+        -:   86:
+function undo_ui called 0 returned 0% blocks executed 0%
+    #####:   87:void undo_ui(Controller controller, Vector undoL)
+        -:   88:{
+        -:   89:
+        -:   90:    char cmd[100];
+    #####:   91:    printf("SUNTETI SIGUR CA DORITi SA FACETI UNDO?\n");
+    %%%%%:   91-block  0
+call    0 never executed
+    #####:   92:    printf("y/n:");
+call    0 never executed
+    #####:   93:    read_line(cmd);
+call    0 never executed
+    #####:   94:    if(strcmp(cmd, "y") == 0)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:   95:    {
+    #####:   96:        if(undoL->size<=0)
+    %%%%%:   96-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:   97:        {
+    #####:   98:            printf("NU SE MAI POATE FACE UNDO\n");
+    %%%%%:   98-block  0
+call    0 never executed
+        -:   99:        } else
+        -:  100:        {
+    #####:  101:            Vector previous_list = return_last_element(undoL);
+    %%%%%:  101-block  0
+call    0 never executed
+    #####:  102:            destroy_last_element(undoL);
+call    0 never executed
+    #####:  103:            destroy_vector(get_Repo_Vector(get_Controller_Repo(controller)), delete_Oferta);
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  104:            controller->repo->array = previous_list;
+    #####:  105:            printf("UNDO REALIZAt CU SUCCES\n");
+call    0 never executed
+        -:  106:        }
+        -:  107:
+    #####:  108:    } else if(strcmp(cmd, "n") == 0)
+    %%%%%:  108-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  109:    {
+    #####:  110:        printf("NU S A VRUT\n");
+    %%%%%:  110-block  0
+call    0 never executed
+        -:  111:    }
+    #####:  112:}
+        -:  113:
+function read_line called 1 returned 0% blocks executed 100%
+        1:  114:void read_line(char* store)
+        -:  115:{
+        1:  116:    fflush(stdin);
+        1:  116-block  0
+call    0 returned 1
+call    1 returned 1
+        1:  117:    fgets(store, 150, stdin);
+call    0 returned 1
+call    1 returned 0
+    #####:  118:    store[strlen(store) - 1] = '\0';
+    #####:  119:}
+function run_console called 1 returned 0% blocks executed 4%
+        1:  120:void run_console(Controller controller)
+        -:  121:{
+        1:  122:    int program_run = 1;
+        1:  123:    Vector undoL = create_vector(2);
+        1:  123-block  0
+call    0 returned 1
+        1:  124:    char* optiune = (char*)malloc(100 * sizeof(char));
+        1:  125:    while (program_run)
+        1:  125-block  0
+branch  0 taken 1
+branch  1 taken 0 (fallthrough)
+        -:  126:    {
+        1:  127:        print_menu();
+        1:  127-block  0
+call    0 returned 1
+        1:  128:        printf("Introduceti o optiune:");
+call    0 returned 1
+        1:  129:        read_line(optiune);
+call    0 returned 0
+        -:  130:        //Sleep(1000);
+    #####:  131:        if (validate_option(optiune, 1, 11))
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+        -:  132:        {
+    #####:  133:            int option=transform_chars_to_integer(optiune);
+    %%%%%:  133-block  0
+call    0 never executed
+    #####:  134:            if (option == 1)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  135:            {
+    #####:  136:                char* tip = (char*)malloc(200 * sizeof(char));
+    #####:  137:                char* suprafata = (char*)malloc(200 * sizeof(char));
+    #####:  138:                char* adresa = (char*)malloc(200 * sizeof(char));
+    #####:  139:                char* pret = (char*)malloc(200 * sizeof(char));
+    #####:  140:                printf("Introduceti tipul imobilului. Tipul poate fi doar teren, casa sau apartament:");
+    %%%%%:  140-block  0
+call    0 never executed
+    #####:  141:                read_line(tip);
+call    0 never executed
+    #####:  142:                printf("Introduceti suprafata in metrii patrati:");
+call    0 never executed
+    #####:  143:                read_line(suprafata);
+call    0 never executed
+    #####:  144:                printf("Introduceti adresa imobilului:");
+call    0 never executed
+    #####:  145:                read_line(adresa);
+call    0 never executed
+    #####:  146:                printf("Introduceti pretul imobilului:");
+call    0 never executed
+    #####:  147:                read_line(pret);
+call    0 never executed
+    #####:  148:                char* result = try_to_add_oferta(controller, tip, suprafata, adresa, pret, undoL);
+call    0 never executed
+    #####:  149:                if (check_ok_string(result))
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  150:                    printf("Oferta a fost adaugata cu succes!\n");
+    %%%%%:  150-block  0
+call    0 never executed
+    #####:  151:                else printf("%s", result);
+    %%%%%:  151-block  0
+call    0 never executed
+    #####:  152:                free(tip), free(suprafata), free(adresa), free(pret), free(result);
+    %%%%%:  152-block  0
+        -:  153:            }
+    #####:  154:            if (option == 2)
+    %%%%%:  154-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  155:            {
+    #####:  156:                char* id = (char*)malloc(200 * sizeof(char));
+    #####:  157:                printf("Introduceti id-ul ofertei:");
+    %%%%%:  157-block  0
+call    0 never executed
+    #####:  158:                read_line(id);
+call    0 never executed
+    #####:  159:                char* tip = (char*)malloc(200 * sizeof(char));
+    #####:  160:                char* suprafata = (char*)malloc(200 * sizeof(char));
+    #####:  161:                char* adresa = (char*)malloc(200 * sizeof(char));
+    #####:  162:                char* pret = (char*)malloc(200 * sizeof(char));
+    #####:  163:                printf("Introduceti tipul imobilului. Tipul poate fi doar teren, casa sau apartament:");
+call    0 never executed
+    #####:  164:                read_line(tip);
+call    0 never executed
+    #####:  165:                printf("Introduceti suprafata in metrii patrati:");
+call    0 never executed
+    #####:  166:                read_line(suprafata);
+call    0 never executed
+    #####:  167:                printf("Introduceti adresa imobilului:");
+call    0 never executed
+    #####:  168:                read_line(adresa);
+call    0 never executed
+    #####:  169:                printf("Introduceti pretul imobilului:");
+call    0 never executed
+    #####:  170:                read_line(pret);
+call    0 never executed
+    #####:  171:                char* result = try_to_edit(controller, id, tip, suprafata, adresa, pret, undoL);
+call    0 never executed
+    #####:  172:                if (check_ok_string(result))
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  173:                    printf("Oferta a fost modificata cu succes\n");
+    %%%%%:  173-block  0
+call    0 never executed
+    #####:  174:                else printf("%s", result);
+    %%%%%:  174-block  0
+call    0 never executed
+    #####:  175:                free(id), free(tip), free(suprafata), free(adresa), free(pret), free(result);
+    %%%%%:  175-block  0
+        -:  176:            }
+    #####:  177:            if (option == 3)
+    %%%%%:  177-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  178:            {
+    #####:  179:                char* id = (char*)malloc(200 * sizeof(char));
+    #####:  180:                printf("Introduceti id-ul ofertei:");
+    %%%%%:  180-block  0
+call    0 never executed
+    #####:  181:                read_line(id);
+call    0 never executed
+    #####:  182:                char* result = try_to_remove(controller, id, undoL);
+call    0 never executed
+    #####:  183:                if (check_ok_string(result))
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  184:                    printf("Oferta a fost stearsa cu succes!\n");
+    %%%%%:  184-block  0
+call    0 never executed
+    #####:  185:                else printf("%s", result);
+    %%%%%:  185-block  0
+call    0 never executed
+    #####:  186:                free(id), free(result);
+    %%%%%:  186-block  0
+        -:  187:            }
+    #####:  188:            if (option == 4)
+    %%%%%:  188-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  189:            {
+    #####:  190:                if (!get_Repo_Size(get_Controller_Repo(controller)))
+    %%%%%:  190-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    #####:  191:                    printf("Nu au fost introduse oferte!\n");
+    %%%%%:  191-block  0
+call    0 never executed
+        -:  192:                else
+    #####:  193:                    printf("%d records from database:\n", get_Repo_Size(get_Controller_Repo(controller))), display_oferte_by_array(get_Repo_Vector(get_Controller_Repo(controller)));
+    %%%%%:  193-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+        -:  194:            }
+    #####:  195:            if (option == 5)
+    %%%%%:  195-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  196:            {
+    #####:  197:                sub_menu_sort_offerts();
+    %%%%%:  197-block  0
+call    0 never executed
+    #####:  198:                printf("Introduceti o optiune:");
+call    0 never executed
+    #####:  199:                char* sub_optiune = (char*)malloc(100 * sizeof(char));
+    #####:  200:                read_line(sub_optiune);
+call    0 never executed
+    #####:  201:                while (!validate_option(sub_optiune, 1, 5))
+    %%%%%:  201-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed (fallthrough)
+        -:  202:                {
+    #####:  203:                    printf("Optiunea introdusa este invalida.\n");
+    %%%%%:  203-block  0
+call    0 never executed
+    #####:  204:                    sub_menu_sort_offerts();
+call    0 never executed
+    #####:  205:                    printf("Introduceti o optiune:");
+call    0 never executed
+    #####:  206:                    read_line(sub_optiune);
+call    0 never executed
+        -:  207:                    //Sleep(1000);
+        -:  208:                }
+    #####:  209:                int option_s=transform_chars_to_integer(sub_optiune);
+    %%%%%:  209-block  0
+call    0 never executed
+    #####:  210:                if (option_s == 1)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  211:                {
+    #####:  212:                    Vector oferte = sort_by_price_asc(controller, compare_Oferta_by_price);
+    %%%%%:  212-block  0
+call    0 never executed
+    #####:  213:                    display_oferte_by_array(oferte);
+call    0 never executed
+    #####:  214:                    free(get_Vector_Array(oferte));
+call    0 never executed
+    #####:  215:                    free(oferte);
+        -:  216:                }
+    #####:  217:                else if (option_s == 2)
+    %%%%%:  217-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  218:                {
+    #####:  219:                    Vector oferte = sort_by_price_desc(controller, compare_Oferta_by_price);
+    %%%%%:  219-block  0
+call    0 never executed
+    #####:  220:                    display_oferte_by_array(oferte);
+call    0 never executed
+    #####:  221:                    free(get_Vector_Array(oferte));
+call    0 never executed
+    #####:  222:                    free(oferte);
+        -:  223:                }
+    #####:  224:                else if (option_s == 3)
+    %%%%%:  224-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  225:                {
+    #####:  226:                    Vector oferte = sort_by_tip_asc(controller, compare_Oferta_by_type);
+    %%%%%:  226-block  0
+call    0 never executed
+    #####:  227:                    display_oferte_by_array(oferte);
+call    0 never executed
+    #####:  228:                    free(get_Vector_Array(oferte));
+call    0 never executed
+    #####:  229:                    free(oferte);
+        -:  230:                }
+    #####:  231:                else if (option_s == 4)
+    %%%%%:  231-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  232:                {
+    #####:  233:                    Vector oferte = sort_by_tip_desc(controller, compare_Oferta_by_type);
+    %%%%%:  233-block  0
+call    0 never executed
+    #####:  234:                    display_oferte_by_array(oferte);
+call    0 never executed
+    #####:  235:                    free(get_Vector_Array(oferte));
+call    0 never executed
+    #####:  236:                    free(oferte);
+        -:  237:                }
+    #####:  238:                free(sub_optiune);
+    %%%%%:  238-block  0
+        -:  239:            }
+    #####:  240:            if (option == 6)
+    %%%%%:  240-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  241:            {
+    #####:  242:                char* val_mini = (char*)malloc(200 * sizeof(char));
+    #####:  243:                char* val_maxi = (char*)malloc(200 * sizeof(char));
+    #####:  244:                printf("Introduceti suprafata minima:");
+    %%%%%:  244-block  0
+call    0 never executed
+    #####:  245:                read_line(val_mini);
+call    0 never executed
+    #####:  246:                printf("Introduceti suprafata maxima:");
+call    0 never executed
+    #####:  247:                read_line(val_maxi);
+call    0 never executed
+    #####:  248:                if (!check_number_string(val_mini))
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  249:                    printf("Valoare minima introdusa nu este un numar intreg pozitiv!\n");
+    %%%%%:  249-block  0
+call    0 never executed
+    #####:  250:                else if (!check_number_string(val_maxi))
+    %%%%%:  250-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  251:                    printf("Valoare maxima introdusa nu este un numar intreg pozitiv\n");
+    %%%%%:  251-block  0
+call    0 never executed
+        -:  252:                else {
+    #####:  253:                    Vector oferte = filter_by_suprafata(controller, val_mini, val_maxi);
+    %%%%%:  253-block  0
+call    0 never executed
+    #####:  254:                    printf("%d records from database:\n", get_Vector_Size(oferte)), display_oferte_by_array(oferte);
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  255:                    free(get_Vector_Array(oferte));
+call    0 never executed
+    #####:  256:                    free(oferte);
+        -:  257:                }
+    #####:  258:                free(val_mini);
+    #####:  259:                free(val_maxi);
+    %%%%%:  259-block  0
+        -:  260:            }
+    #####:  261:            if (option == 7)
+    %%%%%:  261-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  262:            {
+    #####:  263:                sub_menu_filter_tip_offerts();
+    %%%%%:  263-block  0
+call    0 never executed
+    #####:  264:                printf("Introduceti o optiune:");
+call    0 never executed
+    #####:  265:                char* sub_optiune = (char*)malloc(100 * sizeof(char));
+    #####:  266:                read_line(sub_optiune);
+call    0 never executed
+    #####:  267:                while (!validate_option(sub_optiune, 1, 4))
+    %%%%%:  267-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed (fallthrough)
+        -:  268:                {
+    #####:  269:                    printf("Optiunea introdusa este invalida.\n");
+    %%%%%:  269-block  0
+call    0 never executed
+    #####:  270:                    sub_menu_filter_tip_offerts();
+call    0 never executed
+    #####:  271:                    printf("Introduceti o optiune:");
+call    0 never executed
+    #####:  272:                    read_line(sub_optiune);
+call    0 never executed
+        -:  273:                    //Sleep(1000);
+        -:  274:                }
+    #####:  275:                int option_s=transform_chars_to_integer(sub_optiune);
+    %%%%%:  275-block  0
+call    0 never executed
+    #####:  276:                printf("%d", option_s);
+call    0 never executed
+    #####:  277:                if (option_s == 1)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  278:                {
+    #####:  279:                    Vector oferte = filter_by_tip(controller, "teren");
+    %%%%%:  279-block  0
+call    0 never executed
+    #####:  280:                    printf("%d records from database:\n", get_Vector_Size(oferte)), display_oferte_by_array(oferte);
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  281:                    free(get_Vector_Array(oferte));
+call    0 never executed
+    #####:  282:                    free(oferte);
+        -:  283:                }
+    #####:  284:                if (option_s == 2)
+    %%%%%:  284-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  285:                {
+    #####:  286:                    Vector oferte = filter_by_tip(controller, "casa");
+    %%%%%:  286-block  0
+call    0 never executed
+    #####:  287:                    printf("%d records from database:\n", get_Vector_Size(oferte)), display_oferte_by_array(oferte);
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  288:                    free(get_Vector_Array(oferte));
+call    0 never executed
+    #####:  289:                    free(oferte);
+        -:  290:                }
+    #####:  291:                if (option_s == 3)
+    %%%%%:  291-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  292:                {
+    #####:  293:                    Vector oferte = filter_by_tip(controller, "apartament");
+    %%%%%:  293-block  0
+call    0 never executed
+    #####:  294:                    printf("%d records from database:\n", get_Vector_Size(oferte)), display_oferte_by_array(oferte);
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  295:                    free(get_Vector_Array(oferte));
+call    0 never executed
+    #####:  296:                    free(oferte);
+        -:  297:                }
+    #####:  298:                free(sub_optiune);
+    %%%%%:  298-block  0
+        -:  299:            }
+    #####:  300:            if (option == 8)
+    %%%%%:  300-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  301:            {
+    #####:  302:                char* val_mini = (char*)malloc(200 * sizeof(char));
+    #####:  303:                char* val_maxi = (char*)malloc(200 * sizeof(char));
+    #####:  304:                printf("Introduceti pretul minim:");
+    %%%%%:  304-block  0
+call    0 never executed
+    #####:  305:                read_line(val_mini);
+call    0 never executed
+    #####:  306:                printf("Introduceti pretul maxim:");
+call    0 never executed
+    #####:  307:                read_line(val_maxi);
+call    0 never executed
+    #####:  308:                if (!check_number_string(val_mini))
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  309:                    printf("Valoare minima introdusa nu este un numar intreg pozitiv!\n");
+    %%%%%:  309-block  0
+call    0 never executed
+    #####:  310:                else if (!check_number_string(val_maxi))
+    %%%%%:  310-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  311:                    printf("Valoare maxima introdusa nu este un numar intreg pozitiv\n");
+    %%%%%:  311-block  0
+call    0 never executed
+        -:  312:                else {
+    #####:  313:                    int* size = (int*)malloc(sizeof(int));
+    #####:  314:                    if(size!=NULL)
+    %%%%%:  314-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  315:                    {
+    #####:  316:                        Vector oferte=filter_by_pret(controller, val_mini, val_maxi);
+    %%%%%:  316-block  0
+call    0 never executed
+    #####:  317:                        printf("%d records from database:\n", get_Vector_Size(oferte)), display_oferte_by_array(oferte);
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  318:                        free(get_Vector_Array(oferte));
+call    0 never executed
+    #####:  319:                        free(oferte);
+        -:  320:                    }
+    #####:  321:                    free(size);
+    %%%%%:  321-block  0
+        -:  322:                }
+    #####:  323:                free(val_mini), free(val_maxi);
+    %%%%%:  323-block  0
+        -:  324:            }
+    #####:  325:            if(option == 9)
+    %%%%%:  325-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  326:            {
+    #####:  327:                undo_ui(controller, undoL);
+    %%%%%:  327-block  0
+call    0 never executed
+        -:  328:            }
+    #####:  329:            if (option == 10)
+    %%%%%:  329-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  330:            {
+    #####:  331:                printf("Aplication closed succesfully");
+    %%%%%:  331-block  0
+call    0 never executed
+    #####:  332:                program_run = 0;
+    #####:  333:                destroy(undoL, (DestroyFunction) destroy_lista);
+call    0 never executed
+        -:  334:            }
+    #####:  335:            if(option == 11)
+    %%%%%:  335-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  336:            {
+    #####:  337:                filter_by_adresa_cluj_ui(controller);
+    %%%%%:  337-block  0
+call    0 never executed
+        -:  338:            }
+        -:  339:        }
+        -:  340:        else
+    #####:  341:            printf("Optiune invalida!\n");
+    %%%%%:  341-block  0
+call    0 never executed
+        -:  342:        //Sleep(1000);
+        -:  343:    }
+    #####:  344:    free(optiune);
+    #####:  345:}

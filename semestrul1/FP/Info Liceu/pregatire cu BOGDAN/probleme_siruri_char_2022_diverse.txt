@@ -1,0 +1,199 @@
+Sa se afiseze pozitiile caracterului 'z' in s
+char *p=strchr(s,'z');
+while(p)
+{
+	cout<<p-s<<" ";
+	p=strchr(p+1,'z');
+ }
+
+MARTIE 2022
+III.2
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+int main()
+{char s[251], x[21];
+    cin.getline(s, 251);
+    cin.getline(x, 21);
+    char sep[]="; ";
+    char *nume,*prenume=strtok(s, sep);
+    while(prenume)
+    {
+       nume=strtok(NULL,sep);
+			if(strcmp(prenume,x)==0)
+				cout<<nume<<" ";
+			prenume=strtok(NULL,sep);
+    }
+}
+VARIANTA 39/2009
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+int main()
+{
+  char s[256];
+  cin.getline(s, 256);
+  char ok[256]="*";
+  char *prim=strtok(s,"*");
+  char *p=strtok(NULL,"*");
+  while(p)
+    {
+      if(strcmp(p,prim)!=0)
+        strcat(ok, p);
+      strcat(ok, "*");
+      p=strtok(NULL, "*");
+    }
+	 strcpy(s,ok);
+	 cout<<s;
+	
+  
+  return 0;
+}
+MODEL 2022
+#include <cstring>
+#include <iostream>
+using namespace std;
+
+int main() {
+  char s[101], *p;
+  int k = 0;
+  cin.getline(s, 101);
+  p = strtok(s, " ");
+  while (p) {
+    if (p[0] >= '0' && p[0] <= '9')
+		{if (k == 0)
+        k = strlen(p);
+      else if (strlen(p) != k) {
+        cout << "NU";
+        return 0;
+      }
+		}
+    p = strtok(NULL, " ");
+  }
+  cout << k;
+  return 0;
+}
+
+TESTUL 9 /2021
+#include <cstring>
+#include <iostream>
+using namespace std;
+
+int main() {
+  char s[101],voc[]="aeiou";
+  cin.getline(s, 101);
+  char *p=strtok(s, " ");
+  while(p)
+    {
+      char ch;
+      int ind=0;
+      for(int i=0; i<=4 && ind<=1; i++)
+          if(strchr(p, voc[i]))
+            ind++;
+			if(ind==1)
+        cout<<p<<endl;
+      p=strtok(NULL, " ");
+    }
+  return 0;
+}
+AUGUST 2020
+#include <cstring>
+#include <iostream>
+using namespace std;
+
+int main() {
+  char s[101],s2[101]="";
+  cin.getline(s, 101);
+  char aux[101];
+	int n;
+	bool gasit=false;
+  char *p=strtok(s, " ");
+  while(p)
+    { n=strlen(p);
+      if(n%2==1){
+        strcpy(aux, p);
+        for(int i = 0; i<=n/2; ++i)
+					{	char c=p[i];
+						p[i] = p[n-i-1];
+						p[n-i-1] = c;
+					}
+				if(strcmp(p, aux)!=0)
+           gasit=true;
+      }
+			strcat(s2,p);strcat(s2," ");
+      p=strtok(NULL, " ");
+    }
+	  if(!gasit)
+      cout << "nu exista";
+  else
+      cout << s2;
+  return 0;
+}
+SPECIALA IULIE 2020
+#include <cstring>
+#include <iostream>
+using namespace std;
+
+int main() {
+  char s[101];
+  cin.getline(s, 101);
+  for(int i=0; s[i]; i++)
+      if(s[i]=='<')
+      {
+        int j=i+1;
+        while(s[j]!='>')
+          {
+            if(s[j]!=' ')
+              s[j]=s[j]-32;
+            j++;
+          }
+        i=j;
+      }
+  cout<<s;
+
+  
+  return 0;
+}
+
+SAU
+#include <cstring>
+#include <iostream>
+using namespace std;
+
+int main() {
+  bool citat=false;
+  char s[101];
+  cin.getline(s, 101);
+  for(int i=0; s[i]; i++)
+      if(s[i]=='<')
+	citat=true;
+     else
+	if(s[i]=='>')
+	  citat=false;
+	else if(s[i]>='a' && s[i]<='z' && citat)
+		s[i]-=32;
+      
+  cout<<s;
+
+  
+  return 0;
+}
+
+
+
+
+
+
+
+TEMA PROBLEME SIRURI CHAR DIN 2020(IUNIE, MODEL) si teste 1-20
+NUMAI PROBLEMELE! III.2
+SI DIN CULEGERE POLI EXERCITII VARIANTE 1-20 PE CHAR
+
+
+
+
+ 

@@ -1,0 +1,145 @@
+        -:    0:Source:D:/facultate/semestrul 2/OOP/LAB8-9/service.h
+        -:    0:Graph:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\teste.cpp.gcno
+        -:    0:Data:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\teste.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <iostream>
+        -:    3:#include "repo.h"
+        -:    4:#include "validator.h"
+        -:    5:#include "cosOferte.h"
+        -:    6:#include <map>
+        -:    7:#include <unordered_map>
+        -:    8:#include "undo.h"
+        -:    9:#include <memory>
+        -:   10:using namespace std;
+        -:   11:
+        -:   12:typedef int(*Sort)(const Oferta&, const Oferta&);
+        -:   13:
+        -:   14:class Service
+        -:   15:{
+        -:   16:private:
+        -:   17:    RepoAbstract& repo;
+        -:   18:    Validator& val;
+        -:   19:    cosOferte& cos;
+        -:   20:    vector<unique_ptr<ActiuneUndo>> undoActions;
+        -:   21:public:
+        -:   22:    /*
+        -:   23:     * Constructorul serivce ului
+        -:   24:     * oferta_repo: obiect de tip repo
+        -:   25:     * val: validatorul
+        -:   26:     */
+function _ZN7ServiceC1ER12RepoAbstractR9ValidatorR9cosOferte called 0 returned 0% blocks executed 0%
+    #####:   27:    Service(RepoAbstract& oferta_repo, Validator& val, cosOferte& cos) :repo{ oferta_repo }, val{ val }, cos{ cos }{};
+    %%%%%:   27-block  0
+call    0 never executed
+        -:   28:
+        -:   29:    Service(const Service& ot) = delete;
+        -:   30:
+        -:   31:    /*
+        -:   32:     * functie de adaugare a unei oferte
+        -:   33:     * denumire: string, denumirea ofertei
+        -:   34:     * destinatie: string, destinatia ofertei
+        -:   35:     * tip: string, tipul ofertei
+        -:   36:     * pret: int, pretul ofertei
+        -:   37:     * return: -
+        -:   38:     */
+        -:   39:    void adaugare_oferta(string denumire, string destinatie, string tip, int pret);
+        -:   40:
+        -:   41:    /*
+        -:   42:     * functie de stergere a unei oferte
+        -:   43:     * poz: pozitia ofertei care se sterge
+        -:   44:     * return: -
+        -:   45:     */
+        -:   46:    void stergere_oferta(const Oferta& of);
+        -:   47:
+        -:   48:    /*
+        -:   49:     * Functie de modificare a ofertei
+        -:   50:     * denumire: string, denumirea ofertei de modificat
+        -:   51:     * destinatie: string, destinatia ofertei de modificat
+        -:   52:     * tip: string, tipul noii oferte
+        -:   53:     * pret: int, pretul noii oferte
+        -:   54:     * return: -
+        -:   55:     */
+        -:   56:    void modificare_oferta(const string& denumire, const string& destinatie, const string& tip, int pret);
+        -:   57:
+        -:   58:    /*
+        -:   59:     * functie de cautare a unei oferte
+        -:   60:     * denumire: string, denumirea dupa care se cauta
+        -:   61:     * destinatie: string, destinatia dupa care se cauta
+        -:   62:     * return: oferta gasita
+        -:   63:     */
+        -:   64:    Oferta cautare_oferte(const string& denumire, const string& destinatie);
+        -:   65:
+        -:   66:    /*
+        -:   67:     * functie de sortare generica
+        -:   68:     * (*fct)(const Oferta&, const Oferta&): functie de comparare
+        -:   69:     * ord: modul in care se sorteaza
+        -:   70:     * return: -
+        -:   71:     */
+        -:   72:    void sortare_destinatie();
+        -:   73:    void sortare_denumire();
+        -:   74:    void sortare_tipPret();
+        -:   75:
+        -:   76:    /*
+        -:   77:     * functie de filtrare dupa destinatie
+        -:   78:     * destinatie: string, destinatia dupa care se filtreaza
+        -:   79:     * return: o lista de oferta care au aceeasi destinatie cu cea data
+        -:   80:     */
+        -:   81:    vector<Oferta> filtrare_destinatie(const string& destinatie);
+        -:   82:
+        -:   83:    /*
+        -:   84:     * functie de filtrare dupa pret
+        -:   85:     * pret: int, pretul dupa care se filtreaza
+        -:   86:     * return: o lista de oferta care au aceeasi destinatie cu cea data
+        -:   87:     */
+        -:   88:    vector<Oferta> filtrare_pret(const int& pret);
+        -:   89:
+        -:   90:    /*
+        -:   91:     * functie de returnare a listei de oferte
+        -:   92:     * return: lista de oferte
+        -:   93:     */
+function _ZN7Service14get_all_oferteEv called 0 returned 0% blocks executed 0%
+    #####:   94:    const vector<Oferta>& get_all_oferte()
+        -:   95:    {
+    #####:   96:        return this->repo.get_all_oferte();
+    %%%%%:   96-block  0
+call    0 never executed
+        -:   97:    }
+        -:   98:
+        -:   99:    /*
+        -:  100:     * functie de adaugare a unei oferte in cos
+        -:  101:     * denumire: string, denumirea ofertei
+        -:  102:     * destinatie: string, destinatia ofertei
+        -:  103:     * return: -
+        -:  104:     */
+        -:  105:    void cos_adauga(const string& denumire, const string& destinatie);
+        -:  106:
+        -:  107:    /*
+        -:  108:     * functie de stergere a tuturor ofertelor din cos
+        -:  109:     * return: -
+        -:  110:     */
+        -:  111:    void cos_stergere();
+        -:  112:
+        -:  113:    /*
+        -:  114:     * functie de adaugare a unui numar random de oferte in cos
+        -:  115:     * numar: numarul de oferte care se adauga
+        -:  116:     * return: numarul de oferte adaugate
+        -:  117:     */
+        -:  118:    int cos_adauga_random(int nr);
+        -:  119:
+        -:  120:    /*
+        -:  121:     * functie de export a cosului in fisier
+        -:  122:     * filename: string, numele fisierului
+        -:  123:     * return: -
+        -:  124:     */
+        -:  125:    void cos_export(const string& filename);
+        -:  126:
+        -:  127:    void undo();
+        -:  128:
+        -:  129:    /*
+        -:  130:     * functie de returnare a listei de oferte din cos
+        -:  131:     * return: lista de oferte
+        -:  132:     */
+        -:  133:    const vector<Oferta>& get_all_cos();
+        -:  134:    unordered_map<string, int> creare_dict();
+        -:  135:};

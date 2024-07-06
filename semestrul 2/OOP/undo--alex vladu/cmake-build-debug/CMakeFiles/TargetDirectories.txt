@@ -1,0 +1,3 @@
+C:/Users/Admin/Desktop/poriect alex vladu/cmake-build-debug/CMakeFiles/poriect_alex_vladu.dir
+C:/Users/Admin/Desktop/poriect alex vladu/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Admin/Desktop/poriect alex vladu/cmake-build-debug/CMakeFiles/rebuild_cache.dir

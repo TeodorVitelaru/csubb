@@ -1,0 +1,313 @@
+GHID BAC
+========
+
+test 5 III.3
+============
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+
+int main()
+{
+  int st, x, dr, cif, maxi=1, nr=1, cif_final, i=1, j=1;
+  fin>>x;
+  st=1; dr=1; cif=cif_final=x;
+  while(fin>>x)
+    {
+      nr++;
+      if(x==cif)
+      {dr++;}
+      else
+      {
+        if(dr-st+1>maxi)
+        {maxi=dr-st+1; cif_final=cif; i=st, j=dr;}
+        st=nr; dr=nr; cif=x;
+      }
+    }
+  if(dr-st+1>maxi)
+  {maxi=dr-st+1; cif_final=cif; i=st, j=dr;}
+  cout<<i<<" "<<j<<" "<<cif_final;
+  return 0;
+}
+
+
+test 6 III.3 formarea unui palindrom cu cifre dintr un fisier
+============
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+
+int main()
+{
+  int nr=0, x, v[11]={0};
+  while(fin>>x) 
+  {
+    v[x]++;
+    nr++;
+   }
+ int cnt=0;
+  for(int i=0; i<=9; ++i)
+    if(v[i]%2==1)
+     cnt++;
+  if((nr%2==0 && cnt!=0) || (nr%2==1 && cnt!=1))
+  {cout<<"IMPOSIBIL"; return 0;}
+ int copie=0;
+  for(int i=9; i>=0; i--)
+    if(v[i]!=0 && v[i]%2==0)
+    {
+      int aux=1;
+      while(aux<=v[i]/2)
+        {cout<<i; aux++;}
+    }
+  else if(v[i]%2==1)
+  {copie=i; 
+  int aux=1; 
+    while(aux<=v[i]/2)
+      {cout<<i; aux++;}
+    }
+  if(copie)
+    cout<<copie;
+  for(int i=0; i<=9; i++)
+    if(v[i]!=0 && v[i]%2==0)
+    {
+      int aux=v[i]/2+1;
+      while(aux<=v[i])
+        {cout<<i; aux++;}
+    }
+  else if(v[i]%2==1)
+  {
+    int aux=(v[i]+1)/2+1;
+    while(aux<=v[i])
+      {cout<<i; aux++;}
+  }
+  
+  return 0;
+}
+
+
+
+
+
+==============
+BAC 2017 IUNIE 
+==============
+
+III.4
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+
+int main()
+{
+  int x, maxi=-1, l=0, cnt=0;
+  while(fin>>x)
+    if(x%2==0)
+      l++;
+  else
+    {
+      if(l>maxi)
+      {maxi=l; cnt=0;}
+      if(l==maxi)
+        cnt++;
+      l=0;
+    }
+  if(l>maxi)
+  {maxi=l; cnt=0;}
+  if(l==maxi)
+    cnt++;
+  cout<<cnt;
+  
+  return 0;
+}
+
+
+III.3
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+
+void duplicare(int &n)
+{
+  int aux=0, v[10000], p=1;
+  while(n)
+    {
+      v[p]=n%10; p++; n/=10;
+    }
+  for(int i=p-1; i>0; i--)
+    {
+      if(v[i]%2==0)
+      aux=aux*100+(v[i]*10)+(v[i]/2);
+   else
+      aux=aux*10+v[i];}
+  n=aux;
+}
+
+int main()
+{
+  int x;
+  cin>>x;
+  duplicare(x);
+  cout<<x;
+  return 0;
+}
+
+
+
+=========
+POZE WAPP
+=========
+
+1.Problema p-compus in:21 19 16 12  out:6 NU NU 3
+==
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+
+int main()
+{
+  int x, p, s;
+  fin>>p;
+  s=p*(p-1)/2;
+  while(fin>>x)
+    {
+      if((x-s)%p!=0)
+        cout<<"nu"<<" ";
+      else
+        cout<<(x-s)/p<<" ";
+    }
+  return 0;
+}
+
+
+
+2. Elementele prime sunt scoase din sir, iar cele neprime
+sunt incrementate cu o valoare. Prelucrarea se repeta pana
+cand in sir nu mai exista niciun nr. . Sa se afiseze pe 
+ecran de cate ori a fost aplicata aceasa prelucrare
+==
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+
+bool prim(int n)
+{
+  if(n==0 || n==1) return false;
+  for(int i=2; i*i<=n; i++)
+    if(n%i==0)
+      return false;
+  return true;
+}
+
+int main()
+{
+  int x, maxi=-1;
+  while(fin>>x)
+    {
+      int cnt=1;
+      while(!prim(x))
+        {cnt++; x++;}
+      if(cnt>maxi)
+        maxi=cnt;
+    }
+  cout<<maxi;
+  return 0;
+}
+
+
+
+3. Concatenare prefix si sufix: in:info  out:io info infnfo infoinfo
+==
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+
+int main()
+{
+  char s[101];
+  cin>>s;
+  int nr=strlen(s)-1;
+  int dr=nr, st=0;
+  while(st!=nr)
+    {
+      for(int i=0; i<=st; i++)
+        cout<<s[i];
+      for(int i=dr; i<=nr; i++)
+        cout<<s[i];
+      cout<<endl;
+      st++; dr--;
+    }
+  cout<<s<<s;
+  return 0;
+}
+
+
+4. sa se afiseze multiplul unor nr care au k cifre
+==
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+
+int main() {
+  int n, m, k, rest, i;
+  fin >> n >> m >> k;
+  int cn=n, cm=m;
+  while (n) {
+    rest = n % m;
+    m = n;
+    m = n;
+    n = rest;
+  }
+  rest = m;
+  int aux = (cn * cm) / rest, putere = 1;
+  while (k) {
+    putere *= 10;
+    k--;
+  }
+  if (putere / 10 % aux == 0)
+    i = putere/10;
+  else
+    i = putere / 10 / aux + aux;
+  for (; i < putere; i += aux)
+    cout << i << " ";
+
+  return 0;
+}
+
+
+
+
+!!! UBB -Sa se afiseze a n- a linie din triunghiul Pascal , utilizand 2 vectori
+==
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+
+int n;
+
+void afisare(int a, int v[]){
+  for(int i=1; i<=a; i++)
+    cout<<v[i]<<" ";
+}
+
+void tri (int a[], int b[], int aux)
+{
+  if(aux>n)
+    afisare(n, a);
+  else{
+    b[1]=1; b[aux]=1;
+    for(int i=1; i<aux; i++)
+      b[i]=a[i-1]+a[i];
+    tri(b, a, aux+1);
+  }
+}
+
+int main() {
+
+  int a[10001], b[100001];
+  cin>>n;
+  tri(a, b, 1);
+  return 0;
+}
+
+
+

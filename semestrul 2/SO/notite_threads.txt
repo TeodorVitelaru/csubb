@@ -1,0 +1,9 @@
+pthread_t tid[21]; creare thread
+pthread_join(tid[i], NULL);
+
+pthread_mutex_t mtx = PTHREAD_MUTEX_INITIALIZER;
+
+pthread_barrier_t barr; declarares bariera
+pthread_barrier_init(&barr, NULL, MAX_THR); initializare bariera
+
+

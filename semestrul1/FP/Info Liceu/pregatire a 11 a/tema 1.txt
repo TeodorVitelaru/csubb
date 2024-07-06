@@ -1,0 +1,290 @@
+TEMA INFO
+#24
+int oglindit (int n)
+{
+    int p=0;
+    while(n!=0)
+    {
+        p=p*10+n%10;
+        n=n/10;
+    }
+    return p;
+}
+
+
+#25
+#include <iostream>
+
+using namespace std;
+int cmmnr(int n)
+{
+    int a[11], cifre=0, altcv;
+    while (n!=0)
+    {
+       cifre=cifre+1;
+       a[cifre]=n%10;
+       n=n/10;
+    }
+    for(int i=1; i<cifre; i++)
+        for(int j=i+1; j<=cifre; j++)
+            if (a[i]<a[j])
+            {
+                altcv=a[i];
+                a[i]=a[j];
+                a[j]=altcv;
+            }
+    for(int i=1; i<=cifre; i++)
+        n=n*10+a[i];
+    return n;
+}
+int main()
+{
+    int a;
+    cin>>a;
+    cout<<cmmnr(a);
+    return 0;
+}
+
+
+
+#3104 40 puncte pe pbinfo
+#include <iostream>
+using namespace std;
+int Egal (int n)
+{
+    int a[10], cifre=0, ok=0;
+    while (n!=0)
+    {
+        if(n%10%2!=0)
+        {
+            cifre++;
+            a[cifre]=n%10;
+        }
+       n=n/10;
+    }
+    ok=1;
+    for(int i=2; i<=cifre; i++)
+    {       
+       if(a[1]!=a[i])
+         {ok=0;break;}
+    }
+    return ok;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<Egal(n);
+    return 0;
+}
+
+else
+
+int Egal (int n)
+{
+    int cifra=0;
+    while (n!=0)
+    {
+      if(n%2!=0)
+        { if(cifra==0)
+           cifra=n%10;
+         else if(n%10!=cifra)
+                return 0;        
+        }  
+       n=n/10;
+    }
+    return 1;
+}
+
+
+
+#904
+#include <iostream>
+
+using namespace std;
+void concat(int a, int b)
+{
+    cout<<a<<b;
+}
+
+
+int main()
+{
+    int a, b;
+    cin>>a>>b;
+    concat(a, b);
+    return 0;
+}
+
+
+
+
+alt tip de mutare #808
+void sub (int n, int v[], int x)
+{
+  int dr=n-1;
+  for(int i=n-1;i>=0;i-- )
+    if(v[i]!=x) {v[dr]=v[i];dr--;}
+  for(int i=dr;i>=0;i--)
+    v[i]=x;  
+}
+
+
+
+#2858
+#include <iostream>
+
+using namespace std;
+int a[101], n;
+void citire ()
+{
+    for(int i=1; i<=n; i++)
+        cin>>a[i];
+}
+void afisare ()
+{
+    for(int i=n; i>=1; i--)
+        cout<<a[i]<<" ";
+    cout<<endl;
+}
+int sumaval()
+{
+    int s=0;
+    for(int i=1; i<=n; i++)
+        if(a[i]%2==0)
+          s=s+a[i];
+    return s;
+
+}
+int sumapoz ()
+{
+    int s=0;
+    for(int i=2; i<=n; i=i+2)
+        s=s+a[i];
+    return s;
+}
+int numar ()
+{
+    int nr=0;
+    for(int i=1; i<=n; i++)
+        if(a[i]%10==0)
+          nr=nr+1;
+    return nr;
+
+}
+int sumaimpr ()
+{
+    int s=0;
+    for(int i=1; i<=n; i=i+2)
+        if(a[i]%3==0)
+          s=s+a[i];
+    return s;
+
+}
+int main()
+{
+    cin>>n;
+    citire();
+    afisare();
+    cout<<endl;
+    cout<<sumaval();
+    cout<<endl;
+    cout<<sumapoz();
+    cout<<endl;
+    cout<<numar();
+    cout<<endl;
+    cout<<sumaimpr();
+    return 0;
+}
+
+
+
+#907
+#include <iostream>
+
+using namespace std;
+void afisare (int a, int b)
+{
+    int aux=0;
+    if(a>b)
+    {
+        aux=a;
+        a=b;
+        b=aux;
+    }
+    for(int i=a; i<=b; i++)
+      if(i%2==0)
+        cout<<i<<" ";
+}
+int main()
+{
+    int a, b;
+    cin>>a>>b;
+    afisare(a,b);
+    return 0;
+}
+
+
+#908
+#include <iostream>
+
+using namespace std;
+void afisare (int a, int b)
+{
+    int aux=0;
+    if(a>b)
+    {
+        aux=a;
+        a=b;
+        b=aux;
+    }
+    for(int i=a; i<=b; i++)
+    {
+        int isprim=0;
+        for(int j=2; j*j<=i; j++)
+          if(i%j==0)
+              isprim=1;
+        if(isprim==0)
+            cout<<i<<" ";
+    }
+}
+int main()
+{
+    int a, b;
+    cin>>a>>b;
+    afisare(a, b);
+    return 0;
+}
+
+
+#800 20 puncte pe pbinfo
+#include <iostream>
+
+using namespace std;
+void perfect (int a, int b)
+{
+    int v=0;
+    for(int i=b; i>=a; i--)
+    {   int s=0;
+        for(int j=1; j<i/2; j++)
+            if(i%j==0)
+              s=s+j;
+        if(i==s)
+            {cout<<i<<" ";
+            v=1;
+            }
+    }
+    if(v==0)
+        cout<<"nu exista";
+
+}
+int main()
+{
+    int a, b;
+    cin>>a>>b;
+    perfect (a,b);
+    return 0;
+}
+
+
+

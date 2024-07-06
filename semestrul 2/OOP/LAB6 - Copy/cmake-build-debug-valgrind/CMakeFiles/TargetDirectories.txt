@@ -1,0 +1,3 @@
+/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/cmake-build-debug-valgrind/CMakeFiles/LAB6.dir
+/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/cmake-build-debug-valgrind/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/cmake-build-debug-valgrind/CMakeFiles/rebuild_cache.dir

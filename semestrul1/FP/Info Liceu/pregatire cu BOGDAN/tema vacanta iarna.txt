@@ -1,0 +1,195 @@
+================
+subiect bac 2020
+================
+
+I.1
+=== c
+
+I.2
+=== d
+
+I.3
+=== c
+
+I.4
+=== b
+
+I.5
+=== b
+
+
+II.1
+====
+a.120
+b.2020 4039
+
+
+II.2
+====
+struct parcare 
+{
+ int id, numar, pret;
+} p[21];
+
+
+II.3
+====
+for(int i=0 ;I,5; ++i)
+  {
+    if(a[i][0] == 2020 || a[i][6] == 2020)
+      cout<<i<<" ";
+  }
+
+
+III.1 
+=====
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+ofstream fout("bac.out");
+int n, d;
+void duplicare(int n, int &d)
+{
+  int putere=10; d=-1;
+  while(n)
+    {
+      if(n%10%2 == 1 && d == -1)
+        d=0;
+      if(n%10%2 == 1)
+      {
+        d = n*putere+n%10*(putere/10)+d%(putere/10);
+        putere*=100;
+      }
+      else
+        putere*=10;
+      n/=10;
+      cout<<d<<endl;
+    }
+}
+
+int main()
+{
+  cin>>n;
+  duplicare(n, d);
+  cout<<d;
+    return 0;
+}
+
+
+
+
+
+III.2
+=====
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+ofstream fout("bac.out");
+
+int main()
+{
+  int x;
+  cin>>x;
+  cin.get();
+  char s[101], copie[101];
+  cin.getline(s, 101);strcpy(copie, s);
+  char *p = strtok(s, " ");
+  while(p)
+    {
+      if(strlen(p) >= x)
+        cout<<p<<endl;
+      p=strtok(NULL, " ");
+    }
+  char *q = strtok(copie, " ");
+  while(q)
+    {
+      if(strlen(q) < x)
+        cout<<q<<endl;
+      q = strtok(NULL, " ");
+    }
+    return 0;
+}
+
+
+
+
+III.3
+=====
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+ofstream fout("bac.out");
+
+
+
+int main()
+{
+  int x, cnt = 0, n;
+  fin>>n;
+  while(fin>>x)
+    if(n>x)
+    {cnt=n-x+cnt; n=x;}
+  cout<<cnt;
+    return 0;
+}
+
+
+
+
+===============
+PROBLEME PBINFO
+===============
+
+#1661
+=====
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+  int x, y, a[101][101];
+  cin>>x>>y;
+  int aux=max(x, y);
+  for(int j=0 ; j <= aux ; j++)
+    a[0][j] = a[j][0] = 1;
+  for(int i = 1 ; i <= aux ; ++i)
+    for(int j = 1 ; j <= aux ; j++)
+      a[i][j]=a[i-1][j]+a[i][j-1];
+  cout<<a[x][y];
+  
+    return 0;
+}
+
+
+
+#1798
+=====
+#include <bits/stdc++.h>
+using namespace std;
+int n , a[101];
+int main()
+{
+    cin >> n;
+    if (n == 1) cout << 1;
+    else
+    {
+        a[0] = 1 , a[1] = 1;
+        for(int i = 2 ; i <= n ; i++)
+            a[i] = a[i - 1] + a[i - 2];
+    
+        cout << a[n];
+    }
+return 0;
+  }
+
+
+#1991 nu stiu
+%9001?
+
+
+#831 nu stiu
+(recursivitate)
+
+
+
+

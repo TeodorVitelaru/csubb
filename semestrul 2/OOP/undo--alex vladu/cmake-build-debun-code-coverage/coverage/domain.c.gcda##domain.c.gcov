@@ -1,0 +1,173 @@
+        -:    0:Source:C:/Users/Admin/Desktop/poriect alex vladu/domain.c
+        -:    0:Graph:C:\Users\Admin\Desktop\poriect alex vladu\cmake-build-debun-code-coverage\CMakeFiles\poriect_alex_vladu.dir\domain.c.gcno
+        -:    0:Data:C:\Users\Admin\Desktop\poriect alex vladu\cmake-build-debun-code-coverage\CMakeFiles\poriect_alex_vladu.dir\domain.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <string.h>
+        -:    2:#include <stdlib.h>
+        -:    3:#include <assert.h>
+        -:    4:#include "domain.h"
+        -:    5:#include "array.h"
+function get_Oferta_tip called 55 returned 100% blocks executed 100%
+       55:    6:char* get_Oferta_tip(Oferta oferta)
+        -:    7:{
+       55:    8:    return oferta->tip;
+       55:    8-block  0
+        -:    9:}
+function get_Oferta_suprafata called 27 returned 100% blocks executed 100%
+       27:   10:int get_Oferta_suprafata(Oferta oferta)
+        -:   11:{
+       27:   12:    return oferta->suprafata;
+       27:   12-block  0
+        -:   13:}
+function get_Oferta_adresa called 41 returned 100% blocks executed 100%
+       41:   14:char* get_Oferta_adresa(Oferta oferta)
+        -:   15:{
+       41:   16:    return oferta->adresa;
+       41:   16-block  0
+        -:   17:}
+function get_Oferta_pret called 42 returned 100% blocks executed 100%
+       42:   18:int get_Oferta_pret(Oferta oferta)
+        -:   19:{
+       42:   20:    return oferta->pret;
+       42:   20-block  0
+        -:   21:}
+function set_Oferta_tip called 36 returned 100% blocks executed 100%
+       36:   22:void set_Oferta_tip(Oferta oferta, char*tip)
+        -:   23:{
+       36:   24:    strcpy(oferta->tip, tip);
+       36:   25:}
+function set_Oferta_suprafata called 36 returned 100% blocks executed 100%
+       36:   26:void set_Oferta_suprafata(Oferta oferta, int suprafata)
+        -:   27:{
+       36:   28:    oferta->suprafata=suprafata;
+       36:   29:}
+function set_Oferta_adresa called 36 returned 100% blocks executed 100%
+       36:   30:void set_Oferta_adresa(Oferta oferta, char*adresa)
+        -:   31:{
+       36:   32:    strcpy(oferta->adresa, adresa);
+       36:   33:}
+function set_Oferta_pret called 36 returned 100% blocks executed 100%
+       36:   34:void set_Oferta_pret(Oferta oferta, int pret)
+        -:   35:{
+       36:   36:    oferta->pret=pret;
+       36:   37:}
+function create_Oferta called 36 returned 100% blocks executed 88%
+       36:   38:Oferta create_Oferta(char* tip, int suprafata, char* adresa, int pret)
+        -:   39:{
+       36:   40:    Oferta oferta = (Oferta)malloc(sizeof(Oferta_Struct));
+       36:   41:    if(oferta==NULL)
+       36:   41-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 36
+    #####:   42:        return NULL;
+    %%%%%:   42-block  0
+       36:   43:    oferta->tip = (char*)malloc(200 * sizeof(char));
+       36:   44:    oferta->adresa = (char*)malloc(200 * sizeof(char));
+       36:   45:    set_Oferta_tip(oferta, tip);
+       36:   45-block  0
+call    0 returned 36
+       36:   46:    set_Oferta_suprafata(oferta, suprafata);
+call    0 returned 36
+       36:   47:    set_Oferta_adresa(oferta, adresa);
+call    0 returned 36
+       36:   48:    set_Oferta_pret(oferta, pret);
+call    0 returned 36
+       36:   49:    return oferta;
+        -:   50:}
+        -:   51:
+function copy_oferta called 17 returned 100% blocks executed 75%
+       17:   52:Oferta copy_oferta(Oferta of)
+        -:   53:{
+       17:   54:    if(of==NULL)
+       17:   54-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 17
+    #####:   55:        return NULL;
+    %%%%%:   55-block  0
+       17:   56:    return create_Oferta(of->tip, of->suprafata, of->adresa, of->pret);
+       17:   56-block  0
+call    0 returned 17
+        -:   57:}
+        -:   58:
+function compare_Oferta_by_price called 50 returned 100% blocks executed 83%
+       50:   59:int compare_Oferta_by_price(Telem of1, Telem of2)
+        -:   60:{
+       50:   61:    Oferta oferta1=(Oferta)of1;
+       50:   62:    Oferta oferta2=(Oferta)of2;
+       50:   63:    if(oferta1->pret>oferta2->pret)
+       50:   63-block  0
+branch  0 taken 22 (fallthrough)
+branch  1 taken 28
+       22:   64:        return 1;
+       22:   64-block  0
+       28:   65:    if(oferta1->pret<oferta2->pret)
+       28:   65-block  0
+branch  0 taken 28 (fallthrough)
+branch  1 taken 0
+       28:   66:        return -1;
+       28:   66-block  0
+    #####:   67:    return 0;
+    %%%%%:   67-block  0
+        -:   68:}
+function compare_Oferta_by_type called 30 returned 100% blocks executed 100%
+       30:   69:int compare_Oferta_by_type(Telem of1, Telem of2)
+        -:   70:{
+       30:   71:    Oferta oferta1=(Oferta)of1;
+       30:   72:    Oferta oferta2=(Oferta)of2;
+       30:   73:    return strcmp(oferta1->tip, oferta2->tip);
+       30:   73-block  0
+        -:   74:}
+function delete_Oferta called 30 returned 100% blocks executed 83%
+       30:   75:void delete_Oferta(void* oferta)
+        -:   76:{
+       30:   77:    if(oferta == NULL)
+       30:   77-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 30
+    #####:   78:        return;
+    %%%%%:   78-block  0
+       30:   79:    Oferta to_remove=(Oferta)oferta;
+       30:   80:    free(get_Oferta_tip(to_remove));
+       30:   80-block  0
+call    0 returned 30
+       30:   81:    free(get_Oferta_adresa(to_remove));
+call    0 returned 30
+       30:   82:    free(to_remove);
+        -:   83:}
+function test_domain called 1 returned 100% blocks executed 82%
+        1:   84:void test_domain()
+        -:   85:{
+        1:   86:    Oferta oferta=create_Oferta("casa", 75, "Sibiu,str.Luncii,nr.14", 2500);
+        1:   86-block  0
+call    0 returned 1
+        1:   87:    Oferta oferta1=create_Oferta("teren", 232, "Sibiu,str.Luncii,nr.200", 9823);
+call    0 returned 1
+       1*:   88:    assert(strcmp(get_Oferta_adresa(oferta), "Sibiu,str.Luncii,nr.14")==0);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   88-block  0
+call    3 never executed
+        1:   88-block  1
+       1*:   89:    assert(get_Oferta_pret(oferta1)==9823);
+        1:   89-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   89-block  1
+call    3 never executed
+        1:   89-block  2
+       1*:   90:    assert(strcmp(get_Oferta_tip(oferta1), "teren") == 0);
+        1:   90-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   90-block  1
+call    3 never executed
+        1:   90-block  2
+        1:   91:    delete_Oferta(oferta);
+        1:   91-block  0
+call    0 returned 1
+        1:   92:    delete_Oferta(oferta1);
+call    0 returned 1
+        1:   93:}

@@ -1,0 +1,415 @@
+        -:    0:Source:C:/Users/Admin/Desktop/poriect alex vladu/validator.c
+        -:    0:Graph:C:\Users\Admin\Desktop\poriect alex vladu\cmake-build-debun-code-coverage\CMakeFiles\poriect_alex_vladu.dir\validator.c.gcno
+        -:    0:Data:C:\Users\Admin\Desktop\poriect alex vladu\cmake-build-debun-code-coverage\CMakeFiles\poriect_alex_vladu.dir\validator.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <string.h>
+        -:    2:#include <assert.h>
+        -:    3:#include "controller.h"
+        -:    4:#include "validator.h"
+        -:    5:
+function test_validate_option called 1 returned 100% blocks executed 76%
+        1:    6:void test_validate_option()
+        -:    7:{
+        -:    8:    //Functia  void test_validate_option() e folosita pentru a testa functia validate_option cu assert;
+       1*:    9:    assert(validate_option("3", 1, 5) == 1);
+        1:    9-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:    9-block  1
+call    3 never executed
+        1:    9-block  2
+       1*:   10:    assert(validate_option("5", 1, 9) == 1);
+        1:   10-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   10-block  1
+call    3 never executed
+        1:   10-block  2
+       1*:   11:    assert(validate_option("-2", 1, 9) == 0);
+        1:   11-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   11-block  1
+call    3 never executed
+        1:   11-block  2
+       1*:   12:    assert(validate_option("15", 1, 5) == 0);
+        1:   12-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   12-block  1
+call    3 never executed
+        1:   12-block  2
+        1:   13:}
+        -:   14:
+function validate_option called 4 returned 100% blocks executed 100%
+        4:   15:int validate_option(char *optiune, int st, int dr)
+        -:   16:{
+        4:   17:    if(check_number_string(optiune))
+        4:   17-block  0
+call    0 returned 4
+branch  1 taken 3 (fallthrough)
+branch  2 taken 1
+        -:   18:    {
+        3:   19:        int option=transform_chars_to_integer(optiune);
+        3:   19-block  0
+call    0 returned 3
+        3:   20:        return option >= st && option <= dr;
+branch  0 taken 3 (fallthrough)
+branch  1 taken 0
+        3:   20-block  0
+branch  2 taken 2 (fallthrough)
+branch  3 taken 1
+        2:   20-block  1
+        1:   20-block  2
+        3:   20-block  3
+        -:   21:    }
+        1:   22:    return 0;
+        1:   22-block  0
+        -:   23:}
+        -:   24:
+function test_check_number called 1 returned 100% blocks executed 77%
+        1:   25:void test_check_number()
+        -:   26:{
+        -:   27:    //Functia  void test_check_number() e folosita pentru a testa functia check_number cu assert;
+       1*:   28:    assert(check_number('3')==1);
+        1:   28-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   28-block  1
+call    3 never executed
+        1:   28-block  2
+       1*:   29:    assert(check_number('5')==1);
+        1:   29-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   29-block  1
+call    3 never executed
+        1:   29-block  2
+       1*:   30:    assert(check_number('a')==0);
+        1:   30-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   30-block  1
+call    3 never executed
+        1:   30-block  2
+        1:   31:}
+        -:   32:
+function check_number called 426 returned 100% blocks executed 100%
+      426:   33:int check_number(char ch)
+        -:   34:{
+      426:   35:    return ch >= '0' && ch <= '9';
+      426:   35-block  0
+branch  0 taken 367 (fallthrough)
+branch  1 taken 59
+      367:   35-block  1
+branch  2 taken 123 (fallthrough)
+branch  3 taken 244
+      123:   35-block  2
+      303:   35-block  3
+      426:   35-block  4
+        -:   36:}
+        -:   37:
+function test_count_sep called 1 returned 100% blocks executed 76%
+        1:   38:void test_count_sep()
+        -:   39:{
+        -:   40:    //Functia  void test_count_sep() e folosita pentru a testa functia count_sep() cu assert;
+       1*:   41:    assert(count_sep("a,b,c,")==3);
+        1:   41-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   41-block  1
+call    3 never executed
+        1:   41-block  2
+       1*:   42:    assert(count_sep("a,b,c")==2);
+        1:   42-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   42-block  1
+call    3 never executed
+        1:   42-block  2
+       1*:   43:    assert(count_sep("a b c")==0);
+        1:   43-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   43-block  1
+call    3 never executed
+        1:   43-block  2
+       1*:   44:    assert(count_sep("a b c,")==1);
+        1:   44-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   44-block  1
+call    3 never executed
+        1:   44-block  2
+        1:   45:}
+        -:   46:
+function count_sep called 21 returned 100% blocks executed 100%
+       21:   47:int count_sep(const char* string)
+        -:   48:{
+       21:   49:    int cnt = 0;
+      400:   50:    for (int i = 0; string[i] != '\0'; i++)
+       21:   50-block  0
+      379:   50-block  1
+      400:   50-block  2
+branch  0 taken 379
+branch  1 taken 21 (fallthrough)
+      379:   51:        if (string[i] == ',')
+      379:   51-block  0
+branch  0 taken 35 (fallthrough)
+branch  1 taken 344
+       35:   52:            cnt++;
+       35:   52-block  0
+       21:   53:    return cnt;
+       21:   53-block  0
+        -:   54:}
+        -:   55:
+function test_check_ok_adress called 1 returned 100% blocks executed 77%
+        1:   56:void test_check_ok_adress()
+        -:   57:{
+        -:   58:    //Functia test_check_ok_adress e folosita pentru a testa functia check_ok_adress cu assert;
+       1*:   59:    assert(check_ok_adress("Sibiu,str.Luncii,nr.12")==1);
+        1:   59-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   59-block  1
+call    3 never executed
+        1:   59-block  2
+       1*:   60:    assert(check_ok_adress("Sibiu,str.Lunciinr.12")==-1);
+        1:   60-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   60-block  1
+call    3 never executed
+        1:   60-block  2
+       1*:   61:    assert(check_ok_adress("Sibiu,str.Luncii,nr.")==0);
+        1:   61-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   61-block  1
+call    3 never executed
+        1:   61-block  2
+        1:   62:}
+        -:   63:
+function check_ok_adress called 17 returned 100% blocks executed 100%
+       17:   64:int check_ok_adress(const char* string)
+        -:   65:{
+       17:   66:    if (count_sep(string) < 2)
+       17:   66-block  0
+call    0 returned 17
+branch  1 taken 3 (fallthrough)
+branch  2 taken 14
+        3:   67:        return -1;
+        3:   67-block  0
+       14:   68:    int ok = 0;
+      332:   69:    for (int i = 0; string[i] != '\0'; i++)
+       14:   69-block  0
+      318:   69-block  1
+      332:   69-block  2
+branch  0 taken 318
+branch  1 taken 14 (fallthrough)
+      318:   70:        if (check_number(string[i]))
+      318:   70-block  0
+call    0 returned 318
+branch  1 taken 21 (fallthrough)
+branch  2 taken 297
+       21:   71:            ok = 1;
+       21:   71-block  0
+       14:   72:    return ok;
+       14:   72-block  0
+        -:   73:}
+        -:   74:
+function test_check_equ_string called 1 returned 100% blocks executed 77%
+        1:   75:void test_check_equ_string()
+        -:   76:{
+        -:   77:    //Functia test_check_equ_string() e folosita pentru a testa functia check_equ_string() cu assert;
+       1*:   78:    assert(check_equ_string("abcd", "abcd")==1);
+        1:   78-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   78-block  1
+call    3 never executed
+        1:   78-block  2
+       1*:   79:    assert(check_equ_string("abcd", " abcd")==0);
+        1:   79-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   79-block  1
+call    3 never executed
+        1:   79-block  2
+       1*:   80:    assert(check_equ_string("2abcd", "2abce")==0);
+        1:   80-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   80-block  1
+call    3 never executed
+        1:   80-block  2
+        1:   81:}
+        -:   82:
+function check_equ_string called 52 returned 100% blocks executed 100%
+       52:   83:int check_equ_string(const char* string1, const char* string2)
+        -:   84:{
+       52:   85:    if (strlen(string1) != strlen(string2))
+       52:   85-block  0
+branch  0 taken 30 (fallthrough)
+branch  1 taken 22
+       30:   86:        return 0;
+       30:   86-block  0
+      110:   87:    for (int i = 0; i < strlen(string1); i++)
+       22:   87-block  0
+       88:   87-block  1
+      110:   87-block  2
+branch  0 taken 93
+branch  1 taken 17 (fallthrough)
+       93:   88:        if (string1[i] != string2[i])
+       93:   88-block  0
+branch  0 taken 5 (fallthrough)
+branch  1 taken 88
+        5:   89:            return 0;
+        5:   89-block  0
+       17:   90:    return 1;
+       17:   90-block  0
+        -:   91:}
+        -:   92:
+        -:   93:
+function test_check_ok_string called 1 returned 100% blocks executed 77%
+        1:   94:void test_check_ok_string()
+        -:   95:{
+        -:   96:    //Functia test_check_ok_string() e folosita pentru a testa functia check_ok_string() cu assert;
+       1*:   97:    assert(check_ok_string("Ok ")==0);
+        1:   97-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   97-block  1
+call    3 never executed
+        1:   97-block  2
+       1*:   98:    assert(check_ok_string("OK")==1);
+        1:   98-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   98-block  1
+call    3 never executed
+        1:   98-block  2
+       1*:   99:    assert(check_ok_string("0K")==0);
+        1:   99-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   99-block  1
+call    3 never executed
+        1:   99-block  2
+        1:  100:}
+        -:  101:
+function check_ok_string called 6 returned 100% blocks executed 88%
+        6:  102:int check_ok_string(const char* string)
+        -:  103:{
+        6:  104:    if (strlen(string) != 2)
+        6:  104-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 5
+        1:  105:        return 0;
+        1:  105-block  0
+        5:  106:    if (string[0] != 'O')
+        5:  106-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 4
+        1:  107:        return 0;
+        1:  107-block  0
+        4:  108:    if (string[1] != 'K')
+        4:  108-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 4
+    #####:  109:        return 0;
+    %%%%%:  109-block  0
+        4:  110:    return 1;
+        4:  110-block  0
+        -:  111:}
+        -:  112:
+function test_check_number_string called 1 returned 100% blocks executed 77%
+        1:  113:void test_check_number_string()
+        -:  114:{
+        -:  115:    //Functia test_check_ok_string() e folosita pentru a testa functia check_ok_string() cu assert;
+       1*:  116:    assert(check_number_string("123z")==0);
+        1:  116-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  116-block  1
+call    3 never executed
+        1:  116-block  2
+       1*:  117:    assert(check_number_string("0123")==1);
+        1:  117-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  117-block  1
+call    3 never executed
+        1:  117-block  2
+       1*:  118:    assert(check_number_string("12k3")==0);
+        1:  118-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  118-block  1
+call    3 never executed
+        1:  118-block  2
+        1:  119:}
+        -:  120:
+function check_number_string called 40 returned 100% blocks executed 100%
+       40:  121:int check_number_string(const char* string)
+        -:  122:{
+        -:  123:    
+      140:  124:    for (int i = 0; i < strlen(string); i++)
+       40:  124-block  0
+      100:  124-block  1
+      140:  124-block  2
+branch  0 taken 105
+branch  1 taken 35 (fallthrough)
+      105:  125:        if (!check_number(string[i]))
+      105:  125-block  0
+call    0 returned 105
+branch  1 taken 5 (fallthrough)
+branch  2 taken 100
+        5:  126:            return 0;
+        5:  126-block  0
+       35:  127:    return 1;
+       35:  127-block  0
+        -:  128:}
+        -:  129:
+function test_validation called 1 returned 100% blocks executed 100%
+        1:  130:void test_validation()
+        -:  131:{
+        1:  132:    test_validate_option();
+        1:  132-block  0
+call    0 returned 1
+        1:  133:    test_check_number();
+call    0 returned 1
+        1:  134:    test_count_sep();
+call    0 returned 1
+        1:  135:    test_check_ok_adress();
+call    0 returned 1
+        1:  136:    test_check_equ_string();
+call    0 returned 1
+        1:  137:    test_check_ok_string();
+call    0 returned 1
+        1:  138:    test_check_number_string();
+call    0 returned 1
+        1:  139:}

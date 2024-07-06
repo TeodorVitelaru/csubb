@@ -1,0 +1,56 @@
+        -:    0:Source:D:/facultate/semestrul 2/OOP/LAB8-9/cosOferte.h
+        -:    0:Graph:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\teste.cpp.gcno
+        -:    0:Data:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\teste.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "domain.h"
+        -:    3:#include <vector>
+        -:    4:
+        -:    5:class cosOferte
+        -:    6:{
+        -:    7:private:
+        -:    8:    vector<Oferta> cos;
+        -:    9:public:
+        -:   10:    /*
+        -:   11:     * Constructorul clasei cosOferte
+        -:   12:     */
+function _ZN9cosOferteC1Ev called 0 returned 0% blocks executed 0%
+    #####:   13:    cosOferte() = default;
+    %%%%%:   13-block  0
+call    0 never executed
+        -:   14:
+        -:   15:    /*
+        -:   16:     * Functie de adaugare a unei oferte in cos
+        -:   17:     * of: obiect de tip Oferta
+        -:   18:     * return: -
+        -:   19:     */
+        -:   20:    void adauga_oferta_cos(const Oferta& of);
+        -:   21:
+        -:   22:    /*
+        -:   23:     * Functie de adaugare a unui numar random de oferte in cos
+        -:   24:     * of: vector de oferte
+        -:   25:     * numar: numarul de oferte care se adauga
+        -:   26:     * return: -
+        -:   27:     */
+        -:   28:    void adauga_random_cos(vector<Oferta>, int numar);
+        -:   29:
+        -:   30:    /*
+        -:   31:     * Functie de stergere a tuturor ofertelor din cos
+        -:   32:     * return: -
+        -:   33:     */
+        -:   34:    void sterge_cos();
+        -:   35:
+        -:   36:    /*
+        -:   37:     * Functie de returnare a tuturor ofertelor din cos
+        -:   38:     * return: vector de oferte
+        -:   39:     */
+        -:   40:    const vector<Oferta>& get_all_cos();
+        -:   41:
+        -:   42:    /*
+        -:   43:     * Destructorul clasei cosOferte
+        -:   44:     */
+function _ZN9cosOferteD1Ev called 0 returned 0% blocks executed 0%
+    #####:   45:    ~cosOferte() = default;
+    %%%%%:   45-block  0
+call    0 never executed
+        -:   46:};

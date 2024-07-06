@@ -1,0 +1,40 @@
+#1494
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("s_p_c.in");
+ofstream fout("s_p_c.out");
+void ordonare(char v[101][41],int n)
+{ for(int i=0;i<n-1;i++)
+	 for(int j=i+1;j<n;j++)
+	  if(strcmp(v[i], v[j])>0)
+      swap(v[i], v[j]);
+/*	{char saux[41]; strcpy(saux,v[i]);
+		strcpy(v[i],v[j]);strcpy(v[j],aux);}  */
+}
+int main ()
+{ 
+  char s[101][41], p[101][41], c[101][41], cuv[101];
+	int k1=0,k2=0,k3=0;
+  while(fin>>cuv)
+	{
+    switch(cuv[strlen(cuv)-1])
+      {
+        case 'S':cuv[strlen(cuv)-2]=0;strcpy(s[k1],cuv);k1++;break;
+        case 'P':cuv[strlen(cuv)-2]=0;strcpy(p[k2],cuv);k2++;break;
+        case 'C':cuv[strlen(cuv)-2]=0;strcpy(c[k3],cuv);k3++;break;
+      } 
+  
+	}
+  ordonare(s, k1);
+  ordonare(p, k2);
+  ordonare(c, k3);
+	
+	for(int i=0; i<k1; i++)
+    for(int j=0; j<k2; j++)
+      for(int z=0; z<k3; z++)
+        fout<<s[i]<<" "<<p[j]<<" "<<c[z]<<endl;
+          
+    
+	
+   return 0;
+}

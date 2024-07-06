@@ -1,0 +1,287 @@
+problema 12 / pag 18
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int v[101];
+    int n;
+    cin >> n;
+    for(int i = 1; i<=n; ++i)
+        cin >> v[i];
+    for(int i = 1; i<=n; ++i)
+        for(int j = i + 1; j<=n; ++j)
+        if(v[i]>v[j])
+            swap(v[i],v[j]);
+    for(int i = 1; i<=n-1; i+=2)
+        swap(v[i],v[i+1]);
+    for(int i = 1; i<=n; ++i)
+        cout << v[i] << " ";
+    return 0;
+}
+
+===============================
+
+problema 14 / pag 18
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int v[101];
+    int n;
+    cin >> n;
+    for(int i = 1; i<=n; ++i)
+        cin >> v[i];
+    for(int i = 1; i<=n-1; i++)
+        if(v[i]>v[i+1]){
+            cout << i;
+            return 0;
+        }
+    for(int i = 1; i<=n; ++i)
+        cout << v[i] << " ";
+    return 0;
+}
+
+
+===================================
+problema 7 / pag 24
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    char s[101];
+    char t[101]="";
+    char aux;
+    int cnt = 1;
+    cin.getline(s, 100);
+    aux = s[0];
+    int n = strlen(s);
+    for(int i = 1; i<n; ++i){
+        if(s[i]==aux)
+            cnt++;
+        else{
+            t[strlen(t)] = aux;
+            aux = s[i];
+            if(cnt > 1)
+                 t[strlen(t)] = cnt + 48;
+            cnt = 1;
+        }
+
+    }
+    t[strlen(t)] = aux;
+    if(cnt > 1)
+        t[strlen(t)] = cnt + 48;
+        cout << t;
+    return 0;
+}
+
+=================================================
+
+problema 2 / pag 30
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int marc[1001];
+
+int main()
+{
+    int n;
+    cin >> n;
+    int v[1001];
+    for(int i = 1; i <= n; ++i)
+        cin >> v[i];
+    int aux = 1;
+    while(aux <= n){
+        if(marc[aux]==1)
+            aux++;
+        int aux2 = 1;
+        while(aux2 <=n){
+        if(v[aux]<=v[aux2] && marc[aux2]==0){
+            cout << v[aux2] << " ";
+         marc[aux2] = 1;
+        }
+        aux2++;
+        }
+        aux++;
+    }
+    return 0;
+}
+
+
+======================================================
+
+problema 10 e / pag 26 
+
+???
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+int voc(char s[])
+{ int poz=strlen(s)-1;
+  while(poz>=0)
+  { if(strchr("aeiou",s[poz]))
+     return poz;
+   poz--;
+  }
+}
+
+int main()
+{
+    char v[5][21];
+    for(int i = 0; i < 4; i++)
+    {
+    char vers[21];
+    cin.getline(vers,21);
+    p=strtok(vers," ");
+    while(p)
+    {
+    strcpy(v[i], p);
+    p=strtok(NULL," ");
+    }
+   }
+   int p1=voc(v[0]),p2=voc(v[1]),...p4=voc(v[3])
+   if(p1==-1 || p2==-1 || p3==-1 || p4==-1) {cout<<"rima alba"; return 0;}
+    if(strcmp(v[0]+p1,v[1]+p2)==0 && strcmp(v[2]+p3,v[3]+p4)==0 && strcmp(v[0]+p1,v[3]+p4)==0  ) //aabb
+     {cout<<"monorima"; return 0;}
+   if(strcmp(v[0]+p1,v[1]+p2)==0 && strcmp(v[2]+p3,v[3]+p4)==0) //aabb
+     {cout<<"rima imperecheata"; return 0;}
+
+   .....
+    return 0;
+}
+
+==========================
+
+
+problema 1 / pag 30
+
+c???
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int cifre(int n){
+    int cnt = 0;
+    while(n){
+        n/=2;
+        ++cnt;
+    }
+    return cnt;
+}
+
+int cifrak(int n, int k){
+    int cnt = 0;
+    while(n){
+        ++cnt;
+        if(cnt == k)
+            return n%2;
+        n/=2;
+    }
+}
+n=19--->10011b 
+int simetric(int n){
+    int x = 0,p=1,aux;
+    if(n%2==0) return 0;
+    while(n){
+        x=x+n%2*p; p=p*10;
+        n/=2;
+    }
+   aux=x;
+   while(aux) {n=n*10+aux%10;aux/=10;}
+   return n==x;
+}
+int main()
+{
+    int n;
+    cin >> n;
+    cout << cifre(n);
+    cout << cifrak(n, 3);
+    return 0;
+}
+--------------------------
+PROGRAMARE DINAMICA--- SUBSIR CRESCATOR MAXIMAL
+PBINFO-SCLM--n^2
+   V=13 4 21 16 18 5 3
+   L= 3 3  1  2  1 1 1
+next= 4 4  0  5  0 0 0
+L[n]=1;pmax=n;
+for(i=n-1;i>=1;i--)
+{ L[i]=1;
+  for(j=i+1;j<=n;j++)
+    if(v[i]<=v[j] && L[j]>=L[i])
+    {L[i]=L[j]+1; next[i]=j;
+    }
+    maxx=max(maxx, L[i]);pmax=i;
+}
+cout<<maxx<<endl;
+i=pmax;
+while(i)
+  {cout<<v[i]<<" ";
+   i=next[i];
+  }
+}
+=========================
+>>><< >><
+-1-1-1+1+1-1-1+1=
+4>3>2>1<5<6>
+5>4>3>2<6<7>1>0>8
+3 <  ---> 1,2,3
+5 > --->4,5,...n
+#include <cstring>
+#include <iostream>
+using namespace std;
+
+int main() {
+  int x, nr = 0;
+  char s[101] = "<<<>><><>>";
+  for (int i = 0; i < strlen(s); i++)
+    if (s[i] == '>')
+      nr++;
+  nr++;
+  x = nr + 1;
+  if (s[0] == '>')
+    cout << x++;
+  else
+    cout << nr--;
+  for (int i = 0; s[i]; i++) {
+    cout << s[i];
+    if (s[i] == '<')
+      cout << x++;
+    else
+      cout << nr--;
+  }
+}
+Liniarizarea unei matrici
+anxm---> v[nxm]
+a[i][j]---> v[(i-1)*m+j]
+v[i]=a[(i-1)/m+1][(i-1)%m+1]  ??????
+n=5,m=3
+i=10
+- - -..-
+- -....-
+   a[i][j]
+
+m=8, n=6
+=====
+fie d=cmmdc(m,n)
+nrpatrate=m*n/(d*d)
+nr_taieturi=m/d-1+n/d-1
+
+
+culegerea paralela45---teste 16-20+...exercitii din TM

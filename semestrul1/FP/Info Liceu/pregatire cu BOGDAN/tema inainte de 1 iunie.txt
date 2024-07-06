@@ -1,0 +1,62 @@
+1.Un nr este x-ordonat daca are cifre in ordine crescatoare si diferenta intre oricare 2 cifre consecutive este egala cu x
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.txt");
+
+int main() {
+  int x, v[1001] = {0}, cnt = 1;
+  cin >> x;
+  int nr = 1, prim = 1;
+  while (nr + x <= 9) {
+    int cif = prim + x;
+    while (cif <= 9) {
+      nr = nr * 10 + cif;
+      v[cnt++] = nr;
+      cif += x;
+    }
+    prim++;
+    nr = prim;
+  }
+  for (int i = 1; i < cnt; i++)
+    cout << v[i] << " ";
+  return 0;
+}
+
+
+2. Sa se afiseze toate palindroamele de 7 cifre cu prop ca suma dintre primele 2 cifre este egala cu un s dat
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.txt");
+
+int main() {
+  int s;
+  cin>>s;
+  for(int i=1; i<=s; i++)
+    {
+      int nr1=0;
+      int j=s-i;
+      nr1=j+i*10;
+      for(int x=0; x<=9; x++)
+        {
+          for(int y=0; y<=9; y++)
+            {
+              int aux=nr1*10+x;
+              aux=aux*10+y;
+              aux=aux*10+x;
+              aux=aux*10+j;
+              aux=aux*10+i;
+              cout<<aux<<" ";
+            }
+          cout<<endl;
+        }
+      
+    }
+  return 0;
+}
+
+
+sesiunea speciala problema III.3??
+https://www.edupedu.ro/bac-2023-sesiunea-speciala-subiectele-si-baremele-pentru-informatica-fizica-chimie-biologie-si-anatomie-publicate-de-ministerul-educatiei/
+
+
+

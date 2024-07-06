@@ -1,0 +1,196 @@
+#3973 20 de pct pe pbinfo
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+double ln (float x, double st, double dr)
+{
+    if(abs(st-dr)<0.000001)
+        return (st+dr)/2;
+    else
+    {
+        double a=(st+dr)/2;
+        if(pow(2.71828182845904523536, a)>x)
+            return ln(x, st, a);
+          else
+            return ln(x, a, dr);
+    }
+}
+
+
+int main() {
+    double n;
+    cin>>n;
+    cout<<fixed<<setprecision(6)<<ln(n, 0, n);
+
+}
+
+
+
+
+
+
+
+
+#1865 20 de puncte pe pbinfo
+#include <iostream>
+
+using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin ("summit.in");
+ofstream fout("summit.out");
+long long int v[1000001], n;
+
+int dei (int x, int st, int dr)
+{
+    if(st>dr)
+        return 0;
+   
+     int m=(st+dr)/2;
+     if(x==v[m])
+				return m;
+			 else
+				if(x<v[m])
+          return dei(x, st, m-1);
+         else
+          return dei(x, m+1, dr);
+
+}
+void solutie()
+{
+  int x;
+  fin>>n>>x;v[1]=x;
+  fout<<1<<'\n';
+  for(int i=2; i<=n ; i++)
+    {
+      fin>>x;
+      v[i]=v[i-1]+x;
+      fout<<dei(x, 1, i-1)<<'\n';
+    }
+  
+}
+int main()
+{
+    solutie();
+    fin.close();
+    fout.close();
+    return 0;
+}
+
+
+
+
+
+
+backtracking permutari
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("permutari.in");
+ofstream fout("permutari.out");
+int v[10], n,used[101];
+void scrie() {
+  for (int i = 1; i <= n; i++)
+    fout << v[i] << " ";
+  fout << "\n";
+}
+
+void Back(int k) {
+  if (k == n + 1) {
+    scrie();
+    return;
+  }
+	for (int i = 1; i <= n; i++) 
+		if(!used[i])
+	{ used[i]=1;   
+		v[k] = i;
+    Back(k + 1);
+		used[i]=0;
+  }
+}
+int main() {
+  fin>>n;
+	Back(1);
+  fin.close();
+  fout.close();
+  return 0;
+}
+
+
+
+
+
+COMBINARI
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("combinari.in");
+ofstream fout("combinari.out");
+int v[10], n,used[101],m;
+void scrie() {
+  for (int i = 1; i <= m; i++)
+    fout << v[i] << " ";
+  fout << "\n";
+}
+
+void Back(int k) {
+  if (k == m + 1) {
+    scrie();
+    return;
+  }
+
+	for (int i =v[k-1]+1; i <= n; i++) 
+		if(!used[i])
+	{ used[i]=1;   
+		v[k] = i;
+    Back(k + 1);
+		used[i]=0;
+  }
+}
+int main() {
+  fin>>n>>m;
+	Back(1);
+  fin.close();
+  fout.close();
+  return 0;
+}
+
+
+
+
+
+
+aranjamente
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("aranjamente.in");
+ofstream fout("aranjamente.out");
+int v[10], n,used[101],m;
+void scrie() {
+  for (int i = 1; i <= m; i++)
+    fout << v[i] << " ";
+  fout << "\n";
+}
+
+void Back(int k) {
+  if (k == m + 1) {
+    scrie();
+    return;
+  }
+	for (int i = 1; i <= n; i++) 
+		if(!used[i])
+	{ used[i]=1;   
+		v[k] = i;
+    Back(k + 1);
+		used[i]=0;
+  }
+}
+int main() {
+  fin>>n>>m;
+	Back(1);
+  fin.close();
+  fout.close();
+  return 0;
+}
+
+

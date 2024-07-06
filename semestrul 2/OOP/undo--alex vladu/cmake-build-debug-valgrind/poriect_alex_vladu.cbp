@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="poriect_alex_vladu"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/c/Users/Admin/Desktop/poriect alex vladu/cmake-build-debug-valgrind"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="poriect_alex_vladu">
+				<Option output="/mnt/c/Users/Admin/Desktop/poriect alex vladu/cmake-build-debug-valgrind/poriect_alex_vladu" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Admin/Desktop/poriect alex vladu/cmake-build-debug-valgrind"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Admin/Desktop/poriect alex vladu/."/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 poriect_alex_vladu"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="poriect_alex_vladu/fast">
+				<Option output="/mnt/c/Users/Admin/Desktop/poriect alex vladu/cmake-build-debug-valgrind/poriect_alex_vladu" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Admin/Desktop/poriect alex vladu/cmake-build-debug-valgrind"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Admin/Desktop/poriect alex vladu/."/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 poriect_alex_vladu/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Users/Admin/Desktop/poriect alex vladu/cmake-build-debug-valgrind"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/Users/Admin/Desktop/poriect alex vladu/cmake-build-debug-valgrind"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/Desktop/poriect\ alex\ vladu/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/c/Users/Admin/Desktop/poriect alex vladu/array.c">
+			<Option target="poriect_alex_vladu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/Desktop/poriect alex vladu/array.h">
+			<Option target="poriect_alex_vladu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/Desktop/poriect alex vladu/controller.c">
+			<Option target="poriect_alex_vladu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/Desktop/poriect alex vladu/controller.h">
+			<Option target="poriect_alex_vladu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/Desktop/poriect alex vladu/domain.c">
+			<Option target="poriect_alex_vladu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/Desktop/poriect alex vladu/domain.h">
+			<Option target="poriect_alex_vladu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/Desktop/poriect alex vladu/main.c">
+			<Option target="poriect_alex_vladu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/Desktop/poriect alex vladu/repository.c">
+			<Option target="poriect_alex_vladu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/Desktop/poriect alex vladu/repository.h">
+			<Option target="poriect_alex_vladu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/Desktop/poriect alex vladu/ui.c">
+			<Option target="poriect_alex_vladu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/Desktop/poriect alex vladu/ui.h">
+			<Option target="poriect_alex_vladu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/Desktop/poriect alex vladu/validator.c">
+			<Option target="poriect_alex_vladu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/Desktop/poriect alex vladu/validator.h">
+			<Option target="poriect_alex_vladu"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/Desktop/poriect alex vladu/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

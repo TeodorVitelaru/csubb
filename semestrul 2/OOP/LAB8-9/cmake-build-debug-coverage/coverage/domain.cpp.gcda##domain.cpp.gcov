@@ -1,0 +1,79 @@
+        -:    0:Source:D:/facultate/semestrul 2/OOP/LAB8-9/domain.cpp
+        -:    0:Graph:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\domain.cpp.gcno
+        -:    0:Data:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\domain.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <iostream>
+        -:    2:#include "domain.h"
+        -:    3:
+function _ZNK6Oferta12get_denumireB5cxx11Ev called 212 returned 100% blocks executed 100%
+      212:    4:string Oferta::get_denumire() const {
+      212:    5:    return this->denumire;
+      212:    5-block  0
+call    0 returned 212
+        -:    6:}
+        -:    7:
+function _ZNK6Oferta14get_destinatieB5cxx11Ev called 125 returned 100% blocks executed 100%
+      125:    8:string Oferta::get_destinatie() const {
+      125:    9:    return this->destinatie;
+      125:    9-block  0
+call    0 returned 125
+        -:   10:}
+        -:   11:
+function _ZNK6Oferta7get_tipB5cxx11Ev called 57 returned 100% blocks executed 100%
+       57:   12:string Oferta::get_tip() const {
+       57:   13:    return this->tip;
+       57:   13-block  0
+call    0 returned 57
+        -:   14:}
+        -:   15:
+function _ZNK6Oferta8get_pretEv called 41 returned 100% blocks executed 100%
+       41:   16:int Oferta::get_pret() const {
+       41:   17:    return this->pret;
+       41:   17-block  0
+        -:   18:}
+        -:   19:
+function _ZN6Oferta12set_denumireENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:   20:void Oferta::set_denumire(string _denumire) {
+        1:   21:    denumire = std::move(_denumire);
+        1:   21-block  0
+call    0 returned 1
+call    1 returned 1
+        1:   22:}
+        -:   23:
+function _ZN6Oferta14set_destinatieENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:   24:void Oferta::set_destinatie(string _destinatie) {
+        1:   25:    destinatie = std::move(_destinatie);
+        1:   25-block  0
+call    0 returned 1
+call    1 returned 1
+        1:   26:}
+        -:   27:
+function _ZN6Oferta7set_tipENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 6 returned 100% blocks executed 100%
+        6:   28:void Oferta::set_tip(basic_string<char> _tip) {
+        6:   29:    tip = std::move(_tip);
+        6:   29-block  0
+call    0 returned 6
+call    1 returned 6
+        6:   30:}
+        -:   31:
+function _ZN6Oferta8set_pretEi called 6 returned 100% blocks executed 100%
+        6:   32:void Oferta::set_pret(int _pret) {
+        6:   33:   pret = _pret;
+        6:   34:}
+        -:   35:
+function _ZlsRSoRK6Oferta called 1 returned 100% blocks executed 100%
+        1:   36:ostream& operator<<(ostream& stream, const Oferta& of)
+        -:   37:{
+        1:   38:    stream << "Denumire:" << of.denumire <<"|| Destinatie:"<<of.destinatie << "|| Tip:"<<of.tip<<"|| Pret:"<<of.pret<<endl;
+        1:   38-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 1
+        1:   39:    return stream;
+        -:   40:}

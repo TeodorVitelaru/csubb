@@ -1,0 +1,182 @@
+        -:    0:Source:D:/facultate/semestrul 2/OOP/LAB8-9/repo.h
+        -:    0:Graph:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\main.cpp.gcno
+        -:    0:Data:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "utils.h"
+        -:    2:#include <iostream>
+        -:    3:#include <vector>
+        -:    4:#include <ostream>
+        -:    5:#include <string>
+        -:    6:using namespace std;
+        -:    7:
+        -:    8:#ifndef LAB6_REPO_H
+        -:    9:#define LAB6_REPO_H
+        -:   10:
+        -:   11:typedef Oferta ElemType;
+        -:   12:
+        -:   13:class RepoAbstract
+        -:   14:{
+        -:   15:    public:
+function _ZN12RepoAbstractC2Ev called 18 returned 100% blocks executed 100%
+       18:   16:    RepoAbstract() = default;
+        -:   17:    RepoAbstract (const RepoAbstract& ot) = delete;
+        -:   18:    virtual void store(const Oferta& oferta) = 0;
+        -:   19:    virtual void del(const Oferta& of) = 0;
+        -:   20:    virtual void modify(const Oferta& oferta) = 0;
+        -:   21:    virtual const vector<Oferta>& get_all_oferte() const = 0;
+        -:   22:    virtual const Oferta& find(string denumire, string destinatie) = 0;
+        -:   23:    virtual bool exists(const Oferta& oferta) = 0;
+function _ZN12RepoAbstractD2Ev called 17 returned 100% blocks executed 100%
+       17:   24:    virtual ~RepoAbstract() = default;
+        -:   25:};
+        -:   26:
+        -:   27:class Repo : public RepoAbstract
+        -:   28:{
+        -:   29:private:
+        -:   30:    vector<Oferta> allOferte;
+        -:   31:    friend class Service;
+        -:   32:public:
+function _ZN4RepoC2Ev called 2 returned 100% blocks executed 100%
+        2:   33:    Repo() = default;
+        2:   33-block  0
+call    0 returned 2
+call    1 returned 2
+        -:   34:    Repo(const Repo& ot) = delete;
+        -:   35:
+        -:   36:    /*
+        -:   37:     * Functia de stoare a ofertei
+        -:   38:     * oferta: oferta care se stocheaza
+        -:   39:     * return: -
+        -:   40:     */
+        -:   41:    void store(const Oferta& oferta) override;
+        -:   42:
+        -:   43:    /*
+        -:   44:     * Functia de sterfere a ofertei
+        -:   45:     * poz: pozitia ofertei ce urmeaza a fi stearsa
+        -:   46:     * return: -
+        -:   47:     */
+        -:   48:    void del(const Oferta& of) override;
+        -:   49:
+        -:   50:    /*
+        -:   51:     * Functia de modificare a ofertei
+        -:   52:     * oferta: oferta cu care se modifica
+        -:   53:     * return: -
+        -:   54:     */
+        -:   55:    void modify(const Oferta& oferta) override;
+        -:   56:
+        -:   57:    /*
+        -:   58:     * functia de returnare a ofertelor
+        -:   59:     * return: lista de oferte
+        -:   60:     */
+        -:   61:    const vector<Oferta>& get_all_oferte() const override;
+        -:   62:
+        -:   63:    /*
+        -:   64:     * functia de cautare a unei oferte
+        -:   65:     * denumire: denumirea dupa care se cauta
+        -:   66:     * destinatie: destinatia dupa care se cauta
+        -:   67:     * return: oferta gasita
+        -:   68:     */
+        -:   69:    const Oferta& find(string denumire, string destinatie) override;
+        -:   70:
+        -:   71:    /*
+        -:   72:     * functie de verificare daca exista o oferta
+        -:   73:     * oferta: oferta care se cauta
+        -:   74:     * return: true sau false
+        -:   75:     */
+        -:   76:    bool exists(const Oferta& oferta) override;
+        -:   77:
+        -:   78:};
+        -:   79:
+        -:   80:class RepoFile : public Repo
+        -:   81:{
+        -:   82:private:
+        -:   83:    string filename;
+        -:   84:    void loadFromFile();
+        -:   85:    void writeToFile();
+        -:   86:    public:
+        -:   87:    /*
+        -:   88:     * constructor pt RepoFile
+        -:   89:     */
+function _ZN8RepoFileC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 100% blocks executed 62%
+        2:   90:    explicit RepoFile(string filename) : Repo(), filename{filename}
+        2:   90-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        -:   91:    {
+        2:   92:        loadFromFile();
+        2:   92-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   93:    }
+        2:   93-block  0
+    $$$$$:   93-block  1
+call    0 never executed
+    $$$$$:   93-block  2
+call    1 never executed
+        -:   94:
+        -:   95:    /*
+        -:   96:     * functie de stocare a unei oferte
+        -:   97:     * oferta: oferta care se stocheaza
+        -:   98:     * return: -
+        -:   99:     */
+function _ZN8RepoFile5storeERK6Oferta called 3 returned 100% blocks executed 100%
+        3:  100:    void store(const Oferta& oferta) override
+        -:  101:    {
+        3:  102:        Repo::store(oferta);
+        3:  102-block  0
+call    0 returned 3
+        3:  103:        writeToFile();
+call    0 returned 3
+        3:  104:    }
+        -:  105:
+        -:  106:    /*
+        -:  107:     * functie de stergere a unei oferte
+        -:  108:     * of: oferta care se sterge
+        -:  109:     * return: -
+        -:  110:     */
+function _ZN8RepoFile3delERK6Oferta called 1 returned 100% blocks executed 100%
+        1:  111:    void del(const Oferta& of) override
+        -:  112:    {
+        1:  113:        Repo::del(of);
+        1:  113-block  0
+call    0 returned 1
+        1:  114:        writeToFile();
+call    0 returned 1
+        1:  115:    }
+        -:  116:
+        -:  117:    /*
+        -:  118:     * functie de modificare a unei oferte
+        -:  119:     * oferta: oferta care se modifica
+        -:  120:     * return: -
+        -:  121:     */
+function _ZN8RepoFile6modifyERK6Oferta called 1 returned 100% blocks executed 100%
+        1:  122:    void modify(const Oferta& oferta) override
+        -:  123:    {
+        1:  124:        Repo::modify(oferta);
+        1:  124-block  0
+call    0 returned 1
+        1:  125:        writeToFile();
+call    0 returned 1
+        1:  126:    }
+        -:  127:};
+        -:  128:
+        -:  129:/*
+        -:  130: * clasa de exceptii pt repo
+        -:  131: */
+        -:  132:class RepoException
+        -:  133:{
+        -:  134:private:
+        -:  135:    string errorMsg;
+        -:  136:public:
+        -:  137:    RepoException(string errorMsg) :errorMsg{ errorMsg } {};
+        -:  138:    string getErrorMessage()
+        -:  139:    {
+        -:  140:        return this->errorMsg;
+        -:  141:    }
+        -:  142:};
+        -:  143:
+        -:  144:
+        -:  145:#endif //LAB6_REPO_H

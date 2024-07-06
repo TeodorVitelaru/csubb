@@ -1,0 +1,105 @@
+# ninja log v5
+3	324	7378223714343245	untitled2_autogen/timestamp	5559b065ec7ffe72
+332	4146	7378223753366542	CMakeFiles/untitled2.dir/main.cpp.obj	cd3736eef0511436
+3	324	7378223714343245	untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+3	324	7378223714343245	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/timestamp	5559b065ec7ffe72
+4151	4894	7378223756797200	untitled2.exe	dff9b531d06e92fe
+3	324	7378223714343245	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+325	496	7378223716693266	CMakeFiles/untitled2.dir/untitled2_autogen/mocs_compilation.cpp.obj	900c74223d4d39f0
+39	305	7378252735458324	untitled2_autogen/timestamp	5559b065ec7ffe72
+39	305	7378252735458324	untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+39	305	7378252735458324	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/timestamp	5559b065ec7ffe72
+39	305	7378252735458324	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+338	1256	7378252744988349	CMakeFiles/untitled2.dir/domain.cpp.obj	4b33dbaed36faea5
+328	1409	7378252746540549	CMakeFiles/untitled2.dir/teste/teste.cpp.obj	99e8e67c3f776c19
+359	1517	7378252747616721	CMakeFiles/untitled2.dir/service.cpp.obj	71a8d6e1171c9808
+319	1781	7378252750252895	CMakeFiles/untitled2.dir/repo.cpp.obj	c3fd161497c79410
+20	223	7378265852097772	untitled2_autogen/timestamp	5559b065ec7ffe72
+20	223	7378265852097772	untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+20	223	7378265852097772	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/timestamp	5559b065ec7ffe72
+20	223	7378265852097772	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+275	2012	7378265869947741	CMakeFiles/untitled2.dir/service.cpp.obj	71a8d6e1171c9808
+268	2384	7378265873657773	CMakeFiles/untitled2.dir/repo.cpp.obj	c3fd161497c79410
+227	6410	7378265913953832	CMakeFiles/untitled2.dir/main.cpp.obj	cd3736eef0511436
+282	6500	7378265914864168	CMakeFiles/untitled2.dir/GUI.cpp.obj	5a57efa53150620e
+8	137	7378266394513912	untitled2_autogen/timestamp	5559b065ec7ffe72
+8	137	7378266394513912	untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+8	137	7378266394513912	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/timestamp	5559b065ec7ffe72
+8	137	7378266394513912	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+141	887	7378266402023310	CMakeFiles/untitled2.dir/service.cpp.obj	71a8d6e1171c9808
+887	1877	7378266404923365	untitled2.exe	84af5ba6add4b35a
+9	161	7378267179429517	untitled2_autogen/timestamp	5559b065ec7ffe72
+9	161	7378267179429517	untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+9	161	7378267179429517	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/timestamp	5559b065ec7ffe72
+9	161	7378267179429517	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+165	4403	7378267221820364	CMakeFiles/untitled2.dir/main.cpp.obj	cd3736eef0511436
+173	4473	7378267222530410	CMakeFiles/untitled2.dir/GUI.cpp.obj	5a57efa53150620e
+4474	5104	7378267226640371	untitled2.exe	84af5ba6add4b35a
+10	123	7378268612720657	untitled2_autogen/timestamp	5559b065ec7ffe72
+10	123	7378268612720657	untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+10	123	7378268612720657	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/timestamp	5559b065ec7ffe72
+10	123	7378268612720657	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+151	998	7378268621400678	CMakeFiles/untitled2.dir/service.cpp.obj	71a8d6e1171c9808
+128	1241	7378268623890746	CMakeFiles/untitled2.dir/repo.cpp.obj	c3fd161497c79410
+135	4169	7378268653160668	CMakeFiles/untitled2.dir/main.cpp.obj	cd3736eef0511436
+143	4299	7378268654470668	CMakeFiles/untitled2.dir/GUI.cpp.obj	5a57efa53150620e
+4299	4896	7378268658210655	untitled2.exe	84af5ba6add4b35a
+9	140	7378269491298055	untitled2_autogen/timestamp	5559b065ec7ffe72
+9	140	7378269491298055	untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+9	140	7378269491298055	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/timestamp	5559b065ec7ffe72
+9	140	7378269491298055	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+144	3689	7378269526788031	CMakeFiles/untitled2.dir/GUI.cpp.obj	5a57efa53150620e
+3690	4193	7378269529508027	untitled2.exe	84af5ba6add4b35a
+9	150	7378271256677212	untitled2_autogen/timestamp	5559b065ec7ffe72
+9	150	7378271256677212	untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+9	150	7378271256677212	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/timestamp	5559b065ec7ffe72
+9	150	7378271256677212	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+155	3465	7378271289806901	CMakeFiles/untitled2.dir/GUI.cpp.obj	5a57efa53150620e
+3465	4112	7378271294006837	untitled2.exe	84af5ba6add4b35a
+9	120	7378271441055689	untitled2_autogen/timestamp	5559b065ec7ffe72
+9	120	7378271441055689	untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+9	120	7378271441055689	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/timestamp	5559b065ec7ffe72
+9	120	7378271441055689	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+123	3070	7378271470561530	CMakeFiles/untitled2.dir/GUI.cpp.obj	5a57efa53150620e
+3071	3545	7378271473261170	untitled2.exe	84af5ba6add4b35a
+12	146	7378271741379558	untitled2_autogen/timestamp	5559b065ec7ffe72
+12	146	7378271741379558	untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+12	146	7378271741379558	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/timestamp	5559b065ec7ffe72
+12	146	7378271741379558	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+174	1338	7378271753129579	CMakeFiles/untitled2.dir/service.cpp.obj	71a8d6e1171c9808
+158	2029	7378271759889579	CMakeFiles/untitled2.dir/repo.cpp.obj	c3fd161497c79410
+150	5442	7378271794309568	CMakeFiles/untitled2.dir/main.cpp.obj	cd3736eef0511436
+166	5613	7378271796039607	CMakeFiles/untitled2.dir/GUI.cpp.obj	5a57efa53150620e
+5613	6234	7378271799729911	untitled2.exe	84af5ba6add4b35a
+16	435	7378271967303710	untitled2_autogen/timestamp	5559b065ec7ffe72
+16	435	7378271967303710	untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+16	435	7378271967303710	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/timestamp	5559b065ec7ffe72
+16	435	7378271967303710	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+454	2590	7378271989039100	CMakeFiles/untitled2.dir/repo.cpp.obj	c3fd161497c79410
+473	2594	7378271989069129	CMakeFiles/untitled2.dir/service.cpp.obj	71a8d6e1171c9808
+443	6075	7378272024039093	CMakeFiles/untitled2.dir/main.cpp.obj	cd3736eef0511436
+463	6193	7378272025189169	CMakeFiles/untitled2.dir/GUI.cpp.obj	5a57efa53150620e
+6193	6709	7378272028259442	untitled2.exe	84af5ba6add4b35a
+14	170	7378272455273549	untitled2_autogen/timestamp	5559b065ec7ffe72
+14	170	7378272455273549	untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+14	170	7378272455273549	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/timestamp	5559b065ec7ffe72
+14	170	7378272455273549	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+195	1348	7378272466983549	CMakeFiles/untitled2.dir/service.cpp.obj	71a8d6e1171c9808
+186	1563	7378272469203546	CMakeFiles/untitled2.dir/repo.cpp.obj	c3fd161497c79410
+176	5424	7378272507809694	CMakeFiles/untitled2.dir/main.cpp.obj	cd3736eef0511436
+204	5700	7378272510579722	CMakeFiles/untitled2.dir/GUI.cpp.obj	5a57efa53150620e
+5700	6261	7378272513819678	untitled2.exe	84af5ba6add4b35a
+12	135	7378272989794815	untitled2_autogen/timestamp	5559b065ec7ffe72
+12	135	7378272989794815	untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+12	135	7378272989794815	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/timestamp	5559b065ec7ffe72
+12	135	7378272989794815	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+139	948	7378272997914768	CMakeFiles/untitled2.dir/repo.cpp.obj	c3fd161497c79410
+948	1441	7378273000684798	untitled2.exe	84af5ba6add4b35a
+10	143	7378274218562878	untitled2_autogen/timestamp	5559b065ec7ffe72
+10	143	7378274218562878	untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+10	143	7378274218562878	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/timestamp	5559b065ec7ffe72
+10	143	7378274218562878	D:/facultate/semestrul 2/OOP/untitled2/cmake-build-debug/untitled2_autogen/mocs_compilation.cpp	5559b065ec7ffe72
+157	944	7378274226572869	CMakeFiles/untitled2.dir/service.cpp.obj	71a8d6e1171c9808
+149	4142	7378274258527278	CMakeFiles/untitled2.dir/main.cpp.obj	cd3736eef0511436
+165	4320	7378274260287273	CMakeFiles/untitled2.dir/GUI.cpp.obj	5a57efa53150620e
+4320	4800	7378274263087264	untitled2.exe	84af5ba6add4b35a

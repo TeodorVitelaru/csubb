@@ -1,0 +1,326 @@
+#1828 trebuie sa ma uit din nou peste
+#include <iostream>
+
+using namespace std;
+void citire (int a[], int &n)
+{
+    cin>>n;
+    for(int i=1; i<-n; i++)
+        cin>>a[i];
+}
+void afisare (int a[], int n)
+{
+    for(int i=1; i<=n; i++)
+        cout<<a[i]<<" ";
+}
+void sortare (int a[], n)
+{
+    int aux=0;
+    for(int i=1; i<n; i++)
+    {
+        for(int j=i+1; j<=n; j++)
+            if(a[i]<a[j])
+        {
+           aux=a[i];
+           a[i]=a[j];
+           a[j]=aux; 
+        }
+    }
+        
+}
+int main()
+{
+    int a[1000], n;
+    citire(a, n);
+    
+
+    return 0;
+}
+
+
+#3343 prea grea
+
+
+#915
+#include <iostream>
+
+using namespace std;
+void citire (int a[], int &n)
+{
+    cin>>n;
+    for(int i=1; i<=n; i++)
+        cin>>a[i];
+}
+void afisare (int a[], int n)
+{
+    for(int i=1; i<=n; i++)
+        cout<<a[i]<<" ";
+}
+bool palindrom (int c)
+{
+    int aux=c;
+    int b=0;
+    while (c!=0)
+    {
+        b=b*10+c%10;
+        c=c/10;
+    }
+    return aux==b;
+}
+void eliminare (int a[], int &n, int &k)
+{
+    for(int i=k; i<n; i++)
+        a[i]=a[i+1];
+    n=n-1;
+    k=k-1;
+}
+int main()
+{
+    int a[1001], n;
+    citire(a, n);
+    for(int i=1; i<=n; i++)
+        if(palindrom(a[i]))
+            eliminare(a, n, i);
+    afisare (a, n);
+    return 0;
+}
+
+#913
+#include <iostream>
+
+using namespace std;
+ void citire (int a[], int &n)
+{
+    cin>>n;
+    for(int i=1; i<=n; i++)
+        cin>>a[i];
+}
+void afisare (int a[], int n)
+{
+    for(int i=1; i<=n; i++)
+        cout<<a[i]<<" ";
+}
+bool prim (int n)
+{ if(n==0 || n==1) return false;
+  for(int i=2;i*i<=n;i++)
+    if(n%i==0) return false;
+  return true;
+}
+int urmatorul_prim (int a)
+{
+    if(a == 0 || a == 1)
+        return 2;
+    while (!prim(a))
+    {
+       a++;
+    }
+    return a;
+}
+void inloc (int a[], int i, int nr)
+{
+    a[i]=nr;
+}
+int main()
+{
+    int a[1000], n;
+    citire(a, n);
+    for(int i=1; i<=n; i++)
+       {
+            if(!prim(a[i]))
+                inloc(a, i, urmatorul_prim(a[i]));
+       }
+    afisare(a, n);
+    return 0;
+}
+
+#3938 facut in clasa
+#include <iostream>
+#include<cmath>
+
+using namespace std;
+void generatoare (int n)
+{
+    int cnt=0;
+    for(int i=2; i<=n; i=i+2)
+    {
+            for(int j=n; j>=0; j--)
+             {
+                 double c=i/j;
+                 if(i*j+floor(c)==n)
+                   {
+                       cout<<i<<"-"<<j<<" ";
+                       cnt=1;
+                   }
+             }
+    }
+    if(cnt==0)
+        cout<<"nu exista";
+}
+int main()
+{
+    int n;
+    cin>>n;
+    generatoare(n);
+
+
+    return 0;
+}
+
+
+#3205 nu inteleg nimic
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("calcfunct.in");
+ofstream fout("calcfunct.out");
+int pmax(int a[], int n){
+    int maxi = 0, pmaxi = 1;
+    for(int i = 1; i <= n; ++i)
+        if(a[i] > maxi)
+            maxi = a[i], pmaxi = i;
+    return pmaxi;
+}
+void pmin(int a[], int n, int &pmini){
+    int pozz = 0;
+    for(int i = 1; i <= n; ++i)
+        if(a[i] < pmini)
+            pmini = a[i], pozz = i;
+    pmini = pozz;
+}
+void inter(int& pmini, int& pmaxi){
+    swap(pmini, pmaxi);
+}
+void solve(int a[], int pozInit, int pozFin){
+    for(int i = pozInit; i >= pozFin; --i)
+        fout << a[i] << " ";
+}
+int main()
+{
+    int n, a[101], pozInit, pozFin;
+    cin >> n;
+    for(int i = 1; i <= n; ++i)
+        fin >> a[i];
+    pozFin = pmax(a, n);
+    pozInit = 1000000000;
+    pmin(a, n, pozInit);
+    if(pozInit > pozFin)
+        inter(pozInit, pozFin);
+    solve(a, pozInit, pozFin);
+    return 0;
+}
+
+
+#1664
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("palindrom_ciclic.in");
+ofstream fout("palindrom_ciclic.out");
+int v[2001] , n;
+bool palindrom(int poz)
+{
+    for(int i = poz, j = poz + n - 1 ; i < j ; ++i , j--)
+        if(v[i]!=v[j])
+            return 0;
+    return 1;
+}
+int main()
+{
+    fin >> n;
+    for(int i = 0 ; i < n ; ++i)
+        fin >> v[i] , v[i+n]=v[i];
+    int cnt=0 , ok=0;
+    for(int i = 0 ; i < n ; ++i)
+    {
+        if(palindrom(i))
+        {
+            fout << "DA" << ' ' << cnt , ok++;
+            break;
+        }
+        cnt++;
+    }
+    if(ok==0)
+    fout << "NU";
+    return 0;
+}
+
+#2817
+bool oky(int a)
+{
+    bool ok = true;
+    while(a > 9)
+    {
+        if(a % 10 != (a/10)%10)
+            ok=false;
+        a/=10;
+    }
+    return ok;
+}
+void identice(int a , int b)
+{
+    int cnt = 0;
+    for(int i = a ; i <= b ; ++i)
+        if(oky(i))
+            cout << i << ' ' , cnt++;
+    if(!cnt)
+        cout << "nu exista";
+}
+
+
+#2842
+#include <bits/stdc++.h>
+using namespace std;
+void triplete (int n)
+{
+    for(int x=0; x<=n-2; x++)
+    {
+        for(int y=x+1; y<=n-1; y++)
+        {
+            for(int z=y+1; z*y<=n; z++)
+                if(x*y+y*z==n)
+            {
+                cout<<"("<<x<<","<<y<<","<<z<<")";
+                cout<<endl;
+            }
+        }
+    }
+}
+int main()
+{
+    int n;
+    cin>>n;
+    triplete(n);
+    return 0;
+}
+
+
+#2811 80 puncte
+#include <bits/stdc++.h>
+using namespace std;
+void triplete (int a, int b, int c)
+{
+    int cnt=0;
+    for(int x=a; x<=b; x++)
+    {
+        for(int y=a; y<=b; y++)
+            if(x<=y)
+             {
+                 for(int z=a; z<=b; z++)
+                    if(y<=z)
+                        if(x+y+z==c)
+                        {
+                            cout<<"{"<<x<<","<<y<<","<<z<<"}";
+                            cout<<endl;
+                            cnt=1;
+                        }
+             }
+    }
+    if(cnt==0)
+        cout<<"nu exista";
+}
+int main()
+{
+    int a, b, c;
+    cin>>a>>b>>c;
+    triplete(a, b, c);
+    return 0;
+}
+

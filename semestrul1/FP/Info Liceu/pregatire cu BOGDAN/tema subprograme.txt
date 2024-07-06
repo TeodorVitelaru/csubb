@@ -1,0 +1,299 @@
+Agust 2022
+#include <iostream>
+
+using namespace std;
+
+void schimb (int &n, int x, int p)
+{
+    int cnt=0, aux=0, putere=10;
+    while(!aux)
+    {
+        if(cnt==p)
+        {
+            aux=(n/putere*10+x)*putere/10+n%(putere/10);
+            cnt++;
+        }
+        putere=putere*10;
+        cnt++;
+    }
+    n=aux;
+}
+int main()
+{
+     int n, x, p;
+     cin>>n;
+     schimb(n, 6, 3);
+     cout<<n;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+iunie 2022
+#include <iostream>
+
+using namespace std;
+
+void secventa(int &n)
+{
+    int p=1;
+    while(n>p*10)
+    {
+        if((n/p)%100==22)
+            n=n/(p*10)*10*p+n%p;
+        p*=10;
+    }
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    secventa(n);
+    cout<<n;
+
+    return 0;
+}
+
+
+
+
+
+
+mai 2022
+#include <iostream>
+
+using namespace std;
+
+void patrate (int &x, int &y, int n)
+{
+    x=0; y=0;
+    int cnt=0;
+    int d=1;
+    for(d=1; d*d<n; d++)
+        if(n%d==0) cnt+=2;
+    if(d*d==n) cnt++;
+    if(cnt%2==1 && cnt!=3)
+    {
+       for(int i=2; i<=d/2; i++)
+         if(d%i==0)
+          {
+            x=i;
+            y=d/i; return;
+            }
+    }
+
+
+}
+int main()
+{
+    int n, x, y;
+    cin>>n;
+    patrate(x, y, n);
+     cout<<x<<" "<<y;
+    return 0;
+}
+
+
+
+
+
+
+martie 2022    ??????? nu intelg dc nu mi afiseaza nimic
+#include <iostream>
+
+using namespace std;
+
+void rest (int x, int y, int n, int &k)
+{
+    int m=x*y,r,z;
+	  while(y)
+	    {r=x%y;x=y;y=r;}
+	  m=m/x;
+    z=(n-2)/m*m;
+    if(z+2>=1 && z+2<=n)
+	      k=z+2;
+	  else k=0;
+	}
+
+int main()
+{
+    int k, n;
+    rest(10, 101, 3000, k);
+    cout<<k;
+    return 0;
+}
+
+
+
+
+
+
+august 2021
+#include <iostream>
+
+using namespace std;
+
+void cuburi (int n)
+{
+    for(int i=n; i>=1; i--)
+      {
+          int aux=i*i*i;
+          cout<<aux<<" ";
+
+      }
+
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    cuburi(n);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+iunie 2021
+#include <iostream>
+
+using namespace std;
+
+void divPrim (int n, int &s)
+{
+    s=0;
+    for(int i=2; i<=n; i++)
+    {
+        int p=0;
+        while(n%i==0)
+        {
+            p++;
+            n=n/i;
+        }
+        if(p%2==1)
+          s+=i;
+    }
+
+}
+
+int main()
+{
+    int n, s;
+    cin>>n;
+    divPrim(n, s);
+    cout<<s;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+mai 2021
+#include <iostream>
+
+using namespace std;
+
+void imog (int x, int y, int &rez)
+{
+    int cnt1=0, cnt2=0, p=1;
+   while(x)
+       if(x%2)
+       {
+          cnt1=cnt1*10+x%10;
+          x=x/10;
+       }
+       else
+        x/=10;
+    while(y)
+        if(y%2)
+        {
+            cnt2=y%10*p+cnt2;
+            p*=10;
+            y=y/10;
+        }
+        else
+        {
+            y=y/10;
+        }
+    if(cnt1==cnt2)
+        rez=1;
+     else
+        rez=0;
+}
+
+int main()
+{
+   int x, y, rez;
+   cin>>x>>y;
+   imog(x, y, rez);
+   cout<<rez;
+    return 0;
+}
+
+
+
+
+
+
+martie 2021
+#include <iostream>
+
+using namespace std;
+
+int putere (int n)
+{
+    int mini=n, aux;
+    for(int i=2; i<=n; i++)
+    {
+        int p=0;
+        while(n%i==0)
+        {
+            p++;
+            n/=i;
+        }
+        if(p && p<mini)
+          {
+              mini=p;
+              aux=i;
+          }
+
+    }
+    return aux;
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<putere(n);
+
+
+    return 0;
+
+
+
+
+
+
+
+
+FUNCTII CULEGEREA POLI
+

@@ -1,0 +1,233 @@
+=============
+CULEGERE IASI
+=============
+
+
+test 2 prob 3
+=============
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin ("bac.in");
+ofstream fout ("bac.out");
+
+int main() {
+  int v[1000]={0}, n, m, x;
+  fin>>n>>m;
+  for(int i=1; i<=n; i++)
+    {
+      fin>>x; v[x]=-1;
+    }
+  for(int i=1; i<=m; i++)
+    {
+      fin>>x; if(v[x]==0) v[x]=1;
+    }
+  for(int i=1; i<=999; i++)
+    {
+      if(v[i]==1)
+        cout<<i<<" ";
+    }
+  return 0;
+}
+
+
+
+
+test 3 prob 3 ???? nu e ca in rez
+=============
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin ("bac.in");
+ofstream fout ("bac.out");
+
+int main() {
+  int v[82]={0}, n, x, maxi=0;
+  fin>>n;
+  for(int i=1; i<=n; ++i)
+    {fin>>x; int s=0;
+      while(x)
+        {s+=x%10; x/=10;}
+      v[s]++;
+      }
+  for(int i=0; i<82; ++i)
+    maxi += v[i]/2;
+  cout<<maxi;
+    
+  return 0;
+}
+
+
+
+
+
+
+test 4 prob 2
+=============
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin ("bac.in");
+ofstream fout ("bac.out");
+
+int main() {
+  char s[251], cnt[251]="";
+  bool ok=false;
+  cin.getline(s, 251);
+  char *p=strtok(s, " ");
+  while(p)
+    {
+      int nr=strlen(p);
+      char aux[251]="";
+      strcpy(aux, p);
+      if(nr%2==0)
+      {
+        for(int i=0; i<nr/2; ++i)
+          {
+           char ch=p[i];
+            p[i]=p[i+nr/2];
+            p[i+nr/2]=ch;
+          }
+      }
+      if(!ok && strcmp(aux, p)!=0)
+        ok=true;
+      strcat(cnt, p);
+      strcat(cnt, " ");
+      p=strtok(NULL, " ");
+    }
+  if(ok)
+    cout<<cnt;
+  else
+    cout<<"TEXT NEMODIFICAT";
+  return 0;
+}
+
+
+
+
+
+test 4 prob 3
+=============
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin("bac.in");
+ofstream fout("bac.out");
+
+int main() {
+  int v[1000] = {0}, x;
+  while (fin >> x)
+    if (x < 1000)
+      v[x] = 1;
+  for (int i = 1; i <= 900; i++)
+    if (v[i] && v[1000 - i] == 0) {
+      cout << 1000 - i;
+      return 0;
+    }
+  cout << "NU EXISTA";
+  return 0;
+}
+
+
+
+
+
+test 5 prob 2
+=============
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin("bac.in");
+ofstream fout("bac.out");
+
+int main() {
+  char s[1001];
+  cin.getline(s, 101);
+  bool aux=false;
+  char *p=strtok(s, " ");
+  while(p)
+    {
+      int nr=strlen(p);
+      bool ok=true;
+      if(!strchr("aeiou", p[0]) && !strchr("aeiou", p[nr-1]))
+      {
+        for(int i=1; i<nr-1; i++)
+          if(!strchr("aeiou", p[i]))
+            ok=false;
+      }
+      else ok=false;
+      if(ok)
+      {cout<<p<<endl; aux=true;}
+      p=strtok(NULL, " ");
+    }
+  if(!aux)
+    cout<<"nu exista";
+  return 0;
+}
+
+
+
+
+
+test 5 prob 3 ???
+=============
+
+
+
+
+
+
+#2260 dinamica02 !! 0 puncte !!
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+
+int main()
+{
+  long long int n, x, y;
+  cin>>n;
+  x=26;
+  for(int i=2; i<=n; i++)
+    {
+      if(i%3==0) y=(25*x)%777013;
+     else y=(26*x)%777013;
+      x=y;
+    }
+  cout<<x%777013;
+  return 0;
+}
+
+
+
+==============================
+INFO VARIANTA C (https://cdn.discordapp.com/attachments/1016657053399396476/1068204723892666368/Info_VariantaC.pdf)
+==============================
+1. c 
+2. d
+3. ? -- struct
+4. f
+5. c
+6. c
+7. e
+8. b
+9. d
+10. d
+
+
+
+=============================================
+ADMITERE UPB INFORMTICA 2022-07-18 VARIANTA F (https://cdn.discordapp.com/attachments/1016657053399396476/1068204724278530198/Informatica_Ia_2022_varianta_F.pdf)
+=============================================
+1 a
+2.e
+3.d
+4.c
+5.c
+6.d 
+7.f
+8.e
+9.d
+10.e
+
+
+

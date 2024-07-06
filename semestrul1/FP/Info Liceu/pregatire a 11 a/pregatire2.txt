@@ -1,0 +1,73 @@
+FUNCTII- SUBPROGRAME
+Variabila:identificator,valoare,adresa de memorie,tip de date asociat(interval de valori+operatii permise)
+-Transmiterea parametrilor
+TEORIE
+https://www.pbinfo.ro/articole/3666/transmiterea-parametrilor
+https://www.pbinfo.ro/articole/3874/cum-functioneaza-stiva
+https://www.pbinfo.ro/articole/3667/mai-multe-despre-functii
+
+1.PRIN VALOARE
+functia va primi la apel o copie a valorilor parametrilor transmisi prin valoare
+int suma(int n)
+{
+  int s=0;
+  while(n)
+    s+=n%10,n/=10;
+  return s;
+
+}....//in main..
+int n=1234;
+    cout<<suma(n);//10
+    cout<<endl<<n;//1234
+-la apel, parametrul poate fi inlocuit cu o valoare constanta sau o expresie
+===================================
+2.PRIN REFERINTA/ADRESA
+functia va primi adresa de memorie a parametrului transmis prin referinta
+parametrul va fi precedat la definitia functiei de simbolul &(operator de referentiere)
+int suma(int &n)
+{
+  int s=0;
+  while(n)
+    s+=n%10,n/=10;
+  return s;
+
+}....//in main..
+int n=1234;
+    cout<<suma(n);//10
+    cout<<endl<<n;//0
+
+Exemplu
+void swap(int a,int b)
+{ a=a+b;b=a-b;a=a-b;}
+int main()
+{ int a=12,b=5;
+  swap(a,b);
+  cout<<a<<" "<<b;//12 5
+}
+SAU
+void swap(int &a,int &b)
+{ a=a+b;b=a-b;a=a-b;}
+int main()
+{ int a=12,b=5;
+  swap(a,b);
+  cout<<a<<" "<<b;//5 12
+}
+SAU
+void swap(int a,int &b)
+{ a=a+b;b=a-b;a=a-b;}
+int main()
+{ int a=12,b=5;
+  swap(a,b);
+  cout<<a<<" "<<b;//12 12
+}
+OBS: & nu se scrie in fata unei variabile structurate(vector , matrice, sir de caractere)
+transmiterea unei variabile structurate este IMPLICIT  prin referinta
+
+void citire(int &n,int v[])
+{ cin>>n;
+for(int i=1;i<=n;i++)
+  cin>>v[i];
+}
+
+
+

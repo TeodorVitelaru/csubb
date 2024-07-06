@@ -1,0 +1,394 @@
+        -:    0:Source:C:/Users/Admin/CLionProjects/LAB2-4/domain.c
+        -:    0:Graph:C:\Users\Admin\CLionProjects\LAB2-4\cmake-build-debug-coverage\CMakeFiles\LAB2_4.dir\domain.c.gcno
+        -:    0:Data:C:\Users\Admin\CLionProjects\LAB2-4\cmake-build-debug-coverage\CMakeFiles\LAB2_4.dir\domain.c.gcda
+        -:    0:Runs:1
+        -:    1:#include<stdlib.h>
+        -:    2:#include<string.h>
+        -:    3:#include <stdio.h>
+        -:    4:#include "domain.h"
+        -:    5:
+function creareOferta called 25 returned 100% blocks executed 100%
+       25:    6:oferta* creareOferta(char* tip, char* destinatie, char* data_plecare, int pret)
+        -:    7:{
+       25:    8:    oferta* of = (oferta*)malloc(sizeof(oferta));
+       25:    9:    int ok = validareOferta(tip,destinatie, data_plecare, pret);
+       25:    9-block  0
+call    0 returned 25
+       25:   10:    int nr_tip = (int) strlen(tip) + 1;
+       25:   11:    of->tip = (char*)malloc(nr_tip * sizeof (char));
+       25:   12:    strcpy(of->tip, tip);
+        -:   13:
+       25:   14:    int nr_destinatie = (int) strlen(destinatie) + 1;
+       25:   15:    of->destinatie = (char*)malloc(nr_destinatie * sizeof (char));
+       25:   16:    strcpy(of->destinatie, destinatie);
+        -:   17:
+       25:   18:    int nr_data_plecare = (int) strlen(data_plecare) + 1;
+       25:   19:    of->data_plecare = (char*)malloc( nr_data_plecare * sizeof (char));
+       25:   20:    strcpy(of->data_plecare, data_plecare);
+       25:   21:    if (ok)
+branch  0 taken 24 (fallthrough)
+branch  1 taken 1
+        -:   22:    {
+       24:   23:        of->pret = pret;
+       24:   24:        return of;
+       24:   24-block  0
+        -:   25:    } else
+        -:   26:    {
+        1:   27:        of->pret = -1;
+        1:   28:        return of;
+        1:   28-block  0
+        -:   29:    }
+        -:   30:}
+        -:   31:
+function distruge_oferta called 25 returned 100% blocks executed 100%
+       25:   32:void distruge_oferta(oferta* of)
+        -:   33:{
+       25:   34:    free(of->tip);
+       25:   35:    free(of->destinatie);
+       25:   36:    free(of->data_plecare);
+       25:   37:    free(of);
+       25:   38:}
+        -:   39:
+function validareOferta called 30 returned 100% blocks executed 100%
+       30:   40:int validareOferta(char* tip, char* destinatie, char* data_plecare, int pret)
+        -:   41:{
+       30:   42:    if (strcmp(tip, "munte") && strcmp(tip, "mare") && strcmp(tip, "city break"))
+       30:   42-block  0
+branch  0 taken 18 (fallthrough)
+branch  1 taken 12
+       18:   42-block  1
+branch  2 taken 6 (fallthrough)
+branch  3 taken 12
+        6:   42-block  2
+branch  4 taken 3 (fallthrough)
+branch  5 taken 3
+        3:   43:        return 0;
+        3:   43-block  0
+       27:   44:    if (strlen(destinatie) > 50)
+       27:   44-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 26
+        1:   45:        return 0;
+        1:   45-block  0
+       26:   46:    if (pret < 0 || pret >= 100000)
+       26:   46-block  0
+branch  0 taken 26 (fallthrough)
+branch  1 taken 0
+       26:   46-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 25
+        1:   47:        return 0;
+        1:   47-block  0
+       25:   48:    return 1;
+       25:   48-block  0
+        -:   49:}
+        -:   50:
+function creareLista called 15 returned 100% blocks executed 100%
+       15:   51:ListaMea creareLista()
+        -:   52:{
+        -:   53:    ListaMea l;
+       15:   54:    l.lg = 0;
+       15:   55:    l.capacitate = 1;
+       15:   56:    l.of = (oferta**) malloc(l.capacitate * sizeof(oferta*));
+       15:   57:    return l;
+       15:   57-block  0
+        -:   58:}
+        -:   59:
+function distrugeLista called 10 returned 100% blocks executed 100%
+       10:   60:void distrugeLista(ListaMea* lista)
+        -:   61:{
+       29:   62:    for(int i=0; i<lista->lg; i++)
+       10:   62-block  0
+       29:   62-block  1
+branch  0 taken 19
+branch  1 taken 10 (fallthrough)
+        -:   63:    {
+       19:   64:        distruge_oferta(lista->of[i]);
+       19:   64-block  0
+call    0 returned 19
+        -:   65:    }
+       10:   66:    free(lista->of);
+       10:   67:}
+        -:   68:
+function lungime called 23 returned 100% blocks executed 100%
+       23:   69:int lungime(ListaMea* l)
+        -:   70:{
+       23:   71:    return l->lg;
+       23:   71-block  0
+        -:   72:}
+        -:   73:
+function adaugaSf called 30 returned 100% blocks executed 100%
+       30:   74:void adaugaSf(ListaMea* l, oferta* of)
+        -:   75:{
+       30:   76:    if(l->lg == l->capacitate)
+       30:   76-block  0
+branch  0 taken 15 (fallthrough)
+branch  1 taken 15
+        -:   77:    {
+       15:   78:        int new_cap = l->capacitate*2;
+       15:   79:        oferta** aux = (oferta**)malloc(sizeof(oferta*)*new_cap);
+       35:   80:        for(int i=0; i<l->lg; i++)
+       15:   80-block  0
+       35:   80-block  1
+branch  0 taken 20
+branch  1 taken 15 (fallthrough)
+       20:   81:            aux[i] =l->of[i];
+       20:   81-block  0
+       15:   82:        free(l->of);
+       15:   83:        l->of = aux;
+       15:   84:        l->capacitate = new_cap;
+       15:   84-block  0
+        -:   85:    }
+       30:   86:    l->of[l->lg] = of;
+       30:   87:    l->lg++;
+       30:   88:}
+        -:   89:
+function stergere called 3 returned 100% blocks executed 100%
+        3:   90:void stergere(ListaMea* lista, int poz)
+        -:   91:{
+        3:   92:    distruge_oferta(lista->of[poz]);
+        3:   92-block  0
+call    0 returned 3
+        4:   93:    for(int i=poz; i < lista->lg-1; i++)
+        4:   93-block  0
+branch  0 taken 1
+branch  1 taken 3 (fallthrough)
+        1:   94:        lista->of[i] = lista->of[i+1];
+        1:   94-block  0
+        3:   95:    lista->lg--;
+        3:   96:}
+        -:   97:
+function modificare called 1 returned 100% blocks executed 100%
+        1:   98:void modificare(ListaMea* lista, int poz, char* tip, char* destinatie, char* data_plecare, int pret)
+        -:   99:{
+        1:  100:    free(lista->of[poz]->tip);
+        1:  101:    free(lista->of[poz]->destinatie);
+        1:  102:    free(lista->of[poz]->data_plecare);
+        1:  103:    oferta* old = lista->of[poz];
+        1:  104:    int nr_tip = (int) strlen(tip) + 1;
+        1:  105:    old->tip = (char*)malloc(nr_tip * sizeof (char));
+        1:  106:    strcpy(old->tip, tip);
+        -:  107:
+        1:  108:    int nr_destinatie = (int) strlen(destinatie) + 1;
+        1:  109:    old->destinatie = (char*)malloc(nr_destinatie * sizeof (char));
+        1:  110:    strcpy(old->destinatie, destinatie);
+        -:  111:
+        1:  112:    int nr_data_plecare = (int) strlen(data_plecare) + 1;
+        1:  113:    old->data_plecare = (char*)malloc( nr_data_plecare * sizeof (char));
+        1:  114:    strcpy(old->data_plecare, data_plecare);
+        -:  115:
+        1:  116:    old->pret = pret;
+        -:  117:
+        1:  118:    strcpy(lista->of[poz]->tip, tip);
+        1:  119:    strcpy(lista->of[poz]->destinatie, destinatie);
+        1:  120:    strcpy(lista->of[poz]->data_plecare, data_plecare);
+        -:  121:
+        1:  122:}
+        -:  123:
+function ordoneaza_pret called 2 returned 100% blocks executed 100%
+        2:  124:void ordoneaza_pret(ListaMea* lista, char* cum)
+        -:  125:{
+        2:  126:    if(strcmp(cum, "c") == 0)
+        2:  126-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        -:  127:    {
+        3:  128:        for(int i = 0; i<lista->lg - 1; i++)
+        1:  128-block  0
+        2:  128-block  1
+        3:  128-block  2
+branch  0 taken 2
+branch  1 taken 1
+        -:  129:        {
+        5:  130:            for(int j = i+1; j<lista->lg; j++)
+        2:  130-block  0
+        3:  130-block  1
+        5:  130-block  2
+branch  0 taken 3
+branch  1 taken 2 (fallthrough)
+        3:  131:                if (lista->of[i]->pret > lista->of[j]->pret)
+        3:  131-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        -:  132:                {
+        2:  133:                    oferta** cnt = lista->of[i];
+        2:  134:                    lista->of[i] = lista->of[j];
+        2:  135:                    lista->of[j] = cnt;
+        2:  135-block  0
+        -:  136:                }
+        -:  137:        }
+        1:  138:    } else if (strcmp(cum, "d") == 0)
+        1:  138-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        -:  139:    {
+        -:  140:
+        2:  141:        for(int i = 0; i<lista->lg - 1; i++)
+        1:  141-block  0
+        1:  141-block  1
+        2:  141-block  2
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        -:  142:        {
+        2:  143:            for(int j = i+1; j<lista->lg; j++)
+        1:  143-block  0
+        1:  143-block  1
+        2:  143-block  2
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        1:  144:                if (lista->of[i]->pret < lista->of[j]->pret)
+        1:  144-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        -:  145:                {
+        1:  146:                    oferta* cnt = lista->of[i];
+        1:  147:                    lista->of[i] = lista->of[j];
+        1:  148:                    lista->of[j] = cnt;
+        1:  148-block  0
+        -:  149:                }
+        -:  150:        }
+        -:  151:    }
+        2:  152:}
+        -:  153:
+function ordoneaza_destinatie called 2 returned 100% blocks executed 100%
+        2:  154:void ordoneaza_destinatie(ListaMea* lista, char* cum)
+        -:  155:{
+        2:  156:    if(strcmp(cum, "c") == 0)
+        2:  156-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        -:  157:    {
+        3:  158:        for(int i = 0; i<lista->lg - 1; i++)
+        1:  158-block  0
+        2:  158-block  1
+        3:  158-block  2
+branch  0 taken 2
+branch  1 taken 1
+        -:  159:        {
+        -:  160:
+        5:  161:            for(int j = i+1; j<lista->lg; j++)
+        2:  161-block  0
+        3:  161-block  1
+        5:  161-block  2
+branch  0 taken 3
+branch  1 taken 2 (fallthrough)
+        3:  162:                if (strcmp(lista->of[i]->destinatie,lista->of[j]->destinatie) > 0)
+        3:  162-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        -:  163:                {
+        2:  164:                    oferta* cnt = lista->of[i];
+        2:  165:                    lista->of[i] = lista->of[j];
+        2:  166:                    lista->of[j] = cnt;
+        2:  166-block  0
+        -:  167:                }
+        -:  168:        }
+        1:  169:    } else if (strcmp(cum, "d") == 0)
+        1:  169-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        -:  170:    {
+        2:  171:        for(int i = 0; i<lista->lg - 1; i++)
+        1:  171-block  0
+        1:  171-block  1
+        2:  171-block  2
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        -:  172:        {
+        2:  173:            for(int j = i+1; j<lista->lg; j++)
+        1:  173-block  0
+        1:  173-block  1
+        2:  173-block  2
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        1:  174:                if (strcmp(lista->of[i]->destinatie,lista->of[j]->destinatie) < 0)
+        1:  174-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        -:  175:                {
+        1:  176:                    oferta* cnt = lista->of[i];
+        1:  177:                    lista->of[i] = lista->of[j];
+        1:  178:                    lista->of[j] = cnt;
+        1:  178-block  0
+        -:  179:                }
+        -:  180:        }
+        -:  181:    }
+        2:  182:}
+        -:  183:
+function filtreaza_dest_tip called 3 returned 100% blocks executed 100%
+        3:  184:ListaMea filtreaza_dest_tip(ListaMea* lista, char* criteriu, char* sir)
+        -:  185:{
+        3:  186:    ListaMea lista_filtrata = creareLista();
+        3:  186-block  0
+call    0 returned 3
+        3:  187:    if(strcmp(criteriu, "d") == 0)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
+        -:  188:    {
+        4:  189:        for(int i=0; i<lista->lg; i++)
+        1:  189-block  0
+        3:  189-block  1
+        4:  189-block  2
+branch  0 taken 3
+branch  1 taken 1
+        3:  190:            if(strcmp(lista->of[i]->destinatie, sir) == 0)
+        3:  190-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        -:  191:            {
+        2:  192:                printf("aici");
+        2:  192-block  0
+call    0 returned 2
+        2:  193:                adaugaSf(&lista_filtrata, lista->of[i]);
+call    0 returned 2
+        -:  194:            }
+        2:  195:    } else if(strcmp(criteriu, "t") == 0)
+        2:  195-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 0
+        -:  196:    {
+        8:  197:        for(int i=0; i<lista->lg; i++)
+        2:  197-block  0
+        6:  197-block  1
+        8:  197-block  2
+branch  0 taken 6
+branch  1 taken 2 (fallthrough)
+        6:  198:            if(strcmp(lista->of[i]->tip, sir) == 0)
+        6:  198-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 3
+        -:  199:            {
+        3:  200:                adaugaSf(&lista_filtrata, lista->of[i]);
+        3:  200-block  0
+call    0 returned 3
+        -:  201:            }
+        -:  202:    }
+        3:  203:    return lista_filtrata;
+        3:  203-block  0
+        -:  204:}
+        -:  205:
+function filtreaza_pret called 2 returned 100% blocks executed 100%
+        2:  206:ListaMea filtreaza_pret(ListaMea* lista, int pret)
+        -:  207:{
+        2:  208:    ListaMea lista_filtrata = creareLista();
+        2:  208-block  0
+call    0 returned 2
+        8:  209:    for(int i=0; i<lista->lg; i++)
+        6:  209-block  0
+        8:  209-block  1
+branch  0 taken 6
+branch  1 taken 2 (fallthrough)
+        6:  210:        if(lista->of[i]->pret == pret)
+        6:  210-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 3
+        -:  211:        {
+        3:  212:            adaugaSf(&lista_filtrata, lista->of[i]);
+        3:  212-block  0
+call    0 returned 3
+        -:  213:        }
+        2:  214:    return lista_filtrata;
+        2:  214-block  0
+        -:  215:}
+        -:  216:
+        -:  217:

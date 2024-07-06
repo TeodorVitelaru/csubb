@@ -1,0 +1,142 @@
+2,3,6
+1,6,6  2,2,9
+-------------------
+r=a=v=1
+h=1
+h=2 r(2)=r(1)+a(1)+v(1)=3, 
+    a(2)=r(1)+a(1)+v(1)=3
+    v(2)=v(1)+a(1)=2
+h=3 r(3)=r(2)+a(2)+v(2)=8
+    a(3)=r(2)+a(2)+v(2)=8
+    v(3)=a(2)+v(2)=5
+h=4 
+
+h=7
+f(h,a,r,v)=f(h-1,a+1,r,v)+
+        +f(h-1,r+1,v)
+
+ar(h)=3*ar(h-1), 
+v(h)=2*ar(h-1)+v(h-1)
+-------------------
+ar(h)=nr de turnuri care au in varf un cub albastru sau rosu si au inaltimea h
+h   a(h)   r(h)   v(h)
+1    1      1     1
+2    3      3     2
+3    8      8     5
+4    21     21    13
+5    55     55    34
+6    ...?
+...
+22
+
+a(h)=r(h)=a(h-1)+r(h-1)+v(h-1)
+v(h)=a(h-1)+v(h-1)
+================================
+n(n-1)/2>=23052021---> n(n-1)>=46104042
+--------------
+Fie tk termenul triangular de rang k, tk=k(k+1)/2
+t1=1
+t2=1+2
+t3=1+2+3....
+tk=1+2..+k=k(k+1)/2
+2+3=1+1  +1+2=2*t1 +t2
+4+5+6=3+3+3+ 1+2+3=3*t2 +t3
+suma totala=suma(linia1)+suma(linia 2)...+suma(linia k)
+ =1+ 2*t1+t2+  3*t2+t3+  4*t3+t4 +...+k*tk-1 +tk=1+2*t1+4* t2+5*t3+6*t4+....+(k+1)tk-1 +tk 
+suma(latura_st)=1+ 1+t1+1+t2+1+t3+... 1+tk-1=k+ t1+t2+...+tk-1
+suma(latura_dr)=t1+t2+...+tk
+suma(latura_jos)=k*tk-1 +tk
+
+suma_finala=suma totala-suma(latura_st)-suma(latura_dr)-suma(latura_jos)+1+ 1+tk-1 +tk
+=1+2t2+3t3+...+(k-2)tk-2      -tk-1  -tk+k
+=1+2*2*3/2 +3*3*4/2...+(k-2)*(k-2)*(k-1)/2  -(k-1)*k/2-k*(k+1)/2+k
+
+=1/2 * [1^3+1^2  +2^3+2^2...+(k-2)^3 +(k-2)^2 ]+k-k^2=
+[[(k-2)(k-1)/2]^2 + [(k-2)(k-1)(2k-3)]/6 ]/2+k-k^2
+
+............................
+
+11 12 13 14 15
+1+t4 + 2+t4+...5+t4=
+suma(latura_dr)=
+
+
+
+
+----------------------------
+CULEGERE TM
+Pentru un num˘ar natural n, s˘a se scrie un algoritm care determin˘a num˘arul
+maxim de divizori pe care ˆıi are un num˘ar din mult¸imea {2, 3, . . . , n}. De exemplu, dac˘a n = 12, num˘arul maxim de divizori este 5 (num˘arul 12 are 5 divizori:
+2, 3, 4, 6, 12
+CIURUL LUI ERATOSTENE
+-nr de divizori (i), i=1,n
+...
+for(i=2;i<=n; i++)
+  for(j=1;i*j<=n;j++)
+   v[i*j]++;
+
+v=0 0 0 0 0 0 ...0
+i=2 v=0 0 1 0 1 0 1...
+i=3 v=0 0 1 1 1 0 2
+...
+i=6 v=............3
+=======================
+a=1, b=10000000
+
+Determinat¸i cel mai mic ¸si cel mai mare num˘ar constituit din k cifre (k < 5)
+avˆand proprietatea c˘a suma cifrelor este S. Date de test: k = 3, S = 25; k =
+4, S = 33; k = 4, S = 12
+
+1029
+6999
+
+nr9=(s-1)/9
+...
+
+
+12-->6
+6-->3
+3-->2
+2-->1
+1-->0
+
+SOLUTIE ITERATIVA
+1-dublare, 2-incrementare
+while(n)
+{ if(n%2==0) 
+  {n/=2;v[++k]=1;}
+ else 
+  {n--;v[++k]=2;
+}
+for(i=k;i>=1;i--)
+ if(v[i]==1)
+  cout<<"dublare";
+else cout<<"incrementare";
+
+
+SOLUTIA RECURSIVA
+void f(int n)
+{
+  if(n==0) return;
+  if(n%2==0) 
+  {f(n/2); cout<<"dublare";}
+  else
+  {f(n-1); cout<<"incrementare";}
+}
+1001101
+nr operatii=nr de biti+nr_biti_1
+}
+
+PROB CULEGERE TM(ColectieProblemeInformatica_2021.pdf)
+-- pag 18 prob 12,13,14
+pag 24 prob 7 a,b,
+ pag 26 prob 10 e, 
+pag 30 prob 1,2
+
+
+
+  
+
+
+
+

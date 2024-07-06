@@ -1,0 +1,154 @@
+        -:    0:Source:C:/Users/Admin/CLionProjects/LAB6/validator.cpp
+        -:    0:Graph:C:\Users\Admin\CLionProjects\LAB6\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\validator.cpp.gcno
+        -:    0:Data:C:\Users\Admin\CLionProjects\LAB6\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\validator.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "validator.h"
+        -:    2:#include "errors.h"
+        -:    3:
+function _Z11validStringNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 24 returned 100% blocks executed 87%
+       24:    4:bool validString(string str) {
+      24*:    5:    if (str.size() == 0) return false;
+       24:    5-block  0
+call    0 returned 24
+branch  1 taken 0 (fallthrough)
+branch  2 taken 24
+    %%%%%:    5-block  1
+      119:    6:    for (int i = 0; i < str.size(); i++) {
+       24:    6-block  0
+       95:    6-block  1
+      119:    6-block  2
+call    0 returned 119
+branch  1 taken 95
+branch  2 taken 24 (fallthrough)
+      95*:    7:        if (!((str.at(i) >= 'a' && str.at(i) <= 'z') || (str.at(i) >= 'A' && str.at(i) <= 'Z') || str.at(i) == ' ')) return false;
+       95:    7-block  0
+call    0 returned 95
+branch  1 taken 88 (fallthrough)
+branch  2 taken 7
+       88:    7-block  1
+call    3 returned 88
+branch  4 taken 0 (fallthrough)
+branch  5 taken 88
+        7:    7-block  2
+call    6 returned 7
+branch  7 taken 6 (fallthrough)
+branch  8 taken 1
+        6:    7-block  3
+call    9 returned 6
+branch 10 taken 0 (fallthrough)
+branch 11 taken 6
+        1:    7-block  4
+call   12 returned 1
+branch 13 taken 0 (fallthrough)
+branch 14 taken 1
+    %%%%%:    7-block  5
+       95:    7-block  6
+       95:    7-block  7
+branch 15 taken 0 (fallthrough)
+branch 16 taken 95
+    %%%%%:    7-block  8
+        -:    8:    }
+       24:    9:    return true;
+       24:    9-block  0
+        -:   10:}
+        -:   11:
+function _ZN9Validator14validateOfertaENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_S5_i called 8 returned 100% blocks executed 43%
+        8:   12:void Validator::validateOferta(string denumire, string destinatie, string tip, int pret) {
+        8:   13:    string errors;
+        8:   13-block  0
+call    0 returned 8
+        -:   14:
+       8*:   15:    if (!validString(denumire)) errors.append("Denumirea este invalida!\n");
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        8:   15-block  0
+call    3 returned 8
+branch  4 taken 8 (fallthrough)
+branch  5 taken 0 (throw)
+        8:   15-block  1
+call    6 returned 8
+branch  7 taken 0 (fallthrough)
+branch  8 taken 8
+    %%%%%:   15-block  2
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    $$$$$:   15-block  3
+call   12 never executed
+    $$$$$:   15-block  4
+       8*:   16:    if (!validString(destinatie)) errors.append("Destinatia este invalida!\n");
+        8:   16-block  0
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        8:   16-block  1
+call    3 returned 8
+branch  4 taken 8 (fallthrough)
+branch  5 taken 0 (throw)
+        8:   16-block  2
+call    6 returned 8
+branch  7 taken 0 (fallthrough)
+branch  8 taken 8
+    %%%%%:   16-block  3
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    $$$$$:   16-block  4
+call   12 never executed
+    $$$$$:   16-block  5
+       8*:   17:    if (!validString(tip)) errors.append("Tipul este invalid!\n");
+        8:   17-block  0
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        8:   17-block  1
+call    3 returned 8
+branch  4 taken 8 (fallthrough)
+branch  5 taken 0 (throw)
+        8:   17-block  2
+call    6 returned 8
+branch  7 taken 0 (fallthrough)
+branch  8 taken 8
+    %%%%%:   17-block  3
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    $$$$$:   17-block  4
+call   12 never executed
+    $$$$$:   17-block  5
+       8*:   18:    if (pret <= 0) errors.append("Pretul este invalid!\n");
+        8:   18-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 8
+    %%%%%:   18-block  1
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed (throw)
+       8*:   19:    if (errors.size() != 0) throw Exception(errors);
+        8:   19-block  0
+call    0 returned 8
+branch  1 taken 0 (fallthrough)
+branch  2 taken 8
+    %%%%%:   19-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+    %%%%%:   19-block  2
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   19-block  3
+call   10 never executed
+call   11 never executed
+    $$$$$:   19-block  4
+call   12 never executed
+    $$$$$:   19-block  5
+    $$$$$:   19-block  6
+call   13 never executed
+        8:   20:}
+        8:   20-block  0
+call    0 returned 8
+    $$$$$:   20-block  1
+call    1 never executed

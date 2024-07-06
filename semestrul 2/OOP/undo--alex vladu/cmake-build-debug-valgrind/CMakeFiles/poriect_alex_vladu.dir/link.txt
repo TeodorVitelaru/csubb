@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/poriect_alex_vladu.dir/array.c.o CMakeFiles/poriect_alex_vladu.dir/controller.c.o CMakeFiles/poriect_alex_vladu.dir/domain.c.o CMakeFiles/poriect_alex_vladu.dir/main.c.o CMakeFiles/poriect_alex_vladu.dir/repository.c.o CMakeFiles/poriect_alex_vladu.dir/ui.c.o CMakeFiles/poriect_alex_vladu.dir/validator.c.o -o poriect_alex_vladu

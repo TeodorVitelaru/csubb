@@ -1,0 +1,27 @@
+# ninja log v5
+7	894	7381847989944615	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Proiect_C++/App.cpp.obj	80102161ce1adb94
+20	147	7381916137217374	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Proiect_C++/Iterator.cpp.obj	4419029807255c35
+5	472	7381916140470611	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Proiect_C++/DO.cpp.obj	3129474ba15302f7
+11	435	7381916140098966	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Teste/TestScurt.cpp.obj	762e6278a0e1d9ac
+591	696	7381916142661727	lab7__sda.exe	123ab445c2847ac2
+16	590	7381916141656921	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Teste/TestExtins.cpp.obj	5e1ec22d3c3237ce
+8	136	7381916302871064	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Proiect_C++/Iterator.cpp.obj	4419029807255c35
+13	433	7381916305846688	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Teste/TestScurt.cpp.obj	762e6278a0e1d9ac
+3	463	7381916306146680	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Proiect_C++/DO.cpp.obj	3129474ba15302f7
+18	585	7381916307347186	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Teste/TestExtins.cpp.obj	5e1ec22d3c3237ce
+586	686	7381916308342368	lab7__sda.exe	123ab445c2847ac2
+22	173	7381916473935457	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Proiect_C++/Iterator.cpp.obj	4419029807255c35
+11	492	7381916477121506	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Teste/TestScurt.cpp.obj	762e6278a0e1d9ac
+5	509	7381916477291545	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Proiect_C++/DO.cpp.obj	3129474ba15302f7
+17	654	7381916478732610	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Teste/TestExtins.cpp.obj	5e1ec22d3c3237ce
+654	770	7381916479868636	lab7__sda.exe	123ab445c2847ac2
+72	1365	7393680404426449	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Proiect_C++/Iterator.cpp.obj	4419029807255c35
+82	1599	7393680406690163	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Teste/TestScurt.cpp.obj	762e6278a0e1d9ac
+8	1698	7393680407778183	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Proiect_C++/DO.cpp.obj	3129474ba15302f7
+92	1949	7393680410308294	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Teste/TestExtins.cpp.obj	5e1ec22d3c3237ce
+1949	2652	7393680417212451	lab7__sda.exe	123ab445c2847ac2
+7	873	7393680865505286	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Teste/TestExtins.cpp.obj	5e1ec22d3c3237ce
+875	1168	7393680868417100	lab7__sda.exe	123ab445c2847ac2
+36	865	7393694050912908	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Proiect_C++/App.cpp.obj	80102161ce1adb94
+17	916	7393694051424753	CMakeFiles/lab7__sda.dir/TAD_Dictionar_Ordonat/Proiect_C++/DO.cpp.obj	3129474ba15302f7
+917	1093	7393694053055465	lab7__sda.exe	123ab445c2847ac2

@@ -1,0 +1,82 @@
+        -:    0:Source:D:/facultate/semestrul 2/OOP/LAB8-9/cosOferte.cpp
+        -:    0:Graph:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\cosOferte.cpp.gcno
+        -:    0:Data:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\cosOferte.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "cosOferte.h"
+        -:    3:#include <algorithm>
+        -:    4:#include <random>
+        -:    5:using namespace std;
+        -:    6:
+function _ZN9cosOferte17adauga_oferta_cosERK6Oferta called 14 returned 100% blocks executed 100%
+       14:    7:void cosOferte::adauga_oferta_cos(const Oferta& of)
+        -:    8:{
+       14:    9:    this->cos.push_back(of);
+       14:    9-block  0
+call    0 returned 14
+       14:   10:}
+        -:   11:
+function _ZN9cosOferte17adauga_random_cosESt6vectorI6OfertaSaIS1_EEi called 3 returned 100% blocks executed 87%
+        3:   12:void cosOferte::adauga_random_cos(vector<Oferta> oferte, int numar)
+        -:   13:{
+        3:   14:    shuffle(oferte.begin(), oferte.end(), default_random_engine(std::random_device{}())); //amesteca vectorul oferte
+        3:   14-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   14-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   14-block  2
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:   14-block  3
+call    9 returned 3
+call   10 returned 3
+call   11 returned 3
+branch 12 taken 3 (fallthrough)
+branch 13 taken 0 (throw)
+        3:   14-block  4
+call   14 returned 3
+    $$$$$:   14-block  5
+call   15 never executed
+    $$$$$:   14-block  6
+        9:   15:    while (cos.size() < numar && !oferte.empty()) {
+        9:   15-block  0
+call    0 returned 9
+branch  1 taken 6 (fallthrough)
+branch  2 taken 3
+        6:   15-block  1
+call    3 returned 6
+branch  4 taken 6 (fallthrough)
+branch  5 taken 0
+        6:   15-block  2
+        3:   15-block  3
+        9:   15-block  4
+branch  6 taken 6
+branch  7 taken 3 (fallthrough)
+        6:   16:        cos.push_back(oferte.back());
+        6:   16-block  0
+call    0 returned 6
+call    1 returned 6
+        6:   17:        oferte.pop_back();
+call    0 returned 6
+        -:   18:    }
+        3:   19:}
+        3:   19-block  0
+        -:   20:
+function _ZN9cosOferte11get_all_cosEv called 19 returned 100% blocks executed 100%
+       19:   21:const vector<Oferta>& cosOferte::get_all_cos()
+        -:   22:{
+       19:   23:    return this->cos;
+       19:   23-block  0
+        -:   24:}
+        -:   25:
+function _ZN9cosOferte10sterge_cosEv called 3 returned 100% blocks executed 100%
+        3:   26:void cosOferte::sterge_cos() {
+        3:   27:    this->cos.clear();
+        3:   27-block  0
+call    0 returned 3
+        3:   28:}

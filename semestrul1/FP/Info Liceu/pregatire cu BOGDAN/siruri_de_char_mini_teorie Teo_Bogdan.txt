@@ -1,0 +1,158 @@
+V15, EX 14
+int a,b;
+void f(int&x,int y)
+{ int b=1,c;
+a++; b++; x=x*2; y=y*3;
+b=x; c=y; c++; }
+
+
+a=b=0
+f(a,b); f(0,0): a=1,b=2,a=2,y=0,
+b=2,c=0,c=1
+
+a=2, b=0
+--------------
+III.1-MATRICI SAU SIRURI DE CARACTERE
+SIRURI DE CHAR
+1.DECLARARE
+char s[lung_max+1];
+Ex. char s[101];
+
+sir="soare"---> s o a r e \0
+               sir
+sir+1: "oare"
+sir+2:"are"
+
+
+sir+i este sufix
+sir[i] este un caracter
+
+for(i=0;i<strlen(s);i++)
+ ...
+for(i=0;sir[i]!=0;i++)
+  cout<<sir+i<<endl;
+CITIREA
+1. UN CUVANT
+ cin>>sir;
+2. O propozitie
+cin.getline(sir,101);
+3. 2 propozitii
+cin.getline(s1,101);
+cin.getline(s2,101);
+4.numar si o propozitie
+cin>>n;
+cin.get();
+cin.getline(s1,101);
+===========
+FUNCTII <cstring>
+1.strlen(s)
+2.strcpy(s1,s2);//copiere clasica, s2 in s1
+sau pentru stergere de caractere
+   s o    a  r    e \0
+     s+1     s+3
+cout<<strcpy(s+1,s+3);//sre
+
+
+s r  e \0   e \0
+
+strcpy(s,s+1);//sterge primul caracter
+
+3. strcmp(s1,s2); ret 1 (daca s1>s2), 0 sau -1
+4. strcat(s1,s2);//lipeste pe s2 la sf lui s1
+strncat(s1,s2,n);
+5.strchr(s,c) ret NULL daca nu gaseste sau subsirul de la prima aparitie a lui c in s
+cout<<strchr("aievea",'e');//evea
+6.strstr(s,ss);ret NULL daca nu gaseste sau subsirul de la prima aparitie a lui ss in s
+7. strtok(sir,separatori): cauta prima aparitie a unui separator si inlocuieste acel separator cu \0
+
+
+char *p;//pointer salveaza o adresa de memorie
+int *q;
+//s="azi e o zi ok!"
+p=strtok(s," .,!");
+//s="azi\0e o zi ok!"
+//   p
+cout<<p;//azi
+cout<<p[0]<<" "<<*p;//a a 
+
+cout<<p[1]<<" "<<*(p+1);//z z
+cout<<s;//azi
+PRELUCRAREA CUVINTELOR
+p=strtok(s," .,!");
+while(p)
+{
+ cout<<p<<"---";
+ p=strtok(NULL," .,!?");
+}
+
+VECTOR DE CUVINTE
+char v[nr_maxim_cuvinte+1][lung_maxima_a_unui_cuvat+1];
+char v[21][11];
+//s="azi este o zi ok"
+  0 1 2 3 4 5 6 7
+0 a z i \0
+1 e s t e \0
+2 o \0
+3 z i \0
+4
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+int main()
+{ int n;
+   char s[101],v[21][11];
+	int i=0;
+		cin.getline(s,101);
+	char *p;//pointer salveaza o adresa de memorie
+
+//s="azi e o zi ok!"
+p=strtok(s," .,!");
+while(p)
+{
+    strcpy(v[i],p);i++;
+    p=strtok(NULL," .,!?");
+}
+for(int j=i-1;j>=0;j--)
+	cout<<v[j]<<endl;
+    return 0;
+}
+
+
+Ex.nr de aparitii al caracterului 'a'
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+int main()
+{ int n;
+   char s[101],v[21][11];
+	int nr=0;
+		cin.getline(s,101);
+	char *p;//pointer salveaza o adresa de memorie
+p=strchr(s,'a');//matematica
+	while(p)
+		{
+			nr++;
+			p=strchr(p+1,'a');
+		}
+	cout<<nr;
+}
+
+EX. nr de aparitii al sirului "zi"
+v
+==================
+TEMA-
+ex. si prob de siruri din 2022 si 2021
+variante 1-20 ex de siruri de char.
+
+
+
+
+
+
+
+
+

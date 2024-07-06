@@ -1,0 +1,37 @@
+# ninja log v5
+320	424	7379118950216211	CMakeFiles/simulare_practic.dir/simulare_practic_autogen/mocs_compilation.cpp.obj	888fbb59e8b7302a
+19	146	7379281084844169	simulare_practic_autogen/timestamp	6db6a7d39d621118
+19	146	7379281084844169	D:/facultate/semestrul 2/OOP/simulare_practic/cmake-build-debug/simulare_practic_autogen/mocs_compilation.cpp	6db6a7d39d621118
+19	146	7379281084844169	simulare_practic_autogen/mocs_compilation.cpp	6db6a7d39d621118
+19	146	7379281084844169	D:/facultate/semestrul 2/OOP/simulare_practic/cmake-build-debug/simulare_practic_autogen/timestamp	6db6a7d39d621118
+147	3279	7379279750466472	CMakeFiles/simulare_practic.dir/main.cpp.obj	dc063c2018501185
+4859	5653	7379281137141301	simulare_practic.exe	89dc0404a0d20692
+195	1070	7379279728373099	CMakeFiles/simulare_practic.dir/Elev.cpp.obj	94620765159c5bd2
+209	1240	7379279730053676	CMakeFiles/simulare_practic.dir/teste.cpp.obj	f83c04adb04498f2
+199	1343	7379279731098879	CMakeFiles/simulare_practic.dir/Repo.cpp.obj	cd375b3a8364c2b6
+189	1366	7379279731318937	CMakeFiles/simulare_practic.dir/Service.cpp.obj	42fd7c993a911212
+151	4858	7379281131925535	CMakeFiles/simulare_practic.dir/GUI.cpp.obj	16def0964ae3f4ea
+14	139	7379281571860291	simulare_practic_autogen/timestamp	6db6a7d39d621118
+14	139	7379281571860291	simulare_practic_autogen/mocs_compilation.cpp	6db6a7d39d621118
+14	139	7379281571860291	D:/facultate/semestrul 2/OOP/simulare_practic/cmake-build-debug/simulare_practic_autogen/timestamp	6db6a7d39d621118
+14	139	7379281571860291	D:/facultate/semestrul 2/OOP/simulare_practic/cmake-build-debug/simulare_practic_autogen/mocs_compilation.cpp	6db6a7d39d621118
+142	2995	7379281600399613	CMakeFiles/simulare_practic.dir/GUI.cpp.obj	16def0964ae3f4ea
+2995	3446	7379281603057049	simulare_practic.exe	89dc0404a0d20692
+22	196	7379284432034170	simulare_practic_autogen/timestamp	6db6a7d39d621118
+22	196	7379284432034170	simulare_practic_autogen/mocs_compilation.cpp	6db6a7d39d621118
+22	196	7379284432034170	D:/facultate/semestrul 2/OOP/simulare_practic/cmake-build-debug/simulare_practic_autogen/timestamp	6db6a7d39d621118
+22	196	7379284432034170	D:/facultate/semestrul 2/OOP/simulare_practic/cmake-build-debug/simulare_practic_autogen/mocs_compilation.cpp	6db6a7d39d621118
+201	5001	7379284480089981	CMakeFiles/simulare_practic.dir/GUI.cpp.obj	16def0964ae3f4ea
+5001	5800	7379284484725113	simulare_practic.exe	89dc0404a0d20692
+13	210	7379285729872814	simulare_practic_autogen/timestamp	6db6a7d39d621118
+13	210	7379285729872814	simulare_practic_autogen/mocs_compilation.cpp	6db6a7d39d621118
+13	210	7379285729872814	D:/facultate/semestrul 2/OOP/simulare_practic/cmake-build-debug/simulare_practic_autogen/timestamp	6db6a7d39d621118
+13	210	7379285729872814	D:/facultate/semestrul 2/OOP/simulare_practic/cmake-build-debug/simulare_practic_autogen/mocs_compilation.cpp	6db6a7d39d621118
+216	4651	7379285774254819	CMakeFiles/simulare_practic.dir/GUI.cpp.obj	16def0964ae3f4ea
+4651	5300	7379285778342649	simulare_practic.exe	89dc0404a0d20692
+25	206	7379286081001883	simulare_practic_autogen/timestamp	6db6a7d39d621118
+25	206	7379286081001883	simulare_practic_autogen/mocs_compilation.cpp	6db6a7d39d621118
+25	206	7379286081001883	D:/facultate/semestrul 2/OOP/simulare_practic/cmake-build-debug/simulare_practic_autogen/timestamp	6db6a7d39d621118
+25	206	7379286081001883	D:/facultate/semestrul 2/OOP/simulare_practic/cmake-build-debug/simulare_practic_autogen/mocs_compilation.cpp	6db6a7d39d621118
+211	5746	7379286136242515	CMakeFiles/simulare_practic.dir/GUI.cpp.obj	16def0964ae3f4ea
+5748	7409	7379286145827946	simulare_practic.exe	89dc0404a0d20692

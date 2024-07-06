@@ -1,0 +1,364 @@
+=============
+CULEGERE IASI
+=============
+
+
+test 2 prob 3
+=============
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin ("bac.in");
+ofstream fout ("bac.out");
+
+int main() {
+  int v[1000]={0}, n, m, x;
+  fin>>n>>m;
+  for(int i=1; i<=n; i++)
+    {
+      fin>>x; v[x]=-1;
+    }
+  for(int i=1; i<=m; i++)
+    {
+      fin>>x; if(v[x]==0) v[x]=1;
+    }
+  for(int i=1; i<=999; i++)
+    {
+      if(v[i]==1)
+        cout<<i<<" ";
+    }
+  return 0;
+}
+
+
+
+
+test 3 prob 3 ???? nu e ca in rez
+=============
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin ("bac.in");
+ofstream fout ("bac.out");
+
+int main() {
+  int v[82]={0}, n, x, maxi=0;
+  fin>>n;
+  for(int i=1; i<=n; ++i)
+    {fin>>x; int s=0;
+      while(x)
+        {s+=x%10; x/=10;}
+      v[s]++;
+      }
+  for(int i=0; i<82; ++i)
+    maxi += v[i]*(v[i]-1)/2;
+  cout<<maxi;
+    
+  return 0;
+}
+
+v=... 5
+      12 
+
+
+
+
+
+
+
+test 4 prob 2
+=============
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin ("bac.in");
+ofstream fout ("bac.out");
+
+int main() {
+  char s[251], cnt[251]="";
+  bool ok=false;
+  cin.getline(s, 251);
+  char *p=strtok(s, " ");
+  while(p)
+    {
+      int nr=strlen(p);
+      char aux[251]="";
+      strcpy(aux, p);
+      if(nr%2==0)
+      {
+        for(int i=0; i<nr/2; ++i)
+          {
+           char ch=p[i];
+            p[i]=p[i+nr/2];
+            p[i+nr/2]=ch;
+          }
+      }
+      if(!ok && strcmp(aux, p)!=0)
+        ok=true;
+      strcat(cnt, p);
+      strcat(cnt, " ");
+      p=strtok(NULL, " ");
+    }
+  if(ok)
+    cout<<cnt;
+  else
+    cout<<"TEXT NEMODIFICAT";
+  return 0;
+}
+
+
+
+
+
+test 4 prob 3
+=============
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin("bac.in");
+ofstream fout("bac.out");
+
+int main() {
+  int v[1000] = {0}, x;
+  while (fin >> x)
+    if (x < 1000)
+      v[x] = 1;
+  for (int i = 1; i <= 900; i++)
+    if (v[i] && v[1000 - i] == 0) {
+      cout << 1000 - i;
+      return 0;
+    }
+  cout << "NU EXISTA";
+  return 0;
+}
+
+
+
+
+
+test 5 prob 2
+=============
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin("bac.in");
+ofstream fout("bac.out");
+
+int main() {
+  char s[1001];
+  cin.getline(s, 101);
+  bool aux=false;
+  char *p=strtok(s, " ");
+  while(p)
+    {
+      int nr=strlen(p);
+      bool ok=true;
+      if(!strchr("aeiou", p[0]) && !strchr("aeiou", p[nr-1]))
+      {
+        for(int i=1; i<nr-1; i++)
+          if(!strchr("aeiou", p[i]))
+            ok=false;
+      }
+      else ok=false;
+      if(ok)
+      {cout<<p<<endl; aux=true;}
+      p=strtok(NULL, " ");
+    }
+  if(!aux)
+    cout<<"nu exista";
+  return 0;
+}
+
+
+
+
+
+test 5 prob 3 ???
+=============
+...
+while(fin>>x)
+{ nr=0;aux=x;x=x*x;
+  do
+{s=0;nr++;
+ while(x) s+=x%10 *(x%10);,x/=10;
+ x=s;
+}while(!( x==0 || x==1 ||....|| x=145));
+if(x==1)
+ cout<<aux<<" "<<nr<<endl;
+
+------------
+
+
+#2260 dinamica02 !! 0 puncte !!
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+
+int main()
+{
+  long long int n, x, y;
+  cin>>n;
+  x=26;
+  for(int i=2; i<=n; i++)
+    {
+      if(i%3==0) y=(25*x)%777013;
+     else y=(26*x)%777013;
+      x=y;
+    }
+  cout<<x%777013;
+  return 0;
+}
+
+d(n)=nr de siruri care se termina cu 2 cifre distincte
+      abcd, dfrf
+e(n)==nr de siruri care se termina cu 2 cifre egale
+d(n+1)=25* e(n)+25*d(n)
+e(n+1)=d(n)
+
+e1=26;d1=25*26/2;
+for(int i=3;i<=n;i++)
+{
+   e2=d1;d2=25*(e1+d1);
+   e1=e2;d1=d2;
+}
+================
+dinamica03
+a,b,c,d
+fab(n)= nr de siruri care se termina cu a sau cu b
+fcd(n)=nr de siruri care se termina cu c sau cu d
+fab(n+1)=2*fcd(n)+fab(n)
+fcd(n+1)=2*(fab(n)+fcd(n))
+
+
+dinamica04
+i(n)- nr de siruri de n cifre care se termina cu o cifra impara
+p(n)-nr de siruri de n cifre care se termina cu o cifra para
+i(1)=5, p(1)=4
+i(n+1)=5*i(n)
+p(n+1)=5*(i(n) +p(n))
+-----
+
+==============================
+INFO VARIANTA C (https://cdn.discordapp.com/attachments/1016657053399396476/1068204723892666368/Info_VariantaC.pdf)
+==============================
+1. d 
+2. d
+3. d
+4. f
+5. c
+6. c
+7. e
+8. b
+9. d
+10. d
+
+
+
+=============================================
+ADMITERE UPB INFORMTICA 2022-07-18 VARIANTA F (https://cdn.discordapp.com/attachments/1016657053399396476/1068204724278530198/Informatica_Ia_2022_varianta_F.pdf)
+=============================================
+1 a
+2.e
+3.d
+4.c
+5.a
+
+k=4
+1 2 3 4
+1 2 4 8
+
+inca 2^(k-1)-(k-1) noduri
+n=k+2^(k-1)-(k-1)=2^(k-1)+1 noduri 
+
+6.d 
+7.f
+8.e
+9.d
+10.e
+
+
+
+1	1	1	1	1	1
+1	2	3	4	5	6
+1	3	6	10	15
+
+1	4		
+X	
+1	5				
+1	6				
+ A[i][j]=a[i-1][j]  +a[i][j-1]
+F(x,y)=f(x-1,y) +f(x,y-1)
+
+COMBINARITRIUNGHIUL LUI PASCAL
+
+1					
+1	1				
+1	2	1			
+1	3	3	1		
+1	4	6	4	1	
+1	5	10	10	5	1
+
+Combin(n,k)=combin(n-1,k-1)+combin(n-1,k-1)
+A[i][j]=a[i-1][j-1]+a[i-1][j]
+
+
+UBB -Sa se afiseze a n- a linie din triunghiul Pascal , utilizand 2 vectori
+
+
+nr de grafuri cu 5 noduri a.i 1 si 2 sa nu aiba muchie si 3 si 4 sa nu aiba muchie
+2^8
+
+0 a x x x
+  0 x x x
+    0 a x
+      0 x
+        0
+
+#include <iostream>
+using namespace std;
+int numarare(int n, int m){
+  int nc = n, mc = m;
+  int cifn = 0;
+  int cifm = 0;
+  int p = 1;
+  int suma = 0;
+  while(nc){
+    p*=10;
+    cifn++;
+    nc/=10;
+  }
+  while(mc){
+    cifm++;
+    mc/=10;
+  }
+  for(int i=cifn; i<=cifm; ++i,p*=10){
+    if(i==cifn)
+      suma+=(p-n)*cifn;
+		else
+    if(i==cifm)
+      suma+=(m-p/10+1)*cifm;
+    else{
+      suma+=i*(p/10)*9;
+    }
+			
+  }
+  return suma;
+}
+int main() {
+ int n, m;
+  cin >> n >> m;
+  cout << numarare(n, m);
+}
+
+----------------------
+ADMITERE
+IASI AC- 2022, VARIANTE 2,3  daca sunt diferite , altfel Iasi INfo 2019,2018, exercitii
+
++ghid bac---> prob III. din testele 6,7
++poze
++bac 2017---> iunie
+
+
+
+
+

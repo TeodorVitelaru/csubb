@@ -1,0 +1,162 @@
+================
+exercitii pbinfo
+================
+
+
+#3905 
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int fact(int n){
+    int p = 1;
+    while(n>1){
+        p*=n;
+        n--;
+    }
+    return p;
+}
+int main(){
+    int n, c = 0,  p = 0, cop,f;
+      long long s=0;
+    cin >> n;
+    cop = n;
+    while(cop){
+        p=p*10+1;
+        c++;
+        cop/=10;
+    }
+    f=fact(c-1);
+   while(n){
+         s = s + 1ll*n%10*p*f;
+         n/=10;
+    }
+    cout << s;
+    return 0;
+}
+
+=========================================================
+
+
+#297
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("secvsummax.in");
+ofstream fout("secvsummax.out");
+
+int main()
+{
+  int smax, s, x, u, p=0, n, i=1, aux;
+  fin>>n>>x; smax=s=x; aux=1; u=1; p=1;
+  n--;
+  while(n)
+    {
+      if(s<0) {s=0; aux=i+1;}
+      fin>>x;
+      i++;
+      s=s+x;
+      if(s>smax)
+      {smax=s; p=aux; u=i;}
+      n--;
+    }
+  fout<<p<<" "<<u;
+  return 0;
+}
+==========================================================
+
+
+#981
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int n, x, l, lmax=0;
+  cin>>n;
+  for(int i=1; i<=n; ++i)
+    {
+      cin>>x;
+      int ok=1;
+      while(x>1 && ok)
+        {
+          if(x%2==0) ok=0;
+          x/=2;
+        }
+      if(ok)
+      {
+        l++;
+        if(l>lmax) lmax=l;
+        
+      }
+      else  l=0;
+    }
+  cout<<lmax;
+
+  
+    return 0;
+}
+=========================================================
+
+
+#3163 am vazut o tarziu (solutie bruta)
+int main(){
+    ifstream fin("secvmaxval.in");
+    ofstream fout("secvmaxval.out");
+    int n, k, sirMax;
+    int v[1001];
+    fin >> n >> k;
+    for(int i = 1; i<=n; ++i)
+        fin >> v[i];
+    int start = 1, sir=-1, sum=v[start];
+    for(int i = 1; i<=n; ++i){
+        sum+=v[i];
+        if(sum>k){
+                if(i-start > sir)
+                sir=i-start;
+            sum-=v[start];
+            start++;
+        }
+    }
+    fout << sir;
+}
+
+=========================================================
+
+
+#4035
+#include <bits/stdc++.h>
+using namespace std;
+
+long long NrSecvS(int a[], int n, int S)
+{
+  long long cnt=0,st=1;
+  long long s=0;
+  for(int i=1; i<=n; ++i)
+    {
+      s+=a[i];
+      while(s>S) 
+                {cnt+=n-i+1;s-=a[st];st++;
+                    }
+      
+    }
+  return cnt;
+}
+
+
+int main()
+{
+  int n, a[1000001], S;
+  cin>>n>>S;
+  for(int i=1; i<=n; ++i)
+    cin>>a[i];
+  cout<<NrSecvS(a, n, S);
+  
+  return 0;
+}
+===========================================================
+
+
+
+
+
+
+

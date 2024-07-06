@@ -1,0 +1,77 @@
+        -:    0:Source:C:/Users/Admin/CLionProjects/LAB6/domain.h
+        -:    0:Graph:C:\Users\Admin\CLionProjects\LAB6\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\ui.cpp.gcno
+        -:    0:Data:C:\Users\Admin\CLionProjects\LAB6\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\ui.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <string>
+        -:    2:#include <iostream>
+        -:    3:using namespace std;
+        -:    4:
+        -:    5:class Oferta
+        -:    6:{
+        -:    7:private:
+        -:    8:    string denumire{ "" };
+        -:    9:    string destinatie{ "" };
+        -:   10:    string tip{ "" };
+        -:   11:    int pret{ 0 };
+        -:   12:public:
+        -:   13:    Oferta() = delete;
+        -:   14:
+        -:   15:    Oferta(string denumire, string destinatie, string tip, int pret) :denumire{ denumire }, destinatie{ destinatie }, tip{ tip }, pret{ pret }{};
+        -:   16:
+function _ZN6OfertaC1ERKS_ called 0 returned 0% blocks executed 0%
+    #####:   17:    Oferta(const Oferta& ot)
+    #####:   18:    {
+    %%%%%:   18-block  0
+    %%%%%:   18-block  1
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   18-block  2
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   18-block  3
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    $$$$$:   18-block  4
+call    9 never executed
+    $$$$$:   18-block  5
+    $$$$$:   18-block  6
+    #####:   19:        denumire = ot.denumire;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   20:        destinatie = ot.destinatie;
+    %%%%%:   20-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   21:        tip = ot.tip;
+    %%%%%:   21-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   22:        pret = ot.pret;
+    #####:   23:    }
+    %%%%%:   23-block  0
+    $$$$$:   23-block  1
+call    0 never executed
+    $$$$$:   23-block  2
+call    1 never executed
+    $$$$$:   23-block  3
+call    2 never executed
+        -:   24:
+        -:   25:    string get_denumire() const;
+        -:   26:    string get_destinatie() const;
+        -:   27:    string get_tip() const;
+        -:   28:    int get_pret() const;
+        -:   29:    void set_denumire(string _denumire);
+        -:   30:    void set_destinatie(string _destinatie);
+        -:   31:    void set_tip(string _tip);
+        -:   32:    void set_pret(int _pret);
+        -:   33:
+        -:   34:    friend ostream& operator<<(ostream& stream, const Oferta& of);
+        -:   35:};
+        -:   36:
+        -:   37:

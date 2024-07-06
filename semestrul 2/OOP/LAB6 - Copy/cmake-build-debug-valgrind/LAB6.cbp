@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="LAB6"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/cmake-build-debug-valgrind"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="LAB6">
+				<Option output="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/cmake-build-debug-valgrind/LAB6" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/cmake-build-debug-valgrind"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 LAB6"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="LAB6/fast">
+				<Option output="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/cmake-build-debug-valgrind/LAB6" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/cmake-build-debug-valgrind"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 LAB6/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/cmake-build-debug-valgrind"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/cmake-build-debug-valgrind"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/mnt/c/Users/Admin/CLionProjects/LAB6\ -\ Copy/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/Vectorul_meu/vector.h">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/domain.cpp">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/domain.h">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/errors.h">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/main.cpp">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/repo.cpp">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/repo.h">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/service.cpp">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/service.h">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/teste.cpp">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/teste.h">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/ui.cpp">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/ui.h">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/utils.cpp">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/utils.h">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/validator.cpp">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/validator.h">
+			<Option target="LAB6"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Admin/CLionProjects/LAB6 - Copy/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,27 @@
+        -:    0:Source:C:/Users/Admin/CLionProjects/LAB6/ui.h
+        -:    0:Graph:C:\Users\Admin\CLionProjects\LAB6\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\Admin\CLionProjects\LAB6\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "service.h"
+        -:    2://#include "utils.h"
+        -:    3:#include "errors.h"
+        -:    4:
+        -:    5:class Consola
+        -:    6:{
+        -:    7:private:
+        -:    8:    Service& srv;
+        -:    9:public:
+function _ZN7ConsolaC1ER7Service called 1 returned 100% blocks executed 100%
+        1:   10:    Consola(Service& srv) :srv{ srv } {};
+        -:   11:    Consola(const Consola& ot) = delete;
+        -:   12:    void print_menu();
+        -:   13:    void adaugare_ui();
+        -:   14:    void modificare_ui();
+        -:   15:    void stergere_ui();
+        -:   16:    void cautare_ui();
+        -:   17:    void sortare_ui();
+        -:   18:    void filtrare_ui();
+        -:   19:    void print_all_oferte(vector<Oferta> allOferte);
+        -:   20:    void run();
+        -:   21:    void add_default_oferte();
+        -:   22:};

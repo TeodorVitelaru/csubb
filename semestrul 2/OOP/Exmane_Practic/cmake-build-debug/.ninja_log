@@ -1,0 +1,52 @@
+# ninja log v5
+10	181	7413629480991963	Exmane_Practic_autogen/timestamp	1d858e1b2c6baa40
+10	181	7413629480991963	Exmane_Practic_autogen/mocs_compilation.cpp	1d858e1b2c6baa40
+10	181	7413629480991963	D:/facultate/semestrul 2/OOP/Exmane_Practic/cmake-build-debug/Exmane_Practic_autogen/timestamp	1d858e1b2c6baa40
+10	181	7413629480991963	D:/facultate/semestrul 2/OOP/Exmane_Practic/cmake-build-debug/Exmane_Practic_autogen/mocs_compilation.cpp	1d858e1b2c6baa40
+144	236	7411872956281624	CMakeFiles/Exmane_Practic.dir/Exmane_Practic_autogen/mocs_compilation.cpp.obj	69a9c245f48781ec
+201	1757	7413623222407238	CMakeFiles/Exmane_Practic.dir/Repo.cpp.obj	1805a9c678529474
+252	5359	7413625260682763	CMakeFiles/Exmane_Practic.dir/main.cpp.obj	fbb731c9105da7c
+5262	6040	7413629536867364	Exmane_Practic.exe	a432c74bd29ebe9a
+260	1669	7413625223786281	CMakeFiles/Exmane_Practic.dir/Service.cpp.obj	fcd5e89f2977a19f
+186	5261	7413629531757093	CMakeFiles/Exmane_Practic.dir/GUI.cpp.obj	8dc3c68b029e9785
+278	5529	7413625262395060	CMakeFiles/Exmane_Practic.dir/teste.cpp.obj	8ff1a22a2ae8189b
+28	199	7413631347897271	Exmane_Practic_autogen/timestamp	1d858e1b2c6baa40
+28	199	7413631347897271	Exmane_Practic_autogen/mocs_compilation.cpp	1d858e1b2c6baa40
+28	199	7413631347897271	D:/facultate/semestrul 2/OOP/Exmane_Practic/cmake-build-debug/Exmane_Practic_autogen/timestamp	1d858e1b2c6baa40
+28	199	7413631347897271	D:/facultate/semestrul 2/OOP/Exmane_Practic/cmake-build-debug/Exmane_Practic_autogen/mocs_compilation.cpp	1d858e1b2c6baa40
+230	6492	7413631410814530	CMakeFiles/Exmane_Practic.dir/teste.cpp.obj	8ff1a22a2ae8189b
+223	7422	7413631420084005	CMakeFiles/Exmane_Practic.dir/GUI.cpp.obj	8dc3c68b029e9785
+30	387	7413631569038155	Exmane_Practic_autogen/timestamp	1d858e1b2c6baa40
+30	387	7413631569038155	Exmane_Practic_autogen/mocs_compilation.cpp	1d858e1b2c6baa40
+30	387	7413631569038155	D:/facultate/semestrul 2/OOP/Exmane_Practic/cmake-build-debug/Exmane_Practic_autogen/timestamp	1d858e1b2c6baa40
+30	387	7413631569038155	D:/facultate/semestrul 2/OOP/Exmane_Practic/cmake-build-debug/Exmane_Practic_autogen/mocs_compilation.cpp	1d858e1b2c6baa40
+443	1896	7413631584270273	CMakeFiles/Exmane_Practic.dir/Repo.cpp.obj	1805a9c678529474
+462	2033	7413631585623951	CMakeFiles/Exmane_Practic.dir/Service.cpp.obj	fcd5e89f2977a19f
+407	5513	7413631620407057	CMakeFiles/Exmane_Practic.dir/main.cpp.obj	fbb731c9105da7c
+481	5682	7413631622107343	CMakeFiles/Exmane_Practic.dir/teste.cpp.obj	8ff1a22a2ae8189b
+425	6432	7413631629597655	CMakeFiles/Exmane_Practic.dir/GUI.cpp.obj	8dc3c68b029e9785
+6432	7319	7413631635788874	Exmane_Practic.exe	a432c74bd29ebe9a
+31	210	7413632438185917	Exmane_Practic_autogen/timestamp	1d858e1b2c6baa40
+31	210	7413632438185917	Exmane_Practic_autogen/mocs_compilation.cpp	1d858e1b2c6baa40
+31	210	7413632438185917	D:/facultate/semestrul 2/OOP/Exmane_Practic/cmake-build-debug/Exmane_Practic_autogen/timestamp	1d858e1b2c6baa40
+31	210	7413632438185917	D:/facultate/semestrul 2/OOP/Exmane_Practic/cmake-build-debug/Exmane_Practic_autogen/mocs_compilation.cpp	1d858e1b2c6baa40
+233	1538	7413632451474456	CMakeFiles/Exmane_Practic.dir/Repo.cpp.obj	1805a9c678529474
+225	1668	7413632452777000	CMakeFiles/Exmane_Practic.dir/Service.cpp.obj	fcd5e89f2977a19f
+216	4810	7413632484173692	CMakeFiles/Exmane_Practic.dir/main.cpp.obj	fbb731c9105da7c
+252	4983	7413632485923193	CMakeFiles/Exmane_Practic.dir/teste.cpp.obj	8ff1a22a2ae8189b
+242	5868	7413632494726979	CMakeFiles/Exmane_Practic.dir/GUI.cpp.obj	8dc3c68b029e9785
+5868	6862	7413632500976853	Exmane_Practic.exe	a432c74bd29ebe9a
+24	202	7413633457827526	Exmane_Practic_autogen/timestamp	1d858e1b2c6baa40
+24	202	7413633457827526	Exmane_Practic_autogen/mocs_compilation.cpp	1d858e1b2c6baa40
+24	202	7413633457827526	D:/facultate/semestrul 2/OOP/Exmane_Practic/cmake-build-debug/Exmane_Practic_autogen/timestamp	1d858e1b2c6baa40
+24	202	7413633457827526	D:/facultate/semestrul 2/OOP/Exmane_Practic/cmake-build-debug/Exmane_Practic_autogen/mocs_compilation.cpp	1d858e1b2c6baa40
+23	183	7413633641296004	Exmane_Practic_autogen/timestamp	1d858e1b2c6baa40
+23	183	7413633641296004	Exmane_Practic_autogen/mocs_compilation.cpp	1d858e1b2c6baa40
+23	183	7413633641296004	D:/facultate/semestrul 2/OOP/Exmane_Practic/cmake-build-debug/Exmane_Practic_autogen/timestamp	1d858e1b2c6baa40
+23	183	7413633641296004	D:/facultate/semestrul 2/OOP/Exmane_Practic/cmake-build-debug/Exmane_Practic_autogen/mocs_compilation.cpp	1d858e1b2c6baa40
+24	189	7413634506569062	Exmane_Practic_autogen/timestamp	1d858e1b2c6baa40
+24	189	7413634506569062	Exmane_Practic_autogen/mocs_compilation.cpp	1d858e1b2c6baa40
+24	189	7413634506569062	D:/facultate/semestrul 2/OOP/Exmane_Practic/cmake-build-debug/Exmane_Practic_autogen/timestamp	1d858e1b2c6baa40
+24	189	7413634506569062	D:/facultate/semestrul 2/OOP/Exmane_Practic/cmake-build-debug/Exmane_Practic_autogen/mocs_compilation.cpp	1d858e1b2c6baa40
+194	4955	7413634554175487	CMakeFiles/Exmane_Practic.dir/GUI.cpp.obj	8dc3c68b029e9785
+4956	5972	7413634561358628	Exmane_Practic.exe	a432c74bd29ebe9a

@@ -1,0 +1,228 @@
+TESTUL 10/2020
+#include <cstring>
+#include <iostream>
+using namespace std;
+
+
+int main() {
+  char sir[101],snou[101+50*7]="";
+	cin.getline(sir, 101);
+  char *p, *q;
+  bool ok = 0;
+  p=strtok(sir, " ");
+  q=strtok(NULL, " ");
+	strcat(snou, p);
+  strcat(snou, " ");
+  while(q){
+    if(p[strlen(p)-1] == q[strlen(q)-1])
+      strcat(snou, "succes "), ok = 1;
+    strcat(snou, q);
+    strcat(snou, " ");
+    p = q;
+    q=strtok(NULL, " ");
+  }
+  if(ok)
+    cout << snou;
+  else
+    cout << "nu exista";
+  return 0;
+}
+
+TEST 2/2020
+#include <cstring>
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    char sir[101];
+    char sirFinal[101]="";
+    cin.getline(sir, 100);
+    char *p;
+
+    p=strtok(sir, " ");
+    while(p){
+        if(p[0]=='-')
+            p=strtok(NULL, " ");
+        else{
+            strcat(sirFinal, p);
+        strcat(sirFinal, " ");
+        p=strtok(NULL, " ");
+        }
+    }
+    cout << sirFinal << endl;
+    return 0;
+}
+====
+TESTUL 6/2020
+#include <cstring>
+#include <iostream>
+using namespace std;
+
+int main() {
+ char sir[101];
+    char mat[10][101];
+    int cntV = 0, cntC=0;
+    cin.getline(sir, 100);
+    int tot=0;
+    bool test = 0;
+    char *p = strtok(sir, " ");
+    while(p){
+            cntV=0, cntC=0;
+        for(int i=0; i<strlen(p); ++i)
+            if(strchr("aeiou",p[i]))
+                cntV++;
+                else
+                cntC++;
+        if(cntV<cntC)
+				{ cout<<p<<endl;test=1;}
+    p = strtok(NULL, " ");
+    }
+    if(!test)
+        cout << "nu exista" << endl;
+     return 0;
+
+}
+MATRICI
+IUNIE 2022
+#include <cstring>
+#include <iostream>
+using namespace std;
+
+int main() {
+  int a[101][101], m, n, aux, suma=0;
+  cin >> m >> n;
+  for(int i = 1; i<=m; ++i)
+    for(int j = 1; j<=n; ++j)
+      cin >> a[i][j];
+  for(int j=0; j<=n+1; ++j)
+    a[0][j] = a[m+1][j] = 10;
+  for(int i=0; i<=m+1; ++i)
+    a[i][0] = a[i][n+1] = 10;
+  for(int i=1; i<=m; ++i)
+    for(int j=1; j<=n; ++j)
+      {
+        aux = min(min(a[i+1][j],a[i-1][j]), min(a[i][j+1], a[i][j-1]));
+        
+				if(a[i][j]<aux)
+            suma += aux - a[i][j];
+        }
+  cout << suma << endl;
+}
+SIMETRIE IN MATRICE
+Simetricul lui a[i][j] (indexare de la 1 la n)
+-fata de DP : a[j][i]
+-fata de DS: a[n-j+1][n-i+1]
+-fata de linia mediana a[n-i+1][n]
+-fata de coloana mediana a[i][n-j+1]
+-fata de elementul de la celalalt capat al matricii a[n-i+1][n-j+1]?????
+  a[1][1]-a[n][n]
+  a[1][2]-a[n][n-1]
+
+PBINFO- 1585#include <cstring>
+#include <iostream>
+using namespace std;
+int a[31][31];
+int main() {
+  int n;
+  cin >> n;
+	for(int i = 1; i<=(n+1)/2; i+=2)
+    for(int j = i; j<=n-i+1; ++j)
+    a[n-i+1][j]=a[n-j+1][n-i+1]=a[j][i]=a[i][j]=1;
+  for(int i=1; i<=n; ++i){
+    for( int j=1; j<=n; ++j)
+      cout << a[i][j] << " ";
+      cout << endl;
+    }
+}
+PBINFO-608 PSEUDO-DIAGONALE
+
+Diagonala paralela cu DP deasupra: j=i+1
+Diagonala paralela cu DP dedesubt: i=j-1===> |i-j|=1
+..K diagonale paralele cu DP: |i-j|<=k
+
+Diagonala paralela cu DS deasupra:i+j=n
+Diagonala paralela cu DS dedesubt: i+j=n+2==>|n+1-(i+j)|=1
+K diagonale paralele cu DS:|n+1-(i+j)|<=k
+
+#include <cstring>
+#include <iostream>
+#include <cmath>
+using namespace std;
+int a[31][31];
+int main() {
+  int n, k;
+  cin >> n >> k;
+  for(int i = 1; i<=n ; ++i)
+    for(int j = 1; j<=n ; ++j)
+      if(abs(i-j) <=k || abs(n+1-i-j) <= k)
+        a[i][j]=1;
+  else
+        a[i][j]=2;
+  for(int i =1; i<=n; ++i){
+    for(int j=1; j<=n; ++j)
+      cout << a[i][j] << " ";
+  cout << endl;
+      }
+}
+================
+PBINFO 229
+#include <cstring>
+#include <iostream>
+#include <cmath>
+using namespace std;
+int a[25][25];
+int main() {
+  int n, a1=1, a2=0;
+  cin >> n;
+  for(int i=1; i<=n; ++i)
+    for(int j=1; j<=n; ++j){
+      a[i][j] = (a1+a2)%10;
+      a1=a2;
+      a2=a[i][j];
+      }
+  for(int i = 1; i<=n; ++i){
+    for(int j = 1; j<=n; ++j)
+      cout << a[i][j] << " ";
+      cout << endl;
+    }
+  return 0;
+}
+
+
+===============
+PBINFO-235
+#include <cstring>
+#include <iostream>
+#include <cmath>
+using namespace std;
+int a[7][7];
+int main() {
+  int n, a1=1, a2=0;
+  cin >> n;
+  for(int i=1; i<=n; ++i)
+    if(i%2==1)
+    for(int j=1; j<=n; ++j){
+      a[i][j] = a1+a2;
+      a1=a2;
+      a2=a[i][j];
+      }
+  else
+      for(int j=n; j>=1; --j){
+        a[i][j]=a1+a2;
+        a1=a2;
+        a2=a[i][j];
+      }
+
+  for(int i = 1; i<=n; ++i){
+    for(int j = 1; j<=n; ++j)
+      cout << a[i][j] << " ";
+      cout << endl;
+    }
+  return 0;
+}
+
+TEMA DIN SUBIECTE 2022 SI 2021 (INCLUSIV TESTE) PROBLEME(III.2) SI EXERCITII(II.3) DE MATRICI
+
+  

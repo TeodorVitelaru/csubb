@@ -1,0 +1,389 @@
+#1864 100 de puncte pe pbinfo dar nu afiseaza nimic pe replit
+=====
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("moscraciun.in");
+ofstream fout("moscraciun.out");
+
+int a[102][102];
+const int dc[]={0,0,-1,1};
+const int dl[]={1, -1, 0, 0};
+void fillin (int i, int j, int &spiri)
+{
+  if(a[i][j]==0 ||a[i][j]==-1) return;
+  else
+  {
+    if(a[i][j]==3)
+      spiri++;
+    a[i][j]=-1;
+    for(int k=0; k<=3; k++)
+      fillin(i+dl[k], j+dc[k], spiri);
+  }
+}
+int main()
+{
+    int n, m, cnt=0;
+    fin >> n >> m;
+    for(int i=0; i <= n + 1; i++)
+      a[i][0] = a[i][m + 1] = 0;
+    for(int j = 0; j <=m + 1; j++)
+      a[0][j] = a[n + 1][j] = 0;
+    
+    for(int i=1; i <=n ;i++)
+        for(int j=1; j<=m; j++)
+            fin >> a[i][j];
+    for(int i = 1; i <= n; i++)
+        for(int j = 1;j <= m; j++)
+            if(a[i][j] == 2)
+            {fillin(i, j, cnt); fout<<cnt;}
+    return 0;
+}
+
+
+
+
+
+#845
+====
+#include<iostream>
+#include<cstring>
+using namespace std;
+int a[1026][1026];
+void generare(int lsus, int csus, int ljos, int cjos)
+{
+  if(ljos==lsus+1 && cjos==csus+1)
+  {a[lsus][csus]=1; return;}
+  else
+  {
+    int lm=(lsus+ljos)/2, cm=(cjos+csus)/2;
+    for(int i=lsus; i<=lm; i++)
+      for(int j=csus; j<=cm; j++)
+        a[i][j]=1;
+    generare(lsus, cm+1, lm, cjos);
+    generare(lm+1, csus, ljos, cm);
+    generare(lm+1, cm+1, ljos, cjos);
+    
+  }
+}
+
+int main()
+{
+    int n,ljos,cjos;
+    cin>>n;
+    ljos=cjos=(1<<n);
+    generare(1,1, ljos, cjos);
+  for(int i=1; i<=ljos; i++)
+    {
+      for(int j=1; j<=cjos; j++)
+        cout<<a[i][j]<<" ";
+      cout<<endl;
+    }
+  return 0;
+}
+
+
+
+
+
+#1952
+=====
+#include <bits/stdc++.h>
+
+using namespace std;
+int a[1026][1026];
+void generare(int lsus, int csus, int ljos, int cjos, int n)
+{
+  if(n==1)
+  {a[lsus][csus]=1; return;}
+  else
+  {
+    int lm=(lsus+ljos)/2, cm=(cjos+csus)/2;
+    a[lm][cm]=n;
+    generare(lsus, csus, lm-1, cm-1, n-1);
+    generare(lsus, cm+1, lm-1, cjos, n-1);
+    generare(lm+1, csus, ljos, cm-1, n-1);
+    generare(lm+1, cm+1, ljos, cjos, n-1);
+    
+    
+  }
+}
+
+int main()
+{
+    int n,ljos,cjos;
+    cin>>n;
+    ljos=cjos=(1<<n)-1;
+    generare(1,1, ljos, cjos, n);
+  for(int i=1; i<=ljos; i++)
+    {
+      for(int j=1; j<=cjos; j++)
+        cout<<a[i][j]<<" ";
+      cout<<endl;
+    }
+  return 0;
+}
+
+
+
+
+
+#2543
+=====
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int n, s=0, cnt=0;
+    cin>>n;
+    while(n)
+      {
+        s+=n*(1<<cnt);
+        n--;
+        cnt+=2;
+      }
+  cout<<s;
+  return 0;
+}
+
+
+
+
+
+#837
+====
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("fill.in");
+ofstream fout("fill.out");
+int a[102][102], n, m;
+
+void citire()
+{
+  fin>>n>>m;
+  for(int i=1; i<=n; i++)
+    for(int j=1; j<=m; j++)
+      fin>>a[i][j];
+}
+void Fill(int x,int y)
+{
+    if(a[x][y]==0)return ;
+  a[x][y]=0;
+  Fill(x-1, y);
+  Fill(x, y+1);
+  Fill(x+1, y);
+  Fill(x, y-1);
+    
+}
+int cnt_cont()
+{int nr=0;
+    for(int i=1; i<=n; i++)
+    for(int j=1; j<=m; j++)
+        if(a[i][j]==1)
+        {
+          nr++;
+          Fill(i, j);
+        }
+  return nr;
+  
+    
+}
+
+    int main()
+{
+   citire();
+  fout<<cnt_cont();
+    return 0;
+}
+
+
+
+
+
+#1507
+=====
+#include <bits/stdc++.h>
+
+using namespace std;
+
+ifstream fin("grupuri.in");
+ofstream fout("grupuri.out");
+
+int a[101][101], n;
+
+int dc[]={0, 0, 1, -1};
+int dl[]={-1, 1, 0, 0};
+
+void fillin (int i, int j)
+{
+  if(a[i][j]!=1) return;
+  else
+  {
+    a[i][j]=-1;
+    for(int k=0; k<=3; k++)
+      fillin(i+dl[k], j+dc[k]);
+  }
+}
+
+int main()
+{
+  int nr=0;
+  fin>>n;
+  for(int i=1; i<=n; ++i)
+    for(int j=1; j<=n; j++)
+      fin>>a[i][j];
+  for(int i=0; i<=n+1; i++)
+    a[i][0]=a[i][n+1]=a[0][i]=a[n+1][0]=-1;
+  for(int i=1; i<=n; ++i)
+    for(int j=1; j<=n; ++j)
+      if(a[i][j]==1)
+      {nr++; fillin(i, j);}
+  fout<<nr;
+ 
+  return 0;
+}
+
+
+
+
+
+
+=======================
+SUBIECTUL 3, PROBLEMA 3
+=======================
+
+pag.7
+=====
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+
+int main()
+{
+  int x, lmax=0, l=0;
+  while(fin>>x)
+    if(x%2==0) l++;
+   else
+    {
+      if(l>lmax)
+        lmax=l; 
+      l=0;
+    }
+  if(l>lmax)
+    lmax=l;
+  cout<<lmax;
+ 
+  return 0;
+}
+
+
+
+
+pag.16
+======
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+ofstream fout("bac.out");
+
+
+int main()
+{
+  int x, l=1, lmax=0, nrcif1=0, nrcif2=0;
+  fin>>x;
+  while(x)
+    {
+      nrcif1+=x%10;
+      x/=10;
+    }
+  while(fin>>x)
+    {
+      nrcif2=0;
+      while(x)
+        {
+          nrcif2+=x%10;
+          x/=10;
+        }
+      if(nrcif2==nrcif1) l++;
+      else
+      {
+        if(l>lmax)
+          lmax=l;
+        l=1;
+        nrcif1=nrcif2;
+      }
+    }
+  if(l>lmax)
+    lmax=l;
+  cout<<lmax;
+    return 0;
+}
+
+
+
+
+pag.24 
+======
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+ofstream fout("bac.out");
+
+bool corect(int x, int a)
+{
+  while(x)
+    {
+      if(x%2==a)
+        x/=10;
+      else
+        return false;
+    }
+  return true;
+}
+
+int main()
+{
+  int l=0, x, nr=0, nrcif;
+  bool ok=false;
+  fin>>x;
+  while(!corect(x, 0))
+    fin>>x;
+  l++;
+  while(fin>>x)
+    {
+      if(corect(x, 1))
+        nr=0;
+      else
+        nr++;
+      l++;
+    }
+ cout<<l-nr;
+ return 0;
+}
+
+
+
+
+pag.32
+======
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.in");
+ofstream fout("bac.out");
+
+
+
+int main()
+{
+  int x, v[11]={0};
+  while(fin>>x)
+      while(x)
+        {v[x%10]++; x/=10;}
+  for(int i=9; i>=0; i--)
+    {
+      while(v[i])
+        {cout<<i; v[i]--;}
+    }
+    return 0;
+}

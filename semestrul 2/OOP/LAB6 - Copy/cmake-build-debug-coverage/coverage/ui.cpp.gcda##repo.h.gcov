@@ -1,0 +1,56 @@
+        -:    0:Source:C:/Users/Admin/CLionProjects/LAB6/repo.h
+        -:    0:Graph:C:\Users\Admin\CLionProjects\LAB6\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\ui.cpp.gcno
+        -:    0:Data:C:\Users\Admin\CLionProjects\LAB6\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\ui.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "utils.h"
+        -:    2:#include <iostream>
+        -:    3:#include <vector>
+        -:    4:#include <ostream>
+        -:    5:#include <string>
+        -:    6:using namespace std;
+        -:    7:
+        -:    8:#ifndef LAB6_REPO_H
+        -:    9:#define LAB6_REPO_H
+        -:   10:
+        -:   11:typedef Oferta ElemType;
+        -:   12:
+        -:   13:class Repo
+        -:   14:{
+        -:   15:private:
+        -:   16:    vector<Oferta> allOferte;
+        -:   17:    friend class Service;
+        -:   18:public:
+        -:   19:    Repo() = default;
+        -:   20:    Repo(const Repo& ot) = delete;
+        -:   21:
+        -:   22:    void store(const Oferta& oferta);
+        -:   23:
+        -:   24:    void del(const int& poz);
+        -:   25:
+        -:   26:    void modify(const Oferta&);
+        -:   27:
+        -:   28:    const vector<Oferta>& get_all_oferte() const;
+        -:   29:
+        -:   30:    const Oferta& find(string denumire, string destinatie);
+        -:   31:
+        -:   32:    bool exists(const Oferta& oferta);
+        -:   33:
+        -:   34:};
+        -:   35:
+        -:   36:class RepoException
+        -:   37:{
+        -:   38:private:
+        -:   39:    string errorMsg;
+        -:   40:public:
+        -:   41:    RepoException(string errorMsg) :errorMsg{ errorMsg } {};
+function _ZN13RepoException15getErrorMessageB5cxx11Ev called 1 returned 100% blocks executed 100%
+        1:   42:    string getErrorMessage()
+        -:   43:    {
+        1:   44:        return this->errorMsg;
+        1:   44-block  0
+call    0 returned 1
+        -:   45:    }
+        -:   46:};
+        -:   47:
+        -:   48:
+        -:   49:#endif //LAB6_REPO_H

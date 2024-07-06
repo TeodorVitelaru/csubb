@@ -1,0 +1,137 @@
+#2666
+void Trim (char s[])
+{
+    int i=0;
+    int ok=false;
+    int poz1, poz2;
+    while(s[i]!='\0')
+    {
+        if(s[i]!=' ' && ok==false ) {ok=true; poz1=i;}
+        if(s[i]!=' ') poz2=i;
+        i++;
+    }
+    for(int i=poz1; i<=poz2; i++)
+        s[i-poz1]=s[i];
+    s[poz2-poz1+1]='\0';
+    
+}
+
+
+
+
+#3243
+bool verificare (char ch)
+{
+    return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z');
+}
+int Path(const char cale[], char d[101][101])
+{
+    int i=0; int c=0, j=0;
+    while(cale[i])
+    {
+        if(verificare(cale[i]))
+        	{
+            	d[c][j]=cale[i];
+            	j++;
+        	}
+        	else {c++; j=0;}
+        i++;
+    }
+    return c+1;
+}
+
+
+#2997 
+void Prescurtat(char s[])
+{char *p,s2[101]="";
+	p=strtok(s," ");
+	while(p)
+		{if(p[strlen(p)-1]=='.')
+			switch(p[0])
+				{
+					case 'C':strcat(s2,"COLEGIUL");break;
+					case'L': strcat(s2,"LICEUL");break;
+          case'N':strcat(s2,"NATIONAL"); break;
+          case'T':strcat(s2, "TEORETIC"); break;	
+				}
+			else strcat(s2,p);
+			strcat(s2," ");
+			p=strtok(0," ");
+		}
+	 s2[strlen(s2)-1]=0;//sterg ultimul spatiu
+	strcpy(s,s2);}
+
+
+
+
+
+#2369 nu inteleg ca nu am facut la scoala mai deloc sa mor eu
+#2640 
+int delimitator(char delim[],char c)
+{int i=0;
+	while(delim[i]!=0)
+    {
+      if(delim[i]==c)
+        return 1;
+      else i++;
+    }
+  
+	return 0;
+}
+int extrageCuvant (char dest[], char sursa[], char delim[], int n)
+{ int i=0,k=0,start=0,nrcuv=-1;//textul incepe cu litera
+		while(delimitator(delim,sursa[i]) && sursa[i]!=0 )i++;
+	
+	while(sursa[i]!=0 && nrcuv<n)
+		{ 
+			while((sursa[i]>='a' && sursa[i]<='z' || sursa[i]>='A' && sursa[i]<='Z') && sursa[i]!=0 )
+				 i++;//deplasare peste literele cuvantului
+			nrcuv++;
+				if(nrcuv==n)
+				{for(int j=start;j<i;j++)
+					 dest[k++]=sursa[j];
+					dest[k]=0;
+					return 1;}
+				int j=i+1;
+				while(delimitator(delim,sursa[j])&& sursa[j] !=0)
+					 j++;
+				if(sursa[j]==0)return 0;
+				else
+				{start=j;i=j;}
+      }
+	
+		}
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+bool litera (char ch)
+{
+    return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z');
+}
+
+int extrageCuvant (char destinatie[], char sursa[], char separatori[], int k)
+{
+   char cuv[21][21];
+   int c=0, j=0, i=0;
+   while(sursa[i]!='\0')
+   {
+       if(litera(sursa[i])) {cuv[c][j]=sursa[i]; j++;}
+            else if(sursa[i]==' ' && litera(sursa[i-1])){c++; j=0;}
+        i++;
+   }
+   for(int i=0; i>=0; i++)
+    destinatie[i]=cuv[k][i];
+   if(destinatie!='\0')
+     return 1;
+    else
+     return 0;
+}
+int main()
+{
+    char dest[1001];
+    extrageCuvant(dest, "Un mar, doua mere, trei mere, toata livada !", ", !", 0);
+    cout<<dest;
+
+    return 0;
+}

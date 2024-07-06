@@ -1,0 +1,147 @@
+n=4 
+12 14 13 11 5 13 14 
+x=0
+1111
+3210
+x=2^n -1
+
+x%k=2
+0000 | 100=0100
+
+x%k=1
+
+0100 | 0010=0110
+10
+
+y=2^k -1---> (y+1)=2^k
+
+
+(y+1) & y ==0
+
+#include <bits/stdc++.h>
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin("bac.in");
+ofstream fout("bac.out");
+
+int main() {
+  int k, x, rest[11] = {0};
+  bool ok = true;
+  fin >> k;
+  int v[k], smax = 0, s = 0, srest = 0,y=0;
+
+  for (int i = 0; i <= k - 1; i++) {
+    fin >> x;
+    v[i] = x;
+    s += x;
+    
+    y=y + ( 1<<(x%k));
+		}
+	cout<<y<<endl;
+	if((y+1)==(1<<k))
+    smax = s;
+		
+  int prim = 0, ultim =k - 1;
+  
+  
+  while (fin >> x) {
+    s = s + x - v[prim];
+    y=y -(1<<(v[prim]%k));
+    y=y + ( 1<<(x%k));
+		
+    if ((y+1)==(1<<k)) {
+      if (s > smax)
+        smax = s;
+    }
+    prim = (prim + 1) % k;
+    ultim = (ultim + 1) % k;
+    v[ultim] = x;
+    
+  }
+
+  if (smax == 0)
+    cout << "NU EXISTA";
+  else
+    cout << smax;
+
+  return 0;
+}
+----------------
+
+v=1 0 1 0 ....0 0
+
+DINAMICA01 <-- PBINFO
+
+numere de o cifra
+-4 numere pare
+-5 numere impare
+
+numere de 2 cifre
+-
+c1 c2 c3 ... cn
+fpar(n)= nr de numere de n cifre care se termina cu o cifra para
+fi(n)= nr de numere de n cifre care se termina cu o cifra impara
+
+
+fpar(1)=4
+fi(1)=5
+
+fpar(2)=4*fi(1)
+fi(2)=5*fpar(1)
+
+fpar(3)=4*fi(2)
+fi(3)=5*fpar(2)
+
+
+nr=fpar(n)+fi(n)
+
+int x1,x2,y1,y2;
+x1=4;y1=5
+for(i=2;i<=n;i++)
+{
+  x2=4*y1;
+  y2=5*x1;
+  x1=x2;y1=y2;
+}
+cout<<x2+y2;
+-------------------------
+
+-----------------
+POLI 2022
+EX. 4--->f)
+S=1^2+2^2+...+20^2+ 2*[1*19+2*18+...+19*1]+(1+2+...+20)=
+=20*21*41/6 +SUMA((20-K)*K) +20*21/2=
+               K=1,..19
+
+ex.8
+{x1}- 1
+{x3}-1
+{x1,xk,xk+1}--->combin(7,2)
+{x3,xk,xk+1}--->combin(7,2)
+{x1,xk,xk+1,xk+2,xk+3}---> combin(7,4)
+{x3,xk,xk+1,xk+2,xk+3}---> combin(7,4)
+.....
+2*(combin(7,0)+combin(7,2)+combin(7,4)+combin(7,6))=2* (2^6)=128
+--------------------
+
+poli2
+ex.4 
+12 15 23 100 2000 2500 3000
+
+
+
+
+TEMA
+BAC AUGUST SI IUNIE 2018
+Poli, cele 2 fisiere de pe resurse, exercitiile ramase si prob din culegerea Iasi  de data trecuta
+MODEL 2.3 DE LA AC /2022 !!!
+pbinfo--->dinamica02,dinamica03,dinamica04
+
+
+
+
+
+
+
+

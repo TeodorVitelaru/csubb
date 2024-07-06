@@ -1,0 +1,190 @@
+        -:    0:Source:C:/Users/Admin/Desktop/poriect alex vladu/array.c
+        -:    0:Graph:C:\Users\Admin\Desktop\poriect alex vladu\cmake-build-debun-code-coverage\CMakeFiles\poriect_alex_vladu.dir\array.c.gcno
+        -:    0:Data:C:\Users\Admin\Desktop\poriect alex vladu\cmake-build-debun-code-coverage\CMakeFiles\poriect_alex_vladu.dir\array.c.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "array.h"
+        -:    3:#include "domain.h"
+        -:    4:#include <stdlib.h>
+        -:    5:#include <stdio.h>
+function get_Vector_Size called 322 returned 100% blocks executed 100%
+      322:    6:int get_Vector_Size(Vector vec)
+        -:    7:{
+      322:    8:    return vec->size;
+      322:    8-block  0
+        -:    9:}
+        -:   10:
+        -:   11:
+function get_Vector_Array called 14 returned 100% blocks executed 100%
+       14:   12:Telem* get_Vector_Array(Vector vec)
+        -:   13:{
+       14:   14:    return vec->v;
+       14:   14-block  0
+        -:   15:}
+        -:   16:
+        -:   17:
+function create_vector called 35 returned 100% blocks executed 75%
+       35:   18:Vector create_vector(int cap)
+        -:   19:{
+       35:   20:    Vector vec = (Vector)malloc(sizeof(Vector_Struct));
+       35:   21:    if(vec==NULL)
+       35:   21-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 35
+    #####:   22:        return NULL;
+    %%%%%:   22-block  0
+       35:   23:    vec->size = 0;
+       35:   24:    vec->cap = cap;
+       35:   25:    vec->v = (Telem*)malloc(vec->cap * sizeof(Telem));
+       35:   26:    return vec;
+       35:   26-block  0
+        -:   27:}
+        -:   28:
+function copy_vector called 11 returned 100% blocks executed 100%
+       11:   29:Vector copy_vector(Vector vec)
+        -:   30:{
+       11:   31:    Vector new_vect = create_vector(vec->cap);
+       11:   31-block  0
+call    0 returned 11
+       28:   32:    for(int i=0; i<vec->size; i++)
+       28:   32-block  0
+branch  0 taken 17
+branch  1 taken 11 (fallthrough)
+        -:   33:    {
+       17:   34:        add_vector(new_vect, copy_oferta(vec->v[i]));
+       17:   34-block  0
+call    0 returned 17
+call    1 returned 17
+        -:   35:    }
+        -:   36:    //printf("%d%d\n", new_vect->size, vec->size);
+       11:   37:    return new_vect;
+       11:   37-block  0
+        -:   38:}
+        -:   39:
+function add_vector called 87 returned 100% blocks executed 100%
+       87:   40:void add_vector(Vector vec, Telem elem)
+        -:   41:{
+       87:   42:    if (vec->size >= vec->cap)
+       87:   42-block  0
+branch  0 taken 5 (fallthrough)
+branch  1 taken 82
+        -:   43:    {
+        5:   44:        int new_cap = vec->cap * 2;
+        5:   45:        Telem* aux = malloc(sizeof(Telem) * new_cap);
+       14:   46:        for (int i = 0; i < vec->size; i++)
+        5:   46-block  0
+       14:   46-block  1
+branch  0 taken 9
+branch  1 taken 5 (fallthrough)
+        9:   47:            aux[i] = vec->v[i];
+        9:   47-block  0
+        5:   48:        free(vec->v);
+        5:   49:        vec->v = aux;
+        5:   50:        vec->cap = new_cap;
+        5:   50-block  0
+        -:   51:    }
+       87:   52:    vec->v[vec->size] = elem;
+       87:   53:    vec->size++;
+        -:   54:
+        -:   55:
+        -:   56:    //if (get_Vector_Size(vec) == vec->cap)
+        -:   57:        //vec->v = resize_vector(vec->v, vec->size, 2 * vec->cap);
+        -:   58:    //vec->v[vec->size++] = elem;
+       87:   59:}
+function get_vector_element called 256 returned 100% blocks executed 80%
+      256:   60:Telem get_vector_element(Vector vec, int poz)
+        -:   61:{
+      256:   62:    if (poz < get_Vector_Size(vec) )
+      256:   62-block  0
+call    0 returned 256
+branch  1 taken 256 (fallthrough)
+branch  2 taken 0
+      256:   63:        return vec->v[poz];
+      256:   63-block  0
+    #####:   64:    return NULL;
+    %%%%%:   64-block  0
+        -:   65:}
+function modify_vector_element called 1 returned 100% blocks executed 100%
+        1:   66:void modify_vector_element(Vector vec, int poz, Telem elem, void (*delete_element)(void*))
+        -:   67:{
+        1:   68:    if (poz < vec->size)
+        1:   68-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:   69:        delete_element(vec->v[poz]), vec->v[poz]=elem;
+        1:   69-block  0
+call    0 returned 1
+        1:   70:}
+function remove_vector_element called 3 returned 100% blocks executed 89%
+        3:   71:Telem remove_vector_element(Vector vec, int poz, void (*delete_element)(void*))
+        -:   72:{
+        3:   73:    Telem elem = vec->v[poz];
+        3:   74:    if(poz<vec->size)
+        3:   74-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 0
+        -:   75:    {
+        3:   76:        delete_element(vec->v[poz]);
+        3:   76-block  0
+call    0 returned 3
+       3*:   77:        for (int i = poz; i < get_Vector_Size(vec) -1 ; i++)
+        3:   77-block  0
+call    0 returned 3
+branch  1 taken 0
+branch  2 taken 3 (fallthrough)
+    #####:   78:            vec->v[i] = vec->v[i + 1];
+    %%%%%:   78-block  0
+        3:   79:        vec->size--;
+        3:   79-block  0
+        -:   80:    }
+        3:   81:    return elem;
+        3:   81-block  0
+        -:   82:}
+function destroy_vector called 14 returned 100% blocks executed 100%
+       14:   83:void destroy_vector(Vector vec, void(*delete_element)(void*))
+        -:   84:{
+        -:   85:    //printf("aiiicici");
+       38:   86:    for (int i = 0; i < get_Vector_Size(vec); i++)
+       14:   86-block  0
+       38:   86-block  1
+call    0 returned 38
+branch  1 taken 24
+branch  2 taken 14 (fallthrough)
+        -:   87:    {
+        -:   88:        //printf("%d", i);
+       24:   89:        delete_element(vec->v[i]);
+       24:   89-block  0
+call    0 returned 24
+        -:   90:    }
+        -:   91:    //printf("\n");
+       14:   92:    free(vec->v);
+       14:   93:    free(vec);
+       14:   94:}
+        -:   95:
+function destroy called 5 returned 100% blocks executed 100%
+        5:   96:void destroy(Vector vec, DestroyFunction destrf)
+        -:   97:{
+       16:   98:    for (int i = 0; i < get_Vector_Size(vec); i++)
+        5:   98-block  0
+       16:   98-block  1
+call    0 returned 16
+branch  1 taken 11
+branch  2 taken 5 (fallthrough)
+        -:   99:    {
+       11:  100:        Telem p = vec->v[i];
+       11:  101:        destrf(p);
+       11:  101-block  0
+call    0 returned 11
+        -:  102:    }
+        5:  103:    free(vec->v);
+        5:  104:    free(vec);
+        5:  105:}
+        -:  106:
+function destroy_lista called 11 returned 100% blocks executed 100%
+       11:  107:void destroy_lista(Vector vec)
+        -:  108:{
+       11:  109:    destroy_vector(vec, delete_Oferta);
+       11:  109-block  0
+call    0 returned 11
+       11:  110:}
+        -:  111:

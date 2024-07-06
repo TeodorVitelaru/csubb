@@ -1,0 +1,3 @@
+C:/Users/Admin/CLionProjects/lab1--grafuri--2/cmake-build-debug/CMakeFiles/lab1__grafuri__2.dir
+C:/Users/Admin/CLionProjects/lab1--grafuri--2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Admin/CLionProjects/lab1--grafuri--2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,163 @@
+UBB 2022
+
+ex.9
+a) 12 36
+b)
+
+Ex n= 1011101 &
+  n-1=1011100
+-------------------
+   n= 1011100 &
+ n-1= 1011011
+---------------
+      1011000
+
+10000
+10001
+10010
+...
+11111
+100000
+DE CITIT https://www.pbinfo.ro/articole/18895/aplicatii-ale-operatiilor-pe-biti
+===========
+BAC2007/INTERSECTIA A n intervale
+cin>>n;
+cin>>x>>y;
+  for(int i=2; i<=n; ++i)
+    {
+      cin>>a>>b;
+      if(a>x) x=a;
+      if(b<y) y=b;
+    }
+    if(x<=y)
+     cout<<x<<" "<<y;
+   else cout<<"intersectie vida";
+
+=======================
+BAC 2007/ PAG 79
+x^2+n=y^2
+n=y^2-x^2=(y-x)(y+x)
+            d   n/d
+y-x=d
+y+x=n/d
+--------
+y=(d+n/d)/2, x=n/d-y;
+
+for(d=1;d*d<=n;d++)
+  if(n%d==0)
+   if((d+n/d)%2==0)
+    {y=(d+n/d)/2; x=n/d-y; cout<<x<<" "<<y;}
+-----------------------
+1+2+...+k===n--->k(k+1)/2===n--->k===sqrt(2n)--->O(sqrt(n))
+
+k(k+1)/2===n--->k^2+k-2n=0, delta=1+8n
+k1=(-1-sqrt(delta))/2 <0
+k=(int)(-1+sqrt(delta))/2
+
+n=6-->delta=49-->k=3
+n=5-->k=2
+
+
+O(1): (varianta 72/2009)
+delta=1+8*n;
+double z=sqrt(delta)
+if(z==(int)z)
+  k=(int)(-1+sqrt(delta))/2;
+else
+ k=(int)(-1+sqrt(delta))/2+1;
+cout<<k;
+-------------
+BAC 2007, PAG 107
+https://tutoriale-pe.net/algoritmul-lui-kadane-subsir-de-suma-maxima/
+
+
+3 2 -3 -4 1 -2
+
+2 3 1 5 6
+
+#include <iostream>
+using namespace std;
+int main() { 
+  int x, n, smin, s, y;
+  cin>>n;
+  cin>>x;
+	 s=smin=x;
+  n--;
+  while(n--)
+    { if(s>0) s=0; 
+      cin>>y;
+      s=s+y;
+      if(s<smin)
+        smin=s;
+			 
+      }
+  cout<<smin;
+  return 0;
+  }
+BAC2007/PAG 113
+ (8p.)
+3. Scrie
+i un program C/C++ care citete de la tastatur un numr natural nenul k (k<100) i din
+fiierul text BAC.TXT, de pe prima linie un numr natural nenul n (k<n<100.000), iar de pe
+urmtoarea linie un ir S alctuit din n numere întregi formate din cel mult patru cifre fiecare, separate
+prin câte un spatiu; programul va afia pe ecran valoarea maxim care poate fi ob
+inut prin însumarea a k elemente aflate pe pozi
+ii consecutive în ir. De exemplu, dac se citete k=5 de la
+tastatur, n=10 de pe prima linie a fiierului i numerele: -9 11 7 -19 2 14 5 -1 6 -2 de pe a
+doua linie, atunci se afieaz 26, deoarece suma maxim care se poate ob
+ine prin adunarea a 5 valori aflate pe pozitii consecutive în ir este 26 (2+14+5+(-1)+6).
+
+
+-9 11 7 -19 2 14 5 -1 6 -2
+k=5 s=-9..2
+    s=11..14
+    s=7..5
+COADA CIRCULARA
+v=-9 11 7 -19 2
+x=14 v=14 11 7 -19 2
+x=5 v=14 5 7 -19 2
+COADA- FIFO- First In First Out--se prelucreaza elem de la inceputul cozii si adaugarea se face dupa ultimul element
+cin>>k;
+int v[k];
+for(int i=0;i<k;i++)
+ {f>>v[i];s+=v[i];}
+prim=0;ultim=k-1;
+smax=s;
+for(i=k;i<n;i++)
+{  f>>x;
+   s=s+x-v[prim];
+   if(s>smax) smax=s;
+   ultim=(ultim+1)%k;
+    v[ultim]=x;
+   prim=(prim+1)%k;
+ }
+cout<<smax;
+==============
+PROBLEME DE EFICIENTA DIN BAC 2007
++Variante 2007: 
+pag 83 iii2
+pag 85 iii.2
+pag 89 iii.2
+pag 107 iii2
+pag 111 iii3
+pag 113 iii 3
+pag 119 iii2
+pag 125 iii 3
+pag 131 iii 3
+pag 169 iii 1
+pag 187 prob III.3
+pag 195 prob III.2
+pag 197 prob III.3
+pag 201 prob III.2( nu este de eficienta, dar este interesanta)
+
+
++CONCURS UBB 2022
+
+
+
+
+
+
+
+
+

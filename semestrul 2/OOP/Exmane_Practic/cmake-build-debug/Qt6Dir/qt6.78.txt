@@ -1,0 +1,47 @@
+#include <QtWidgets/QApplication>
+#include <QLabel>
+#include <QPushButton>
+#include <QHBoxLayout>
+#include <QFormLayout>
+#include <QLineEdit>
+#include <QTableWidget>
+#include <QMessageBox>
+#include <QHeaderView>
+#include <QGroupBox>
+#include <QRadioButton>
+#include <qlistwidget.h>
+#include <QStringList>
+#include <QPainter>
+#include <QComboBox>
+
+
+#pragma once
+
+#pragma once
+#include <string>
+
+using namespace std;
+
+class Exception {
+    string msg;
+public:
+    Exception(string m) : msg{ m } {
+    };
+
+    string get_msg() {
+        return msg;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,704 @@
+        -:    0:Source:D:/facultate/semestrul 2/OOP/LAB8-9/repo.cpp
+        -:    0:Graph:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\repo.cpp.gcno
+        -:    0:Data:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\repo.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <iostream>
+        -:    2:#include <fstream>
+        -:    3:#include "repo.h"
+        -:    4:using namespace std;
+        -:    5:
+function _ZN4Repo6existsERK6Oferta called 50 returned 100% blocks executed 94%
+       50:    6:bool Repo::exists(const Oferta &oferta) {
+        -:    7:    try{
+      148:    8:        find(oferta.get_denumire(), oferta.get_destinatie());
+       50:    8-block  0
+call    0 returned 50
+branch  1 taken 50 (fallthrough)
+branch  2 taken 0 (throw)
+       50:    8-block  1
+call    3 returned 50
+branch  4 taken 50 (fallthrough)
+branch  5 taken 0 (throw)
+       50:    8-block  2
+call    6 returned 50
+branch  7 taken 1 (fallthrough)
+branch  8 taken 49 (throw)
+        1:    8-block  3
+call    9 returned 1
+call   10 returned 1
+       49:    8-block  4
+call   11 returned 49
+       49:    8-block  5
+       49:    8-block  6
+call   12 returned 49
+       49:    8-block  7
+        1:    9:        return true;
+        -:   10:    }
+       49:   11:    catch (RepoException&)
+       49:   11-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 49
+       49:   11-block  1
+call    2 returned 49
+        -:   12:    {
+       49:   13:        return false;
+       49:   14:    }
+        -:   15:}
+        -:   16:
+function _ZN4Repo4findENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ called 66 returned 24% blocks executed 60%
+       66:   17:const Oferta& Repo::find(std::string denumire, std::string destinatie) {
+      138:   18:    for(const Oferta& oferta : this->allOferte)
+       66:   18-block  0
+call    0 returned 66
+call    1 returned 66
+       88:   18-block  1
+call    2 returned 88
+       72:   18-block  2
+call    3 returned 72
+      138:   18-block  3
+call    4 returned 138
+branch  5 taken 88
+branch  6 taken 50 (fallthrough)
+        -:   19:    {
+       88:   20:        if(oferta.get_denumire() == denumire && oferta.get_destinatie() == destinatie)
+call    0 returned 88
+branch  1 taken 88 (fallthrough)
+branch  2 taken 0 (throw)
+       88:   20-block  0
+call    3 returned 88
+branch  4 taken 16 (fallthrough)
+branch  5 taken 72
+       16:   20-block  1
+call    6 returned 16
+branch  7 taken 16 (fallthrough)
+branch  8 taken 0 (throw)
+       16:   20-block  2
+call    9 returned 16
+branch 10 taken 16 (fallthrough)
+branch 11 taken 0
+       16:   20-block  3
+       72:   20-block  4
+       88:   20-block  5
+branch 12 taken 16 (fallthrough)
+branch 13 taken 72
+       16:   20-block  6
+call   14 returned 16
+       88:   20-block  7
+branch 15 taken 88 (fallthrough)
+branch 16 taken 0
+       88:   20-block  8
+call   17 returned 88
+       88:   20-block  9
+branch 18 taken 16 (fallthrough)
+branch 19 taken 72
+    $$$$$:   20-block 10
+branch 20 never executed (fallthrough)
+branch 21 never executed
+    $$$$$:   20-block 11
+call   22 never executed
+    $$$$$:   20-block 12
+    $$$$$:   20-block 13
+branch 23 never executed (fallthrough)
+branch 24 never executed
+    $$$$$:   20-block 14
+call   25 never executed
+    $$$$$:   20-block 15
+       16:   21:            return oferta;
+       16:   21-block  0
+       16:   21-block  1
+        -:   22:    }
+       50:   23:    throw RepoException("Oferta cu denumirea "+denumire+" si destinatia "+destinatie+" nu exista in lista");
+       50:   23-block  0
+call    0 returned 50
+call    1 returned 50
+branch  2 taken 50 (fallthrough)
+branch  3 taken 0 (throw)
+       50:   23-block  1
+call    4 returned 50
+branch  5 taken 50 (fallthrough)
+branch  6 taken 0 (throw)
+       50:   23-block  2
+call    7 returned 50
+branch  8 taken 50 (fallthrough)
+branch  9 taken 0 (throw)
+       50:   23-block  3
+call   10 returned 50
+branch 11 taken 50 (fallthrough)
+branch 12 taken 0 (throw)
+       50:   23-block  4
+call   13 returned 50
+branch 14 taken 50 (fallthrough)
+branch 15 taken 0 (throw)
+       50:   23-block  5
+call   16 returned 50
+call   17 returned 50
+call   18 returned 50
+call   19 returned 50
+call   20 returned 0
+    $$$$$:   23-block  6
+call   21 never executed
+    $$$$$:   23-block  7
+call   22 never executed
+    $$$$$:   23-block  8
+call   23 never executed
+    $$$$$:   23-block  9
+call   24 never executed
+    $$$$$:   23-block 10
+    $$$$$:   23-block 11
+    $$$$$:   23-block 12
+    $$$$$:   23-block 13
+    $$$$$:   23-block 14
+call   25 never executed
+        -:   24:}
+        -:   25:
+function _ZN4Repo5storeERK6Oferta called 50 returned 98% blocks executed 65%
+       50:   26:void Repo::store(const Oferta &oferta) {
+       50:   27:    if(exists(oferta))
+       50:   27-block  0
+call    0 returned 50
+branch  1 taken 1 (fallthrough)
+branch  2 taken 49
+        3:   28:        throw RepoException("Oferta cu aceaste denumire si acest titlu exista deja!");
+        1:   28-block  0
+call    0 returned 1
+        1:   28-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   28-block  2
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   28-block  3
+call    7 returned 1
+call    8 returned 0
+    $$$$$:   28-block  4
+call    9 never executed
+    $$$$$:   28-block  5
+    $$$$$:   28-block  6
+    $$$$$:   28-block  7
+call   10 never executed
+       49:   29:    this->allOferte.push_back(oferta);
+       49:   29-block  0
+call    0 returned 49
+       49:   30:}
+        -:   31:
+        -:   32:
+function _ZN4Repo3delERK6Oferta called 5 returned 100% blocks executed 64%
+        5:   33:void Repo::del(const Oferta& of) {
+        5:   34:    int i = 0;
+       12:   35:    while (i < this->allOferte.size()) {
+        5:   35-block  0
+       12:   35-block  1
+call    0 returned 12
+branch  1 taken 12
+branch  2 taken 0 (fallthrough)
+       12:   36:        if (allOferte.at(i).get_denumire() == of.get_denumire() && allOferte.at(i).get_destinatie() == of.get_destinatie()) {
+       12:   36-block  0
+call    0 returned 12
+branch  1 taken 12 (fallthrough)
+branch  2 taken 0 (throw)
+       12:   36-block  1
+call    3 returned 12
+branch  4 taken 12 (fallthrough)
+branch  5 taken 0 (throw)
+       12:   36-block  2
+call    6 returned 12
+branch  7 taken 12 (fallthrough)
+branch  8 taken 0 (throw)
+       12:   36-block  3
+call    9 returned 12
+branch 10 taken 5 (fallthrough)
+branch 11 taken 7
+        5:   36-block  4
+call   12 returned 5
+branch 13 taken 5 (fallthrough)
+branch 14 taken 0 (throw)
+        5:   36-block  5
+call   15 returned 5
+branch 16 taken 5 (fallthrough)
+branch 17 taken 0 (throw)
+        5:   36-block  6
+call   18 returned 5
+branch 19 taken 5 (fallthrough)
+branch 20 taken 0 (throw)
+        5:   36-block  7
+call   21 returned 5
+branch 22 taken 5 (fallthrough)
+branch 23 taken 0
+        5:   36-block  8
+        7:   36-block  9
+       12:   36-block 10
+branch 24 taken 5 (fallthrough)
+branch 25 taken 7
+        5:   36-block 11
+call   26 returned 5
+       12:   36-block 12
+branch 27 taken 5 (fallthrough)
+branch 28 taken 7
+        5:   36-block 13
+call   29 returned 5
+       12:   36-block 14
+branch 30 taken 12 (fallthrough)
+branch 31 taken 0
+       12:   36-block 15
+call   32 returned 12
+       12:   36-block 16
+branch 33 taken 12 (fallthrough)
+branch 34 taken 0
+       12:   36-block 17
+call   35 returned 12
+       12:   36-block 18
+branch 36 taken 5 (fallthrough)
+branch 37 taken 7
+    $$$$$:   36-block 19
+branch 38 never executed (fallthrough)
+branch 39 never executed
+    $$$$$:   36-block 20
+call   40 never executed
+    $$$$$:   36-block 21
+    $$$$$:   36-block 22
+branch 41 never executed (fallthrough)
+branch 42 never executed
+    $$$$$:   36-block 23
+call   43 never executed
+    $$$$$:   36-block 24
+    $$$$$:   36-block 25
+branch 44 never executed (fallthrough)
+branch 45 never executed
+    $$$$$:   36-block 26
+call   46 never executed
+    $$$$$:   36-block 27
+    $$$$$:   36-block 28
+branch 47 never executed (fallthrough)
+branch 48 never executed
+    $$$$$:   36-block 29
+call   49 never executed
+    $$$$$:   36-block 30
+call   50 never executed
+        5:   37:            this->allOferte.erase(this->allOferte.begin() + i);
+        5:   37-block  0
+call    0 returned 5
+call    1 returned 5
+call    2 returned 5
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   37-block  1
+    $$$$$:   37-block  2
+        5:   38:            break;
+        5:   38-block  0
+        -:   39:        }
+        7:   40:        i++;
+        7:   40-block  0
+        -:   41:    }
+        5:   42:}
+        5:   42-block  0
+        -:   43:
+function _ZN4Repo6modifyERK6Oferta called 5 returned 100% blocks executed 65%
+        5:   44:void Repo::modify(const Oferta &of) {
+       15:   45:    for(int i=0; i<allOferte.size(); i++)
+        5:   45-block  0
+       10:   45-block  1
+       15:   45-block  2
+call    0 returned 15
+branch  1 taken 10
+branch  2 taken 5 (fallthrough)
+       10:   46:        if(allOferte[i].get_denumire() == of.get_denumire() && allOferte[i].get_destinatie() == of.get_destinatie())
+       10:   46-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:   46-block  1
+call    3 returned 10
+call    4 returned 10
+branch  5 taken 10 (fallthrough)
+branch  6 taken 0 (throw)
+       10:   46-block  2
+call    7 returned 10
+branch  8 taken 5 (fallthrough)
+branch  9 taken 5
+        5:   46-block  3
+call   10 returned 5
+branch 11 taken 5 (fallthrough)
+branch 12 taken 0 (throw)
+        5:   46-block  4
+call   13 returned 5
+call   14 returned 5
+branch 15 taken 5 (fallthrough)
+branch 16 taken 0 (throw)
+        5:   46-block  5
+call   17 returned 5
+branch 18 taken 5 (fallthrough)
+branch 19 taken 0
+        5:   46-block  6
+        5:   46-block  7
+       10:   46-block  8
+branch 20 taken 5 (fallthrough)
+branch 21 taken 5
+        5:   46-block  9
+call   22 returned 5
+       10:   46-block 10
+branch 23 taken 5 (fallthrough)
+branch 24 taken 5
+        5:   46-block 11
+call   25 returned 5
+       10:   46-block 12
+branch 26 taken 10 (fallthrough)
+branch 27 taken 0
+       10:   46-block 13
+call   28 returned 10
+       10:   46-block 14
+branch 29 taken 10 (fallthrough)
+branch 30 taken 0
+       10:   46-block 15
+call   31 returned 10
+       10:   46-block 16
+branch 32 taken 5 (fallthrough)
+branch 33 taken 5
+    $$$$$:   46-block 17
+branch 34 never executed (fallthrough)
+branch 35 never executed
+    $$$$$:   46-block 18
+call   36 never executed
+    $$$$$:   46-block 19
+    $$$$$:   46-block 20
+branch 37 never executed (fallthrough)
+branch 38 never executed
+    $$$$$:   46-block 21
+call   39 never executed
+    $$$$$:   46-block 22
+    $$$$$:   46-block 23
+branch 40 never executed (fallthrough)
+branch 41 never executed
+    $$$$$:   46-block 24
+call   42 never executed
+    $$$$$:   46-block 25
+    $$$$$:   46-block 26
+branch 43 never executed (fallthrough)
+branch 44 never executed
+    $$$$$:   46-block 27
+call   45 never executed
+    $$$$$:   46-block 28
+call   46 never executed
+        -:   47:        {
+        5:   48:            allOferte[i].set_tip(of.get_tip());
+        5:   48-block  0
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 5 (fallthrough)
+branch  3 taken 0 (throw)
+        5:   48-block  1
+call    4 returned 5
+branch  5 taken 5 (fallthrough)
+branch  6 taken 0 (throw)
+        5:   48-block  2
+call    7 returned 5
+    $$$$$:   48-block  3
+call    8 never executed
+        5:   49:            allOferte[i].set_pret(of.get_pret());
+call    0 returned 5
+call    1 returned 5
+call    2 returned 5
+        -:   50:        }
+        -:   51:
+        5:   52:}
+        5:   52-block  0
+        -:   53:
+function _ZNK4Repo14get_all_oferteEv called 53 returned 100% blocks executed 100%
+       53:   54:const vector<Oferta>& Repo::get_all_oferte() const {
+       53:   55:    return this->allOferte;
+       53:   55-block  0
+        -:   56:}
+        -:   57:
+function _ZN8RepoFile12loadFromFileEv called 2 returned 100% blocks executed 55%
+        2:   58:void RepoFile::loadFromFile() {
+        2:   59:    ifstream in(filename);
+        2:   59-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   60:    if (!in.is_open())
+        2:   60-block  0
+call    0 returned 2
+branch  1 taken 0 (fallthrough)
+branch  2 taken 2
+    #####:   61:        throw RepoException("Eroare la deschiderea fisierului!!!");
+    %%%%%:   61-block  0
+call    0 never executed
+    %%%%%:   61-block  1
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:   61-block  2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+    %%%%%:   61-block  3
+call    7 never executed
+call    8 never executed
+    $$$$$:   61-block  4
+call    9 never executed
+    $$$$$:   61-block  5
+    $$$$$:   61-block  6
+    $$$$$:   61-block  7
+call   10 never executed
+        4:   62:    while(!in.eof())
+        2:   62-block  0
+        4:   62-block  1
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   62-block  2
+branch  3 taken 4
+branch  4 taken 0 (fallthrough)
+        -:   63:    {
+        4:   64:        string denumire;
+        4:   64-block  0
+call    0 returned 4
+        4:   65:        string destinatie;
+call    0 returned 4
+        4:   66:        string tip;
+call    0 returned 4
+        -:   67:        int pret;
+       4*:   68:        if (in.eof()) break;
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   68-block  0
+branch  3 taken 0 (fallthrough)
+branch  4 taken 4
+    %%%%%:   68-block  1
+        4:   69:        in>>denumire;
+        4:   69-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   70:        if (in.eof()) break;
+        4:   70-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   70-block  1
+branch  3 taken 2 (fallthrough)
+branch  4 taken 2
+        2:   70-block  2
+        2:   71:        in>>destinatie;
+        2:   71-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+       2*:   72:        if (in.eof()) break;
+        2:   72-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   72-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 2
+    %%%%%:   72-block  2
+        2:   73:        in>>tip;
+        2:   73-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+       2*:   74:        if (in.eof()) break;
+        2:   74-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   74-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 2
+    %%%%%:   74-block  2
+        2:   75:        in>>pret;
+        2:   75-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   76:        Oferta of{denumire, destinatie, tip, pret};
+        2:   76-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   76-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   76-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:   76-block  3
+call    9 returned 2
+branch 10 taken 2 (fallthrough)
+branch 11 taken 0 (throw)
+        2:   76-block  4
+call   12 returned 2
+call   13 returned 2
+call   14 returned 2
+    $$$$$:   76-block  5
+call   15 never executed
+    $$$$$:   76-block  6
+    $$$$$:   76-block  7
+call   16 never executed
+    $$$$$:   76-block  8
+    $$$$$:   76-block  9
+call   17 never executed
+    $$$$$:   76-block 10
+        2:   77:        Repo::store(of);
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        8:   78:    }
+        2:   78-block  0
+call    0 returned 2
+        4:   78-block  1
+call    1 returned 4
+branch  2 taken 2 (fallthrough)
+branch  3 taken 2
+        2:   78-block  2
+        4:   78-block  3
+call    4 returned 4
+branch  5 taken 2 (fallthrough)
+branch  6 taken 2
+        2:   78-block  4
+        4:   78-block  5
+call    7 returned 4
+branch  8 taken 2 (fallthrough)
+branch  9 taken 2
+    $$$$$:   78-block  6
+call   10 never executed
+    $$$$$:   78-block  7
+call   11 never executed
+    $$$$$:   78-block  8
+call   12 never executed
+    $$$$$:   78-block  9
+call   13 never executed
+        2:   79:}
+        2:   79-block  0
+call    0 returned 2
+    $$$$$:   79-block  1
+call    1 never executed
+        -:   80:
+function _ZN8RepoFile11writeToFileEv called 5 returned 100% blocks executed 50%
+        5:   81:void RepoFile::writeToFile() {
+        5:   82:    ofstream out(filename);
+        5:   82-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   83:    if (!out.is_open())
+        5:   83-block  0
+call    0 returned 5
+branch  1 taken 0 (fallthrough)
+branch  2 taken 5
+    #####:   84:        throw RepoException("Eroare la deschiderea fisierului!!!");
+    %%%%%:   84-block  0
+call    0 never executed
+    %%%%%:   84-block  1
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:   84-block  2
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+    %%%%%:   84-block  3
+call    7 never executed
+call    8 never executed
+    $$$$$:   84-block  4
+call    9 never executed
+    $$$$$:   84-block  5
+    $$$$$:   84-block  6
+    $$$$$:   84-block  7
+call   10 never executed
+       15:   85:    for(const Oferta& of : this->get_all_oferte())
+        5:   85-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   85-block  1
+call    3 returned 5
+call    4 returned 5
+       10:   85-block  2
+call    5 returned 10
+       10:   85-block  3
+call    6 returned 10
+       15:   85-block  4
+call    7 returned 15
+branch  8 taken 10
+branch  9 taken 5 (fallthrough)
+        -:   86:    {
+       10:   87:        out<<of.get_denumire()<<endl;
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:   87-block  0
+call    3 returned 10
+branch  4 taken 10 (fallthrough)
+branch  5 taken 0 (throw)
+       10:   87-block  1
+call    6 returned 10
+branch  7 taken 10 (fallthrough)
+branch  8 taken 0 (throw)
+       10:   87-block  2
+call    9 returned 10
+    $$$$$:   87-block  3
+call   10 never executed
+    $$$$$:   87-block  4
+       10:   88:        out<<of.get_destinatie()<<endl;
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:   88-block  0
+call    3 returned 10
+branch  4 taken 10 (fallthrough)
+branch  5 taken 0 (throw)
+       10:   88-block  1
+call    6 returned 10
+branch  7 taken 10 (fallthrough)
+branch  8 taken 0 (throw)
+       10:   88-block  2
+call    9 returned 10
+    $$$$$:   88-block  3
+call   10 never executed
+    $$$$$:   88-block  4
+       10:   89:        out<<of.get_tip()<<endl;
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:   89-block  0
+call    3 returned 10
+branch  4 taken 10 (fallthrough)
+branch  5 taken 0 (throw)
+       10:   89-block  1
+call    6 returned 10
+branch  7 taken 10 (fallthrough)
+branch  8 taken 0 (throw)
+       10:   89-block  2
+call    9 returned 10
+    $$$$$:   89-block  3
+call   10 never executed
+    $$$$$:   89-block  4
+       10:   90:        out<<of.get_pret()<<endl;
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:   90-block  0
+call    3 returned 10
+branch  4 taken 10 (fallthrough)
+branch  5 taken 0 (throw)
+       10:   90-block  1
+call    6 returned 10
+branch  7 taken 10 (fallthrough)
+branch  8 taken 0 (throw)
+        -:   91:    }
+        5:   92:}
+        5:   92-block  0
+call    0 returned 5
+    $$$$$:   92-block  1
+call    1 never executed
+        -:   93:
+        -:   94:
+        -:   95:

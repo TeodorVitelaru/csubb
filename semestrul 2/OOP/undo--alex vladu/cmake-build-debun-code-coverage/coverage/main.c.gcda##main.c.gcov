@@ -1,0 +1,79 @@
+        -:    0:Source:C:/Users/Admin/Desktop/poriect alex vladu/main.c
+        -:    0:Graph:C:\Users\Admin\Desktop\poriect alex vladu\cmake-build-debun-code-coverage\CMakeFiles\poriect_alex_vladu.dir\main.c.gcno
+        -:    0:Data:C:\Users\Admin\Desktop\poriect alex vladu\cmake-build-debun-code-coverage\CMakeFiles\poriect_alex_vladu.dir\main.c.gcda
+        -:    0:Runs:1
+        -:    1://#define _CRTDBG_MAP_ALLOC
+        -:    2://#include <crtdbg.h>
+        -:    3://#include <windows.h>
+        -:    4:#include <stdlib.h>
+        -:    5:#include <stdio.h>
+        -:    6:#include <string.h>
+        -:    7:
+        -:    8:#include "domain.h"
+        -:    9:#include "controller.h"
+        -:   10:#include "repository.h"
+        -:   11:#include "validator.h"
+        -:   12:#include "UI.h"
+function test_modules called 1 returned 100% blocks executed 100%
+        1:   13:void test_modules()
+        -:   14:{
+        1:   15:    test_validation();
+        1:   15-block  0
+call    0 returned 1
+        -:   16:
+        1:   17:    Repository repo = create_Repo(100);
+call    0 returned 1
+        1:   18:    detroy_Repo(repo);
+call    0 returned 1
+        1:   19:    test_domain();
+call    0 returned 1
+        -:   20:
+        -:   21:
+        1:   22:    repo = create_Repo(100);
+call    0 returned 1
+        1:   23:    Controller controller = create_Controller(repo);
+call    0 returned 1
+        1:   24:    test_controller(controller);
+call    0 returned 1
+        1:   25:    destroy_Controller(controller);
+call    0 returned 1
+        1:   26:}
+        -:   27:
+function main called 1 returned 0% blocks executed 89%
+        1:   28:int main()
+        -:   29:{
+        -:   30:
+        1:   31:    test_modules();
+        1:   31-block  0
+call    0 returned 1
+        -:   32:
+        1:   33:    Repository repo = create_Repo(100);
+call    0 returned 1
+        1:   34:    Controller controller = create_Controller(repo);
+call    0 returned 1
+        1:   35:    add_Oferta_Repo(controller->repo, create_Oferta("teren", 52, "Sibiu,str.Luncii,nr.14", 350));
+call    0 returned 1
+call    1 returned 1
+        1:   36:    add_Oferta_Repo(controller->repo, create_Oferta("casa", 120, "Cluj,str.Aurel Vlaicu,nr.184", 250));
+call    0 returned 1
+call    1 returned 1
+        1:   37:    add_Oferta_Repo(controller->repo, create_Oferta("apartament", 25, "Cluj,str.Libertatii,nr.1", 550));
+call    0 returned 1
+call    1 returned 1
+        1:   38:    add_Oferta_Repo(controller->repo, create_Oferta("teren", 375, "Sibiu,str.Rovine,nr.12", 5550));
+call    0 returned 1
+call    1 returned 1
+        1:   39:    add_Oferta_Repo(controller->repo, create_Oferta("casa", 275, "Pitesti,str.Ploiesti,nr.23", 150));
+call    0 returned 1
+call    1 returned 1
+        1:   40:    add_Oferta_Repo(controller->repo, create_Oferta("casa", 175, "Alba-Iulia,str.Neagra,nr.5", 1550));
+call    0 returned 1
+call    1 returned 1
+        -:   41:
+        1:   42:    run_console(controller);
+call    0 returned 0
+    #####:   43:    destroy_Controller(controller);
+call    0 never executed
+        -:   44:    //_CrtDumpMemoryLeaks();
+    #####:   45:    return 0;
+        -:   46:}

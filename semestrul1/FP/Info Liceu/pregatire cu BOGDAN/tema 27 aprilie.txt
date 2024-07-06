@@ -1,0 +1,47 @@
+test 7
+======
+#include <bits/stdc++.h>
+using namespace std;
+
+ifstream fin("bac.txt");
+
+int main() {
+  int a, b, nr=-1;
+  fin>>b;
+  while(fin>>a)
+    {
+      int x=b, y=a;
+      while(x%10 == y%10 && x>0)
+        {
+          if(x%10!=y%10)
+            x=-1;
+          x/=10; y/=10;
+        }
+      if(!x && x!=-1)
+        nr=a;
+    }
+  cout<<nr;
+  return 0;
+}
+
+
+test 8
+======
+#include <bits/stdc++.h>
+using namespace std;
+ifstream fin("bac.txt");
+
+int main() {
+  int x, nr=0;
+  int v[20] = {0};
+  while (fin >> x) {
+    v[x+9]++;
+  }
+  for(int i=0; i<=18; i++)
+    if(v[i]>nr)
+      nr=v[i];
+  for(int i=0; i<=18; i++)
+    if(v[i]==nr)
+      cout<<i-9<<" ";
+  return 0;
+}

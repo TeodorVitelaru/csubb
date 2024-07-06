@@ -1,0 +1,22 @@
+        -:    0:Source:D:/facultate/semestrul 2/OOP/LAB8-9/errors.h
+        -:    0:Graph:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\validator.cpp.gcno
+        -:    0:Data:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\validator.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <string>
+        -:    3:
+        -:    4:using namespace std;
+        -:    5:
+        -:    6:class Exception {
+        -:    7:    string msg;
+        -:    8:public:
+function _ZN9ExceptionC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:    9:    Exception(string m) : msg{ m } {
+    %%%%%:    9-block  0
+call    0 never executed
+    #####:   10:    };
+        -:   11:
+        -:   12:    string getMessage() {
+        -:   13:        return msg;
+        -:   14:    }
+        -:   15:};

@@ -1,0 +1,9 @@
+# ninja log v5
+2	385	7368786112292722	test_autogen/timestamp	3ac6a5835bc9c78a
+2	385	7368786112292722	test_autogen/mocs_compilation.cpp	3ac6a5835bc9c78a
+2	385	7368786112292722	D:/facultate/semestrul 2/grafuri/test/cmake-build-debug/test_autogen/timestamp	3ac6a5835bc9c78a
+2	385	7368786112292722	D:/facultate/semestrul 2/grafuri/test/cmake-build-debug/test_autogen/mocs_compilation.cpp	3ac6a5835bc9c78a
+385	514	7368786114198875	CMakeFiles/test.dir/test_autogen/mocs_compilation.cpp.obj	8c065e1d69e47dac
+400	519	7368786114252977	CMakeFiles/test.dir/repo.cpp.obj	5a30d0ac497a35cc
+393	4302	7368786152106069	CMakeFiles/test.dir/main.cpp.obj	3c0a175f92bb830c
+4309	5127	7368786155823683	test.exe	89c6d4516377997c

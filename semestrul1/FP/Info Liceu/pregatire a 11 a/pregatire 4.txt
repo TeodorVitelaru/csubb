@@ -1,0 +1,143 @@
+#2811
+void triplete (int a, int b, int c)
+{
+    int cnt=0,z; 
+    for(int x=a; x<=b; x++)
+    {
+        for(int y=x; x+y+y<=c && y<=b; y++)
+            { z=c-x-y;
+              if(z>=y && z<=b)
+                        {
+                            cout<<"{"<<x<<","<<y<<","<<z<<"}";
+                            cout<<endl;
+                            cnt=1;
+                        }
+             }
+    }
+    if(cnt==0)
+        cout<<"nu exista";
+}
+
+#1307 ciurul lui erestotene
+#include <bits/stdc++.h>
+using namespace std;
+void generare(int maxx,int v[],int &nrprime)
+{ for(int i=1;i<maxx;i++) v[i]=0;
+  v[0]=v[1]=1;
+  for(int i=4;i<maxx;i=i+2)
+    v[i]=1;
+  for(int i=3;i*i<maxx;i+=2)
+    if(v[i]==0)
+     for(int j=i*i;j<maxx;j=j+2*i)
+      v[j]=1;
+  v[1]=2;nrprime=1;
+  for(int i=3;i< maxx;i=i+2)
+    if(v[i]==0){nrprime++;v[nrprime]=i;}
+}
+void citire(int x[], int &n)
+{
+  cin>>n;
+  for(int i=1; i<=n; i++)
+   cin>>x[i];
+}
+void afisare (int y[], int n)
+{
+  for(int i=1; i<=n; i++)
+    cout<<y[i]<<" ";
+}
+bool verificare (int x, int nrprim)
+{
+  int cnt=0;
+  while (x%nrprim==0)
+  {
+    x=x/nrprim;
+    cnt++;
+  }
+  if(cnt==1)
+     return true;
+   else 
+     return false;
+}
+
+void construire (int x[], int n, int y[], int &m)
+{
+  int prim[1000], nrp;
+  m=0;
+  generare(1000, prim, nrp);
+  for(int i=1; i<=nrp; i++)
+    for(int j=1; j<=n; j++)
+    {
+      if(verificare(x[j], prim[i] ))
+      { y[++m]=prim[i];
+        break;}
+    }
+}
+
+int main()
+{
+    int x[1000], n, y[1000], m;
+    citire(x, n);
+    construire(x, n, y, m);
+    if(m==0)
+       cout<<"Sirul Y este vid.";
+     else
+       afisare(y, m);
+
+    
+    return 0;
+}
+
+
+CIURUL LUI ERTOSTENE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+https://www.pbinfo.ro/articole/2540/ciurul-lui-eratostene
+
+void generare(int maxx,int v[],int &nrprime)
+{ for(int i=1;i<maxx;i++) v[i]=0;
+  v[0]=v[1]=1;
+//marcam numerele neprime
+  for(int i=4;i<maxx;i=i+2)
+    v[i]=1;
+  for(int i=3;i*i<maxx;i+=2)
+    if(v[i]==0)
+     for(int j=i*i;j<maxx;j=j+2*i)
+      v[j]=1;
+  v[1]=2;nrprime=1;
+//copiem numerele prime la inceputul vectorului
+  for(int i=3;i< maxx;i=i+2)
+    if(v[i]==0){nrprime++;v[nrprime]=i;}
+}
+========================================
+BAZE DE NUMERATIE
+BAZA 2:coduri de 0 si 1
+Codificarea din baza 10 in baza 2
+x=27
+27:2=13, rest 1
+13:2=6, rest 1
+6:2=3, rest 0
+3:2=1, rest 1
+1:2=0, rest 1  
+resturile citite de jos in sus formeaza codifcarea binara
+27= 00011011b
+12=00001100b
+12=8+4=1* 2^3+1* 2^2      
+Sistemul pozitional al cifrelor
+nr  2765 in baza 10
+poz 3210
+
+    00001100
+poz 76543210
+
+n=76=64+8+4=2^6  +2^3 +2^2
+
+    01001100b
+poz 76543210
+----
+#429
+cin>>n;nr0=nr1=0;
+while(n)
+{if(n%2==0) nr0++;
+ else nr1++;
+ n=n/2;
+}
+https://www.pbinfo.ro/articole/5562/baze-de-numeratie
+TEMA pbinfo-122,2872,3348

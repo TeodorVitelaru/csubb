@@ -1,0 +1,50 @@
+#1281
+#include <bits/stdc++.h>
+using namespace std;
+int x[10], n, used[15];
+void afisare()
+{
+  for(int i=1; i<=n; i++)
+		{for(int j=1; j<=n; j++)
+        if(j==x[i]) 
+			cout<<'*'<<" ";
+       else cout<<'_'<<" ";
+        cout<<endl;
+      }
+        
+}
+bool valid (int k)
+{
+  for(int i=1; i<k; i++)
+    if(x[k]==x[i] || abs(x[i]-x[k])==k-i)
+      return false;
+  return true;
+}
+void Back(int k)
+{
+  if(k==n+1)
+  {
+    afisare ();
+    exit (0);
+  }
+  for(int i=1; i<=n; i++)
+    if(!used[i])
+    {
+      used[i]=1;
+      x[k]=i;
+      if(valid(k))
+			 Back(k+1);
+      used[i]=0;
+    }
+    
+}
+/*
+atac pe linie x[k]=x[i], i<k
+atac pe diagonala, exista x[i], i<k a.i. k-i=|x[i]-x[k]|
+	*/
+	int main()
+{
+    cin>>n;
+    Back(1);
+    return 0;
+}

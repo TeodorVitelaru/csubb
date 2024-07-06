@@ -1,0 +1,369 @@
+        -:    0:Source:/mnt/c/Users/Admin/CLionProjects/LAB2-4/ui.c
+        -:    0:Graph:/mnt/c/Users/Admin/CLionProjects/LAB2-4/cmake-build-debug-valgrind-coverage/CMakeFiles/LAB2_4.dir/ui.c.gcno
+        -:    0:Data:/mnt/c/Users/Admin/CLionProjects/LAB2-4/cmake-build-debug-valgrind-coverage/CMakeFiles/LAB2_4.dir/ui.c.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:
+        -:    3:#include<stdio.h>
+        -:    4:#include<string.h>
+        -:    5:#include "ui.h"
+        -:    6:#include "domain.h"
+        -:    7:
+function print_menu called 0 returned 0% blocks executed 0%
+    #####:    8:void print_menu()
+        -:    9:{
+    #####:   10:    printf("MENIU\n");
+    %%%%%:   10-block  0
+call    0 never executed
+    #####:   11:    printf("COMENZI DISONIBILE:");
+call    0 never executed
+    #####:   12:    printf("a-adauga, m-modifica, s-sterge, p-printeaza lista, o-ordoneaza, f-filtreaza, i-iesire\n");
+call    0 never executed
+    #####:   13:}
+        -:   14:
+function print_oferta called 0 returned 0% blocks executed 0%
+    #####:   15:void print_oferta(oferta* of)
+        -:   16:{
+    #####:   17:    printf("tip: %s, destinatie: %s, data plecarii: %s, pret:%d", of->tip, of->destinatie, of->data_plecare, of->pret);
+    %%%%%:   17-block  0
+call    0 never executed
+    #####:   18:}
+        -:   19:
+function print_lista called 0 returned 0% blocks executed 0%
+    #####:   20:void print_lista(ListaMea* lista)
+        -:   21:{
+    #####:   22:    if(lista->lg > 0)
+    %%%%%:   22-block  0
+branch  0 never executed
+branch  1 never executed
+        -:   23:    {
+    #####:   24:        for(int i=0; i<lista->lg; i++)
+    %%%%%:   24-block  0
+    %%%%%:   24-block  1
+branch  0 never executed
+branch  1 never executed
+        -:   25:        {
+    #####:   26:            printf("%d. ", i);
+    %%%%%:   26-block  0
+call    0 never executed
+    #####:   27:            print_oferta(lista->of[i]);
+call    0 never executed
+    #####:   28:            printf("\n");
+call    0 never executed
+        -:   29:        }
+    #####:   30:        printf("\n");
+    %%%%%:   30-block  0
+call    0 never executed
+        -:   31:    }
+        -:   32:    else
+        -:   33:    {
+    #####:   34:        printf("Lista este goala!\n");
+    %%%%%:   34-block  0
+call    0 never executed
+        -:   35:    }
+    #####:   36:}
+        -:   37:
+function read called 0 returned 0% blocks executed 0%
+    #####:   38:void read(char *string)
+        -:   39:{
+    #####:   40:    fflush(stdin);
+    %%%%%:   40-block  0
+call    0 never executed
+    #####:   41:    fgets(string, 50, stdin);
+call    0 never executed
+    #####:   42:    string[strlen(string)-1]='\0';
+    #####:   43:}
+        -:   44:
+function adaugare_ui called 0 returned 0% blocks executed 0%
+    #####:   45:void adaugare_ui(ListaMea* lista)
+        -:   46:{
+        -:   47:    char tip[15], dest[50], data[50];
+        -:   48:    int pret;
+    #####:   49:    printf("Introduceti tip:");
+    %%%%%:   49-block  0
+call    0 never executed
+    #####:   50:    read(tip);
+call    0 never executed
+        -:   51:    //scanf("%[^\n]%*c", tip);
+        -:   52:    //scanf("%[^\n]%*c", tip);
+    #####:   53:    printf("Introduceti destinatie:");
+call    0 never executed
+    #####:   54:    read(dest);
+call    0 never executed
+    #####:   55:    printf("Introduceti data plecarii:");
+call    0 never executed
+    #####:   56:    read(data);
+call    0 never executed
+    #####:   57:    printf("Introduceti pretul:");
+call    0 never executed
+    #####:   58:    scanf("%d", &pret);
+call    0 never executed
+    #####:   59:    oferta* of = creareOferta(tip, dest, data, pret);
+call    0 never executed
+    #####:   60:    if (of->pret == -1)
+branch  0 never executed
+branch  1 never executed
+        -:   61:    {
+    #####:   62:        printf("EROARE! ADAUGARE NEREUSITA!\n");
+    %%%%%:   62-block  0
+call    0 never executed
+        -:   63:    } else
+        -:   64:    {
+    #####:   65:        adaugaSf(&lista, of);
+    %%%%%:   65-block  0
+call    0 never executed
+    #####:   66:        printf("SUCCES!ADAUGARE REUSITA\n");
+call    0 never executed
+        -:   67:    }
+        -:   68:
+    #####:   69:}
+        -:   70:
+function stergere_ui called 0 returned 0% blocks executed 0%
+    #####:   71:void stergere_ui(ListaMea* lista)
+        -:   72:{
+        -:   73:    int poz;
+    #####:   74:    printf("Introduceti pozitia ofertei:");
+    %%%%%:   74-block  0
+call    0 never executed
+    #####:   75:    scanf("%d", &poz);
+call    0 never executed
+    #####:   76:    if (poz<lista->lg)
+branch  0 never executed
+branch  1 never executed
+        -:   77:    {
+    #####:   78:        stergere(lista, poz);
+    %%%%%:   78-block  0
+call    0 never executed
+    #####:   79:        printf("SUCCES! STERGERE REUSITA!\n");
+call    0 never executed
+        -:   80:    }else
+        -:   81:    {
+    #####:   82:        printf("EROARE! STERGERE NEREUSITA!\n");
+    %%%%%:   82-block  0
+call    0 never executed
+        -:   83:    }
+    #####:   84:}
+        -:   85:
+function modificare_ui called 0 returned 0% blocks executed 0%
+    #####:   86:void modificare_ui(ListaMea* lista)
+        -:   87:{
+        -:   88:    int poz, pret;
+        -:   89:    char tip[15], dest[50], data[50];
+    #####:   90:    printf("Introduceti pozitia elementului de modificat:");
+    %%%%%:   90-block  0
+call    0 never executed
+    #####:   91:    scanf("%d", &poz);
+call    0 never executed
+    #####:   92:    printf("Introduceti tip:");
+call    0 never executed
+    #####:   93:    read(tip);
+call    0 never executed
+    #####:   94:    printf("Introduceti destinatie:");
+call    0 never executed
+    #####:   95:    read(dest);
+call    0 never executed
+    #####:   96:    printf("Introduceti data plecarii:");
+call    0 never executed
+    #####:   97:    read(data);
+call    0 never executed
+    #####:   98:    printf("Introduceti pretul:");
+call    0 never executed
+    #####:   99:    scanf("%d", &pret);
+call    0 never executed
+    #####:  100:    oferta* of = creareOferta(tip, dest, data, pret);
+call    0 never executed
+    #####:  101:    if (of->pret == -1 || poz >= lista->lg)
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  101-block  0
+branch  2 never executed
+branch  3 never executed
+        -:  102:    {
+    #####:  103:        printf("EROARE! MODIFICARE NEREUSITA!\n");
+    %%%%%:  103-block  0
+call    0 never executed
+        -:  104:    } else
+        -:  105:    {
+    #####:  106:        modificare(lista, poz, tip, dest, data, pret);
+    %%%%%:  106-block  0
+call    0 never executed
+    #####:  107:        printf("SUCCES! MODIFICARE REUSITA!\n");
+call    0 never executed
+        -:  108:    }
+    #####:  109:}
+        -:  110:
+function ordonare_ui called 0 returned 0% blocks executed 0%
+    #####:  111:void ordonare_ui(ListaMea* lista)
+        -:  112:{
+        -:  113:    char mod[2];
+        -:  114:    char cum[2];
+        -:  115:
+    #####:  116:    printf("Introduceti modul (c-crescator, d-descrescator):");
+    %%%%%:  116-block  0
+call    0 never executed
+    #####:  117:    read(cum);
+call    0 never executed
+        -:  118:    //nu ma lasa sa citesc inainte mod si dupa cum
+        -:  119:
+    #####:  120:    printf("Introduceti dupa ce sa fie ordonata lista (p-pret, d-destinatie):");
+call    0 never executed
+    #####:  121:    read(mod);
+call    0 never executed
+        -:  122:
+    #####:  123:    printf("aici %s si %s", mod, cum);
+call    0 never executed
+    #####:  124:    if(strcmp(mod, "p") == 0)
+branch  0 never executed
+branch  1 never executed
+        -:  125:    {
+    #####:  126:        ordoneaza_pret(lista, cum);
+    %%%%%:  126-block  0
+call    0 never executed
+    #####:  127:        printf("SUCCES!Ordonare realizata!");
+call    0 never executed
+    #####:  128:    }else if(strcmp(mod, "d") == 0)
+    %%%%%:  128-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  129:    {
+    #####:  130:        ordoneaza_destinatie(lista, cum);
+    %%%%%:  130-block  0
+call    0 never executed
+    #####:  131:        printf("SUCCES!Ordonare realizata!");
+call    0 never executed
+        -:  132:    } else
+        -:  133:    {
+    #####:  134:        printf("EROARE!\n");
+    %%%%%:  134-block  0
+call    0 never executed
+        -:  135:    }
+    #####:  136:}
+        -:  137:
+function filtrare_ui called 0 returned 0% blocks executed 0%
+    #####:  138:void filtrare_ui(ListaMea* lista)
+        -:  139:{
+        -:  140:    char criteriu[3];
+    #####:  141:    printf("Intrduceti criteriu(d-destinatie, t-tip, p-pret):");
+    %%%%%:  141-block  0
+call    0 never executed
+    #####:  142:    read(criteriu);
+call    0 never executed
+    #####:  143:    if (strcmp(criteriu, "p") == 0)
+branch  0 never executed
+branch  1 never executed
+        -:  144:    {
+        -:  145:        int pret;
+    #####:  146:        printf("Introduceti sirul:");
+    %%%%%:  146-block  0
+call    0 never executed
+    #####:  147:        scanf("%d", &pret);
+call    0 never executed
+    #####:  148:        ListaMea lista_filtrata = filtreaza_pret(lista, pret);
+call    0 never executed
+    #####:  149:        printf("Lista filtrata este:\n");
+call    0 never executed
+    #####:  150:        print_lista(&lista_filtrata);
+call    0 never executed
+    #####:  151:    } else if(strcmp(criteriu, "t") == 0 || strcmp(criteriu, "d") == 0)
+    %%%%%:  151-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  151-block  1
+branch  2 never executed
+branch  3 never executed
+        -:  152:    {
+        -:  153:        char sir[50];
+    #####:  154:        printf("Introduceti sirul:");
+    %%%%%:  154-block  0
+call    0 never executed
+    #####:  155:        read(sir);
+call    0 never executed
+    #####:  156:        ListaMea lista_filtrata = filtreaza_dest_tip(lista, criteriu, sir);
+call    0 never executed
+    #####:  157:        printf("Lista filtrata este:\n");
+call    0 never executed
+    #####:  158:        print_lista(&lista_filtrata);
+call    0 never executed
+        -:  159:
+        -:  160:    }
+    #####:  161:}
+        -:  162:
+function run called 0 returned 0% blocks executed 0%
+    #####:  163:void run()
+        -:  164:{
+    #####:  165:    ListaMea lista = creareLista();
+    %%%%%:  165-block  0
+call    0 never executed
+    #####:  166:    int iesire = 0;
+        -:  167:    char cmd[50];
+    #####:  168:    while (!iesire)
+    %%%%%:  168-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  169:    {
+    #####:  170:        print_menu();
+    %%%%%:  170-block  0
+call    0 never executed
+    #####:  171:        printf("Introduceti comanda: ");
+call    0 never executed
+    #####:  172:        read(cmd);
+call    0 never executed
+    #####:  173:        if (strcmp(cmd, "i") == 0)
+branch  0 never executed
+branch  1 never executed
+        -:  174:        {
+    #####:  175:            iesire = 1;
+    #####:  176:            distrugeLista(&lista);
+    %%%%%:  176-block  0
+call    0 never executed
+    #####:  177:        } else if(strcmp(cmd, "a") == 0)
+    %%%%%:  177-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  178:        {
+    #####:  179:            adaugare_ui(&lista);
+    %%%%%:  179-block  0
+call    0 never executed
+    #####:  180:        } else if(strcmp(cmd, "p") == 0)
+    %%%%%:  180-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  181:        {
+    #####:  182:            print_lista(&lista);
+    %%%%%:  182-block  0
+call    0 never executed
+    #####:  183:        } else if(strcmp(cmd, "s") == 0)
+    %%%%%:  183-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  184:        {
+    #####:  185:            stergere_ui(&lista);
+    %%%%%:  185-block  0
+call    0 never executed
+    #####:  186:        } else if(strcmp(cmd, "m") == 0)
+    %%%%%:  186-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  187:        {
+    #####:  188:            modificare_ui(&lista);
+    %%%%%:  188-block  0
+call    0 never executed
+    #####:  189:        } else if(strcmp(cmd, "o") == 0)
+    %%%%%:  189-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  190:        {
+    #####:  191:            ordonare_ui(&lista);
+    %%%%%:  191-block  0
+call    0 never executed
+    #####:  192:        } else if(strcmp(cmd, "f") == 0)
+    %%%%%:  192-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  193:        {
+    #####:  194:            filtrare_ui(&lista);
+    %%%%%:  194-block  0
+call    0 never executed
+        -:  195:        }
+        -:  196:    }
+    #####:  197:}

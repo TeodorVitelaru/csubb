@@ -1,0 +1,172 @@
+BAC IUNIE 2020
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    char s[101];
+    cin.getline(s, 101);
+    char aux[101]="";
+    bool gasit=false;
+    char *p=strtok(s, " ");
+    while(p)
+    {
+        if(strlen(p)>=3)
+        {
+            int n=strlen(p);
+            char ch=p[0];
+             for(int i=0; i<n-1; i++)
+                p[i]=p[i+1];
+            p[n-1]=ch;
+
+            strcat(aux, p);
+            strcat(aux, " ");
+            p=strtok(NULL, " ");
+            gasit=true;
+        }
+        else
+        {
+            strcat(aux, p);
+            strcat(aux, " ");
+            p=strtok(NULL, " ");
+        }
+    }
+    strcpy(s, aux);
+    if(gasit)
+        cout<<s;
+     else
+        cout<<"nu exista";
+
+    return 0;
+}
+
+========================================================================
+
+
+
+MODEL 2020
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+  int n, ind=0;
+  cin>>n;
+  cin.get();
+  char s[101], m[101][101];
+  cin.getline(s, 101);
+  char *p=strtok(s, " ");
+  while(p)
+  {
+      if(strlen(p)>=5)
+        cout<<p<<'\n';
+      else
+        strcpy(m[++ind], p);
+      p=strtok(NULL, " ");
+  }
+  for(int i=1; i<=ind; ++i)
+    cout<<m[i]<<'\n';
+    return 0;
+}
+
+==========================================================
+==============================================================
+
+
+TESTE DE ANTRENAMENT 2020
+==================================
+TESTUL 2
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    char s[101];
+    cin.getline(s, 101);
+    char aux[101]="";
+    char *p=strtok(s, " ");
+    while(p)
+    {
+        if(p[0]!='-')
+            {
+                strcat(aux, p);
+                strcat(aux, " ");
+            }
+        p=strtok(NULL, " ");
+    }
+    strcpy(s, aux);
+    cout<<s;
+
+    return 0;
+}
+
+==============================================
+TESTUL 5 avem o problema
+
+================================================
+
+
+TESTUL 6#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    char s[101];
+    cin.getline(s, 101);
+    char *p=strtok(s, " ");
+    bool gasit=false;
+    while(p)
+    {
+        int nrvoc=0, nrcons=0;
+        for(int i=0; i<strlen(p); ++i)
+            if(strchr("aeiou", p[i]))
+              nrvoc++;
+            else
+               nrcons++;
+        if(nrvoc<nrcons)
+            {
+                cout<<p<<'\n';
+                gasit=true;
+            }
+        p=strtok(NULL, " ");
+    }
+    if(!gasit)
+        cout<<"nu exista";
+    return 0;
+}
+
+===========================================
+
+TESTUL 9
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    int n, ind=0;
+    cin>>n;
+    cin.get();
+    char s[21], m[21][21];
+    for(int i=1; i<=n; i++)
+    {
+        cin.getline(s, 21);
+        strcpy(m[++ind], s);
+    }
+    for(int i=1; i<ind; ++i)
+    {
+        if(strstr(m[i], m[ind]) && m[i][0]==m[ind][0])
+            cout<<m[i]<<" ";
+    }
+
+    return 0;
+}

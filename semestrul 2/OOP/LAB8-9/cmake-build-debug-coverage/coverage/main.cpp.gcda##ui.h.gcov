@@ -1,0 +1,33 @@
+        -:    0:Source:D:/facultate/semestrul 2/OOP/LAB8-9/ui.h
+        -:    0:Graph:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\main.cpp.gcno
+        -:    0:Data:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "service.h"
+        -:    2:#include "utils.h"
+        -:    3:#include "errors.h"
+        -:    4:
+        -:    5:class Consola
+        -:    6:{
+        -:    7:private:
+        -:    8:    Service& srv;
+        -:    9:public:
+function _ZN7ConsolaC1ER7Service called 1 returned 100% blocks executed 100%
+        1:   10:    Consola(Service& srv) :srv{ srv } {};
+        -:   11:    Consola(const Consola& ot) = delete;
+        -:   12:    void print_menu();
+        -:   13:    void adaugare_ui();
+        -:   14:    void modificare_ui();
+        -:   15:    void stergere_ui();
+        -:   16:    void cautare_ui();
+        -:   17:    void sortare_ui();
+        -:   18:    void filtrare_ui();
+        -:   19:    void cos_ui();
+        -:   20:    void cos_adaugare_ui();
+        -:   21:    void cos_stergere_ui();
+        -:   22:    void cos_adaugare_random_ui();
+        -:   23:    void cos_export_ui();
+        -:   24:    void undo_ui();
+        -:   25:    void print_all_oferte(vector<Oferta> allOferte);
+        -:   26:    void run();
+        -:   27:    void add_default_oferte();
+        -:   28:};

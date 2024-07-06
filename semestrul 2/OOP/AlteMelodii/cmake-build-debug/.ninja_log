@@ -1,0 +1,68 @@
+# ninja log v5
+9	124	7408671156684662	AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+9	124	7408671156684662	AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+9	124	7408671156684662	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+4406	4902	7408671202804891	AlteMelodii.exe	459f80b74b1e2aaa
+176	1242	7408640973304138	CMakeFiles/AlteMelodii.dir/Service.cpp.obj	39bf03afaf0a8347
+9	124	7408671156684662	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+365	503	7408604824760622	CMakeFiles/AlteMelodii.dir/AlteMelodii_autogen/mocs_compilation.cpp.obj	dd863bfa53e4d2a0
+128	3889	7408671194301439	CMakeFiles/AlteMelodii.dir/main.cpp.obj	2b53f8ddb211779f
+172	1255	7408634944345822	CMakeFiles/AlteMelodii.dir/Repo.cpp.obj	b7b42a77c1a1e80f
+133	4405	7408671199461398	CMakeFiles/AlteMelodii.dir/GUI.cpp.obj	4b10ddea760fefe7
+8	143	7408671278281129	AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+8	143	7408671278281129	AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+8	143	7408671278281129	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+8	143	7408671278281129	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+147	4487	7408671321709585	CMakeFiles/AlteMelodii.dir/main.cpp.obj	2b53f8ddb211779f
+153	5184	7408671328627256	CMakeFiles/AlteMelodii.dir/GUI.cpp.obj	4b10ddea760fefe7
+5184	5759	7408671332558017	AlteMelodii.exe	459f80b74b1e2aaa
+11	148	7408671729793119	AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+11	148	7408671729793119	AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+11	148	7408671729793119	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+11	148	7408671729793119	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+154	3439	7408671762710622	CMakeFiles/AlteMelodii.dir/main.cpp.obj	2b53f8ddb211779f
+159	3904	7408671767334262	CMakeFiles/AlteMelodii.dir/GUI.cpp.obj	4b10ddea760fefe7
+3904	4393	7408671770550999	AlteMelodii.exe	459f80b74b1e2aaa
+15	176	7408672086691645	AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+15	176	7408672086691645	AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+15	176	7408672086691645	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+15	176	7408672086691645	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+181	3370	7408672118632402	CMakeFiles/AlteMelodii.dir/main.cpp.obj	2b53f8ddb211779f
+185	3866	7408672123577472	CMakeFiles/AlteMelodii.dir/GUI.cpp.obj	4b10ddea760fefe7
+3866	4377	7408672126885581	AlteMelodii.exe	459f80b74b1e2aaa
+8	123	7408672236399329	AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+8	123	7408672236399329	AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+8	123	7408672236399329	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+8	123	7408672236399329	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+127	3365	7408672268810197	CMakeFiles/AlteMelodii.dir/main.cpp.obj	2b53f8ddb211779f
+133	3818	7408672273300181	CMakeFiles/AlteMelodii.dir/GUI.cpp.obj	4b10ddea760fefe7
+3819	4312	7408672276564965	AlteMelodii.exe	459f80b74b1e2aaa
+10	134	7408672341738679	AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+10	134	7408672341738679	AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+10	134	7408672341738679	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+10	134	7408672341738679	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+137	3624	7408672376630961	CMakeFiles/AlteMelodii.dir/main.cpp.obj	2b53f8ddb211779f
+142	4099	7408672381383384	CMakeFiles/AlteMelodii.dir/GUI.cpp.obj	4b10ddea760fefe7
+4099	4597	7408672384671148	AlteMelodii.exe	459f80b74b1e2aaa
+11	125	7408672914790692	AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+11	125	7408672914790692	AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+11	125	7408672914790692	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+11	125	7408672914790692	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+129	3864	7408672952154700	CMakeFiles/AlteMelodii.dir/main.cpp.obj	2b53f8ddb211779f
+133	4392	7408672957422010	CMakeFiles/AlteMelodii.dir/GUI.cpp.obj	4b10ddea760fefe7
+4392	4885	7408672960718466	AlteMelodii.exe	459f80b74b1e2aaa
+32	303	7409078474086794	AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+32	303	7409078474086794	AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+32	303	7409078474086794	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+32	303	7409078474086794	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+322	1387	7409078484940679	CMakeFiles/AlteMelodii.dir/Service.cpp.obj	39bf03afaf0a8347
+313	5046	7409078521455585	CMakeFiles/AlteMelodii.dir/main.cpp.obj	2b53f8ddb211779f
+333	5935	7409078530379299	CMakeFiles/AlteMelodii.dir/GUI.cpp.obj	4b10ddea760fefe7
+5935	7745	7409078537996535	AlteMelodii.exe	459f80b74b1e2aaa
+9	113	7409476158221007	AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+9	113	7409476158221007	AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+9	113	7409476158221007	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/timestamp	1eb818e3f41e7386
+9	113	7409476158221007	D:/facultate/semestrul 2/OOP/AlteMelodii/cmake-build-debug/AlteMelodii_autogen/mocs_compilation.cpp	1eb818e3f41e7386
+116	3095	7409476188007278	CMakeFiles/AlteMelodii.dir/main.cpp.obj	2b53f8ddb211779f
+121	3604	7409476193097404	CMakeFiles/AlteMelodii.dir/GUI.cpp.obj	4b10ddea760fefe7
+3605	4132	7409476196566008	AlteMelodii.exe	459f80b74b1e2aaa

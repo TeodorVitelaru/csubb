@@ -1,0 +1,9 @@
+# ninja log v5
+1	189	7331874681742315	CMakeFiles/poriect_alex_vladu.dir/array.c.obj	8b8e4d42d404c9df
+16	197	7331874681802446	CMakeFiles/poriect_alex_vladu.dir/domain.c.obj	b2740d29afead462
+10	209	7331874681912429	CMakeFiles/poriect_alex_vladu.dir/repository.c.obj	1e8fabccb62d64c5
+65	257	7332493066991498	CMakeFiles/poriect_alex_vladu.dir/validator.c.obj	137595ec5b1502df
+339	657	7332493070934683	poriect_alex_vladu.exe	79ac6611321d76d2
+33	242	7332493066843631	CMakeFiles/poriect_alex_vladu.dir/main.c.obj	5de8be25291c7123
+15	339	7332493067818540	CMakeFiles/poriect_alex_vladu.dir/controller.c.obj	101a7d5b1814efc
+48	285	7332493067280462	CMakeFiles/poriect_alex_vladu.dir/ui.c.obj	7fe72725e3bd147e

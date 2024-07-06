@@ -1,0 +1,1 @@
+Din main.c incepe executia

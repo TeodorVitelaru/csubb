@@ -1,0 +1,23 @@
+# ninja log v5
+15	701	7337515664919865	CMakeFiles/sda_lab1.dir/Proiect_C++/Proiect_C++/Matrice.cpp.obj	77b7e7d9dc43a7d4
+8	511	7334064247840400	CMakeFiles/sda_lab1.dir/Proiect_C++/Proiect_C++/App.cpp.obj	c94c18e05a3a0e96
+6	613	7337514576535287	CMakeFiles/sda_lab1.dir/Teste/Teste/TestScurt.cpp.obj	3393cf7237ff3e71
+17	702	7337505274502453	CMakeFiles/sda_lab1.dir/Teste/Teste/TestExtins.cpp.obj	65f20c2c8abefaa5
+702	880	7337515666668297	sda_lab1.exe	5b04c86b56d39dd9
+15	763	7338656516432395	CMakeFiles/sda_lab1.dir/Proiect_C++/Proiect_C++/App.cpp.obj	f51e05e028baf4b8
+7	803	7338656516831465	CMakeFiles/sda_lab1.dir/Proiect_C++/Proiect_C++/Matrice.cpp.obj	e2b2bebfc3e43da3
+23	813	7338656516946668	CMakeFiles/sda_lab1.dir/Teste/Teste/TestExtins.cpp.obj	12c4f62d23557022
+33	821	7338656516997506	CMakeFiles/sda_lab1.dir/Teste/Teste/TestScurt.cpp.obj	74519b1b139b4f0b
+821	1177	7338656520511307	sda_lab1.exe	5b04c86b56d39dd9
+8	879	7338661644689237	CMakeFiles/sda_lab1.dir/Proiect_C++/Proiect_C++/Matrice.cpp.obj	e2b2bebfc3e43da3
+879	1111	7338661646983807	sda_lab1.exe	5b04c86b56d39dd9
+92	1083	7339266335287169	CMakeFiles/sda_lab1.dir/Teste/Teste/TestScurt.cpp.obj	74519b1b139b4f0b
+82	1084	7339266335292297	CMakeFiles/sda_lab1.dir/Proiect_C++/Proiect_C++/App.cpp.obj	f51e05e028baf4b8
+22	1089	7339266335344166	CMakeFiles/sda_lab1.dir/Proiect_C++/Proiect_C++/Matrice.cpp.obj	e2b2bebfc3e43da3
+101	1094	7339266335384162	CMakeFiles/sda_lab1.dir/Teste/Teste/TestExtins.cpp.obj	12c4f62d23557022
+1094	1672	7339266341133261	sda_lab1.exe	5b04c86b56d39dd9
+52	643	7339270542458307	CMakeFiles/sda_lab1.dir/Teste/Teste/TestScurt.cpp.obj	74519b1b139b4f0b
+21	646	7339270542468329	CMakeFiles/sda_lab1.dir/Proiect_C++/Proiect_C++/App.cpp.obj	f51e05e028baf4b8
+35	691	7339270542935627	CMakeFiles/sda_lab1.dir/Proiect_C++/Proiect_C++/Matrice.cpp.obj	e2b2bebfc3e43da3
+43	726	7339270543298653	CMakeFiles/sda_lab1.dir/Teste/Teste/TestExtins.cpp.obj	12c4f62d23557022
+726	892	7339270544888412	sda_lab1.exe	5b04c86b56d39dd9

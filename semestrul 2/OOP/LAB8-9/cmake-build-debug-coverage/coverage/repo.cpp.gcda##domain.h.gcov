@@ -1,0 +1,139 @@
+        -:    0:Source:D:/facultate/semestrul 2/OOP/LAB8-9/domain.h
+        -:    0:Graph:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\repo.cpp.gcno
+        -:    0:Data:D:\facultate\semestrul 2\OOP\LAB8-9\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\repo.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <string>
+        -:    3:#include <iostream>
+        -:    4:using namespace std;
+        -:    5:
+        -:    6:class Oferta
+        -:    7:{
+        -:    8:private:
+        -:    9:    string denumire{ "" };
+        -:   10:    string destinatie{ "" };
+        -:   11:    string tip{ "" };
+        -:   12:    int pret{ 0 };
+        -:   13:public:
+        -:   14:    Oferta() = delete;
+        -:   15:    /*
+        -:   16:     * Constructorul clasei produs
+        -:   17:     * denumire, denumirea produsului
+        -:   18:     * destinatia, destinatia ofertei
+        -:   19:     * tip, tipul ofertei
+        -:   20:     * pret, pretul ofertei
+        -:   21:     */
+function _ZN6OfertaC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_S5_i called 67 returned 100% blocks executed 62%
+       67:   22:    Oferta(string denumire, string destinatie, string tip, int pret) :denumire{ denumire }, destinatie{ destinatie }, tip{ tip }, pret{ pret }{};
+       67:   22-block  0
+call    0 returned 67
+call    1 returned 67
+branch  2 taken 67 (fallthrough)
+branch  3 taken 0 (throw)
+       67:   22-block  1
+call    4 returned 67
+branch  5 taken 67 (fallthrough)
+branch  6 taken 0 (throw)
+       67:   22-block  2
+    $$$$$:   22-block  3
+call    7 never executed
+    $$$$$:   22-block  4
+call    8 never executed
+        -:   23:
+function _ZN6OfertaC1ERKS_ called 237 returned 100% blocks executed 55%
+      237:   24:    Oferta(const Oferta& ot)
+     1422:   25:    {
+      237:   25-block  0
+      237:   25-block  1
+call    0 returned 237
+branch  1 taken 237 (fallthrough)
+branch  2 taken 0 (throw)
+      237:   25-block  2
+call    3 returned 237
+branch  4 taken 237 (fallthrough)
+branch  5 taken 0 (throw)
+      237:   25-block  3
+call    6 returned 237
+branch  7 taken 237 (fallthrough)
+branch  8 taken 0 (throw)
+    $$$$$:   25-block  4
+call    9 never executed
+    $$$$$:   25-block  5
+    $$$$$:   25-block  6
+      237:   26:        denumire = ot.denumire;
+call    0 returned 237
+branch  1 taken 237 (fallthrough)
+branch  2 taken 0 (throw)
+      237:   27:        destinatie = ot.destinatie;
+      237:   27-block  0
+call    0 returned 237
+branch  1 taken 237 (fallthrough)
+branch  2 taken 0 (throw)
+      237:   28:        tip = ot.tip;
+      237:   28-block  0
+call    0 returned 237
+branch  1 taken 237 (fallthrough)
+branch  2 taken 0 (throw)
+      237:   29:        pret = ot.pret;
+      237:   30:    }
+      237:   30-block  0
+    $$$$$:   30-block  1
+call    0 never executed
+    $$$$$:   30-block  2
+call    1 never executed
+    $$$$$:   30-block  3
+call    2 never executed
+        -:   31:
+        -:   32:    /*
+        -:   33:     * Functiile de get pentru fiecare parametru
+        -:   34:     * al produsului
+        -:   35:     */
+        -:   36:    string get_denumire() const;
+        -:   37:    string get_destinatie() const;
+        -:   38:    string get_tip() const;
+        -:   39:    int get_pret() const;
+        -:   40:
+        -:   41:    /*
+        -:   42:     * Functiile de set pentru fiecare parametru
+        -:   43:     * al produsului
+        -:   44:     */
+        -:   45:    void set_denumire(string _denumire);
+        -:   46:    void set_destinatie(string _destinatie);
+        -:   47:    void set_tip(string _tip);
+        -:   48:    void set_pret(int _pret);
+        -:   49:
+        -:   50:    /*
+        -:   51:     * Functie pentru afisare a ofertei
+        -:   52:     */
+        -:   53:    friend ostream& operator<<(ostream& stream, const Oferta& of);
+        -:   54:
+        -:   55:    bool cmp_denumire(const Oferta& of1, const Oferta& of2)
+        -:   56:    {
+        -:   57:        if(of1.get_denumire() > of2.get_denumire())
+        -:   58:            return 1;
+        -:   59:        else
+        -:   60:            return 0;
+        -:   61:    }
+        -:   62:
+        -:   63:    bool cmp_destinatie(const Oferta& of1, const Oferta& of2)
+        -:   64:    {
+        -:   65:        if(of1.get_destinatie() > of2.get_destinatie())
+        -:   66:            return 1;
+        -:   67:        else
+        -:   68:            return 0;
+        -:   69:    }
+        -:   70:
+        -:   71:    bool cmp_tip_pret(const Oferta& of1, const Oferta& of2) {
+        -:   72:        if (of1.get_tip() > of2.get_tip()) {
+        -:   73:            return 1;
+        -:   74:        } else if(of1.get_tip() == of2.get_tip())
+        -:   75:        {
+        -:   76:            if(of1.get_pret() > of2.get_pret())
+        -:   77:                return 1;
+        -:   78:            return 0;
+        -:   79:        }
+        -:   80:        return 0;
+        -:   81:    }
+        -:   82:};
+        -:   83:
+        -:   84:

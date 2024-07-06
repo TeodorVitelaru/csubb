@@ -1,0 +1,189 @@
+SPECIALA 2023
+III.3
+min=1000000000;max=-1000000000 ;poz=0;pst=pdr=0;
+while(f>>x)
+{ poz++;
+  if(x>=min && x<=max)
+  { if(pst==0) pst=poz;
+    pdr=poz;
+  }
+  if(x>max) max=x;
+  if(x<min) min=x;
+}
+if(pst==0) cout<<"nu exista";
+else
+ cout<<pst<<" "<<pdr;
+--------------------------
+II.3
+for(k=strlen(s)-1;k>=0;k--) 
+{//prefix s[0],s[1]...s[k]
+ if(s[0]==s[k])
+  { char s2[21];
+    strncpy(s2,s,k+1);
+    s2[k+1]=0;
+    cout<<s2<<" ";
+  }
+}
+
+
+bacalaureat--->s2="cal"
+strncpy(s2,s+2,3);s2[3]=0;
+
+
+void putere (int n, int &x, int &p)
+{
+ 
+  for(int i=2; i<=n; i++)
+    if(n%i==0)
+    {
+      int aux=i;  int putere=1;
+      while(aux*i<=n){
+        aux*=i; putere++;
+      }
+      if(aux==n)
+      {x=i; p=putere;}
+    }
+}
+=====
+cin>>n;cin.get();
+cin.getline(s,101);
+=============
+https://www.pbinfo.ro/articole/67/aplicatii-ale-descompunerii-in-factori-primi
+1. NUMARUL DE DIVIZORI
+d=2;nr=1;;
+while(n!=1) //d*d<=n
+{ p=0;
+  while(n%d==0)
+  {n/=d;p++;
+  }
+  if(p) nr=nr*(p+1);
+  d++;
+}
+2.SUMA DIVIZORILOR
+d=2;s=0;
+while(n!=1) //d*d<=n
+{ p=0;f=1;
+  while(n%d==0)
+  {n/=d;p++;f=f*d;
+  }
+  if(p) s=s*(f*d-1)/(d-1);
+  d++;
+}
+
+
+INDICATORUL LUI EULER
+
+d=2;E=n;
+while(n!=1) //d*d<=n
+{ p=0;
+  while(n%d==0)
+  {n/=d;p++;
+  }
+  if(p) E=E*(d-1)/d;
+  d++;
+}
+=======================
+VARIANTE 2009
+"din departare se vede tare bine"
+tare
+----->
+"din depar**** se vede **** bine"
+#include <iostream> 
+#include <cstring>
+using namespace std;
+
+int main(){
+  char s[256];
+  char c[21];
+  char stea[21];
+  char * p;
+  cin.getline(s,256);
+  cin.getline(c, 21);
+  int n = strlen(c);
+  for(int i = 0; i<n; ++i)
+    stea[i]='*';
+  stea[n]='\0';
+  p = strstr(s, c);
+  while(p){
+    strncpy(p, stea, n);
+    p = strstr(p+n, c); 
+  }
+  cout << s;
+  return 0;
+}
+=====================
+Scrieţi un program C/C++ care citeşte de la tastatură un şir de caractere format din
+maximum 10 caractere, reprezentând un număr real în care partea întreagă este separată
+de partea zecimală prin caracterul punct. Programul afişează pe ecran valoarea obţinută
+prin adunarea numărului corespunzător părţii întregi şi a numărului corespunzător părţii
+zecimale ale datei citite.
+Exemplu: dacă se citeşte de la tastatură şirul de caractere 120.456 atunci se va afişa
+576, iar dacă se citeşte de la tastatură şirul de caractere 121.090 atunci se va afişa 130
+"230"---> atoi()
+==============
+#include <iostream> 
+#include <cstring>
+using namespace std;
+
+int main(){
+  char s[11];
+  cin.getline(s,11);
+  char *p=strtok(s, ".");
+  char *m=strtok(NULL," ");
+	while(m[strlen(m)-1]=='0' && strlen(m))
+    {
+      m[strlen(m)-1]=0;
+    }
+  int a=0, b=0;
+	for(int i=0; i<strlen(p); i++)
+    a=a*10+(p[i]-'0');
+  for(int i=0; i<strlen(m); i++)
+    b=b*10+(m[i]-'0');
+
+  cout<<a+b;
+  return 0;
+}
+
+==========================
+Valorile de pe diagonalele paralele cu diagonala secundara au regula
+linia+coloana=valoare,
+valoare=2,3,4...,n+1
+
+linia=k+1-i
+
+
+TEMA
+din https://profs.info.uaic.ro/~vcosmin/pagini/resurse_pregatire/variante-bac-2009-informatica-intensiv.pdf
+pag prob
+21  III4
+39 III 3
+43 I.2.D
+63 III 4
+72 III 4
+81 III 4
+86 II 5
+87 III 4
+99 III 4
+105 II 2
+112 I.2.C
+183 III 4
+171 III 4 Eficient!!
+212 II 5
+215 II 5
+216 III 3
+224 II 5
+225 III 3
+233 II 5
+282 III 4
+285 III 4
+288 III 4
+300 III 4
+
+
+PARALELA 45
+Sa se determine lungimea maxima a unei secvente de tip vale
+x1>x2...>xk<xk+1<...xn
+!!!!!
+
+MATERIALE DE PREGATIRE FMI
+https://drive.google.com/drive/folders/1rpN2h3VhCCw1JX4WWiyD7Gy1lVpuJoTg

@@ -1,0 +1,317 @@
+PSEUDOCOD
+https://www.pbinfo.ro/articole/23972/limbajul-pseudocod
+INSTRUCTIUNI
+-liniare/secventiale:citeste,scrie,atribuire(<-)
+-decizie/selectie:daca,cazuri
+-repetitive/de ciclare:
+  -cu test initial:cat timp
+  -cu test final:repeta -pana cand, executa-cat timp
+  -cu nr cunoscut de pasi:pentru
+     pentru i<-v1,v2,pas executa
+      instructiune
+     sf. pentru
+
+REGULI DE ECHIVALARE-
+https://www.pbinfo.ro/articole/23972/limbajul-pseudocod
+BAC AUGUST 2022
+II.1.d.
+citeşte m,n
+ (numere naturale nenule, m<n)
+ x<-1
+
+┌repeta
+│ xm; yn; nn-1
+│┌cât timp x≠y execută
+││┌dacă x>y atunci xx-y
+│││altfel yy-x
+││└■
+│└■
+└■pana cand x<>1
+
+scrie n+1
+----------------
+REGULI DE MORGAN
+
+not(p si q) <--> not p sau not q
+not(p sau q)  <--> not p si not q
+
+--------------------------------
+LIMBAJ C++
+TIPURI DE DATE
+-pentru numere naturale: unsigned ([0..2^32-1]),long long unsigned [0..2^64-1], unsigned char [0..2^8-1]
+-pentru numere intregi:int [-2^31..2^31-1], long long int [-2^63..2^63-1],char [-2^7..2^7-1]
+-pentru numere reale: float(max.7 zecimale), double(max.15 zecimale), long double
+-pentru caractere: char
+OPERATORI
+-artimetici-,+,*,/,%
+-logici: !,&&,||
+-relationali: <,>,<=,>=,==,!=
+-post sau pre-incrementare/decrementare: ++,--
+   a++; ++a;
+int x=2,y=x++;//y=2,x=3
+int a=12,b=++a;//a=13,b=13
+ int a=1,b=5,c=a++ + ++b;//b=6,c=7,a=2
+-atribuire
+  simpla  a=10;
+  Operatia de atribuire returneaza in sistem valoarea care a fost atribuita!!
+   cout<<(a=2);//2
+   x=x+3;
+  multipla a=b=c=10;
+           a=b=c+2=10;//GRESIT!!
+  compusa:-=,+=,*=,....
+    int a=12;a+=3;//a=15
+    int a=10;a*=a+2;//a=a*(a+2)=120
+ -operatorul conditional ?
+  cond_logica?val_true:val_false;
+
+maxx=a>b?a:b;
+
+INSTRUCTIUNI
+-liniare/secventiale: cin,cout, =, {},;
+   ; instr vida
+-decizie:if,switch
+-repetitive:while, do-while, for
+
+for(i=1;i<=3;i++)
+ cout<<i;
+cout<<i;
+//1234
+
+while(a)
+{cout<<a%10;a/=10;}
+
+for(;a;a/=10)
+  cout<<a%10;
+
+SAU
+for(;a; cout<<a%10,a/=10);
+
+for(st=1,dr=n;st<dr;st++,dr--)
+  cout<<v[st]<<v[dr];
+
+
+a=4;
+while(a--)
+  cout<<a;
+//3210
+
+<-->
+a=4;
+while(a)
+ {a--; cout<<a;}
+
+-----------
+ALGORITMI FUNDAMENTALI
+A.CIFRELE UNUI NUMAR
+EX. NR DE CIFRE
+cnt=0;
+do
+{cnt++;n/=10;
+}while(n);
+cout<<cnt;
+------------
+while(n)
+{//prelucram n%10
+  n/=10;
+}
+OGLINDITUL
+ogl=0;
+ while(n)
+{ogl=n%10+ogl*10;
+  n/=10;
+}
+n	ogl
+125	5
+12	52
+1	521
+CONSTRUIM UN NOU NUMAR FORMAT DIN CIFRELE IMPARE, PASTRAND ORDINEA INITIALA
+n=12345--->nou=135
+nou=0;p=1;
+while(n)
+{
+  if(n%2==1)
+   {  nou=n%10*p+nou;
+      p=p*10;
+   }
+   n/=10;
+}
+
+n 	nou
+12345	5
+1234
+123	35
+12
+1	135
+
+CIFRA DE CONTROL
+n=1238654--->s=29-->s=11-->s=2
+
+do
+{ 
+  s=0;
+  while(n)
+ { s+=n%10;
+   n=n/10;
+ }
+ n=s;
+}while(s>9);
+cout<<n;
+
+ECHIVALENT CU
+s=0;
+while(n)
+ { s+=n%10;
+   n=n/10;
+   if(n==0 && s>9)
+     {n=s;s=0;}
+ }
+
+ECHIVALENT CU
+cifra_de_control(a)=a%9, daca a%9<>0
+                   =9, daca a%9=0
+
+B.CEL MAI MARE DIVIZOR COMUN
+-prin scaderi
+(120,80)-(40,80)-(40,40)
+if(x*y)
+{
+while(x!=y)
+   if(x>y)
+     x=x-y;
+   else
+     y=y-x;
+d=x;
+}
+else
+ if(x==0) d=y;
+ else d=x;
+cout<<"cmmdc"<<d;
+-------------------------
+-prin impartiri
+a    b
+120:160=0, rest 120
+160:120=1,rest 40
+120:40 =3, rest 0
+ 40:0 STOP
+!!!!!!!!!!!!!!!!!!!!!!!!!!
+while(b)
+{ rest=a%b;
+  a=b;
+  b=rest;  
+}
+cout<<"cmmdc="<<a;
+!!!!!!!!!!!!!!!!!!!!!!!!!!!
+a=0, b=10
+a=10, b=0
+
+int cmmdc(int a,int b)
+{ if(b==0) return a;
+else return cmmdc(b,a%b);
+}
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+C.DIVIZORII
+NR DE DIVIZORI
+cnt=1;
+for(d=1;d<=n/2;d++)
+ if(n%d==0) cnt++;
+
+
+OPTIM (sqrt(n))
+n=120
+(1,120)(2,60)(3,40)....(10,12)
+        d,n/d
+cnt=0;
+for(d=1;d*d<n;d++)
+ if(n%d==0) cnt+=2;
+if(d*d==n) cnt++;
+
+n=100
+(1,100)(2,50)...(10,10)
+
+D.VERIFICAREA PRIMALITATII
+prim=1;
+if(n==1 || n==0) prim=0;
+for(int d=2;d*d<=n;d++)
+    if(n%d==0) {prim=0;break;}
+ if(prim) cout<<"nr prim";
+ else cout<<"nr neprim";
+
+CU SUBPROGRAME
+
+bool isprim(int n)
+{ if(n==1 || n==0) return false;
+  for(int d=2;d*d<=n;d++)
+    if(n%d==0) return false;
+  return true;
+}
+
+
+
+RECURSIV
+bool isprim(int n,int d)
+{ if(d*d>n) return true;
+  if(n%d==0) return false;
+  else return isprim(n,d+1);
+}
+la apel isprim(n,2);
+
+
+-----------------------------
+TEMA SUB II.1 DIN SUBIECTELE BAC PE 2022(AUG,IUN,MAI,MARTIE) SI I.1
++20 ex CU EXPRESII LOGICE din variantele 1-20 culeg poli(CU AUTOEVALUARE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ALGORITMI FUNDAMENTALI

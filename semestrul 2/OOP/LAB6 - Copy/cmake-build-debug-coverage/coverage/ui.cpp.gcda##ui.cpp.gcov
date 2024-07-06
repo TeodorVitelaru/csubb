@@ -1,0 +1,956 @@
+        -:    0:Source:C:/Users/Admin/CLionProjects/LAB6/ui.cpp
+        -:    0:Graph:C:\Users\Admin\CLionProjects\LAB6\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\ui.cpp.gcno
+        -:    0:Data:C:\Users\Admin\CLionProjects\LAB6\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\ui.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <iostream>
+        -:    2:#include <string>
+        -:    3:#include "ui.h"
+        -:    4:
+        -:    5:using namespace std;
+        -:    6:
+function _ZN7Consola10print_menuEv called 1 returned 100% blocks executed 100%
+        1:    7:void Consola::print_menu() {
+        1:    8:    cout<<"MENIU\n";
+        1:    8-block  0
+call    0 returned 1
+        1:    9:    cout<<"1.Aduagare oferta\n";
+call    0 returned 1
+        1:   10:    cout<<"2.Stergere oferta\n";
+call    0 returned 1
+        1:   11:    cout<<"3.Modificare oferta\n";
+call    0 returned 1
+        1:   12:    cout<<"4.Printare oferte\n";
+call    0 returned 1
+        1:   13:    cout<<"5.Cautare oferta\n";
+call    0 returned 1
+        1:   14:    cout<<"6.Filtrare oferte\n";
+call    0 returned 1
+        1:   15:    cout<<"7.Sortare oferte\n";
+call    0 returned 1
+        1:   16:    cout<<"8.Exit\n";
+call    0 returned 1
+        1:   17:}
+        -:   18:
+function _ZN7Consola11adaugare_uiEv called 0 returned 0% blocks executed 0%
+    #####:   19:void Consola::adaugare_ui() {
+    #####:   20:    string denumire, destinatie, tip;
+    %%%%%:   20-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   21:    char pr[100];
+        -:   22:    int pret;
+    #####:   23:    cout<<"Denumirea: ";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   24:    cin>>denumire;
+    %%%%%:   24-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   25:    cout<<"Destinatia: ";
+    %%%%%:   25-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   26:    cin>>destinatie;
+    %%%%%:   26-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   27:    cout<<"Tipul: ";
+    %%%%%:   27-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   28:    cin>>tip;
+    %%%%%:   28-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   29:    cout<<"Pretul: ";
+    %%%%%:   29-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   30:    cin>>pr;
+    %%%%%:   30-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   31:    pret = atoi(pr);
+    %%%%%:   31-block  0
+call    0 never executed
+        -:   32:    try{
+    #####:   33:        srv.adaugare_oferta(denumire, destinatie, tip, pret);
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   33-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   33-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:   33-block  2
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:   33-block  3
+call   12 never executed
+call   13 never executed
+call   14 never executed
+    $$$$$:   33-block  4
+call   15 never executed
+    $$$$$:   33-block  5
+    $$$$$:   33-block  6
+call   16 never executed
+    $$$$$:   33-block  7
+    $$$$$:   33-block  8
+call   17 never executed
+    $$$$$:   33-block  9
+    #####:   34:        cout<<"Oferta a fost adaugata cu succes!"<<endl;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   34-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+        -:   35:    }
+    =====:   36:    catch (RepoException& re)
+    $$$$$:   36-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   36-block  1
+call    3 never executed
+        -:   37:    {
+    =====:   38:        cout<< re.getErrorMessage();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   38-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:   38-block  1
+call    6 never executed
+    $$$$$:   38-block  2
+call    7 never executed
+    $$$$$:   38-block  3
+    =====:   39:    }
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   39-block  0
+call    3 never executed
+    =====:   40:    catch (Exception exception)
+    $$$$$:   40-block  0
+call    0 never executed
+call    1 never executed
+        -:   41:    {
+    =====:   42:        cout<<exception.getMessage();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   42-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:   42-block  1
+call    6 never executed
+    $$$$$:   42-block  2
+call    7 never executed
+    $$$$$:   42-block  3
+    =====:   43:    }
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    $$$$$:   43-block  0
+call    4 never executed
+    $$$$$:   43-block  1
+call    5 never executed
+    #####:   44:}
+    %%%%%:   44-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:   44-block  1
+call    3 never executed
+    $$$$$:   44-block  2
+call    4 never executed
+    $$$$$:   44-block  3
+call    5 never executed
+        -:   45:
+function _ZN7Consola13modificare_uiEv called 0 returned 0% blocks executed 0%
+    #####:   46:void Consola::modificare_ui()
+        -:   47:{
+    #####:   48:    string denumire, destinatie, tip_nou;
+    %%%%%:   48-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   49:    char pr[100];
+        -:   50:    int pret_nou;
+    #####:   51:    cout<<"Denumirea ofertei pe care vreti sa o schimbati: ";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   52:    cin>>denumire;
+    %%%%%:   52-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   53:    cout<<"Destinatia ofertei pe care vreti sa o schimbati: ";
+    %%%%%:   53-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   54:    cin>>destinatie;
+    %%%%%:   54-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   55:    cout<<"Tipul nou: ";
+    %%%%%:   55-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   56:    cin>>tip_nou;
+    %%%%%:   56-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   57:    cout<<"Pretul nou: ";
+    %%%%%:   57-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   58:    cin>>pr;
+    %%%%%:   58-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   59:    pret_nou = atoi(pr);
+    %%%%%:   59-block  0
+call    0 never executed
+        -:   60:    try {
+    #####:   61:        srv.modificare_oferta(denumire, destinatie, tip_nou,pret_nou);
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   62:    }
+    =====:   63:    catch (Exception exception)
+    $$$$$:   63-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   63-block  1
+call    3 never executed
+call    4 never executed
+        -:   64:    {
+    =====:   65:        cout<<exception.getMessage();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   65-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:   65-block  1
+call    6 never executed
+    $$$$$:   65-block  2
+call    7 never executed
+    $$$$$:   65-block  3
+    =====:   66:    }
+call    0 never executed
+call    1 never executed
+    $$$$$:   66-block  0
+call    2 never executed
+    $$$$$:   66-block  1
+call    3 never executed
+    =====:   67:    catch (RepoException& re)
+    $$$$$:   67-block  0
+call    0 never executed
+        -:   68:    {
+    =====:   69:        cout<< re.getErrorMessage();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   69-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:   69-block  1
+call    6 never executed
+    $$$$$:   69-block  2
+call    7 never executed
+    $$$$$:   69-block  3
+    =====:   70:    }
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   70-block  0
+call    3 never executed
+    #####:   71:}
+    %%%%%:   71-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:   71-block  1
+call    3 never executed
+    $$$$$:   71-block  2
+call    4 never executed
+    $$$$$:   71-block  3
+call    5 never executed
+        -:   72:
+function _ZN7Consola11stergere_uiEv called 0 returned 0% blocks executed 0%
+    #####:   73:void Consola::stergere_ui() {
+        -:   74:    int poz;
+    #####:   75:    cout<<"Introduceti pozitia: ";
+    %%%%%:   75-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   76:    cin>>poz;
+    %%%%%:   76-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   77:    if(poz<0 || poz>=srv.get_all_oferte().size())
+    %%%%%:   77-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   77-block  1
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed (throw)
+    %%%%%:   77-block  2
+call    5 never executed
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    %%%%%:   77-block  3
+    %%%%%:   77-block  4
+    %%%%%:   77-block  5
+branch  8 never executed (fallthrough)
+branch  9 never executed
+    #####:   78:        cout<<"Introduceti o pozitie valida!"<<endl;
+    %%%%%:   78-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   78-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+        -:   79:    try{
+    #####:   80:        srv.stergere_oferta(poz);
+    %%%%%:   80-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   81:    }
+    =====:   82:    catch (Exception exception)
+    $$$$$:   82-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   82-block  1
+call    3 never executed
+call    4 never executed
+        -:   83:    {
+    =====:   84:        cout<<exception.getMessage();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   84-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:   84-block  1
+call    6 never executed
+    $$$$$:   84-block  2
+call    7 never executed
+    $$$$$:   84-block  3
+    =====:   85:    }
+call    0 never executed
+call    1 never executed
+    $$$$$:   85-block  0
+call    2 never executed
+    $$$$$:   85-block  1
+call    3 never executed
+    =====:   86:    catch (RepoException& re)
+    $$$$$:   86-block  0
+call    0 never executed
+        -:   87:    {
+    =====:   88:        cout<< re.getErrorMessage();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   88-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:   88-block  1
+call    6 never executed
+    $$$$$:   88-block  2
+call    7 never executed
+    $$$$$:   88-block  3
+    =====:   89:    }
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   89-block  0
+call    3 never executed
+    #####:   90:}
+    %%%%%:   90-block  0
+        -:   91:
+function _ZN7Consola10cautare_uiEv called 0 returned 0% blocks executed 0%
+    #####:   92:void Consola::cautare_ui() {
+    #####:   93:    string denumire, destinatie;
+    %%%%%:   93-block  0
+call    0 never executed
+call    1 never executed
+    #####:   94:    cout<<"Denumirea: ";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   95:    cin>>denumire;
+    %%%%%:   95-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   96:    cout<<"Destinatia: ";
+    %%%%%:   96-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   97:    cin>>destinatie;
+    %%%%%:   97-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   98:    try{
+    #####:   99:       cout<<srv.cautare_oferte(denumire,destinatie);
+    %%%%%:   99-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   99-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   99-block  2
+call    6 never executed
+    $$$$$:   99-block  3
+call    7 never executed
+    $$$$$:   99-block  4
+        -:  100:    }
+    =====:  101:    catch (Exception exception)
+    $$$$$:  101-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  101-block  1
+call    3 never executed
+call    4 never executed
+        -:  102:    {
+    =====:  103:        cout<<exception.getMessage();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:  103-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:  103-block  1
+call    6 never executed
+    $$$$$:  103-block  2
+call    7 never executed
+    $$$$$:  103-block  3
+    =====:  104:    }
+call    0 never executed
+call    1 never executed
+    $$$$$:  104-block  0
+call    2 never executed
+    $$$$$:  104-block  1
+call    3 never executed
+    =====:  105:    catch (RepoException& re)
+    $$$$$:  105-block  0
+call    0 never executed
+        -:  106:    {
+    =====:  107:        cout<< re.getErrorMessage();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:  107-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:  107-block  1
+call    6 never executed
+    $$$$$:  107-block  2
+call    7 never executed
+    $$$$$:  107-block  3
+    =====:  108:    }
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:  108-block  0
+call    3 never executed
+    #####:  109:}
+    %%%%%:  109-block  0
+call    0 never executed
+call    1 never executed
+    $$$$$:  109-block  1
+call    2 never executed
+    $$$$$:  109-block  2
+call    3 never executed
+        -:  110:
+function _ZN7Consola11filtrare_uiEv called 0 returned 0% blocks executed 0%
+    #####:  111:void Consola::filtrare_ui() {
+        -:  112:    int nr;
+    #####:  113:    cout<<"1.destinatie   2.pret"<<endl;
+    %%%%%:  113-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  113-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    #####:  114:    cout<<"alegeti o optiune: ";
+    %%%%%:  114-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  115:    cin>>nr;
+    %%%%%:  115-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  116:    if(nr == 1)
+    %%%%%:  116-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  117:    {
+    #####:  118:        string destinatia;
+    %%%%%:  118-block  0
+call    0 never executed
+    #####:  119:        cout<<"Dati destinatia pentru care vreti sa vedeti ofertele: ";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  120:        cin>>destinatia;
+    %%%%%:  120-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  121:        print_all_oferte(srv.filtrare_destinatie(destinatia));
+    %%%%%:  121-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  121-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  121-block  2
+call    6 never executed
+    $$$$$:  121-block  3
+call    7 never executed
+    $$$$$:  121-block  4
+    #####:  122:    }
+call    0 never executed
+    $$$$$:  122-block  0
+call    1 never executed
+    #####:  123:    else if(nr == 2)
+    %%%%%:  123-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  124:    {
+        -:  125:        int pret;
+    #####:  126:        cout<<"Dati pretul pentru care vreti sa vedeti ofertele: ";
+    %%%%%:  126-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  127:        cin>>pret;
+    %%%%%:  127-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  128:        print_all_oferte(srv.filtrare_pret(pret));
+    %%%%%:  128-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  128-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  128-block  2
+call    6 never executed
+    $$$$$:  128-block  3
+call    7 never executed
+    $$$$$:  128-block  4
+        -:  129:    }
+    #####:  130:}
+    %%%%%:  130-block  0
+        -:  131:
+function _ZN7Consola10sortare_uiEv called 0 returned 0% blocks executed 0%
+    #####:  132:void Consola::sortare_ui() {
+    #####:  133:    if(!srv.get_all_oferte().empty())
+    %%%%%:  133-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed
+        -:  134:    {
+    #####:  135:        string crit;
+    %%%%%:  135-block  0
+call    0 never executed
+    #####:  136:        cout << "Introduceti criteriul dupa care doriti sa faceti sortarea(1-denumire,2-destinatie,3-tip+pret): ";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  137:        cin >> crit;
+    %%%%%:  137-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  138:        if(crit == "1")
+    %%%%%:  138-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  138-block  1
+branch  3 never executed (fallthrough)
+branch  4 never executed
+        -:  139:        {
+        -:  140:            int ord;
+    #####:  141:            cout << "Introduceti ordinea de sortare(1-crescator,2-descrescator): ";
+    %%%%%:  141-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  142:            cin >> ord;
+    %%%%%:  142-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  143:            if(ord == 1 || ord==2)
+    %%%%%:  143-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  143-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+        -:  144:            {
+    #####:  145:                srv.sortare_generica(cmp_denumire, ord);
+    %%%%%:  145-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  146:                cout<<"Sortare reusita!"<<endl;
+    %%%%%:  146-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  146-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  146-block  2
+        -:  147:            }
+        -:  148:            else{
+    #####:  149:                cout<<"Introduceti valori corecte!!"<<endl;
+    %%%%%:  149-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  149-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+        -:  150:            }
+    #####:  151:        } else if(crit == "2")
+    %%%%%:  151-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  151-block  1
+branch  3 never executed (fallthrough)
+branch  4 never executed
+        -:  152:        {
+        -:  153:            int ord;
+    #####:  154:            cout << "Introduceti ordinea de sortare(1-crescator,2-descrescator): ";
+    %%%%%:  154-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  155:            cin >> ord;
+    %%%%%:  155-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  156:            if(ord == 1 || ord==2)
+    %%%%%:  156-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  156-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+        -:  157:            {
+    #####:  158:                srv.sortare_generica(cmp_destinatie, ord);
+    %%%%%:  158-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  159:                cout<<"Sortare reusita!"<<endl;
+    %%%%%:  159-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  159-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  159-block  2
+        -:  160:            }
+        -:  161:            else{
+    #####:  162:                cout<<"Introduceti valori corecte!!"<<endl;
+    %%%%%:  162-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  162-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+        -:  163:            }
+    #####:  164:        } else if(crit == "3")
+    %%%%%:  164-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  164-block  1
+branch  3 never executed (fallthrough)
+branch  4 never executed
+        -:  165:        {
+        -:  166:            int ord;
+    #####:  167:            cout << "Introduceti ordinea de sortare(1-crescator,2-descrescator): ";
+    %%%%%:  167-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  168:            cin >> ord;
+    %%%%%:  168-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  169:            if(ord == 1 || ord==2)
+    %%%%%:  169-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  169-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+        -:  170:            {
+    #####:  171:                srv.sortare_generica(cmp_tip_pret, ord);
+    %%%%%:  171-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  172:                cout<<"Sortare reusita!"<<endl;
+    %%%%%:  172-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  172-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  172-block  2
+        -:  173:            }
+        -:  174:            else{
+    #####:  175:                cout<<"Introduceti valori corecte!!"<<endl;
+    %%%%%:  175-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  175-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+        -:  176:            }
+        -:  177:        }
+    #####:  178:    }
+    %%%%%:  178-block  0
+call    0 never executed
+    $$$$$:  178-block  1
+call    1 never executed
+    #####:  179:    else{cout<<"Lista este goala.NU se pot face sortari!!"<<endl;}
+    %%%%%:  179-block  0
+call    0 never executed
+call    1 never executed
+    #####:  180:}
+    %%%%%:  180-block  0
+        -:  181:
+function _ZN7Consola16print_all_oferteESt6vectorI6OfertaSaIS1_EE called 0 returned 0% blocks executed 0%
+    #####:  182:void Consola::print_all_oferte(vector<Oferta> allOferte) {
+    #####:  183:    if(allOferte.size() == 0)
+    %%%%%:  183-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  184:        cout<< "Nu exista melodii"<<endl;
+    %%%%%:  184-block  0
+call    0 never executed
+call    1 never executed
+        -:  185:    else{
+    #####:  186:        int cnt=0;
+    #####:  187:        for(const auto& oferta : allOferte)
+    %%%%%:  187-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  187-block  1
+call    2 never executed
+    %%%%%:  187-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed (fallthrough)
+        -:  188:        {
+    #####:  189:            cout<<cnt<<"."<<oferta;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  189-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  189-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    #####:  190:            cnt++;
+    %%%%%:  190-block  0
+call    0 never executed
+        -:  191:        }
+        -:  192:    }
+    #####:  193:}
+    %%%%%:  193-block  0
+        -:  194:
+function _ZN7Consola3runEv called 1 returned 0% blocks executed 21%
+        1:  195:void Consola::run() {
+        1:  196:    int running = 1;
+        -:  197:    int cmd;
+        -:  198:    //this->add_default_oferte();
+        1:  199:    while (running)
+        1:  199-block  0
+        1:  199-block  1
+branch  0 taken 1
+branch  1 taken 0 (fallthrough)
+        -:  200:    {
+        1:  201:        print_menu();
+        1:  201-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  202:        cout<<"Comanda este:";
+        1:  202-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  203:        cin>>cmd;
+        1:  203-block  0
+call    0 returned 0
+branch  1 taken 0 (fallthrough)
+branch  2 taken 0 (throw)
+    #####:  204:        switch (cmd)
+    %%%%%:  204-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+    #####:  205:        {   case 1:
+    #####:  206:                adaugare_ui();
+    %%%%%:  206-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  207:                break;
+    %%%%%:  207-block  0
+    #####:  208:            case 8:
+    #####:  209:                running = 0;
+    #####:  210:                break;
+    %%%%%:  210-block  0
+    #####:  211:            case 4:
+    #####:  212:                print_all_oferte(const_cast<vector<Oferta> &>(srv.get_all_oferte()));
+    %%%%%:  212-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  212-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  212-block  2
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  212-block  3
+call    9 never executed
+    $$$$$:  212-block  4
+call   10 never executed
+    $$$$$:  212-block  5
+    #####:  213:                break;
+    #####:  214:            case 3:
+    #####:  215:                modificare_ui();
+    %%%%%:  215-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  216:                break;
+    %%%%%:  216-block  0
+    #####:  217:            case 2:
+    #####:  218:                stergere_ui();
+    %%%%%:  218-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  219:                break;
+    %%%%%:  219-block  0
+    #####:  220:            case 5:
+    #####:  221:                cautare_ui();
+    %%%%%:  221-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  222:                break;
+    %%%%%:  222-block  0
+    #####:  223:            case 7:
+    #####:  224:                sortare_ui();
+    %%%%%:  224-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  225:                break;
+    %%%%%:  225-block  0
+    #####:  226:            default:
+    #####:  227:                break;
+    %%%%%:  227-block  0
+        -:  228:
+        -:  229:        }
+        -:  230:    }
+    #####:  231:}
+    %%%%%:  231-block  0

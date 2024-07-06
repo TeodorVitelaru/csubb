@@ -1,0 +1,2077 @@
+        -:    0:Source:C:/Users/Admin/CLionProjects/LAB6/teste.cpp
+        -:    0:Graph:C:\Users\Admin\CLionProjects\LAB6\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\teste.cpp.gcno
+        -:    0:Data:C:\Users\Admin\CLionProjects\LAB6\cmake-build-debug-coverage\CMakeFiles\LAB6.dir\teste.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <iostream>
+        -:    2:#include <assert.h>
+        -:    3:#include "teste.h"
+        -:    4:
+        -:    5:
+function _Z11test_domainv called 1 returned 100% blocks executed 54%
+        1:    6:void test_domain()
+        1:    6-block  0
+        -:    7:{
+        5:    8:     Oferta o1{ "vacanta", "Suceava", "munte", 1400 };
+        1:    8-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:    8-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:    8-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:    8-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:    8-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:    8-block  5
+call   15 never executed
+    $$$$$:    8-block  6
+    $$$$$:    8-block  7
+    $$$$$:    8-block  8
+call   16 never executed
+    $$$$$:    8-block  9
+    $$$$$:    8-block 10
+    $$$$$:    8-block 11
+call   17 never executed
+    $$$$$:    8-block 12
+    $$$$$:    8-block 13
+       1*:    9:     assert(o1.get_destinatie() == "Suceava");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:    9-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:    9-block  1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:    9-block  2
+call    8 never executed
+        1:    9-block  3
+        1:    9-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:    9-block  5
+call   11 returned 1
+    $$$$$:    9-block  6
+branch 12 never executed (fallthrough)
+branch 13 never executed
+    $$$$$:    9-block  7
+call   14 never executed
+    $$$$$:    9-block  8
+       1*:   10:     assert(o1.get_denumire() == "vacanta");
+        1:   10-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   10-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   10-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:   10-block  3
+call    8 never executed
+        1:   10-block  4
+        1:   10-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   10-block  6
+call   11 returned 1
+    $$$$$:   10-block  7
+branch 12 never executed (fallthrough)
+branch 13 never executed
+    $$$$$:   10-block  8
+call   14 never executed
+    $$$$$:   10-block  9
+       1*:   11:     assert(o1.get_tip() == "munte");
+        1:   11-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   11-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   11-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:   11-block  3
+call    8 never executed
+        1:   11-block  4
+        1:   11-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   11-block  6
+call   11 returned 1
+    $$$$$:   11-block  7
+branch 12 never executed (fallthrough)
+branch 13 never executed
+    $$$$$:   11-block  8
+call   14 never executed
+    $$$$$:   11-block  9
+       1*:   12:     assert(o1.get_pret() == 1400);
+        1:   12-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   12-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:   12-block  2
+call    5 never executed
+        1:   12-block  3
+        1:   13:     o1.set_pret(100);
+        1:   13-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   14:     o1.set_tip("mare");
+        1:   14-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   14-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   14-block  2
+call    6 returned 1
+    $$$$$:   14-block  3
+call    7 never executed
+    $$$$$:   14-block  4
+    $$$$$:   14-block  5
+        2:   15:     o1.set_denumire("aici");
+        1:   15-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   15-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   15-block  2
+call    6 returned 1
+    $$$$$:   15-block  3
+call    7 never executed
+    $$$$$:   15-block  4
+    $$$$$:   15-block  5
+        1:   16:     o1.set_destinatie("nuaici");
+        1:   16-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   16-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   16-block  2
+call    6 returned 1
+    $$$$$:   16-block  3
+call    7 never executed
+    $$$$$:   16-block  4
+    $$$$$:   16-block  5
+       1*:   17:    assert(o1.get_destinatie() == "nuaici");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   17-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   17-block  1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:   17-block  2
+call    8 never executed
+        1:   17-block  3
+        1:   17-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   17-block  5
+call   11 returned 1
+    $$$$$:   17-block  6
+branch 12 never executed (fallthrough)
+branch 13 never executed
+    $$$$$:   17-block  7
+call   14 never executed
+    $$$$$:   17-block  8
+       1*:   18:    assert(o1.get_denumire() == "aici");
+        1:   18-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   18-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   18-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:   18-block  3
+call    8 never executed
+        1:   18-block  4
+        1:   18-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   18-block  6
+call   11 returned 1
+    $$$$$:   18-block  7
+branch 12 never executed (fallthrough)
+branch 13 never executed
+    $$$$$:   18-block  8
+call   14 never executed
+    $$$$$:   18-block  9
+       1*:   19:    assert(o1.get_tip() == "mare");
+        1:   19-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   19-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   19-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:   19-block  3
+call    8 never executed
+        1:   19-block  4
+        1:   19-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   19-block  6
+call   11 returned 1
+    $$$$$:   19-block  7
+branch 12 never executed (fallthrough)
+branch 13 never executed
+    $$$$$:   19-block  8
+call   14 never executed
+    $$$$$:   19-block  9
+       1*:   20:    assert(o1.get_pret() == 100);
+        1:   20-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   20-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:   20-block  2
+call    5 never executed
+        1:   20-block  3
+        1:   21:    cout<<o1;
+        1:   21-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   22:}
+        1:   22-block  0
+call    0 returned 1
+    $$$$$:   22-block  1
+call    1 never executed
+        -:   23:
+function _Z10test_storev called 1 returned 100% blocks executed 59%
+        1:   24:void test_store()
+        -:   25:{
+        1:   26:    Repo repo;
+        1:   26-block  0
+call    0 returned 1
+        5:   27:    repo.store(Oferta{"La mare", "Mamaia", "all-inclusive", 2345});
+        1:   27-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   27-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   27-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   27-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   27-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   27-block  5
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+    $$$$$:   27-block  6
+call   19 never executed
+    $$$$$:   27-block  7
+call   20 never executed
+    $$$$$:   27-block  8
+    $$$$$:   27-block  9
+    $$$$$:   27-block 10
+call   21 never executed
+    $$$$$:   27-block 11
+    $$$$$:   27-block 12
+    $$$$$:   27-block 13
+call   22 never executed
+    $$$$$:   27-block 14
+    $$$$$:   27-block 15
+    $$$$$:   27-block 16
+       1*:   28:    assert(repo.get_all_oferte().size()==1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   28-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   28-block  1
+call    6 never executed
+        1:   28-block  2
+        5:   29:    repo.store(Oferta("Munte", "Sinaia", "all-inclusive", 1280));
+        1:   29-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   29-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   29-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   29-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   29-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   29-block  5
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+    $$$$$:   29-block  6
+call   19 never executed
+    $$$$$:   29-block  7
+call   20 never executed
+    $$$$$:   29-block  8
+    $$$$$:   29-block  9
+    $$$$$:   29-block 10
+call   21 never executed
+    $$$$$:   29-block 11
+    $$$$$:   29-block 12
+    $$$$$:   29-block 13
+call   22 never executed
+    $$$$$:   29-block 14
+    $$$$$:   29-block 15
+    $$$$$:   29-block 16
+       1*:   30:    assert(repo.get_all_oferte().size()==2);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   30-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   30-block  1
+call    6 never executed
+        1:   30-block  2
+        -:   31:    try {
+       7*:   32:        repo.store(Oferta("La mare", "Mamaia", "all-inclusive", 2345));assert(false);
+        1:   32-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   32-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   32-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   32-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   32-block  4
+call   12 returned 1
+branch 13 taken 0 (fallthrough)
+branch 14 taken 1 (throw)
+    %%%%%:   32-block  5
+call   15 never executed
+call   16 never executed
+call   17 never executed
+call   18 never executed
+call   19 never executed
+        1:   32-block  6
+call   20 returned 1
+        1:   32-block  7
+call   21 returned 1
+        1:   32-block  8
+        1:   32-block  9
+        1:   32-block 10
+call   22 returned 1
+        1:   32-block 11
+        1:   32-block 12
+        1:   32-block 13
+call   23 returned 1
+        1:   32-block 14
+        1:   32-block 15
+        1:   32-block 16
+        -:   33:    }
+        1:   34:    catch (RepoException& re)
+        1:   34-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   34-block  1
+call    2 returned 1
+        -:   35:    {
+        1:   36:        assert(re.getErrorMessage() == "Oferta cu aceaste denumire si acest titlu exista deja!");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   36-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   36-block  1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    $$$$$:   36-block  2
+call    8 never executed
+        1:   36-block  3
+        1:   36-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   36-block  5
+call   11 returned 1
+    $$$$$:   36-block  6
+branch 12 never executed (fallthrough)
+branch 13 never executed
+    $$$$$:   36-block  7
+call   14 never executed
+    $$$$$:   36-block  8
+        1:   37:    }
+        1:   37-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   37-block  1
+call    3 never executed
+        1:   38:}
+        1:   38-block  0
+call    0 returned 1
+    $$$$$:   38-block  1
+call    1 never executed
+        -:   39:
+function _Z9test_findv called 1 returned 100% blocks executed 58%
+        1:   40:void test_find()
+        1:   40-block  0
+        -:   41:{
+        5:   42:    Oferta of1{"La mare", "Mamaia", "all-inclusive", 2345};
+        1:   42-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   42-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   42-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   42-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   42-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   42-block  5
+call   15 never executed
+    $$$$$:   42-block  6
+    $$$$$:   42-block  7
+    $$$$$:   42-block  8
+call   16 never executed
+    $$$$$:   42-block  9
+    $$$$$:   42-block 10
+    $$$$$:   42-block 11
+call   17 never executed
+    $$$$$:   42-block 12
+    $$$$$:   42-block 13
+        1:   43:    Repo repo;
+call    0 returned 1
+        -:   44:    try{
+       4*:   45:        repo.find("aici", "aici");
+        1:   45-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   45-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   45-block  2
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1 (throw)
+    %%%%%:   45-block  3
+call    9 never executed
+call   10 never executed
+        1:   45-block  4
+call   11 returned 1
+        1:   45-block  5
+        1:   45-block  6
+        1:   45-block  7
+call   12 returned 1
+        1:   45-block  8
+        1:   45-block  9
+        -:   46:        //assert(false);
+        1:   47:    } catch (RepoException& ex)
+        1:   47-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   47-block  1
+call    2 returned 1
+        -:   48:    {
+        -:   49:        assert(true);
+        1:   50:    }
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   51:    repo.store(of1);
+        1:   51-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   52:    repo.find("La mare", "Mamaia");
+        1:   52-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   52-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   52-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   52-block  3
+call    9 returned 1
+call   10 returned 1
+    $$$$$:   52-block  4
+call   11 never executed
+    $$$$$:   52-block  5
+    $$$$$:   52-block  6
+    $$$$$:   52-block  7
+call   12 never executed
+    $$$$$:   52-block  8
+    $$$$$:   52-block  9
+        1:   53:}
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   53-block  0
+call    2 never executed
+    $$$$$:   53-block  1
+call    3 never executed
+        -:   54:
+function _Z8test_delv called 1 returned 100% blocks executed 51%
+        1:   55:void test_del()
+        -:   56:{
+        1:   57:    Repo repo;
+        1:   57-block  0
+call    0 returned 1
+        5:   58:    repo.store(Oferta("La mare", "Mamaia", "all-inclusive", 2345));
+        1:   58-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   58-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   58-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   58-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   58-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   58-block  5
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+    $$$$$:   58-block  6
+call   19 never executed
+    $$$$$:   58-block  7
+call   20 never executed
+    $$$$$:   58-block  8
+    $$$$$:   58-block  9
+    $$$$$:   58-block 10
+call   21 never executed
+    $$$$$:   58-block 11
+    $$$$$:   58-block 12
+    $$$$$:   58-block 13
+call   22 never executed
+    $$$$$:   58-block 14
+    $$$$$:   58-block 15
+    $$$$$:   58-block 16
+       1*:   59:    assert(repo.get_all_oferte().size()==1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   59-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   59-block  1
+call    6 never executed
+        1:   59-block  2
+        5:   60:    Oferta o1 = Oferta("La mare", "Mamaia", "all-inclusive", 2345);
+        1:   60-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   60-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   60-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   60-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   60-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   60-block  5
+call   15 never executed
+    $$$$$:   60-block  6
+    $$$$$:   60-block  7
+    $$$$$:   60-block  8
+call   16 never executed
+    $$$$$:   60-block  9
+    $$$$$:   60-block 10
+    $$$$$:   60-block 11
+call   17 never executed
+    $$$$$:   60-block 12
+    $$$$$:   60-block 13
+        1:   61:    repo.del(0);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   61-block  0
+       1*:   62:    assert(repo.get_all_oferte().size()==0);
+        1:   62-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   62-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   62-block  2
+call    6 never executed
+        1:   62-block  3
+        1:   63:}
+        1:   63-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   63-block  1
+call    2 never executed
+    $$$$$:   63-block  2
+call    3 never executed
+        -:   64:
+function _Z11test_modifyv called 1 returned 100% blocks executed 53%
+        1:   65:void test_modify()
+        -:   66:{
+        1:   67:    Repo repo;
+        1:   67-block  0
+call    0 returned 1
+        5:   68:    repo.store(Oferta("La mare", "Mamaia", "all-inclusive", 2345));
+        1:   68-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   68-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   68-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   68-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   68-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   68-block  5
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+    $$$$$:   68-block  6
+call   19 never executed
+    $$$$$:   68-block  7
+call   20 never executed
+    $$$$$:   68-block  8
+    $$$$$:   68-block  9
+    $$$$$:   68-block 10
+call   21 never executed
+    $$$$$:   68-block 11
+    $$$$$:   68-block 12
+    $$$$$:   68-block 13
+call   22 never executed
+    $$$$$:   68-block 14
+    $$$$$:   68-block 15
+    $$$$$:   68-block 16
+       1*:   69:    assert(repo.get_all_oferte()[0].get_pret() == 2345);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   69-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   69-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:   69-block  2
+call    9 never executed
+        1:   69-block  3
+        5:   70:    Oferta of1{"La mare", "Mamaia", "munte", 1400};
+        1:   70-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   70-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   70-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   70-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   70-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   70-block  5
+call   15 never executed
+    $$$$$:   70-block  6
+    $$$$$:   70-block  7
+    $$$$$:   70-block  8
+call   16 never executed
+    $$$$$:   70-block  9
+    $$$$$:   70-block 10
+    $$$$$:   70-block 11
+call   17 never executed
+    $$$$$:   70-block 12
+    $$$$$:   70-block 13
+        1:   71:    repo.modify(of1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   72:    assert(repo.get_all_oferte()[0].get_pret() == 1400);
+        1:   72-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   72-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   72-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:   72-block  3
+call    9 never executed
+        1:   72-block  4
+        1:   73:}
+        1:   73-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   73-block  1
+call    2 never executed
+    $$$$$:   73-block  2
+call    3 never executed
+        -:   74:
+function _Z21test_adaugare_servicev called 1 returned 100% blocks executed 53%
+        1:   75:void test_adaugare_service()
+        -:   76:{
+        1:   77:    Repo repo;
+        1:   77-block  0
+call    0 returned 1
+        -:   78:    Validator valid;
+        1:   79:    Service service{repo, valid};
+call    0 returned 1
+       1*:   80:    assert(service.get_all_oferte().size()==0);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   80-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   80-block  1
+call    6 never executed
+        1:   80-block  2
+        5:   81:    service.adaugare_oferta("La Mare", "Mamaia", "allinclusive", 2345);
+        1:   81-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   81-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   81-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   81-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   81-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   81-block  5
+call   15 never executed
+    $$$$$:   81-block  6
+    $$$$$:   81-block  7
+    $$$$$:   81-block  8
+call   16 never executed
+    $$$$$:   81-block  9
+    $$$$$:   81-block 10
+    $$$$$:   81-block 11
+call   17 never executed
+    $$$$$:   81-block 12
+    $$$$$:   81-block 13
+       1*:   82:    assert(service.get_all_oferte().size()==1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   82-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   82-block  1
+call    6 never executed
+        1:   82-block  2
+        5:   83:    service.adaugare_oferta("100", "nuj", "fgfg", 123);
+        1:   83-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   83-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   83-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   83-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   83-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   83-block  5
+call   15 never executed
+    $$$$$:   83-block  6
+    $$$$$:   83-block  7
+    $$$$$:   83-block  8
+call   16 never executed
+    $$$$$:   83-block  9
+    $$$$$:   83-block 10
+    $$$$$:   83-block 11
+call   17 never executed
+    $$$$$:   83-block 12
+    $$$$$:   83-block 13
+        -:   84:    assert(true);
+        1:   85:}
+call    0 returned 1
+    $$$$$:   85-block  0
+call    1 never executed
+        -:   86:
+function _Z21test_stergere_servicev called 1 returned 100% blocks executed 58%
+        1:   87:void test_stergere_service()
+        -:   88:{
+        1:   89:    Repo repo;
+        1:   89-block  0
+call    0 returned 1
+        -:   90:    Validator valid;
+        1:   91:    Service service{repo, valid};
+call    0 returned 1
+        5:   92:    repo.store(Oferta("La mare", "Mamaia", "all-inclusive", 2345));
+        1:   92-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   92-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   92-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   92-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   92-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   92-block  5
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+    $$$$$:   92-block  6
+call   19 never executed
+    $$$$$:   92-block  7
+call   20 never executed
+    $$$$$:   92-block  8
+    $$$$$:   92-block  9
+    $$$$$:   92-block 10
+call   21 never executed
+    $$$$$:   92-block 11
+    $$$$$:   92-block 12
+    $$$$$:   92-block 13
+call   22 never executed
+    $$$$$:   92-block 14
+    $$$$$:   92-block 15
+    $$$$$:   92-block 16
+       1*:   93:    assert(repo.get_all_oferte().size()==1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   93-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   93-block  1
+call    6 never executed
+        1:   93-block  2
+        -:   94:    //service.stergere_oferta(1);
+       1*:   95:    assert(repo.get_all_oferte().size()==1);
+        1:   95-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   95-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   95-block  2
+call    6 never executed
+        1:   95-block  3
+        1:   96:    service.stergere_oferta(0);
+        1:   96-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   97:    assert(0 == service.get_all_oferte().size());
+        1:   97-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   97-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   97-block  2
+call    6 never executed
+        1:   97-block  3
+        1:   98:}
+        1:   98-block  0
+call    0 returned 1
+    $$$$$:   98-block  1
+call    1 never executed
+        -:   99:
+function _Z23test_modificare_servicev called 1 returned 100% blocks executed 51%
+        1:  100:void test_modificare_service()
+        -:  101:{
+        1:  102:    Repo repo;
+        1:  102-block  0
+call    0 returned 1
+        -:  103:    Validator valid;
+        1:  104:    Service service{repo, valid};
+call    0 returned 1
+        5:  105:    service.adaugare_oferta("La mare", "Mamaia", "allinclusive", 2345);
+        1:  105-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  105-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  105-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  105-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  105-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  105-block  5
+call   15 never executed
+    $$$$$:  105-block  6
+    $$$$$:  105-block  7
+    $$$$$:  105-block  8
+call   16 never executed
+    $$$$$:  105-block  9
+    $$$$$:  105-block 10
+    $$$$$:  105-block 11
+call   17 never executed
+    $$$$$:  105-block 12
+    $$$$$:  105-block 13
+       1*:  106:    assert(repo.get_all_oferte().size()==1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  106-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  106-block  1
+call    6 never executed
+        1:  106-block  2
+        6:  107:    service.modificare_oferta("La mare", "Mamaia", "trei zile", 1000);
+        1:  107-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  107-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  107-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  107-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  107-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  107-block  5
+call   15 never executed
+    $$$$$:  107-block  6
+    $$$$$:  107-block  7
+    $$$$$:  107-block  8
+call   16 never executed
+    $$$$$:  107-block  9
+    $$$$$:  107-block 10
+    $$$$$:  107-block 11
+call   17 never executed
+    $$$$$:  107-block 12
+    $$$$$:  107-block 13
+        3:  108:    Oferta o = service.cautare_oferte("La mare", "Mamaia");
+        1:  108-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  108-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  108-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  108-block  3
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  108-block  4
+call   11 never executed
+    $$$$$:  108-block  5
+    $$$$$:  108-block  6
+    $$$$$:  108-block  7
+call   12 never executed
+    $$$$$:  108-block  8
+    $$$$$:  108-block  9
+       1*:  109:    assert(o.get_tip()=="trei zile");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  109-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  109-block  1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:  109-block  2
+call    8 never executed
+        1:  109-block  3
+        1:  109-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  109-block  5
+call   11 returned 1
+    $$$$$:  109-block  6
+branch 12 never executed (fallthrough)
+branch 13 never executed
+    $$$$$:  109-block  7
+call   14 never executed
+    $$$$$:  109-block  8
+       1*:  110:    assert(o.get_pret()==1000);
+        1:  110-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  110-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  110-block  2
+call    5 never executed
+        1:  110-block  3
+        1:  111:}
+        1:  111-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  111-block  1
+call    2 never executed
+    $$$$$:  111-block  2
+call    3 never executed
+        -:  112:
+function _Z18test_filtrare_destv called 1 returned 100% blocks executed 51%
+        1:  113:void test_filtrare_dest()
+        -:  114:{
+        1:  115:    Repo repo;
+        1:  115-block  0
+call    0 returned 1
+        -:  116:    Validator valid;
+        1:  117:    Service service{repo, valid};
+call    0 returned 1
+        5:  118:    repo.store(Oferta("La mare", "Mamaia", "all-inclusive", 2345));
+        1:  118-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  118-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  118-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  118-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  118-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  118-block  5
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+    $$$$$:  118-block  6
+call   19 never executed
+    $$$$$:  118-block  7
+call   20 never executed
+    $$$$$:  118-block  8
+    $$$$$:  118-block  9
+    $$$$$:  118-block 10
+call   21 never executed
+    $$$$$:  118-block 11
+    $$$$$:  118-block 12
+    $$$$$:  118-block 13
+call   22 never executed
+    $$$$$:  118-block 14
+    $$$$$:  118-block 15
+    $$$$$:  118-block 16
+       1*:  119:    assert(repo.get_all_oferte().size()==1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  119-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  119-block  1
+call    6 never executed
+        1:  119-block  2
+        6:  120:    repo.store(Oferta("Plaja", "Mamaia", "-", 400));
+        1:  120-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  120-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  120-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  120-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  120-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  120-block  5
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+    $$$$$:  120-block  6
+call   19 never executed
+    $$$$$:  120-block  7
+call   20 never executed
+    $$$$$:  120-block  8
+    $$$$$:  120-block  9
+    $$$$$:  120-block 10
+call   21 never executed
+    $$$$$:  120-block 11
+    $$$$$:  120-block 12
+    $$$$$:  120-block 13
+call   22 never executed
+    $$$$$:  120-block 14
+    $$$$$:  120-block 15
+    $$$$$:  120-block 16
+        6:  121:    repo.store(Oferta("Munte", "Sinaia", "all-inclusive", 1234));
+        1:  121-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  121-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  121-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  121-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  121-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  121-block  5
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+    $$$$$:  121-block  6
+call   19 never executed
+    $$$$$:  121-block  7
+call   20 never executed
+    $$$$$:  121-block  8
+    $$$$$:  121-block  9
+    $$$$$:  121-block 10
+call   21 never executed
+    $$$$$:  121-block 11
+    $$$$$:  121-block 12
+    $$$$$:  121-block 13
+call   22 never executed
+    $$$$$:  121-block 14
+    $$$$$:  121-block 15
+    $$$$$:  121-block 16
+        1:  122:    vector<Oferta> listaFiltrata1 = service.filtrare_destinatie("Mamaia");
+        1:  122-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  122-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  122-block  2
+call    6 returned 1
+    $$$$$:  122-block  3
+call    7 never executed
+    $$$$$:  122-block  4
+    $$$$$:  122-block  5
+       1*:  123:    assert(listaFiltrata1.size()==2);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  123-block  0
+call    3 never executed
+        1:  123-block  1
+       1*:  124:    assert(listaFiltrata1[0].get_pret()==2345);
+        1:  124-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  124-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  124-block  2
+call    6 never executed
+        1:  124-block  3
+       1*:  125:    assert(listaFiltrata1[1].get_pret()==400);
+        1:  125-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  125-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  125-block  2
+call    6 never executed
+        1:  125-block  3
+        1:  126:    vector<Oferta> listaFiltrata2 = service.filtrare_destinatie("Exemplu");
+        1:  126-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  126-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  126-block  2
+call    6 returned 1
+    $$$$$:  126-block  3
+call    7 never executed
+    $$$$$:  126-block  4
+    $$$$$:  126-block  5
+       1*:  127:    assert(listaFiltrata2.empty());
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  127-block  0
+call    3 never executed
+        1:  127-block  1
+        1:  128:}
+        1:  128-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:  128-block  1
+call    3 never executed
+    $$$$$:  128-block  2
+call    4 never executed
+    $$$$$:  128-block  3
+call    5 never executed
+        -:  129:
+function _Z18test_filtrare_pretv called 1 returned 100% blocks executed 52%
+        1:  130:void test_filtrare_pret()
+        -:  131:{
+        1:  132:    Repo repo;
+        1:  132-block  0
+call    0 returned 1
+        -:  133:    Validator valid;
+        1:  134:    Service service{repo, valid};
+call    0 returned 1
+        5:  135:    repo.store(Oferta("La mare", "Mamaia", "all-inclusive", 2345));
+        1:  135-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  135-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  135-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  135-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  135-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  135-block  5
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+    $$$$$:  135-block  6
+call   19 never executed
+    $$$$$:  135-block  7
+call   20 never executed
+    $$$$$:  135-block  8
+    $$$$$:  135-block  9
+    $$$$$:  135-block 10
+call   21 never executed
+    $$$$$:  135-block 11
+    $$$$$:  135-block 12
+    $$$$$:  135-block 13
+call   22 never executed
+    $$$$$:  135-block 14
+    $$$$$:  135-block 15
+    $$$$$:  135-block 16
+       1*:  136:    assert(repo.get_all_oferte().size()==1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  136-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  136-block  1
+call    6 never executed
+        1:  136-block  2
+        6:  137:    repo.store(Oferta("Plaja", "Mamaia", "-", 400));
+        1:  137-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  137-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  137-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  137-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  137-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  137-block  5
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+    $$$$$:  137-block  6
+call   19 never executed
+    $$$$$:  137-block  7
+call   20 never executed
+    $$$$$:  137-block  8
+    $$$$$:  137-block  9
+    $$$$$:  137-block 10
+call   21 never executed
+    $$$$$:  137-block 11
+    $$$$$:  137-block 12
+    $$$$$:  137-block 13
+call   22 never executed
+    $$$$$:  137-block 14
+    $$$$$:  137-block 15
+    $$$$$:  137-block 16
+        5:  138:    repo.store(Oferta("Munte", "Sinaia", "all-inclusive", 1234));
+        1:  138-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  138-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  138-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  138-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  138-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  138-block  5
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+    $$$$$:  138-block  6
+call   19 never executed
+    $$$$$:  138-block  7
+call   20 never executed
+    $$$$$:  138-block  8
+    $$$$$:  138-block  9
+    $$$$$:  138-block 10
+call   21 never executed
+    $$$$$:  138-block 11
+    $$$$$:  138-block 12
+    $$$$$:  138-block 13
+call   22 never executed
+    $$$$$:  138-block 14
+    $$$$$:  138-block 15
+    $$$$$:  138-block 16
+        1:  139:    vector<Oferta> listaFiltrata1 = service.filtrare_pret(2000);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  139-block  0
+       1*:  140:    assert(listaFiltrata1.size()==2);
+        1:  140-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  140-block  1
+call    3 never executed
+        1:  140-block  2
+       1*:  141:    assert(listaFiltrata1[0].get_pret()==400);
+        1:  141-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  141-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  141-block  2
+call    6 never executed
+        1:  141-block  3
+       1*:  142:    assert(listaFiltrata1[1].get_pret()==1234);
+        1:  142-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  142-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  142-block  2
+call    6 never executed
+        1:  142-block  3
+        1:  143:    vector<Oferta> listaFiltrata2 = service.filtrare_pret(10);
+        1:  143-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  143-block  1
+       1*:  144:    assert(typeid(service.filtrare_pret(100))== typeid(vector<Oferta>));
+        1:  144-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  144-block  1
+call    3 never executed
+        1:  144-block  2
+       1*:  145:    assert(listaFiltrata2.size()==0);
+        1:  145-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  145-block  1
+call    3 never executed
+        1:  145-block  2
+        1:  146:}
+        1:  146-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:  146-block  1
+call    3 never executed
+    $$$$$:  146-block  2
+call    4 never executed
+    $$$$$:  146-block  3
+call    5 never executed
+        -:  147:
+function _Z20test_sortare_servicev called 1 returned 100% blocks executed 57%
+        1:  148:void test_sortare_service()
+        -:  149:{
+        1:  150:    Repo repo;
+        1:  150-block  0
+call    0 returned 1
+        -:  151:    Validator valid;
+        1:  152:    Service service{ repo, valid };
+call    0 returned 1
+        6:  153:    service.adaugare_oferta("a", "b", "csc", 100);
+        1:  153-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  153-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  153-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  153-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  153-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  153-block  5
+call   15 never executed
+    $$$$$:  153-block  6
+    $$$$$:  153-block  7
+    $$$$$:  153-block  8
+call   16 never executed
+    $$$$$:  153-block  9
+    $$$$$:  153-block 10
+    $$$$$:  153-block 11
+call   17 never executed
+    $$$$$:  153-block 12
+    $$$$$:  153-block 13
+        6:  154:    service.adaugare_oferta("sa", "a", "c", 50);
+        1:  154-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  154-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  154-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  154-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  154-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  154-block  5
+call   15 never executed
+    $$$$$:  154-block  6
+    $$$$$:  154-block  7
+    $$$$$:  154-block  8
+call   16 never executed
+    $$$$$:  154-block  9
+    $$$$$:  154-block 10
+    $$$$$:  154-block 11
+call   17 never executed
+    $$$$$:  154-block 12
+    $$$$$:  154-block 13
+        6:  155:    service.adaugare_oferta("t", "y", "c", 63);
+        1:  155-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  155-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  155-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  155-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  155-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  155-block  5
+call   15 never executed
+    $$$$$:  155-block  6
+    $$$$$:  155-block  7
+    $$$$$:  155-block  8
+call   16 never executed
+    $$$$$:  155-block  9
+    $$$$$:  155-block 10
+    $$$$$:  155-block 11
+call   17 never executed
+    $$$$$:  155-block 12
+    $$$$$:  155-block 13
+        5:  156:    service.adaugare_oferta("o", "xc", "m", 100);
+        1:  156-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  156-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  156-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  156-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  156-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  156-block  5
+call   15 never executed
+    $$$$$:  156-block  6
+    $$$$$:  156-block  7
+    $$$$$:  156-block  8
+call   16 never executed
+    $$$$$:  156-block  9
+    $$$$$:  156-block 10
+    $$$$$:  156-block 11
+call   17 never executed
+    $$$$$:  156-block 12
+    $$$$$:  156-block 13
+        -:  157:
+        1:  158:    service.sortare_generica(cmp_denumire, 1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  159:    assert(service.get_all_oferte().size() == 4);
+        1:  159-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  159-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  159-block  2
+call    6 never executed
+        1:  159-block  3
+       1*:  160:    assert(service.get_all_oferte()[0].get_denumire() == "a");
+        1:  160-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  160-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  160-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:  160-block  3
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1
+    %%%%%:  160-block  4
+call   12 never executed
+        1:  160-block  5
+        1:  160-block  6
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+        1:  160-block  7
+call   15 returned 1
+    $$$$$:  160-block  8
+branch 16 never executed (fallthrough)
+branch 17 never executed
+    $$$$$:  160-block  9
+call   18 never executed
+    $$$$$:  160-block 10
+       1*:  161:    assert(service.get_all_oferte()[1].get_denumire() == "o");
+        1:  161-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  161-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  161-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:  161-block  3
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1
+    %%%%%:  161-block  4
+call   12 never executed
+        1:  161-block  5
+        1:  161-block  6
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+        1:  161-block  7
+call   15 returned 1
+    $$$$$:  161-block  8
+branch 16 never executed (fallthrough)
+branch 17 never executed
+    $$$$$:  161-block  9
+call   18 never executed
+    $$$$$:  161-block 10
+        -:  162:
+        1:  163:    service.sortare_generica(cmp_destinatie, 0);
+        1:  163-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  164:    assert(service.get_all_oferte().size() == 4);
+        1:  164-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  164-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  164-block  2
+call    6 never executed
+        1:  164-block  3
+       1*:  165:    assert(service.get_all_oferte()[0].get_destinatie() == "y");
+        1:  165-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  165-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  165-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:  165-block  3
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1
+    %%%%%:  165-block  4
+call   12 never executed
+        1:  165-block  5
+        1:  165-block  6
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+        1:  165-block  7
+call   15 returned 1
+    $$$$$:  165-block  8
+branch 16 never executed (fallthrough)
+branch 17 never executed
+    $$$$$:  165-block  9
+call   18 never executed
+    $$$$$:  165-block 10
+       1*:  166:    assert(service.get_all_oferte()[1].get_destinatie() == "xc");
+        1:  166-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  166-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  166-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:  166-block  3
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1
+    %%%%%:  166-block  4
+call   12 never executed
+        1:  166-block  5
+        1:  166-block  6
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+        1:  166-block  7
+call   15 returned 1
+    $$$$$:  166-block  8
+branch 16 never executed (fallthrough)
+branch 17 never executed
+    $$$$$:  166-block  9
+call   18 never executed
+    $$$$$:  166-block 10
+        -:  167:
+        -:  168:
+        1:  169:    service.sortare_generica(cmp_tip_pret, 1);
+        1:  169-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  170:    assert(service.get_all_oferte().size() == 4);
+        1:  170-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  170-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  170-block  2
+call    6 never executed
+        1:  170-block  3
+       1*:  171:    assert(service.get_all_oferte()[0].get_tip() == "c");
+        1:  171-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  171-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  171-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:  171-block  3
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1
+    %%%%%:  171-block  4
+call   12 never executed
+        1:  171-block  5
+        1:  171-block  6
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+        1:  171-block  7
+call   15 returned 1
+    $$$$$:  171-block  8
+branch 16 never executed (fallthrough)
+branch 17 never executed
+    $$$$$:  171-block  9
+call   18 never executed
+    $$$$$:  171-block 10
+       1*:  172:    assert(service.get_all_oferte()[0].get_pret() == 50);
+        1:  172-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  172-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  172-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  172-block  3
+call    9 never executed
+        1:  172-block  4
+       1*:  173:    assert(service.get_all_oferte()[1].get_tip() == "c");
+        1:  173-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  173-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  173-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:  173-block  3
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1
+    %%%%%:  173-block  4
+call   12 never executed
+        1:  173-block  5
+        1:  173-block  6
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+        1:  173-block  7
+call   15 returned 1
+    $$$$$:  173-block  8
+branch 16 never executed (fallthrough)
+branch 17 never executed
+    $$$$$:  173-block  9
+call   18 never executed
+    $$$$$:  173-block 10
+       1*:  174:    assert(service.get_all_oferte()[1].get_pret() == 63);
+        1:  174-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  174-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  174-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  174-block  3
+call    9 never executed
+        1:  174-block  4
+        -:  175:
+        -:  176:
+        1:  177:}
+        1:  177-block  0
+call    0 returned 1
+    $$$$$:  177-block  1
+call    1 never executed
+        -:  178:
+function _Z8test_allv called 1 returned 100% blocks executed 100%
+        1:  179:void test_all(){
+        1:  180:    test_domain();
+        1:  180-block  0
+call    0 returned 1
+        1:  181:    test_store();
+call    0 returned 1
+        1:  182:    test_find();
+call    0 returned 1
+        1:  183:    test_del();
+call    0 returned 1
+        1:  184:    test_modify();
+call    0 returned 1
+        -:  185:
+        1:  186:    test_adaugare_service();
+call    0 returned 1
+        1:  187:    test_stergere_service();
+call    0 returned 1
+        1:  188:    test_modificare_service();
+call    0 returned 1
+        1:  189:    test_filtrare_dest();
+call    0 returned 1
+        1:  190:    test_filtrare_pret();
+call    0 returned 1
+        1:  191:    test_sortare_service();
+call    0 returned 1
+        1:  192:}

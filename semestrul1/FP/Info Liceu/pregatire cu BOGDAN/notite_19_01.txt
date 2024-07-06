@@ -1,0 +1,67 @@
+CULEGERE IASI BAC 2020
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int n;
+  cin >> n;
+  int x[25][25], i1, j1, i2, j2;
+  for (int i = 1; i <= n; ++i)
+    for (int j = 1; j <= n; ++j)
+      cin >> x[i][j];
+  for (int i = 1; i <= n; ++i)
+    for (int j = 1; j <= n; ++j)
+      if (x[i][j] == 0) {
+        i1 = i, j1 = j;
+        i = j = n;
+      }
+  int copie_i = i1;
+  while (copie_i <= n && x[copie_i][j1] == 0) {
+    copie_i++;
+  }
+  i2 = copie_i - 1;
+  int copie_j = j1;
+  while (copie_j <= n && x[i1][copie_j] == 0) {
+    copie_j++;
+  }
+  j2 = copie_j - 1;
+
+  for (int i=i1; i<=i2; ++i)
+    for(int j=j1; j<=j2; ++j)
+      if(x[i][j]==1){
+        cout << "NU";
+        return 0;
+      }
+  for(int i=i1; i<=n; ++i)
+    for(int j=1; j<=n; j++)
+      if(x[i][j]==0 && !(i<=i2 && i>=i1 && j<=j2 && j >=j1)){
+        cout << "NU";
+        return 0;
+        }
+        cout << "DA";
+    return 0;
+}
+
+III.3
+for(i=0;i<k;i++)
+ { fin>>v[i];
+   s+=v[i];
+   a[v[i]%k]++;
+ }
+st=0;dr=k-1;
+...
+
+10 12 11--->000000111
+
+TEMA
+AC- model 2,3 2022!!!
+varianta intreaga bac 2018-august
+CULEGERE IASI
+TEST 1, PROB 3
+test 2 prob 3
+test 3, prob 3
+test 4 prob 2,3
+test 5 prob 3
+
+

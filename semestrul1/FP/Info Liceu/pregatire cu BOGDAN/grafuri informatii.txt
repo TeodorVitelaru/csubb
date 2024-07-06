@@ -1,0 +1,77 @@
+un graf FARA NODURI IZOLATE este graf eulerian daca si numai daca este conex si toate gradele sunt pare
+
+G.N (n noduri, m muchii)
+suma gradelor=2*m
+in Kn, m=n(n-1)/2
+nr de grafuri distincte cu n noduri=2^ (n(n-1)/2)
+nr de subgrafuri=2^n
+nr de grafuri partiale=2^m
+
+n=6 cate grafuri cu nodul 1 de grad 1 se pot forma?
+0 x x x x x
+  0 x x x x
+    0 x x x
+      0 x x
+        0 x
+          0
+5 * 2^10 
+nr ciclomatic=nr de cicluri independente=m-n+p
+========================
+G.O (n varfuri, m arce
+suma gradelor interioare=suma gradelor exterioare=m
+in Kn, m=n(n-1)
+nr de grafuri distincte cu n noduri=2^ (n(n-1))
+nr de subgrafuri=2^n
+nr de grafuri partiale=2^m
+========================
+ARBORI=graf conex, fara cicluri
+m=n-1
+
+
+nr maxim de muchii in graf fara cicluri este n-1
+nr minim de muchii pentru un graf conex=n-1
+==================
+n=100, m=200
+nr maxim si nr minim de comp conexe?
+nr maxim=80
+nr minim=1
+================
+n=6 cate grafuri cu nodul 1 de grad 2 si nodul 2 sa aiba gradul 1
+ se pot forma?
+cazul 1:(1,2): 4* 2^6
+0 1 x x x x
+1 0 0 0 0 0
+    0 x x x
+      0 x x
+        0 x
+          0
+cazul 2: fara (1,2): combin(4,2) * 4* 2^6
+0 x x x x x
+  0 x x x x
+    0 x x x
+      0 x x
+        0 x
+          0
+===============
+20 baieti, 15 fete
+nr de echipe de exact 5 membri, cu minim 3 baieti???
+comb(20,3) *combin(15,2) +comb(20,4) *combin(15,1)+comb(20,5) 
+-----------------------------
+mama---> nr permutari distincte??
+combin(4,2) *combin(2,2)
+
+niagara
+combin(7,3)*combin(4,1)*combin(3,1)*combin(2,1)
+--------------------------
+not(n!=0 si x>0 sau y<0)
+<---> n==0 sau x<=0 si y>=0
+
+
+
+not((n!=0 si x>0) sau y<0)<-->(n==0 sau x<=0) si y>=0
+----------------------------------
+culeg 45---> prob pe siruri de char teze 1-15!!!
++exercitii de grafuri
+------------------
+
+

@@ -1,0 +1,389 @@
+=====================
+VARIANTE 2007
+=====================
+
+
+III.2./83
+b)
+#include <iostream>
+using namespace std;
+int main() {
+  int a, b;
+  cin>>a>>b;
+  for(int i=a; i<=b; i=i+9)
+    cout<<i<<" ";
+  return 0;
+}
+a)
+Cifra de control al unui numar poate fi determinata prin aflarea restului la impartirea cu 9, afisand, astfel, toate numerele i=i+9, incepand cu i=1. Algoritmul este eficient din punct de vedere al timpului, avand un numar de (a-b)/9+1 pasi, iar ca memorie sunt folosite doar 3 variabile a, b, i.
+
+===========================
+
+
+III.2./85
+#include <iostream>
+using namespace std;
+int frec[11];
+int main()
+{
+    int n, intreg;
+    bool ok;
+    cin >> n;
+    double v[30];
+    for(int i=1; i<=n; ++i)
+        cin >> v[i];
+    for(int i=1; i<=n; ++i)
+    {
+        v[i]=abs(v[i]);
+        intreg = int(v[i]);
+        while(v[i]-intreg)
+        {
+            v[i]*=10;
+        }
+        intreg=int(v[i]);
+        while(intreg)
+        {
+            frec[intreg%10]++;
+            intreg/=10;
+        }
+    }
+    ok = false;
+    for(int i=0; i<10; ++i)
+        if(frec[i]==0)
+        {
+            cout << i << " ";
+            ok=true;
+        }
+    if(ok==false)
+        cout << "NICI UNA";
+}
+
+=============================================================================
+
+
+III.2./89
+b)
+#include <iostream>
+#include <fstream>
+#include <cmath>
+using namespace std;
+
+int main() {
+  int n, delta, k;
+  cin>>n;
+  delta=1+8*n;
+  double z=sqrt(delta);
+  if(z==(int)z)
+    k=(int)(-1+sqrt(delta))/2;
+  else
+    k=(int)(-1+sqrt(delta))/2+1;
+cout<<k;
+  return 0;
+}
+a)
+Algoritmul utilizat calculeaza numarul k de pe pozitia n prin rezolvarea ecuatiei de gradul 2,  k^2+k-2n=0. Algoritmul este eficient din punct de vedere al timpului deoarece se rezolva dintr un singur pas, iar ca memorie s au folosit doar 4 variabile (z, k, delta, n).
+
+=============================================================================
+
+
+III.2./107
+a)
+#include <iostream>
+#include <fstream>
+#include <cmath>
+using namespace std;
+ifstream fin("bac.in");
+int main() {
+  int n, x, smin, s, y;
+  fin>>n;
+  fin>>x;
+  s=smin=x; 
+  n--;
+  while(n>0)
+    {
+      if(s>0) s=0;
+      fin>>y;
+      s=s+y;
+      if(s<smin)
+        smin=s;
+      n--;
+    }
+  cout<<smin;
+  return 0;
+}
+b) Metoda folosita afiseaza cea mai mica suma a elementelor din fisier, iar daca toate numerele sunt pozitive, il afiseaza pe cel mai mic dintre acestia. Algoritmul este eficient din punct de vedere al timpului, avand o complexitate de O(n), iar ca memorie s au folosit 5 variabile (n, x, smin, s, y).
+
+=============================================================================
+
+
+III.3./111 
+#include <iostream>
+#include <cmath>
+#include <fstream>
+using namespace std;
+ifstream fin ("date.in");
+ofstream fout ("date.out");
+int main() {
+  int n;
+  while(fin>>x)
+   s+=x;
+  cout<<900*(100+999)/2-s;
+
+  return 0;
+}
+
+======================================================================================
+
+
+III.3./113
+b)
+#include <iostream>
+#include <fstream>
+#include <cmath>
+using namespace std;
+ifstream fin("BAC.TXT");
+int main() {
+  int n, x, k, s;
+  cin>>k;
+  int v[k];
+  fin>>n;
+  for(int i=0; i<k; ++i)
+    {fin>>v[i]; s+=v[i];}
+  int smax=s;
+  int prim=0, ultim=k-1;
+  for(int i=k; i<n; ++i)
+    {
+      fin>>x;
+      s=s+x-v[prim];
+      if(smax<s) smax=s;
+      prim=(prim+1)%k;
+      ultim=(ultim+1)%k;
+      v[ultim]=x;
+    }
+  cout<<smax;
+  return 0;
+}
+a)
+Metoda folosita utilieaza o coada circulara, eliminand si adaugand cate un element si calculand suma lor. algoritmul este eficient din punct de vedere al timpului deoarece se rezolva doar din n pasi, determinandu se eficient suma a k elemente consecutive.
+
+========================================================================================
+
+
+III.2./119
+b)
+#include <iostream>
+#include <fstream>
+#include <cmath>
+using namespace std;
+ifstream fin("BAC.TXT");
+int main() {
+  int n;
+  cin>>n;
+  p5=0;p=1;
+  while(p*5<=n)
+  { p=p*5;
+    p5+=n/p;
+  }
+  cout<<p5;
+  return 0;
+}
+
+==========================================================================================
+
+
+III.3./125 nu stiu
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+  int n, x=0,ratia=11;
+  cin>>n;
+  while(x+ratia<=n)
+    {
+      x=x+ratia;
+      cout<<x<<" ";
+      if(x%9==0)
+      { ratia=ratia*10+1;x=0;} 
+    }
+
+  return 0;
+}
+
+==============================================================================================
+
+
+III.3./131 
+#include <iostream>
+#include <cmath>
+#include <fstream>
+using namespace std;
+ofstream fout ("numere.txt");
+int main()
+{
+  int n;
+  cin>>n;
+  int x0=0, y0=1, x1=1, y1=n, x2, y2;
+  if(n==1)
+  {
+    cout<<x0<<" "<<y0<<endl;
+    cout<<x1<<" "<<y1;
+  }
+  else
+  {
+  bool ok=true;
+  cout<<x0<<" "<<y0<<endl;
+  cout<<x1<<" "<<y1<<endl;
+  for(int i=1; ok; ++i)
+    {
+      x2=((y0+n)/y1)*x1-x0; y2=((y0+n)/y1)*y1-y0;
+      x0=x1; y0=y1; x1=x2; y1=y2;
+      cout<<x1<<" "<<y1;
+      cout<<'\n';
+      if(x1==y1==1)
+        ok=false;
+    }
+    }
+  return 0;
+}
+
+================================================================================================
+
+
+III.1./169
+#include <iostream>
+using namespace std;
+int a[31][31];
+int main() {
+  int n;
+  cin >> n;
+	for(int i = 1; i<=(n+1)/2; i+=2)
+    for(int j = i; j<=n-i+1; ++j)
+    a[n-i+1][j]=a[n-j+1][n-i+1]=a[j][i]=a[i][j]=1;
+  for(int i=1; i<=n; ++i){
+    for( int j=1; j<=n; ++j)
+      cout << a[i][j] << " ";
+      cout << endl;
+    }
+}
+
+=================================================================================================
+
+
+III.3/187 nu stiu
+
+====================================================================================================
+
+
+III.2./195 
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main ()
+{
+  int n, k, s=1;
+  cin>>n>>k;
+  for(i=k-1;i<n;i++)
+   {c=i *c/(i-k+1);
+    s+=c;
+   }
+cout<<s;
+  return 0;
+  }
+
+=====================================================================================================
+
+
+III.3./197
+a)
+#include <iostream>
+#include <fstream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+double radical (float st, float dr, float n)
+{
+  if(abs(st-dr)<0.00001)
+    return (st+dr)/2;
+  else
+  {
+    float a=(st+dr)/2;
+    if(a*a>n) return radical(st, a, n);
+     else
+      return radical (a, dr, n);
+  }
+}
+double program (int n)
+{
+  float s=0;
+  for(int i=1; i<=n; ++i)
+    s+=1/sqrt(i);
+  return s;
+}
+int main ()
+{
+  int n;
+  cin>>n;
+  cout<<fixed<<setprecision(3)<<program(n);
+  }
+b)trebuie un artificiu
+S=S+2/sqrt(2)+2/sqrt(4)+...+2/sqrt(n-1) -
+-2/sqrt(2)-2/sqrt(4)...-2/sqrt(n-1)=
+
+=1+1/sqrt(2)+1/sqrt(3)+...1/sqrt(n)-
+
+2/sqrt(2)-2/sqrt(4)...-2/sqrt(n-1)=
+f(n)-sqrt(2)*(1+1/sqrt(2)+1/sqrt(3)+...+1/sqrt((n-1)/2))
+!!!!!!!!!!!!!!!!!!!
+f(n)-sqrt(2) *f((n-1)/2)
+
+==================================================================================================
+
+
+III.2./201
+a)
+int interval (float x, int a, int b)
+{
+  if(x<=b && x>=a)
+    return 1;
+  if(x>=b && x<=a)
+    return 1;
+  return 0;
+}
+b)
+#include <iostream>
+#include <fstream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+ifstream fin ("numere.in");
+ofstream fout("numere.out");
+int interval (float x, int a, int b)
+{
+  if(x<=b && x>=a)
+    return 1;
+  if(x>=b && x<=a)
+    return 1;
+  return 0;
+}
+int main ()
+{
+   int a, b;
+    cin>>a>>b;
+  float x;
+  while(fin>>x)
+    if(interval(x, a, b)==1)
+      fout<<fixed<<setprecision(2)<<x<<" ";
+  return 0;
+  }
+
+=====================================================================================================
+
+
+
+
+==========================
+CONCURS UBB 2022   4216
+==========================
