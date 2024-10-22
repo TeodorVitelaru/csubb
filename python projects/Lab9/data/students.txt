@@ -1,0 +1,6 @@
+1, Raul, 5
+2, Grigore, 8
+3, asdasd, 12
+4, adsasd, 12
+5, Teodor, 2
+6, teodooodof, 34

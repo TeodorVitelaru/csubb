@@ -1,0 +1,86 @@
+exemplu:
+1. nr total de linii de cod dintr un director de sursa c
+#! /bin/bash
+S = 0
+D = $1
+if [ -z "$D"];then #-z verifica daca este vid
+	D = "."
+fi #acolada inchisa de la if
+for F in $D/*.c $D/*.h;do
+	N = 'grep -E -v "^[ {}]*$" $F | wc -l'
+	S = 'expr $S + $N'  #expr-comanda care face aritmetica
+	# S = $((S+1))
+done #acolada inchisa de la for
+echo $S
+
+
+ls *.c *.h | while read F;do  #citeste si directoarele cu spatiu
+- crapa in $F -- trebuie pus in ghilimele pentru ca altfel grep crede ca ii dai doua fisiere "$F" 
+
+
+
+WILDCARD for files
+===================
+* - orice sir de caractere
+? - orice caracter, dar nu punctul de la inceputul numelui de fisier
+[abc] - lista de caractere
+[!abc] - negarea ei
+
+*.c - toate fisierele sursa c
+*.h - toate fisiere sursa h
+*.cpp - toate fisierele c++
+*.C - toate fisierele c++
+
+
+
+COMANDA FIND
+============
+find $D -- in directorul dolar D
+ (1) find $D -type f -name "*.c" -- cauta in dirictorul  D fisiere care se potrivesc cu .c
+		iname - pentru case insensitive
+find -- returneaza o lista de fisiere si intoarce cu tot cu subcalea lor
+expresia (1) inlocuieste ls *.c *.h
+
+
+
+ps - arata procesele din seisune
+ps -f - arata procesele + detalii
+p -e -f - toate procesele 
+ps -u ex123 - asta e varianta buna
+ps -e -f | grep -E "^ex123 "
+ps -o etime PID
+ps -o etime 9 -- exemplu
+#PID - procces ID
+kill -9 PID - oprire procesele studentilor
+
+#! /bin/bash
+awk -F: '$1 == "exam" || $1 == "practice" {print $4}' /etc//group|sed "s/,/\n/g" | head -n -10 | while read U; do
+	for P in `ps -u $U|tail -n +2|awk '{print $1}'`; do
+		T = `ps -o etimes 9545|tail -n +2`
+		if [ $1 -lt $T]; then
+			echo kill -9 $P	
+		fi
+		echo $U $P
+done
+
+ps -o etimes 9545|tail -n +2 -- iti da direct secundele
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

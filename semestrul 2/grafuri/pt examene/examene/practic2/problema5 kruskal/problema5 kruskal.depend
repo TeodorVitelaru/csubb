@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1685470860 source:c:\users\mihuc\documents\facultate\an 1 semestru 2\algoritmica grafurilor\examene\test2\problema5 kruskal\main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<algorithm>
+

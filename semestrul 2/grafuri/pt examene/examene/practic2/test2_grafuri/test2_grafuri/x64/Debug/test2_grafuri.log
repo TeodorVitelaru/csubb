@@ -1,0 +1,12 @@
+﻿  main.cpp
+C:\Users\mihuc\Documents\facultate\an 1 semestru 2\Algoritmica grafurilor\examene\test2\test2_grafuri\test2_grafuri\main.cpp(24,49): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\mihuc\Documents\facultate\an 1 semestru 2\Algoritmica grafurilor\examene\test2\test2_grafuri\test2_grafuri\main.cpp(27,54): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\mihuc\Documents\facultate\an 1 semestru 2\Algoritmica grafurilor\examene\test2\test2_grafuri\test2_grafuri\main.cpp(38,12): error C3861: 'bfs': identifier not found
