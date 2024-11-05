@@ -1,4 +1,0 @@
-1, Teodor, 2
-2, Teofana, 4
-3, Mihai, 2
-4, Mihaela, 1

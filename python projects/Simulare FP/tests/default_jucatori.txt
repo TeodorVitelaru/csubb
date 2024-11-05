@@ -1,6 +1,0 @@
-GSW30, Stehpen Curry, point_guard, 178
-MH9, david wade, shooting_guard, 210
-LAK16, Teodor Bis, center, 199
-asd2, Andrei Valeriu, point_guard, 120
-KJ2, Broasca david, shooting_guard, 345
-LLk1, MAtei EU, center, 145

@@ -1,5 +1,0 @@
-if (fork() == 0)   creaza parinte--->fiu
-{
-	exit(0);
-}
-wait(0);
