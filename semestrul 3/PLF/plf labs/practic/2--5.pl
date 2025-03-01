@@ -1,0 +1,34 @@
+%deter(l1..ln, max, poz)=
+%=[], daca n=0,
+%=poz+deter(l2..ln, max, poz+1), daca l1=max
+%=deter(l2..ln, max, poz+1), daca l1!=max
+
+%maxim(l1..ln)=
+%=l1, daca n=1
+%=maxim(l1,maxim(l2..ln))
+maxim([H], H).
+maxim([H|T], R):-
+    maxim(T, R1),
+    H > R1,
+    !,
+    R is H.
+maxim([H|T], R):-
+    maxim(T, R1),
+    H =< R1,
+    !,
+    R is R1.
+
+deter([], _, _, []).
+deter([H|T], M, P, [P|R]):-
+    P1 is P +1,
+    H = M,
+    !,
+    deter(T,M,P1,R).
+deter([H|T], M, P, R):-
+    P1 is P+1,
+    deter(T,M,P1,R).
+
+main(L, R):-
+    maxim(L, M),
+    deter(L, M, 1, R).
+

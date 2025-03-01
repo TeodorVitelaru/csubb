@@ -1,39 +1,23 @@
 # ninja log v5
-24	193	7409129260351377	Produse_autogen/timestamp	cb2fb55297f32f4f
-24	193	7409129260351377	Produse_autogen/mocs_compilation.cpp	cb2fb55297f32f4f
-24	193	7409129260351377	D:/facultate/semestrul 2/OOP/Produse/cmake-build-debug/Produse_autogen/timestamp	cb2fb55297f32f4f
-24	193	7409129260351377	D:/facultate/semestrul 2/OOP/Produse/cmake-build-debug/Produse_autogen/mocs_compilation.cpp	cb2fb55297f32f4f
-664	898	7409076840952356	CMakeFiles/Produse.dir/Produse_autogen/mocs_compilation.cpp.obj	1ededb4c2767b90d
-244	2311	7409128408797367	CMakeFiles/Produse.dir/Repo.cpp.obj	9315f58ee7e1cce0
-227	2534	7409128411127302	CMakeFiles/Produse.dir/Service.cpp.obj	a6deec38a5f42d0e
-202	4862	7409129307042901	CMakeFiles/Produse.dir/GUI.cpp.obj	30bb420756d6ddac
-218	6347	7409128449336433	CMakeFiles/Produse.dir/main.cpp.obj	4274d8c0c4eaf826
-4862	5607	7409129311955967	Produse.exe	a5c411671bec1773
-8	1294	7409133981270320	build.ninja	45d557b30e4d9287
-14	249	7409136936822803	Produse_autogen/timestamp	cb2fb55297f32f4f
-14	249	7409136936822803	Produse_autogen/mocs_compilation.cpp	cb2fb55297f32f4f
-14	249	7409136936822803	D:/facultate/semestrul 2/OOP/Produse/cmake-build-debug/Produse_autogen/timestamp	cb2fb55297f32f4f
-14	249	7409136936822803	D:/facultate/semestrul 2/OOP/Produse/cmake-build-debug/Produse_autogen/mocs_compilation.cpp	cb2fb55297f32f4f
-23	252	7409137101946930	Produse_autogen/timestamp	cb2fb55297f32f4f
-23	252	7409137101946930	Produse_autogen/mocs_compilation.cpp	cb2fb55297f32f4f
-23	252	7409137101946930	D:/facultate/semestrul 2/OOP/Produse/cmake-build-debug/Produse_autogen/timestamp	cb2fb55297f32f4f
-23	252	7409137101946930	D:/facultate/semestrul 2/OOP/Produse/cmake-build-debug/Produse_autogen/mocs_compilation.cpp	cb2fb55297f32f4f
-14	136	7409137617552029	Produse_autogen/timestamp	cb2fb55297f32f4f
-14	136	7409137617552029	Produse_autogen/mocs_compilation.cpp	cb2fb55297f32f4f
-14	136	7409137617552029	D:/facultate/semestrul 2/OOP/Produse/cmake-build-debug/Produse_autogen/timestamp	cb2fb55297f32f4f
-14	136	7409137617552029	D:/facultate/semestrul 2/OOP/Produse/cmake-build-debug/Produse_autogen/mocs_compilation.cpp	cb2fb55297f32f4f
-13	119	7409138014420570	Produse_autogen/timestamp	cb2fb55297f32f4f
-13	119	7409138014420570	Produse_autogen/mocs_compilation.cpp	cb2fb55297f32f4f
-13	119	7409138014420570	D:/facultate/semestrul 2/OOP/Produse/cmake-build-debug/Produse_autogen/timestamp	cb2fb55297f32f4f
-13	119	7409138014420570	D:/facultate/semestrul 2/OOP/Produse/cmake-build-debug/Produse_autogen/mocs_compilation.cpp	cb2fb55297f32f4f
-14	118	7409138150234051	Produse_autogen/timestamp	cb2fb55297f32f4f
-14	118	7409138150234051	Produse_autogen/mocs_compilation.cpp	cb2fb55297f32f4f
-14	118	7409138150234051	D:/facultate/semestrul 2/OOP/Produse/cmake-build-debug/Produse_autogen/timestamp	cb2fb55297f32f4f
-14	118	7409138150234051	D:/facultate/semestrul 2/OOP/Produse/cmake-build-debug/Produse_autogen/mocs_compilation.cpp	cb2fb55297f32f4f
-122	3137	7409138180380898	CMakeFiles/Produse.dir/main.cpp.obj	4274d8c0c4eaf826
 19	145	7409139343417079	Produse_autogen/timestamp	cb2fb55297f32f4f
 19	145	7409139343417079	Produse_autogen/mocs_compilation.cpp	cb2fb55297f32f4f
 19	145	7409139343417079	D:/facultate/semestrul 2/OOP/Produse/cmake-build-debug/Produse_autogen/timestamp	cb2fb55297f32f4f
 19	145	7409139343417079	D:/facultate/semestrul 2/OOP/Produse/cmake-build-debug/Produse_autogen/mocs_compilation.cpp	cb2fb55297f32f4f
+664	898	7409076840952356	CMakeFiles/Produse.dir/Produse_autogen/mocs_compilation.cpp.obj	1ededb4c2767b90d
+227	2534	7409128411127302	CMakeFiles/Produse.dir/Service.cpp.obj	a6deec38a5f42d0e
+244	2311	7409128408797367	CMakeFiles/Produse.dir/Repo.cpp.obj	9315f58ee7e1cce0
+122	3137	7409138180380898	CMakeFiles/Produse.dir/main.cpp.obj	4274d8c0c4eaf826
 148	3337	7409139375302098	CMakeFiles/Produse.dir/GUI.cpp.obj	30bb420756d6ddac
 3338	4192	7409139381438697	Produse.exe	a5c411671bec1773
+8	1294	7580357880487756	build.ninja	45d557b30e4d9287
+10	1819	7580357880487756	build.ninja	45d557b30e4d9287
+16	697	7580357888780238	Produse_autogen/timestamp	cb2fb55297f32f4f
+16	697	7580357888780238	Produse_autogen/mocs_compilation.cpp	cb2fb55297f32f4f
+16	697	7580357888780238	D:/facultate/semestrul 2/OOP/Produse/cmake-build-debug/Produse_autogen/timestamp	cb2fb55297f32f4f
+16	697	7580357888780238	D:/facultate/semestrul 2/OOP/Produse/cmake-build-debug/Produse_autogen/mocs_compilation.cpp	cb2fb55297f32f4f
+711	1047	7580357893281976	CMakeFiles/Produse.dir/Produse_autogen/mocs_compilation.cpp.obj	1ededb4c2767b90d
+718	2467	7580357907828211	CMakeFiles/Produse.dir/Repo.cpp.obj	9315f58ee7e1cce0
+725	2681	7580357909939141	CMakeFiles/Produse.dir/Service.cpp.obj	a6deec38a5f42d0e
+703	6658	7580357949756233	CMakeFiles/Produse.dir/main.cpp.obj	4274d8c0c4eaf826
+697	7516	7580357958296814	CMakeFiles/Produse.dir/GUI.cpp.obj	30bb420756d6ddac
+7516	11734	7580357968049042	Produse.exe	a5c411671bec1773

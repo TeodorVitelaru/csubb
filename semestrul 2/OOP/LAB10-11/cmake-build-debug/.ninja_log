@@ -1,81 +1,39 @@
 # ninja log v5
-27	209	7385229175752192	LAB10_11_autogen/timestamp	15dc22ebba499aa1
-27	209	7385229175752192	LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-164	2691	7383276635652683	CMakeFiles/LAB10_11.dir/cosOferte.cpp.obj	53a2908c7ee83ef
+41	445	7385291728501650	LAB10_11_autogen/timestamp	15dc22ebba499aa1
+41	445	7385291728501650	LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
+466	2245	7385291746670590	CMakeFiles/LAB10_11.dir/cosOferte.cpp.obj	53a2908c7ee83ef
 4798	5537	7382344909567505	CMakeFiles/LAB10_11.dir/LAB10_11_autogen/mocs_compilation.cpp.obj	882297b33eb32d2
-6155	7744	7385229247282402	LAB10_11.exe	568026213d601ac6
-180	3774	7383276646490964	CMakeFiles/LAB10_11.dir/service.cpp.obj	94c236407fff2b85
-214	6155	7385229235206996	CMakeFiles/LAB10_11.dir/IncercareGUI.cpp.obj	acb0321ee875dd94
+177	6466	7385275568546179	CMakeFiles/LAB10_11.dir/IncercareGUI.cpp.obj	acb0321ee875dd94
 3480	5536	7382344908662340	CMakeFiles/LAB10_11.dir/utils.cpp.obj	6cebfb6c31f009d
-191	5654	7385217304125558	CMakeFiles/LAB10_11.dir/main.cpp.obj	6644d752b1eb3a3b
+2245	3717	7385291758932821	LAB10_11.exe	568026213d601ac6
+180	3774	7383276646490964	CMakeFiles/LAB10_11.dir/service.cpp.obj	94c236407fff2b85
+226	6383	7385275188788735	CMakeFiles/LAB10_11.dir/main.cpp.obj	6644d752b1eb3a3b
 365	2319	7382344879399962	CMakeFiles/LAB10_11.dir/domain.cpp.obj	af0d5276d05516c
 381	3480	7382344890801440	CMakeFiles/LAB10_11.dir/repo.cpp.obj	7423538484b8680d
 3987	5537	7382344909147534	CMakeFiles/LAB10_11.dir/validator.cpp.obj	9fc6cb3aed92d955
 174	2986	7383276638398406	CMakeFiles/LAB10_11.dir/ui.cpp.obj	ddaa261b6a0102e6
 169	3506	7383276643815223	CMakeFiles/LAB10_11.dir/teste.cpp.obj	b72f6069bce3c22d
+9	1239	7580354265311497	build.ninja	f1e04d8bf9189815
 185	6289	7383276671654054	CMakeFiles/LAB10_11.dir/gui.cpp.obj	bb89ae325d9531ff
-9	1239	7385210755653979	build.ninja	f1e04d8bf9189815
-27	209	7385229175752192	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/timestamp	15dc22ebba499aa1
-27	209	7385229175752192	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-205	311	7382774461755056	CMakeFiles/LAB10_11.dir/CosCRUDGUI.cpp.obj	541f451bdefbc269
-175	5516	7383261926894214	CMakeFiles/LAB10_11.dir/ModeleGUI.cpp.obj	9d224b0a1c270c7d
-11	210	7385264591832926	LAB10_11_autogen/timestamp	15dc22ebba499aa1
-11	210	7385264591832926	LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-11	210	7385264591832926	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/timestamp	15dc22ebba499aa1
-11	210	7385264591832926	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-216	7360	7385264663294335	CMakeFiles/LAB10_11.dir/IncercareGUI.cpp.obj	acb0321ee875dd94
-7361	9078	7385264677173557	LAB10_11.exe	568026213d601ac6
-30	215	7385266837459978	LAB10_11_autogen/timestamp	15dc22ebba499aa1
-30	215	7385266837459978	LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-30	215	7385266837459978	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/timestamp	15dc22ebba499aa1
-30	215	7385266837459978	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-224	6737	7385266902621163	CMakeFiles/LAB10_11.dir/IncercareGUI.cpp.obj	acb0321ee875dd94
-6738	8383	7385266915548048	LAB10_11.exe	568026213d601ac6
-25	195	7385268478846008	LAB10_11_autogen/timestamp	15dc22ebba499aa1
-25	195	7385268478846008	LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-25	195	7385268478846008	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/timestamp	15dc22ebba499aa1
-25	195	7385268478846008	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-203	7042	7385268547272594	CMakeFiles/LAB10_11.dir/IncercareGUI.cpp.obj	acb0321ee875dd94
-7042	8475	7385268558968528	LAB10_11.exe	568026213d601ac6
-27	201	7385268907048657	LAB10_11_autogen/timestamp	15dc22ebba499aa1
-27	201	7385268907048657	LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-27	201	7385268907048657	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/timestamp	15dc22ebba499aa1
-27	201	7385268907048657	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-22	221	7385269864245178	LAB10_11_autogen/timestamp	15dc22ebba499aa1
-22	221	7385269864245178	LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-22	221	7385269864245178	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/timestamp	15dc22ebba499aa1
-22	221	7385269864245178	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-230	6096	7385269922957748	CMakeFiles/LAB10_11.dir/IncercareGUI.cpp.obj	acb0321ee875dd94
-6096	7661	7385269935942543	LAB10_11.exe	568026213d601ac6
-11	192	7385270489862711	LAB10_11_autogen/timestamp	15dc22ebba499aa1
-11	192	7385270489862711	LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-11	192	7385270489862711	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/timestamp	15dc22ebba499aa1
-11	192	7385270489862711	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-198	6746	7385270555348591	CMakeFiles/LAB10_11.dir/IncercareGUI.cpp.obj	acb0321ee875dd94
-6746	8351	7385270568801355	LAB10_11.exe	568026213d601ac6
-19	287	7385272575739155	LAB10_11_autogen/timestamp	15dc22ebba499aa1
-19	287	7385272575739155	LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-19	287	7385272575739155	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/timestamp	15dc22ebba499aa1
-19	287	7385272575739155	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-296	5554	7385272628423594	CMakeFiles/LAB10_11.dir/main.cpp.obj	6644d752b1eb3a3b
-310	6510	7385272637985750	CMakeFiles/LAB10_11.dir/IncercareGUI.cpp.obj	acb0321ee875dd94
-6511	8252	7385272651438602	LAB10_11.exe	568026213d601ac6
-16	220	7385275127189256	LAB10_11_autogen/timestamp	15dc22ebba499aa1
-16	220	7385275127189256	LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-16	220	7385275127189256	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/timestamp	15dc22ebba499aa1
-16	220	7385275127189256	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-226	6383	7385275188788735	CMakeFiles/LAB10_11.dir/main.cpp.obj	6644d752b1eb3a3b
-234	7547	7385275200384161	CMakeFiles/LAB10_11.dir/IncercareGUI.cpp.obj	acb0321ee875dd94
-7548	9168	7385275213279372	LAB10_11.exe	568026213d601ac6
-28	172	7385275505721977	LAB10_11_autogen/timestamp	15dc22ebba499aa1
-28	172	7385275505721977	LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-28	172	7385275505721977	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/timestamp	15dc22ebba499aa1
-28	172	7385275505721977	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-177	6466	7385275568546179	CMakeFiles/LAB10_11.dir/IncercareGUI.cpp.obj	acb0321ee875dd94
-6466	8212	7385275581732221	LAB10_11.exe	568026213d601ac6
-41	445	7385291728501650	LAB10_11_autogen/timestamp	15dc22ebba499aa1
-41	445	7385291728501650	LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
 41	445	7385291728501650	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/timestamp	15dc22ebba499aa1
 41	445	7385291728501650	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
-466	2245	7385291746670590	CMakeFiles/LAB10_11.dir/cosOferte.cpp.obj	53a2908c7ee83ef
-2245	3717	7385291758932821	LAB10_11.exe	568026213d601ac6
+205	311	7382774461755056	CMakeFiles/LAB10_11.dir/CosCRUDGUI.cpp.obj	541f451bdefbc269
+175	5516	7383261926894214	CMakeFiles/LAB10_11.dir/ModeleGUI.cpp.obj	9d224b0a1c270c7d
+7	4898	7580354265311497	build.ninja	f1e04d8bf9189815
+14	636	7580354273554852	LAB10_11_autogen/timestamp	15dc22ebba499aa1
+14	636	7580354273554852	LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
+14	636	7580354273554852	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/timestamp	15dc22ebba499aa1
+14	636	7580354273554852	D:/facultate/semestrul 2/OOP/LAB10-11/cmake-build-debug/LAB10_11_autogen/mocs_compilation.cpp	15dc22ebba499aa1
+650	1943	7580354286810940	CMakeFiles/LAB10_11.dir/validator.cpp.obj	9fc6cb3aed92d955
+1944	3565	7580354302940221	CMakeFiles/LAB10_11.dir/domain.cpp.obj	af0d5276d05516c
+658	4032	7580354307644426	CMakeFiles/LAB10_11.dir/cosOferte.cpp.obj	53a2908c7ee83ef
+665	5532	7580354322839794	CMakeFiles/LAB10_11.dir/teste.cpp.obj	b72f6069bce3c22d
+672	5565	7580354323156467	CMakeFiles/LAB10_11.dir/service.cpp.obj	94c236407fff2b85
+3565	6170	7580354329234196	CMakeFiles/LAB10_11.dir/repo.cpp.obj	7423538484b8680d
+6171	6409	7580354331332723	CMakeFiles/LAB10_11.dir/LAB10_11_autogen/mocs_compilation.cpp.obj	882297b33eb32d2
+5532	6968	7580354337395514	CMakeFiles/LAB10_11.dir/utils.cpp.obj	6cebfb6c31f009d
+4032	7657	7580354344357158	CMakeFiles/LAB10_11.dir/ui.cpp.obj	ddaa261b6a0102e6
+642	10056	7580354368294191	CMakeFiles/LAB10_11.dir/gui.cpp.obj	bb89ae325d9531ff
+636	10539	7580354373091526	CMakeFiles/LAB10_11.dir/IncercareGUI.cpp.obj	acb0321ee875dd94
+5565	12417	7580354391931874	CMakeFiles/LAB10_11.dir/main.cpp.obj	6644d752b1eb3a3b
+12417	17630	7580354414609902	LAB10_11.exe	568026213d601ac6

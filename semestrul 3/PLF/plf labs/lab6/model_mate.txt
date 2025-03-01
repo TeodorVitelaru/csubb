@@ -1,0 +1,4 @@
+inlocuieste(l1..ln, nv, nn)=
+=[], n=0
+=nn+ U(i=1,k)inlocuieste(li, nv, nn), l-lista, l=l2..lk, daca l1=nv
+=l1+ U(i=1,k)inlocuieste(li, nv, nn), l-lista, l=l2..lk

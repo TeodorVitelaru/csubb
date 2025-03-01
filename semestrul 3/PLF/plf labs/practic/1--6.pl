@@ -1,0 +1,50 @@
+%aparitii(e, l1...ln)=
+%=1+aparitii(e, l2..ln), daca l1=e
+
+apare(_, [],0):-!.
+apare(E, [E|T], C):-
+    !,
+    apare(E, T, C1),
+    C is C1+1.
+apare(E, [_|T], C):-apare(E, T, C).
+
+%eliminare(l1...ln)=
+%=[], daca n=0
+%=l1+eliminare(l2..ln), daca l1 nu apare in lista decat o data
+%=eliminare(l2..ln), daca l1 apare in lista de mai mult de doua ori
+
+eliminare(_, [], []):-!.
+eliminare(LC, [H|T], [H|Rez]):-
+    apare(H, LC, C),
+    C = 1,
+    !,
+    eliminare(LC, T, Rez).
+eliminare(LC, [H|T], Rez):-eliminare(LC, T, Rez).
+
+main(L, R):-
+    eliminare(L, L, R).
+
+%elim_max(l1..ln)=
+%=[], daca n=0
+%=l1+ elim_max(l2..ln), daca l1=maxim
+%=elim_max(l2..ln), daca l1!=maxim
+elim_max([], _, []).
+elim_max([H|T], H, Rez):-
+    !,
+    elim_max(T, H, Rez).
+elim_max([H|T], E, [H|Rez]):-
+    elim_max(T, E, Rez).
+
+%max(l1..ln)=
+%=0, daca n-0
+%=l1, daca n=1
+%=max(l1, max(l2..ln))
+max([H], H):-!.
+max([H|T], M):-
+    max(T, M1),
+   (H > M1 -> M=H; M=M1).
+
+final(L, R):-
+    max(L, M),
+    elim_max(L,M,R).
+

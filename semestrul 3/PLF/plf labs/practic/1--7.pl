@@ -1,0 +1,38 @@
+%reuniunea a doua multimi
+%reuniune(l1..ln, L1..Lm)=
+%=l, daca m=0,
+%=L, daca n=0
+%=l1+reuniune(l2..ln, L1..Lm), daca l1 nu apare in L
+%=L1+ reunuiune(l1..ln, L2..Lm), daca L1 nu apare in l
+%=reuniune, altfel
+apare(E, [E|_]):-!.
+apare(E, [_|T]):-apare(E, T).
+
+reuniune([], R, R):-!.
+reuniune(R, [], R):-!.
+reuniune([H|T], L1, R):-
+    apare(H, L1),
+    !,
+    reuniune(T, L1, R).
+reuniune(L, [H|T], R):-
+    apare(H, L),
+    !,
+    reuniune(L, T, R).
+reuniune(L, [H|T], [H|R]):-
+    !,
+    reuniune(L, T, R).
+
+%perechi(l1..ln)=
+%=[], daca n=0
+%=gene(l1, l2..ln) + perechi(l2..ln)
+perechi([A,B], [[A,B]]).
+perechi([H|T], [Set|R]):-
+    gene(H, T, Set),
+    perechi(T, R).
+
+%gene(e, l1..ln)=
+%=[e, l1], daca n=1
+%=[e,l1] + perechi(l2..ln)
+gene(E, [H], [[E,H]]):-!.
+gene(E, [H|T], [[E,H]|R]):-
+    gene(E, T, R).

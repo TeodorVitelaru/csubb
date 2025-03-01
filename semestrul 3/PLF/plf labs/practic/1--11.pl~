@@ -1,0 +1,30 @@
+%vale(l1..ln)=
+%=[], n=0
+%=desc(cresc(l1..ln)), daca l1<l2
+vale(L):-
+    cresc(L, R),
+    desc(R),!.
+
+
+
+%cresc(l1..ln)=
+%=[], daca n=2, l1<l2
+%=cresc(l2..ln), daca l1<l2
+%=l1..ln, daca l1>=l2
+cresc([A,B|[]], []):- A<B.
+cresc([A,B|T], [A,B|T]):-
+    A>=B.
+cresc([A,B|T], R):-
+    A<B,
+    cresc([B|T], R).
+
+%desc(l1..ln)=
+%=true, daca n=2 si l1>l2
+%=desc(l2..ln), daca l1>l2 si n>2
+%=fals daca l1<=l2
+desc([A,B|[]]):-
+    A>B.
+desc([A,B|T]):-
+    A>B,
+    desc([B|T]).
+

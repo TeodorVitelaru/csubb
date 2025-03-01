@@ -1,0 +1,13 @@
+(A 2 B 0 C 2 D 0 E 0)
+(A (B) (C (D) (E)))
+model:
+convert(l1..ln)=
+=[], daca n=0
+=l1+copii(l1)+convert(l2)+convert(l3)
+
+copii(l1..ln)=
+=0, n=0
+=1+numara(l2..ln)
+
+cadr = (car (cdr l))
+caddr = (car (cdr (cdr l)))

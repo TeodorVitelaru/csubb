@@ -1,0 +1,21 @@
+%adaug([l1...ln], poz, v)=
+%=l1 + v + adaug(l2...ln, poz1, v), daca poz=putere_2
+%=l1 + adaug(l2...ln, poz1, v), altfel, poz1=1+poz
+%=[], daca n=0
+
+adaug([], _, _,[]).
+adaug([H|T], Poz, V, [H,V|R]):-
+    putere_2(Poz),
+    !,
+    Poz1 is Poz + 1,
+    adauga(T, Poz1, V, R).
+adaug([H|T], Poz, V, [H|R]):-
+    Poz1 is Poz + 1,
+    adaug(T, Poz1, V, R).
+
+putere_2(1):-!.
+putere_2(N):-
+    N > 1,
+    0 is N mod 2,
+    N1 is N // 2,
+    putere_2(N1).

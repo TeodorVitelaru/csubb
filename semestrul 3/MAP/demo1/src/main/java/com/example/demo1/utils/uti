@@ -1,0 +1,69 @@
+import javafx.scene.layout.VBox;
+
+public class FirstController implements Observer<EntityChangeEvent> {
+    // existing code...
+
+    @FXML
+    private VBox tableContainer; // Add a VBox in your FXML to hold the dynamically created TableViews
+
+     private Map<String, ObservableList<Oferta>> groupByDestination(List<Oferta> offers) {
+            Map<String, ObservableList<Oferta>> groupedOffers = new HashMap<>();
+
+            for (Oferta offer : offers) {
+                String destination = offer.getDestinatie();
+                groupedOffers.putIfAbsent(destination, FXCollections.observableArrayList());
+                groupedOffers.get(destination).add(offer);
+            }
+
+            return groupedOffers;
+        }
+
+    private void createTablesForDestinations() {
+        OfferGrouper grouper = new OfferGrouper();
+        Map<String, ObservableList<Oferta>> groupedOffers = grouper.groupByDestination(modelOferta);
+
+        tableContainer.getChildren().clear(); // Clear any existing tables
+
+        for (Map.Entry<String, ObservableList<Oferta>> entry : groupedOffers.entrySet()) {
+            String destination = entry.getKey();
+            ObservableList<Oferta> offers = entry.getValue();
+
+            TableView<Oferta> tableView = new TableView<>(offers); //data is set here
+
+            TableColumn<Oferta, String> columnDestinatie = new TableColumn<>("Destinatie");
+            columnDestinatie.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDestinatie()));
+
+            TableColumn<Oferta, String> columnHotel = new TableColumn<>("Hotel");
+            columnHotel.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNumeHotel()));
+
+            TableColumn<Oferta, String> columnPerioada = new TableColumn<>("Perioada");
+            columnPerioada.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getPerioada()));
+
+            TableColumn<Oferta, Integer> columnPret = new TableColumn<>("Pret");
+            columnPret.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getPret()).asObject());
+
+            TableColumn<Oferta, Integer> columnNumarLocuri = new TableColumn<>("Numar Locuri");
+            columnNumarLocuri.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getNrLocuri()).asObject());
+
+            tableView.getColumns().addAll(columnDestinatie, columnHotel, columnPerioada, columnPret, columnNumarLocuri);
+
+            tableContainer.getChildren().add(tableView);
+        }
+    }
+
+    @Override
+    public void update(EntityChangeEvent entityChangeEvent) {
+        initModel();
+        createTablesForDestinations();
+    }
+
+    private void initModel() {
+        modelOferta.clear();
+        for (Oferta o : service.getAllOferte()) {
+            modelOferta.add(o);
+        }
+        initializeTable();
+    }
+
+    // existing code...
+}

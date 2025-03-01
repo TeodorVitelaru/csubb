@@ -1,0 +1,63 @@
+
+A:
+model matematic:
+remove_n(l1..ln, poz)=
+=[], daca n=0
+=[], daca poz<=0
+=l1, daca suntem poz=1
+=remove_n(l2..ln, poz-1)
+
+
+
+
+
+B:
+model matematic:
+succesor(l1..ln, f)
+=[], daca n=0
+=1, daca n=0 si f=1
+=0 U succesor(l2..ln, 1), daca l1=9
+=l1+f U succesor(l2..ln, 0), daca l1!=9
+
+main(list)= succesor(invers(list), 1)
+
+invers(l1..ln)=
+=[], daca n=0
+=invers(l2..ln) U l1, daca n!=0
+
+
+
+
+
+
+C:
+model matematic: atoms(l1..ln, aux)=
+=[], n=0
+=l1+atoms(l2..ln, l1 U aux), daca l1 nu apare in aux si l1 este atom
+=atoms(l2..ln, aux), daca l1 apare in aux si l1 este atom
+=atoms(l1 U l2..ln, aux), daca l1 este lista
+
+main(l)=atoms(l, nil)
+
+nu_apare(e, l1..ln)=
+=T, daca n=0
+=F, daca l1=e
+=nu_apare(e, l2..ln), altfel
+
+
+
+
+D:
+model matematic:
+multime(l)=multime_aux(l, nil)
+
+multime_aux(l1..ln, apare)=
+=t, daca n=0
+=nil, daca l1 este in apare
+=multime_aux(l2..ln, l1 U apare)
+
+member_x(e, l1..ln)
+=F, daca n=0
+=T, daca l1=e
+=member_x(e, l2..ln)
+
