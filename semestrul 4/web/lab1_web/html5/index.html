@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab1--web</title>
+</head>
+<body >
+    <h1>Vanzare apartament</h1>
+     <div>
+        <form action="#" method="post">
+            <b>Informatii de vanzare apartament</b>
+            <table>
+                <tr>
+                    <th colspan="4">Date Proprietar</th>
+                </tr>
+                <tr>
+                    <td><b>Nume:</b><span>*</span></td>
+                    <td><input type="text" name="nume" size="30" maxlength="50"></td>
+                    <td><b>Prenume:</b><span>*</span></td>
+                    <td><input type="text" name="prenume" size="30" maxlength="50"></td>
+                </tr>
+                <tr>
+                    <td><b>Email:</b><span>*</span></td>
+                    <td><input type="text" name="email" maxlength="50"></td>
+                    <td><b>Telefon:</b></td>
+                    <td><input type="tel" name="telefon"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><table>
+                        <tr>
+                            <th colspan="4">Detalii apartament</th>
+                        </tr>
+                        <tr>
+                            <td><b>Judet:</b></td>
+                            <td><input type="text" name="judet" maxlength="50"></td>
+                            <td><b>Oras:</b></td>
+                            <td><input type="text" name="oras" maxlength="50"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Locatie:</b></td>
+                            <td colspan="3">
+                                <input type="radio" id="centru" name="locatie" value="centru" checked>Centru
+                                <input type="radio" id="periferie" name="locatie" value="periferie">Periferie
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Adresa:</b><span>*</span></td>
+                            <td><input type="text" name="adresa" size="50" required></td>
+                            <td><b>Numar camere:</b></td>
+                            <td>
+                                <select name="camere">
+                                    <option>Garsoniera</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Facilitati:</b></td>
+                            <td>
+                                <select name="facilitati" multiple>
+                                    <option value="internet" >Internet</option>
+                                    <option value="parcare">Parcare</option>
+                                    <option value="lift">Lift</option>
+                                    <option value="bucatarie_utilata">Bucătărie utilată</option>
+                                    <option value="acoperis">Acoperiș nou</option>
+                                </select>
+                            </td>
+                            <td><b>Fosti chiriasi:</b></td>
+                            <td>
+                                <select name="facilitati" multiple disabled>
+                                    <option value="internet" >Florin Nita</option>
+                                    <option value="parcare">Teodor Vitelaru</option>
+                                    <option value="lift">Lab Web</option>
+                                    <option value="bucatarie_utilata">Bucătărie utilată</option>
+                                    <option value="acoperis">Acoperiș nou</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Suprafata: (m patrati)</b></td>
+                            <td><input type="number" name="suprafata" min="10" max="500" required></td>
+                            <td><b>Pret:</b></td>
+                            <td><input type="number" name="pret" min="10000" required></td>
+                        </tr>
+                        <tr>
+                            <td><b>Mobilat:</b></td>
+                            <td>
+                                <input type="radio" name="mobilat" value="da" required> Da
+                                <input type="radio" name="mobilat" value="nu"> Nu
+                            </td>
+                            <td><b>Balcon:</b></td>
+                            <td>
+                                <input type="radio" name="balcon" value="da" required> Da
+                                <input type="radio" name="balcon" value="nu"> Nu
+                            </td>
+                        </tr>
+                    </table></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><table>
+                        <tr>
+                            <th>Informații Suplimentare</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <textarea name="comentarii" rows="4" cols="50" placeholder="Comentarii suplimentare" readonly></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="accepta_conditii" value="accepta" required> Accept <a href="https://policies.google.com/terms?hl=ro">Conditiile</a> de vânzare
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Trimite Oferta">
+                            </td>
+                        </tr>
+                    </table></td>
+                </tr>
+            </table>
+        </form>
+
+        
+    </div>
+     <h2><strong>Apartamente Disponibile</strong></h2>
+     <ul>
+         <li>Apartament 1 - 2 Camere - 35000 RON
+             <ul>
+                 <li>Locație: Centru</li>
+                 <li>Suprafață: 45 m²</li>
+                 <li>Preț: 35000 RON</li>
+             </ul>
+         </li>
+         <li>Apartament 2 - 3 Camere - 45000 RON
+             <ul>
+                 <li>Locație: Periferie</li>
+                 <li>Suprafață: 60 m²</li>
+                 <li>Preț: 45000 RON</li>
+             </ul>
+         </li>
+         <li>Apartament 3 - 4 Camere - 55000 RON
+             <ul>
+                 <li>Locație: Centru</li>
+                 <li>Suprafață: 85 m²</li>
+                 <li>Preț: 55000 RON</li>
+             </ul>
+         </li>
+     </ul>
+     <h2><strong>Contact</strong></h2>
+        <ol start="1">
+            <li><b>Email:</b> <a href="mailto:contact@apartamente.ro" target="_blank">contact@apartamente.ro</a></li>
+            <li><b>Telefon:</b> 0723 456 789</li>
+            <li><b>Adresă:</b> Strada Exemplu 123, București</li>
+        </ol>
+     <!-- Linkuri utile -->
+     <h2><strong>Linkuri Utile</strong></h2>
+     <ul>
+         <li><a href="http://www.apartamente.ro" target="_blank">Apartamente.ro</a><br><img src="../aparta.jpg" alt="Poza apartament"></li>
+         <li><a href="http://www.anpc.ro" target="_blank">ANPC - Protecția Consumatorului</a></li>
+     </ul>   
+</body>
+
+</html>
