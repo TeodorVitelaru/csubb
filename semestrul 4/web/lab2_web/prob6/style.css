@@ -1,0 +1,65 @@
+.form-container{
+    border: black solid 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form-group{
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.nume{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-align: left;
+    letter-spacing: 13px;
+    border: none; 
+    outline: none; 
+    background-image: url('patratel.png'); 
+    background-repeat: repeat-x; 
+    background-size: 25px 25px; 
+    width: 300px;
+    height: 30px;
+    box-sizing: border-box;
+    caret-color: black; 
+    overflow: hidden;
+}
+
+.cnp{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-align: left;
+    letter-spacing: 13px;
+    border: none; 
+    outline: none; 
+    background-image: url('patratel.png'); 
+    background-repeat: repeat-x; 
+    background-size: 25px 25px; 
+    width: 350px;
+    height: 30px;
+    box-sizing: border-box;
+    caret-color: black;
+}
+
+.prenume{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-align: left;
+    letter-spacing: 13px;
+    border: none; 
+    outline: none; 
+    background-image: url('patratel.png'); 
+    background-repeat: repeat-x; 
+    background-size: 25px 25px; 
+    width: 300px;
+    height: 30px;
+    box-sizing: border-box;
+    caret-color: black;
+}
+

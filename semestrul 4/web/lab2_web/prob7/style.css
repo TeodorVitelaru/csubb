@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.dialog {
+    list-style: none;
+    margin: 200px;
+    width: 60%; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dialog li {
+    display: block;
+    position: relative;
+    padding: 15px 20px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    font-size: 14px;
+    min-width: 150px; /* Dimensiune minimă */
+    min-height: 50px; 
+
+}
+
+.dialog li.alice {
+    align-self: flex-start; 
+}
+
+.dialog li.bob {
+    align-self: flex-start; 
+}
+
+.dialog li::before {
+    content: "";
+    display: block;
+    width: 84px;
+    height: 84px; 
+    background-image: url('sprite.png'); 
+    background-size: 924px 168px;
+    background-repeat: no-repeat;
+    border-radius: 50%; /* Face imaginea rotundă */
+    position: absolute;
+    top: 10px;
+    left: -100px; 
+}
+
+.dialog li.alice::before {
+    background-position: 0 0; 
+}
+
+.dialog li.bob::before {
+    background-position: -84px 0; 
+}
+
+.dialog li::after {
+    content: "";
+    position: absolute;
+    border: 10px solid transparent;
+    border-right-color: #ffffff; 
+    border-left: 0;
+    top: 20px; 
+    left: -10px; 
+    width: 0;
+    height: 0;
+}
+
+.dialog li p {
+    margin: 0;
+    text-align: center; 
+}

@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #d22a2a;
+    color: black;
+    padding: 5px 0;
+    height: 100px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #d8ef2e;
+    height: 25px;
+}
+
+nav ul li {
+    /*ocupa tot spatiul disponibil*/
+    flex: 1;
+    border-right: 1px solid black; /* Adaugă o bară de separare între elemente */
+
+}
+
+nav ul li a {
+    display: block;
+    padding: 8px;
+    color: black;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    
+}
+
+
+.content {
+    background-color: #87e455;
+    padding: 5px;
+    flex: 1;
+    overflow: auto;
+}
+
+p{
+    padding: 5px;
+}
+
+
+footer {
+    background-color: #f69df3;
+    color: black;
+    padding: 10px 0;
+    width: 100%;
+    height: 60px;
+}

@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.parent {
+    display: flex;
+    border: 2px solid black;
+    flex-direction: column;
+}
+
+.left, .right {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    text-align: center;
+}
+
+.right {
+    
+}
+
+.right img {
+    max-width: 100px;
+    max-height: 100%;
+    object-fit: contain;
+}
