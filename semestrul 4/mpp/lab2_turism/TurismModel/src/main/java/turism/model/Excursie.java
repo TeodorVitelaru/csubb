@@ -1,8 +1,9 @@
 package turism.model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Excursie extends Entity<Long>  {
+public class Excursie extends Entity<Long> implements Serializable {
     private Long id;
     private String obiectiv;
     private String firmaTransport;

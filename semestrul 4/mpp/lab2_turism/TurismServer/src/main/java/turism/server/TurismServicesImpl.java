@@ -14,8 +14,11 @@ import turism.services.ITurismServices;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -40,9 +43,9 @@ public class TurismServicesImpl implements ITurismServices {
     }
 
 
-    public synchronized Optional<Client> addClient(Client client) {
+    public synchronized Client addClient(Client client) {
         Optional<Client> client2 = clientRepo.save(client);
-        return client2;
+        return client2.get();
     }
 
 
@@ -94,9 +97,10 @@ public class TurismServicesImpl implements ITurismServices {
     public synchronized Rezervare addRezervare(Excursie excursie, Client client, int nrBilete, User user) {
         logger.info("Adding rezervare for client {} with nrBilete {}", client, nrBilete);
         Rezervare rezervare = new Rezervare(excursie, client, nrBilete, user);
-        Optional<Rezervare> rezervareOuput = rezervareRepo.save(rezervare);
+        Optional<Rezervare> rezervareOutput = rezervareRepo.save(rezervare);
         logger.info("Rezervare added successfully.");
-        return rezervareOuput.orElse(null);
+        notifyForRezervation(rezervareOutput.get());
+        return rezervareOutput.get();
     }
 
     public synchronized User login(User user, ITurismObserver client) throws Exception {
@@ -121,5 +125,29 @@ public class TurismServicesImpl implements ITurismServices {
         logger.info("User {} logged out successfully.", user.getUsername());
     }
 
-    private final int defaultThreadsNo = 3;
+    private final int defaultThreadsNo = 1;
+    private void notifyForRezervation(Rezervare rezervare){
+        logger.info("Notifying for rezervare {}", rezervare);
+        ExecutorService executor = Executors.newFixedThreadPool(defaultThreadsNo);
+        for (Map.Entry<Long, ITurismObserver> entry : loggedUsers.entrySet()) {
+            Long userId = entry.getKey();
+            ITurismObserver observer = entry.getValue();
+            if(!Objects.equals(userId, rezervare.getUser().getId())){
+                executor.execute(() -> {
+                    try {
+                        logger.debug("Notifying user {} about rezervare {}, comparandu se {} cu {}", userId, rezervare, userId, rezervare.getUser().getId());
+                        observer.rezervareReceived(rezervare);
+                    } catch (Exception e) {
+                        logger.error("Error notifying user {} about rezervare {}", userId, e);
+                    }
+                });
+            }
+
+        }
+        executor.shutdown();
+    }
+
+    public Map<Long, ITurismObserver> getAllClientsConnected() {
+        return loggedUsers;
+    }
 }

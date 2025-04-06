@@ -49,16 +49,20 @@ public class TurismClientRpcWorker implements Runnable, ITurismObserver {
                 if (response!=null){
                     sendResponse(response);
                 }
-            } catch (IOException|ClassNotFoundException e) {
+            } catch (IOException | ClassNotFoundException e) {
                 logger.error(e);
                 logger.error(e.getStackTrace());
+                connected = false;
             }
+            /*
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 logger.error(e);
                 logger.error(e.getStackTrace());
             }
+
+             */
         }
         try {
             input.close();
@@ -116,12 +120,15 @@ public class TurismClientRpcWorker implements Runnable, ITurismObserver {
                         .type(ResponseType.ERROR)
                         .data(e.getMessage())
                         .build();
+                //connected = false;
             }
         } else if (request.type() == RequestType.LOGOUT) {
             User user = (User) request.data();
             try {
                 server.logout(user, this);
-                response = okResponse;
+                connected = false;
+                logger.info("Logout response sent {}", connected);
+                return okResponse;
             } catch (Exception e) {
                 logger.error(e);
                 response = new Response.Builder()
@@ -130,9 +137,11 @@ public class TurismClientRpcWorker implements Runnable, ITurismObserver {
                         .build();
             }
         } else if(request.type() == RequestType.SEND_REZERVARE){
+            logger.debug("SEND_REZERVARE request");
             List<Object> params = (List<Object>) request.data();
+            Rezervare rezervare;
             try {
-                Rezervare rezervare = server.addRezervare((Excursie) params.get(0), (Client) params.get(1), (int) params.get(2), (User) params.get(3));
+                rezervare = server.addRezervare((Excursie) params.get(0), (Client) params.get(1), (int) params.get(2), (User) params.get(3));
                 response = new Response.Builder()
                         .type(ResponseType.NEW_REZERVARE)
                         .data(rezervare)
@@ -206,7 +215,7 @@ public class TurismClientRpcWorker implements Runnable, ITurismObserver {
             }
         } else if(request.type() == RequestType.SEND_CLIENT){
             try {
-                Optional<Client> client = server.addClient((Client) request.data());
+                Client client = server.addClient((Client) request.data());
                 response = new Response.Builder()
                         .type(ResponseType.NEW_CLIENT)
                         .data(client)

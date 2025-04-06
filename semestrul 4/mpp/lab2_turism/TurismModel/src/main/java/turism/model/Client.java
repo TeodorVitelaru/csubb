@@ -1,6 +1,8 @@
 package turism.model;
 
-public class Client extends  Entity<Long> {
+import java.io.Serializable;
+
+public class Client extends  Entity<Long> implements Serializable {
     private Long id;
     private String nume;
     private String telefon;

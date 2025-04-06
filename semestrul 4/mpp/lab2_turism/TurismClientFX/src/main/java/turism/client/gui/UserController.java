@@ -28,9 +28,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class UserController implements Initializable, ITurismObserver {
     private User loggedInUser;
@@ -98,19 +96,18 @@ public class UserController implements Initializable, ITurismObserver {
     public UserController(ITurismServices server){
         this.server = server;
         logger.debug("UserController created");
-        initilizeComboBox();
-        initModelExcursie();
+
     }
 
     public void setServer(ITurismServices server) {
         this.server = server;
-        initilizeComboBox();
-        initModelExcursie();
     }
 
     public void setUser(User user) {
         this.loggedInUser = user;
-        System.out.println("User logged in: " + user.getId());
+        logger.info("User set: " + user.getUsername());
+        initilizeComboBox();
+        initModelExcursie();
     }
 
 
@@ -125,23 +122,36 @@ public class UserController implements Initializable, ITurismObserver {
         }
     }
 
+    private Map<Long, Integer> locuriOcupateCache = new HashMap<>();
     private void initTableExcursie() {
+        logger.debug("Initializing tableExcursie");
+        tableViewExcursie.setItems(modelExcursie);
         tableColumnObiectivTuristic.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getObiectiv()));
         tableColumnFirma1.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFirmaTransport()));
         tableColumnPret1.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getPret()).asObject());
         tableColumnOraPlecarii1.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getDataPlecarii()));
         tableColumnLocuriDisponibile1.setCellValueFactory(cellData -> {
             try{
-                int totalSeats = cellData.getValue().getNrLocuriDisponibile();
-                int reservedSeats = server.getLocuriOcupateForExcursie(cellData.getValue());
-                int availableSeats = totalSeats - reservedSeats;
-                return new SimpleIntegerProperty(availableSeats).asObject();
+                logger.info("Getting available seats for excursion: " + cellData.getValue().getId());
+                if(locuriOcupateCache.containsKey(cellData.getValue().getId())) {
+                    return new SimpleIntegerProperty(cellData.getValue().getNrLocuriDisponibile() - locuriOcupateCache.get(cellData.getValue().getId())).asObject();
+                } else {
+                    int totalSeats = cellData.getValue().getNrLocuriDisponibile();
+                    int reservedSeats = server.getLocuriOcupateForExcursie(cellData.getValue());
+                    int availableSeats = totalSeats - reservedSeats;
+                    locuriOcupateCache.put(cellData.getValue().getId(), reservedSeats);
+                    return new SimpleIntegerProperty(availableSeats).asObject();
+                }
             } catch (Exception e) {
                 logger.error("Error getting available seats: " + e.getMessage());
+                logger.info("Error getting available seats for {} ", cellData.getValue());
                 showMessage("Error", "Error", e.getMessage());
                 return new SimpleIntegerProperty(0).asObject();
             }
+
+
         });
+
         tableViewExcursie.setRowFactory(tv -> new TableRow<>() {
             @Override
             protected void updateItem(Excursie excursie, boolean empty) {
@@ -165,7 +175,8 @@ public class UserController implements Initializable, ITurismObserver {
                 }
             }
         });
-        tableViewExcursie.setItems(modelExcursie);
+
+
     }
 
     public void initilizeComboBox() {
@@ -221,16 +232,24 @@ public class UserController implements Initializable, ITurismObserver {
         }
     }
 
+
     private void initTable() {
+        logger.debug("Initializing table searching");
         tableColumnFirma.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFirmaTransport()));
         tableColumnPret.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getPret()).asObject());
         tableColumnOraPlecarii.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getDataPlecarii()));
         tableColumnLocuriDisponibile.setCellValueFactory(cellData -> {
             try{
-                int totalSeats = cellData.getValue().getNrLocuriDisponibile();
-                int reservedSeats = server.getLocuriOcupateForExcursie(cellData.getValue());
-                int availableSeats = totalSeats - reservedSeats;
-                return new SimpleIntegerProperty(availableSeats).asObject();
+                logger.info("Getting available seats for excursion: " + cellData.getValue().getId());
+                if(locuriOcupateCache.containsKey(cellData.getValue().getId())) {
+                    return new SimpleIntegerProperty(cellData.getValue().getNrLocuriDisponibile() - locuriOcupateCache.get(cellData.getValue().getId())).asObject();
+                } else {
+                    int totalSeats = cellData.getValue().getNrLocuriDisponibile();
+                    int reservedSeats = server.getLocuriOcupateForExcursie(cellData.getValue());
+                    int availableSeats = totalSeats - reservedSeats;
+                    locuriOcupateCache.put(cellData.getValue().getId(), reservedSeats);
+                    return new SimpleIntegerProperty(availableSeats).asObject();
+                }
             } catch (Exception e) {
                 logger.error("Error getting available seats: " + e.getMessage());
                 showMessage("Error", "Error", e.getMessage());
@@ -248,7 +267,7 @@ public class UserController implements Initializable, ITurismObserver {
                     try{
                         int totalSeats = excursie.getNrLocuriDisponibile();
                         int reservedSeats = server.getLocuriOcupateForExcursie(excursie);
-                        int availableSeats = totalSeats - reservedSeats;
+                        int availableSeats = totalSeats-reservedSeats;
                         if (availableSeats == 0) {
                             setStyle("-fx-background-color: red;");
                         } else {
@@ -260,7 +279,10 @@ public class UserController implements Initializable, ITurismObserver {
                     }
                 }
             }
+
         });
+
+
     }
 
     public void handleAddRezervare(ActionEvent actionEvent) {
@@ -298,8 +320,9 @@ public class UserController implements Initializable, ITurismObserver {
                 showMessage("Error", "Locuri indisponibile", "Nu sunt suficiente locuri disponibile. Nr maxim de locuri disponibile este: " + (locuriDisponibile - locuriOcupate));
                 return;
             }
-            server.addRezervare(excursie, client, nrBilete, loggedInUser);
+            Rezervare rez = server.addRezervare(excursie, client, nrBilete, loggedInUser);
             listOfTask.add("Rezervare adaugata");
+            logger.info("Rezervare adaugata: " + rez);
 
 
             showMessage("Success", "Success", String.join("\n", listOfTask));
@@ -319,18 +342,14 @@ public class UserController implements Initializable, ITurismObserver {
         alert.setTitle(title);
         alert.setHeaderText(header);
         alert.setContentText(content);
-        alert.showAndWait();
+        alert.show();
     }
 
 
     public void handelLogout(ActionEvent actionEvent) throws IOException {
-        try{
-            logout();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-        } catch (Exception e) {
-            logger.error("Error logging out: " + e.getMessage());
-            showMessage("Error", "Error", e.getMessage());
-        }
+        logout();
+        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+        System.exit(0);
     }
 
 
@@ -349,26 +368,20 @@ public class UserController implements Initializable, ITurismObserver {
         logger.debug("END INIT!!!!!!!!!");
     }
 
-    @Override
+
     public void rezervareReceived(Rezervare rezervare) {
-        Platform.runLater(() -> {
-            initTable();
+       Platform.runLater(() -> {
+            if(!Objects.equals(rezervare.getUser().getId(), loggedInUser.getId())) {
+                logger.info("Rezervare primita in userController: {} {}" + rezervare, rezervare.getClient().getId(), loggedInUser.getId());
+            }
+            locuriOcupateCache.remove(rezervare.getExcursie().getId());
             initTableExcursie();
+            initTable();
+            logger.info("Rezervare primita in userController: " + rezervare);
         });
     }
 
-    @Override
     public void clientReceived(Client client) {
-        Platform.runLater(() -> {
-            try {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Client");
-                alert.setHeaderText("Client primit");
-                alert.setContentText("Client primit: " + client);
-                alert.showAndWait();
-            } catch (Exception e) {
-                logger.error("Error showing client alert: " + e.getMessage());
-            }
-        });
+
     }
 }

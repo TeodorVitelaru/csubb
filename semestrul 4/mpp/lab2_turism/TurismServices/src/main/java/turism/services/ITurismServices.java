@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ITurismServices {
-    public Optional<Client> addClient(Client client) throws Exception;
+    public Client addClient(Client client) throws Exception;
     public Client findClientByNameAndPhoneNumber(String name, String phoneNumber) throws Exception;
     public List<Excursie> getAllExcursieByDestinationAndDate(String destination, LocalDateTime date1, LocalDateTime date2) throws Exception;
     public List<Excursie> getAllExcursie() throws Exception;

@@ -14,7 +14,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -40,26 +42,26 @@ public class TurismServicesRpcProxy implements ITurismServices {
     }
 
 
-    @Override
-    public Optional<Client> addClient(Client client) throws Exception {
-        initializeConnection();
+    public Client addClient(Client client) throws Exception {
+        //initializeConnection();
         Request request=new Request.Builder().type(RequestType.SEND_CLIENT).data(client).build();
         sendRequest(request);
         Response response=readResponse();
         if (response.type()==ResponseType.ERROR){
             String err = (String)response.data();
+            closeConnection();
             throw new Exception(err);
         }
-        if (response.type()==ResponseType.OK){
+        if (response.type()==ResponseType.NEW_CLIENT){
             Client client1=(Client)response.data();
-            return Optional.of(client1);
+            return client1;
         }
         throw new Exception("Error adding client");
     }
 
-    @Override
+
     public Client findClientByNameAndPhoneNumber(String name, String phoneNumber) throws Exception {
-        initializeConnection();
+        //initializeConnection();
         List<String> data=List.of(name,phoneNumber);
         Request request=new Request.Builder().type(RequestType.GET_CLIENT_BY_NAME_AND_PHONE).data(data).build();
         sendRequest(request);
@@ -75,9 +77,9 @@ public class TurismServicesRpcProxy implements ITurismServices {
         throw new Exception("Error getting client");
     }
 
-    @Override
+
     public List<Excursie> getAllExcursieByDestinationAndDate(String destination, LocalDateTime date1, LocalDateTime date2) throws Exception {
-        initializeConnection();
+        //initializeConnection();
         List<Object> data=List.of(destination,date1,date2);
         Request request=new Request.Builder().type(RequestType.GET_EXCURSII_BY_DESTINATION_AND_DATE).data(data).build();
         sendRequest(request);
@@ -93,7 +95,6 @@ public class TurismServicesRpcProxy implements ITurismServices {
         throw new Exception("Error getting excursii");
     }
 
-    @Override
     public List<Excursie> getAllExcursie() throws Exception {
         logger.debug("Getting all excursii");
         initializeConnection();
@@ -115,9 +116,9 @@ public class TurismServicesRpcProxy implements ITurismServices {
 
     }
 
-    @Override
+
     public List<Rezervare> getRezervariByExcursie(Excursie excursie) throws Exception {
-        initializeConnection();
+        //initializeConnection();
         Request request=new Request.Builder().type(RequestType.GET_REZERVARI_BY_EXCURSIE).data(excursie).build();
         sendRequest(request);
         Response response=readResponse();
@@ -132,16 +133,16 @@ public class TurismServicesRpcProxy implements ITurismServices {
         throw new Exception("Error getting rezervari");
     }
 
-    @Override
     public List<Rezervare> getAllRezervari() throws Exception {
         return null;
     }
 
-    @Override
+
     public int getLocuriOcupateForExcursie(Excursie excursie) throws Exception {
-        initializeConnection();
+        //initializeConnection();
         Request request=new Request.Builder().type(RequestType.GET_LOCURI_OCUPATE).data(excursie).build();
         sendRequest(request);
+        logger.info("sending request for locuri ocupate {}",request);
         Response response=readResponse();
         if (response.type()==ResponseType.ERROR){
             String err = (String)response.data();
@@ -154,12 +155,13 @@ public class TurismServicesRpcProxy implements ITurismServices {
         throw new Exception("Error getting locuri ocupate");
     }
 
-    @Override
+
     public Rezervare addRezervare(Excursie excursie, Client client, int nrBilete, User user) throws Exception {
-        initializeConnection();
+        //initializeConnection();
         List<Object> data=List.of(excursie,client,nrBilete,user);
         Request request=new Request.Builder().type(RequestType.SEND_REZERVARE).data(data).build();
         sendRequest(request);
+        /*
         Response response=readResponse();
         if (response.type()==ResponseType.ERROR){
             String err = (String)response.data();
@@ -167,13 +169,16 @@ public class TurismServicesRpcProxy implements ITurismServices {
         }
         if (response.type()==ResponseType.NEW_REZERVARE){
             Rezervare rezervare=(Rezervare)response.data();
+            logger.debug("Rezervare added in proxy{}",rezervare);
             return rezervare;
         }
+        logger.info("Response type: {}", response.type());
         throw new Exception("Error adding rezervare");
 
+         */
+        return null;
     }
 
-    @Override
     public User login(User user, ITurismObserver client) throws Exception {
         initializeConnection();
         Request request=new Request.Builder().type(RequestType.LOGIN).data(user).build();
@@ -191,7 +196,7 @@ public class TurismServicesRpcProxy implements ITurismServices {
         throw new Exception("Login error");
     }
 
-    @Override
+
     public void logout(User user, ITurismObserver client) throws Exception {
         Request request=new Request.Builder().type(RequestType.LOGOUT).data(user).build();
         sendRequest(request);
@@ -231,8 +236,10 @@ public class TurismServicesRpcProxy implements ITurismServices {
 
     private Response readResponse() throws Exception {
         Response response=null;
+        logger.debug("Waiting for response");
         try{
             response=qresponses.take();
+            logger.debug("response received in proxy "+response);
         } catch (InterruptedException e) {
             logger.error(e);
             logger.error(e.getStackTrace());
@@ -258,12 +265,20 @@ public class TurismServicesRpcProxy implements ITurismServices {
     }
 
     private void handleUpdate(Response response){
-
+        if(response.type() == ResponseType.NEW_REZERVARE){
+            Rezervare rezervare = (Rezervare) response.data();
+            logger.debug("New rezervare received "+rezervare);
+            try {
+                client.rezervareReceived(rezervare);
+            } catch (Exception e) {
+                logger.error("Error notifying client about new rezervare "+e);
+            }
+        }
     }
 
 
     private boolean isUpdate(Response response){
-        return response.type()== ResponseType.NEW_REZERVARE || response.type()== ResponseType.NEW_CLIENT;
+        return response.type()== ResponseType.NEW_REZERVARE;
     }
 
     private class ReaderThread implements Runnable{
@@ -273,13 +288,20 @@ public class TurismServicesRpcProxy implements ITurismServices {
                     Object response=input.readObject();
                     logger.debug("response received "+response);
                     try {
-                        qresponses.put((Response)response);
+                        if(isUpdate((Response)response)) {
+                            handleUpdate((Response) response);
+                        } else {
+                            qresponses.put((Response) response);
+                        }
+
                     } catch (InterruptedException e) {
                         logger.error(e);
                         logger.error(e.getStackTrace());
+                        Thread.currentThread().interrupt();
                     }
                 } catch (IOException|ClassNotFoundException e) {
                     logger.error("Reading error "+e);
+                    finished = true;
                 }
             }
         }

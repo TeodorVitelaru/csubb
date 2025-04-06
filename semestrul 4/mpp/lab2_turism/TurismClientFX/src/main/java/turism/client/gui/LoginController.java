@@ -1,5 +1,6 @@
 package turism.client.gui;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -53,7 +54,6 @@ public class LoginController {
 
         try{
             String password = Crypter.encrypt(passwordString, "a1b2c3d4e5f6g7h8");
-            System.out.println(password);
             User copy = new User(username, password);
             crtUser = server.login(copy, userController);
             Stage stage = new Stage();
