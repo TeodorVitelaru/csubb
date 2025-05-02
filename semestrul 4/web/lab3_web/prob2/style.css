@@ -1,0 +1,9 @@
+.error {
+    border: 2px solid red;
+}
+.success {
+    color: green;
+}
+.error-message {
+    color: red;
+}
