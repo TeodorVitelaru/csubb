@@ -1,4 +1,4 @@
-﻿-- Funcție de validare pentru numele ligii
+﻿-- Functie de validare pentru numele ligii
 CREATE or alter FUNCTION uf_ValidateNumeLiga (@nume_liga VARCHAR(255)) RETURNS INT AS
 BEGIN
     DECLARE @return INT;
@@ -9,8 +9,8 @@ BEGIN
 END;
 GO;
 
--- Funcție de validare pentru numărul de echipe
-CREATE FUNCTION uf_ValidateNumarEchipe (@numar_echipe INT) RETURNS INT AS
+-- Functie de validare pentru numarul de echipe
+CREATE or alter FUNCTION uf_ValidateNumarEchipe (@numar_echipe INT) RETURNS INT AS
 BEGIN
     DECLARE @return INT;
     SET @return = 0;
@@ -20,8 +20,8 @@ BEGIN
 END;
 GO;
 
--- Funcție de validare pentru numele antrenorului
-CREATE FUNCTION uf_ValidateNumeAntrenor (@nume_antrenor VARCHAR(255)) RETURNS INT AS
+-- Functie de validare pentru numele antrenorului
+CREATE or alter FUNCTION uf_ValidateNumeAntrenor (@nume_antrenor VARCHAR(255)) RETURNS INT AS
 BEGIN
     DECLARE @return INT;
     SET @return = 0;
@@ -31,8 +31,8 @@ BEGIN
 END;
 GO;
 
--- Funcție de validare pentru data nașterii antrenorului
-CREATE FUNCTION uf_ValidateDataNasterii (@data_nasterii DATE) RETURNS INT AS
+-- Functie de validare pentru data nașterii antrenorului
+CREATE or alter FUNCTION uf_ValidateDataNasterii (@data_nasterii DATE) RETURNS INT AS
 BEGIN
     DECLARE @return INT;
     SET @return = 0;
@@ -53,7 +53,7 @@ GO;
 
 CREATE or alter PROCEDURE InsertLigiAntrenori (
     @nume_liga VARCHAR(255),
-    @id_oras INT = 1,  -- Valoare implicită 1 pentru id_oras
+    @id_oras INT = 1,  -- Valoare implicita 1 pentru id_oras
     @numar_echipe INT,
     @nume_antrenor VARCHAR(255),
     @data_nasterii DATE,
@@ -61,55 +61,52 @@ CREATE or alter PROCEDURE InsertLigiAntrenori (
 )
 AS
 BEGIN
-    BEGIN TRANSACTION;  -- Începem tranzacția
+    BEGIN TRANSACTION;  
 
     BEGIN TRY
-        -- Validarea numelui ligii
+        
         IF (dbo.uf_ValidateNumeLiga(@nume_liga) <> 1)
         BEGIN
-            RAISERROR('Numele ligii trebuie să înceapă cu literă mare.', 16, 1);
+            RAISERROR('Numele ligii trebuie sa inceapa cu litera mare.', 16, 1);
         END
 
-        -- Validarea numărului de echipe
         IF (dbo.uf_ValidateNumarEchipe(@numar_echipe) <> 1)
         BEGIN
-            RAISERROR('Numărul de echipe trebuie să fie pozitiv.', 16, 1);
+            RAISERROR('Numarul de echipe trebuie sa fie pozitiv.', 16, 1);
         END
 
-        -- Validarea numelui antrenorului
         IF (dbo.uf_ValidateNumeAntrenor(@nume_antrenor) <> 1)
         BEGIN
-            RAISERROR('Numele antrenorului trebuie să înceapă cu literă mare.', 16, 1);
+            RAISERROR('Numele antrenorului trebuie sa înceapa cu litera mare.', 16, 1);
         END
 
-        -- Validarea datei nașterii antrenorului
         IF (dbo.uf_ValidateDataNasterii(@data_nasterii) <> 1)
         BEGIN
             RAISERROR('Data nașterii trebuie să fie în trecut.', 16, 1);
         END
 
-        -- Inserăm în tabelul ligi
+        -- Inseram în tabelul ligi
         INSERT INTO Ligi (id_oras, nume_liga, numar_echipe)
         VALUES (@id_oras, @nume_liga, @numar_echipe);
 
-        -- Obținem ID-ul ligii inserate
+        -- Obtinem ID-ul ligii inserate
         DECLARE @id_liga INT = SCOPE_IDENTITY();  -- Preluăm ID-ul ligii
 
-        -- Inserăm în tabelul antrenori
+        -- Inseram în tabelul antrenori
         INSERT INTO Antrenori (nume_antrenor, data_nasterii)
         VALUES (@nume_antrenor, @data_nasterii);
 
-        -- Obținem ID-ul antrenorului inserat
+        -- Obtinem ID-ul antrenorului inserat
         DECLARE @id_antrenor INT = SCOPE_IDENTITY();  -- Preluăm ID-ul antrenorului
 
-        -- Inserăm în tabelul de legătură ligi_castigate
+        -- Inseram in tabelul de legatura ligi_castigate
         INSERT INTO LigiCastigate (id_antrenor, id_liga, an_castigat)
         VALUES (@id_antrenor, @id_liga, @an_castigat);
 
-        -- Dacă totul a mers bine, facem commit
+        -- facem commit
         COMMIT;
 
-        -- Logăm operațiile
+        -- Logam operatiile
         INSERT INTO LogTable (TypeOperation, TableOperation, ExecutionDate)
         VALUES ('INSERT', 'Ligi, Antrenori, LigiCastigate', GETDATE());
 
@@ -118,11 +115,11 @@ BEGIN
     END TRY
 
     BEGIN CATCH
-        -- Dacă apare vreo eroare, facem rollback
+        -- facem rollback
 		IF @@TRANCOUNT > 0
            ROLLBACK TRAN;
 
-        -- Logăm eroarea
+        -- Logam eroarea
         INSERT INTO LogTable (TypeOperation, TableOperation, ExecutionDate)
         VALUES ('ERROR', 'Ligi, Antrenori, Ligi Castigate', GETDATE());
 
@@ -159,16 +156,14 @@ BEGIN
     BEGIN TRY
         BEGIN TRAN
 
-        -- Validarea numelui antrenorului
         IF (dbo.uf_ValidateNumeAntrenor(@nume_antrenor) <> 1)
         BEGIN
-            RAISERROR('Numele antrenorului trebuie să înceapă cu literă mare.', 16, 1);
+            RAISERROR('Numele antrenorului trebuie sa inceapa cu litera mare.', 16, 1);
         END
 
-        -- Validarea datei nașterii antrenorului
         IF (dbo.uf_ValidateDataNasterii(@data_nasterii) <> 1)
         BEGIN
-            RAISERROR('Data nașterii trebuie să fie în trecut.', 16, 1);
+            RAISERROR('Data nasterii trebuie să fie in trecut.', 16, 1);
         END
 
         INSERT INTO Antrenori(nume_antrenor, data_nasterii)
@@ -194,20 +189,18 @@ BEGIN
     BEGIN TRY
         BEGIN TRAN
 
-        -- Validarea numelui ligii
         IF (dbo.uf_ValidateNumeLiga(@nume_liga) <> 1)
         BEGIN
-            RAISERROR('Numele ligii trebuie să înceapă cu literă mare.', 16, 1);
+            RAISERROR('Numele ligii trebuie sa inceapa cu litera mare.', 16, 1);
         END
 
-        -- Validarea numărului de echipe
         IF (dbo.uf_ValidateNumarEchipe(@numar_echipe) <> 1)
         BEGIN
-            RAISERROR('Numărul de echipe trebuie să fie pozitiv.', 16, 1);
+            RAISERROR('Numarul de echipe trebuie sa fie pozitiv.', 16, 1);
         END
 
         INSERT INTO Ligi(nume_liga, numar_echipe, id_oras)
-        VALUES (@nume_liga, @numar_echipe, 1) -- presupunem id_oras default 1
+        VALUES (@nume_liga, @numar_echipe, 1) 
 
         SET @id_liga = SCOPE_IDENTITY()
 
