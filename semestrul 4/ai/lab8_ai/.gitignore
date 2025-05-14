@@ -1,0 +1,8 @@
+# Ignoră doar folderele mari
+.venv/Lib/
+.venv/Include/
+.venv/Scripts/
+.venv/share/
+
+# Păstrează restul (atenție: Git trebuie să știe de ele deja)
+!.venv/
